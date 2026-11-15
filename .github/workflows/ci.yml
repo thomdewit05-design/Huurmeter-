@@ -36,8 +36,8 @@ jobs:
           grep -q "BUILD SUCCEEDED" build.log
 
   huurprijscheck:
-    # Spec §4: de build is pas groen als alle voorbeeldwoningen exact overeenkomen met de officiële
-    # Huurprijscheck. Deze job faalt tot de verwachte uitkomsten in WWSKit/Tests/Fixtures zijn ingevuld.
+    # Vergelijkt de voorbeeldwoningen met de officiële Huurprijscheck. Woningen zonder ingevulde uitkomst
+    # worden overgeslagen (besluit Thom, afwijking van spec §4); een afwijkende ingevulde uitkomst faalt.
     name: Voorbeeldwoningen = Huurprijscheck
     runs-on: macos-15
     steps:

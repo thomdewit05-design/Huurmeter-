@@ -41,8 +41,8 @@ cd HuurmeterCore && swift test
 ```
 
 GitHub Actions (`.github/workflows/ci.yml`) bouwt bij elke push de app en draait alle tests. De job
-"Voorbeeldwoningen = Huurprijscheck" faalt bewust zolang de verwachte uitkomsten in `WWSKit/Tests/Fixtures/`
-niet zijn ingevuld vanuit de officiële Huurprijscheck; de foutmelding toont per woning wat WWSKit berekent.
+"Voorbeeldwoningen = Huurprijscheck" vergelijkt de voorbeeldwoningen in `WWSKit/Tests/Fixtures/` met de officiële
+Huurprijscheck. Woningen zonder ingevulde uitkomst worden overgeslagen; een ingevulde uitkomst die afwijkt, faalt.
 
 ## Gebruik
 
