@@ -4,10 +4,11 @@ import SwiftUI
 /// voor onbeperkt veel woningen en kamers; de prijs staat in App Store Connect, niet in de code.
 struct OntgrendelKaart: View {
     @Environment(Winkel.self) private var winkel
+    var kop: LocalizedStringKey = "Bekijk uw maximale huur"
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Label("Bekijk uw maximale huur", systemImage: "lock.open")
+            Label(kop, systemImage: "lock.open")
                 .font(.headline).foregroundStyle(Huisstijl.bosgroen)
             VStack(alignment: .leading, spacing: 6) {
                 Label("De maximale kale huur en hoeveel u per maand en per jaar te veel betaalt", systemImage: "eurosign.circle")

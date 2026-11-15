@@ -30,6 +30,10 @@ Uitgezocht op 15-11-2026. Prijzen van andere aanbieders komen van hun eigen webs
   wie niet te veel betaalt, hoeft niets te kopen.
 - Vrije sector: daar is geen maximum, dus er valt niets te ontgrendelen.
 
+- Een grove indicatie van het bedrag: "u betaalt waarschijnlijk tussen € 100 en € 200 per maand te veel"
+  (banden tot € 50, € 50–100, € 100–200, € 200–300, € 300–500, meer dan € 500). Bij een te hoge huur staat de
+  betaalkaart direct onder de samenvatting.
+
 Achter de betaalmuur: de maximale kale huur, het bedrag dat u te veel betaalt, het dossier en de brief. Dat geldt ook
 voor de kamerberekening, het overzicht op het startscherm en de widget.
 

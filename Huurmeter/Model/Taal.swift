@@ -54,11 +54,22 @@ enum Weergave {
             return Opmaak.Samenvatting(kop: kop, regels: [String(localized: "Ontgrendel de uitkomst om de maximale kale huur te zien.")], teVeel: false)
         }
         if verschil > 0 {
-            return Opmaak.Samenvatting(kop: String(localized: "Uw huur is waarschijnlijk te hoog"),
-                                       regels: [String(localized: "Ontgrendel de uitkomst om te zien wat de maximale huur is en hoeveel u per maand te veel betaalt.")],
-                                       teVeel: true)
+            var regels: [String] = []
+            if let band = Bandbreedte.voor(teVeelPerMaand: verschil) { regels.append(bandTekst(band)) }
+            regels.append(String(localized: "Ontgrendel de uitkomst om het exacte bedrag en de maximale huur te zien."))
+            return Opmaak.Samenvatting(kop: String(localized: "Uw huur is waarschijnlijk te hoog"), regels: regels, teVeel: true)
         }
         return Opmaak.Samenvatting(kop: kop, regels: [String(localized: "Uw huur is niet hoger dan het maximum.")], teVeel: false)
+    }
+
+    /// Grove indicatie voor de gratis versie, bijvoorbeeld "tussen € 100 en € 200 per maand".
+    static func bandTekst(_ b: Bandbreedte) -> String {
+        let van = "€ \(b.van)"
+        guard let tot = b.tot.map({ "€ \($0)" }) else {
+            return String(localized: "U betaalt waarschijnlijk meer dan \(van) per maand te veel.")
+        }
+        if b.van == 0 { return String(localized: "U betaalt waarschijnlijk tot \(tot) per maand te veel.") }
+        return String(localized: "U betaalt waarschijnlijk tussen \(van) en \(tot) per maand te veel.")
     }
 
     static func termijn(_ t: Termijn) -> String {
