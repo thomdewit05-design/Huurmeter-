@@ -23,6 +23,7 @@ struct StartView: View {
                     } actions: {
                         Button("Nieuwe woning", action: nieuweWoning)
                             .buttonStyle(.borderedProminent)
+                        NavigationLink("Ik huur een kamer") { KamerView() }
                     }
                 } else {
                     List {
@@ -30,6 +31,11 @@ struct StartView: View {
                             NavigationLink(value: woning) { WoningRij(woning: woning) }
                         }
                         .onDelete(perform: verwijder)
+                        Section {
+                            NavigationLink { KamerView() } label: {
+                                Label("Huurt u een kamer?", systemImage: "door.left.hand.open")
+                            }
+                        }
                     }
                 }
             }
