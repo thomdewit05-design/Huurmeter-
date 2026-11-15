@@ -1,4 +1,4 @@
-# Open punten na fase 1 (WWSKit + regelbestand 2026)
+# Open punten
 
 Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 
@@ -59,3 +59,18 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 - Op wetten.overheid.nl staan al wijzigingen aangekondigd per **01-01-2027** voor Bijlage I en de
   Uitvoeringsregeling. Daarvoor komt `wws-zelfstandig-2027.json` erbij; de app kiest het bestand op peildatum.
 - Fase 2 kan pas als A3 is ingevuld en de groene build er is, of als je besluit fase 2 alvast te starten.
+
+## D. Fase 2 (schermen 1 t/m 7)
+
+1. **Niet op een echt toestel getest.** De app-code is gecompileerd via GitHub Actions (macOS, Xcode), maar
+   niemand heeft hem nog in de simulator of op een iPhone doorgelopen. Graag een eerste rondje in Xcode.
+2. **Bouwjaar uit de BAG**: bij meerdere panden neemt de app het oudste bouwjaar. Bij verbouw tot woning kan
+   een ander jaar gelden; de gebruiker kan het aanpassen.
+3. **COROP-gebied Amsterdam/Utrecht** wordt aan de gebruiker gevraagd (alleen bij kleine woningen uit 2018 t/m
+   2022). Automatisch afleiden uit de gemeente kan later met een gemeente-COROP-tabel.
+4. **Sanitair**: de vragenlijst ondersteunt maximaal twee badkamers en telt wastafels in andere kamers als één per kamer.
+5. **Gedeelde ruimtes en parkeren**: één gedeelde woonruimte, één gedeelde berging en één groep parkeerplekken.
+   Complexere situaties (verschillende aantallen adressen per plek) vragen later een uitgebreider scherm.
+6. **Privacy**: "Adres opzoeken" stuurt postcode en huisnummer naar PDOK. Dat staat in Info; voor het
+   App Store-privacylabel is dat geen gegevensverzameling door de app zelf, maar laat dit nog checken.
+7. **Bundel-ID en team**: voorlopig `nl.huurmeter.app` (zie open punt in de spec).
