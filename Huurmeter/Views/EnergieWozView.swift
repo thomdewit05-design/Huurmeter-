@@ -94,6 +94,7 @@ struct EnergieWozView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Energie en WOZ")
         .onChange(of: woning.wozWaarde) {
             if woning.wozWaarde != nil && woning.wozPeildatum == nil { woning.wozPeildatum = peildata.first?.datum() }

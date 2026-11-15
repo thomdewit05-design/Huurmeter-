@@ -7,6 +7,7 @@ import HuurmeterCore
 /// Scherm 5: korte vragen per rubriek. Alleen vragen die punten kunnen opleveren worden getoond.
 struct VoorzieningenView: View {
     @Bindable var woning: Woning
+    @State private var scan: ScanKeuze?
 
     var body: some View {
         Group {
@@ -15,6 +16,7 @@ struct VoorzieningenView: View {
                 Form {
                     ForEach(Vragenlijst.zichtbareGroepen(regels: regels, concept: concept)) { groep in
                         Section(groep.titel.vertaald) {
+                            if Scanner.beschikbaar { scanKnoppen(groep.id) }
                             ForEach(groep.vragen) { vraag in
                                 VraagRij(woning: woning, vraag: vraag)
                             }
@@ -27,7 +29,45 @@ struct VoorzieningenView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Voorzieningen")
+        .fullScreenCover(item: $scan) { s in VoorzieningScanView(woning: woning, ruimte: s.ruimte) }
+    }
+
+    /// AR: keuken, badkamer of toilet scannen; de camera herkent apparaten en sanitair.
+    @ViewBuilder
+    private func scanKnoppen(_ groep: String) -> some View {
+        switch groep {
+        case "keuken":
+            Button { scan = ScanKeuze(ruimte: .keuken) } label: {
+                Label("Keuken scannen met de camera", systemImage: "camera.viewfinder")
+            }
+        case "sanitair":
+            Button { scan = ScanKeuze(ruimte: .badkamer(1)) } label: {
+                Label("Badkamer scannen met de camera", systemImage: "camera.viewfinder")
+            }
+            if woning.antwoord("badkamers") >= 2 {
+                Button { scan = ScanKeuze(ruimte: .badkamer(2)) } label: {
+                    Label("Tweede badkamer scannen", systemImage: "camera.viewfinder")
+                }
+            }
+            Button { scan = ScanKeuze(ruimte: .toilet) } label: {
+                Label("Apart toilet scannen", systemImage: "camera.viewfinder")
+            }
+        default:
+            EmptyView()
+        }
+    }
+}
+
+private struct ScanKeuze: Identifiable {
+    let ruimte: ScanRuimte
+    var id: String {
+        switch ruimte {
+        case .keuken: return "keuken"
+        case .badkamer(let n): return "badkamer\(n)"
+        case .toilet: return "toilet"
+        }
     }
 }
 

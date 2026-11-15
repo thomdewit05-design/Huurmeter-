@@ -70,6 +70,7 @@ struct HuurverhogingView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Huurverhoging")
         .onAppear(perform: vulVoor)
     }

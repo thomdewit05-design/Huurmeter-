@@ -55,6 +55,7 @@ struct GebrekenView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Gebreken")
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -208,6 +209,7 @@ private struct GebrekBewerken: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle(gebrek.titel.isEmpty ? String(localized: "Nieuw gebrek") : gebrek.titel)
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {

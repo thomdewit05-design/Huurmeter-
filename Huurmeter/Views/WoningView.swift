@@ -46,12 +46,6 @@ struct WoningView: View {
                 ToolbarItem(placement: .primaryAction) {
                     Button { toonMeer = true } label: { Label("Meer", systemImage: "ellipsis.circle") }
                 }
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button("Klaar") {
-                        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                    }
-                }
             }
             .sheet(isPresented: $toonMeer) {
                 NavigationStack { WoningMeerView(woning: woning) }

@@ -51,6 +51,7 @@ struct AdresView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Adres")
         .onChange(of: woning.postcode) { woning.geraakt() }
         .onChange(of: woning.huisnummer) { woning.geraakt() }

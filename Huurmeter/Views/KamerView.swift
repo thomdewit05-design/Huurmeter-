@@ -60,20 +60,12 @@ struct KamerView: View {
         }
         .id(stap)
         .transition(.opacity)
-        .scrollDismissesKeyboard(.interactively)
         .huisstijlAchtergrond()
         .safeAreaInset(edge: .top, spacing: 0) { kop }
         .safeAreaInset(edge: .bottom, spacing: 0) { navigatie }
         .navigationTitle("Kamer")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button("Klaar") {
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }
-            }
-        }
+        .toetsenbordKlaar()
         .onAppear {
             guard !geladen else { return }
             geladen = true

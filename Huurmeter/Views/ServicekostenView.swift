@@ -119,6 +119,7 @@ struct ServicekostenView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Servicekosten")
     }
 }
