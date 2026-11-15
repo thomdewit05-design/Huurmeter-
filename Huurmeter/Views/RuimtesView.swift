@@ -9,6 +9,7 @@ struct RuimtesView: View {
     @Environment(\.modelContext) private var context
     @Bindable var woning: Woning
     @State private var bewerk: Ruimte?
+    @State private var woningScan = false
 
     var body: some View {
         List {
@@ -22,6 +23,17 @@ struct RuimtesView: View {
                         }
                         .onDelete { idx in verwijder(idx.map { lijst[$0] }) }
                     }
+                }
+            }
+            if Scanner.beschikbaar {
+                Section {
+                    Button {
+                        woningScan = true
+                    } label: {
+                        Label("Hele woning scannen", systemImage: "camera.metering.matrix")
+                    }
+                } footer: {
+                    Text("Loop met de camera kamer voor kamer door de woning. Daarna controleert u de lijst.")
                 }
             }
             Section {
@@ -44,6 +56,7 @@ struct RuimtesView: View {
         }
         .huisstijlAchtergrond()
         .navigationTitle("Ruimtes")
+        .fullScreenCover(isPresented: $woningScan) { WoningScanView(woning: woning) }
         .sheet(item: $bewerk) { r in
             NavigationStack { RuimteEditView(ruimte: r) }
         }

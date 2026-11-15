@@ -60,3 +60,16 @@ final class GeometrieTests: XCTestCase {
         XCTAssertEqual(Geometrie.aanrechtLengte([]), 0)
     }
 }
+
+final class KamerherkenningTests: XCTestCase {
+    func testLabels() {
+        XCTAssertEqual(Kamerherkenning.functie(voorLabel: "bathroom"), .badkamer)
+        XCTAssertEqual(Kamerherkenning.functie(voorLabel: "livingRoom"), .woonkamer)
+        XCTAssertEqual(Kamerherkenning.functie(voorLabel: "unidentified"), .overig)
+    }
+
+    func testNamen() {
+        XCTAssertEqual(Kamerherkenning.namen(voor: [.woonkamer, .slaapkamer, .slaapkamer, .overig]),
+                       ["Woonkamer", "Slaapkamer 1", "Slaapkamer 2", "Kamer"])
+    }
+}
