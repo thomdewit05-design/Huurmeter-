@@ -11,12 +11,32 @@
         }
       }
     },
+    "%1$@: kan tot en met %2$@, als dit uw eerste contract voor deze woning is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@: possible up to and including %2$@, if this is your first contract for this home."
+          }
+        }
+      }
+    },
     "%@": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "%@"
+          }
+        }
+      }
+    },
+    "%@ p/m te veel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ /month too much"
           }
         }
       }
@@ -67,6 +87,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ – %@"
+          }
+        }
+      }
+    },
+    "%@: kan tot en met %@, als dit uw eerste contract voor deze woning is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@: possible up to and including %@, if this is your first contract for this home."
           }
         }
       }
@@ -137,6 +167,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "2 or more people"
+          }
+        }
+      }
+    },
+    "Aandacht nodig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Needs attention"
           }
         }
       }
@@ -271,6 +311,16 @@
         }
       }
     },
+    "Adressen die dit delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses sharing this"
+          }
+        }
+      }
+    },
     "Aftrekken": {
       "localizations": {
         "en": {
@@ -297,6 +347,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Extractor hood (built-in)"
+          }
+        }
+      }
+    },
+    "Alle gebreken zijn gemeld bij de verhuurder.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All defects have been reported to the landlord."
+          }
+        }
+      }
+    },
+    "Alle gegevens, foto's en berekeningen van deze woning worden van uw telefoon verwijderd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All details, photos and calculations of this home will be removed from your phone."
           }
         }
       }
@@ -347,6 +417,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Only spaces inside the building that you may use under your rental contract."
+          }
+        }
+      }
+    },
+    "Alleen voor u": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Just for you"
+          }
+        }
+      }
+    },
+    "Alles wat u invult blijft op uw telefoon.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything you enter stays on your phone."
           }
         }
       }
@@ -411,12 +501,32 @@
         }
       }
     },
+    "Bad met douche": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bath with shower"
+          }
+        }
+      }
+    },
     "Bad met douche: %lld": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Bath with shower: %lld"
+          }
+        }
+      }
+    },
+    "Baden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baths"
           }
         }
       }
@@ -451,6 +561,26 @@
         }
       }
     },
+    "Badkamer of toilet %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom or toilet %@"
+          }
+        }
+      }
+    },
+    "Badkamer of toilet %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom or toilet %lld"
+          }
+        }
+      }
+    },
     "Badkamer of toilet toevoegen": {
       "localizations": {
         "en": {
@@ -477,6 +607,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Start in the first room. Point the camera at the walls and walk around slowly."
+          }
+        }
+      }
+    },
+    "Bekijk uitkomst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See result"
           }
         }
       }
@@ -587,6 +727,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Object by"
+          }
+        }
+      }
+    },
+    "Bij %@ van uw woningen betaalt u waarschijnlijk te veel huur.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For %@ of your homes you are probably paying too much rent."
+          }
+        }
+      }
+    },
+    "Bij %lld van uw woningen betaalt u waarschijnlijk te veel huur.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For %lld of your homes you are probably paying too much rent."
           }
         }
       }
@@ -807,6 +967,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Check in Huurmeter whether the increase stays within the maximum and whether the proposal came at least two months in advance."
+          }
+        }
+      }
+    },
+    "Controleer of het voorstel binnen het maximum blijft. Bezwaar maakt u vóór de ingangsdatum.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check whether the proposal stays within the maximum. Object before the start date."
           }
         }
       }
@@ -1131,6 +1301,16 @@
         }
       }
     },
+    "Douches": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Showers"
+          }
+        }
+      }
+    },
     "Douches: %lld": {
       "localizations": {
         "en": {
@@ -1301,6 +1481,16 @@
         }
       }
     },
+    "Eigen kamers met koeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own rooms with cooling"
+          }
+        }
+      }
+    },
     "Eigen kamers met koeling: %lld": {
       "localizations": {
         "en": {
@@ -1451,12 +1641,32 @@
         }
       }
     },
+    "Extra": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra"
+          }
+        }
+      }
+    },
     "Extra keukenkasten (aantal stuks van 60 cm breed, minstens 60 cm hoog)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Extra kitchen cupboards (number of 60 cm wide units, at least 60 cm high)"
+          }
+        }
+      }
+    },
+    "Extra's in de badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom extras"
           }
         }
       }
@@ -1681,6 +1891,16 @@
         }
       }
     },
+    "Gebruiksoppervlakte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usable floor area"
+          }
+        }
+      }
+    },
     "Gebruiksoppervlakte van het adres": {
       "localizations": {
         "en": {
@@ -1741,12 +1961,52 @@
         }
       }
     },
+    "Gedeelde buitenruimte %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared outdoor space %@"
+          }
+        }
+      }
+    },
+    "Gedeelde buitenruimte %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared outdoor space %lld"
+          }
+        }
+      }
+    },
     "Gedeelde buitenruimte toevoegen": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Add shared outdoor space"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimte %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared space %@"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimte %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared space %lld"
           }
         }
       }
@@ -2061,6 +2321,36 @@
         }
       }
     },
+    "Goedemiddag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good afternoon"
+          }
+        }
+      }
+    },
+    "Goedemorgen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good morning"
+          }
+        }
+      }
+    },
+    "Goedenavond": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good evening"
+          }
+        }
+      }
+    },
     "Hal of gang": {
       "localizations": {
         "en": {
@@ -2281,6 +2571,16 @@
         }
       }
     },
+    "Hulpmiddelen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tools"
+          }
+        }
+      }
+    },
     "Huur": {
       "localizations": {
         "en": {
@@ -2291,12 +2591,32 @@
         }
       }
     },
+    "Huur invullen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter rent"
+          }
+        }
+      }
+    },
     "Huur kan omlaag tot": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Rent can go down to"
+          }
+        }
+      }
+    },
+    "Huur klopt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent is fine"
           }
         }
       }
@@ -2411,6 +2731,26 @@
         }
       }
     },
+    "Huurverhoging checken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check rent increase"
+          }
+        }
+      }
+    },
+    "Huurverhoging gekregen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received a rent increase?"
+          }
+        }
+      }
+    },
     "Huurverlaging": {
       "localizations": {
         "en": {
@@ -2487,6 +2827,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "How many other rooms have a washbasin?"
+          }
+        }
+      }
+    },
+    "Inbouwapparatuur en extra's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in appliances and extras"
           }
         }
       }
@@ -2861,6 +3211,16 @@
         }
       }
     },
+    "Kamer berekenen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculate room"
+          }
+        }
+      }
+    },
     "Kamer(s) die alleen u gebruikt": {
       "localizations": {
         "en": {
@@ -2887,6 +3247,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Check rooms"
+          }
+        }
+      }
+    },
+    "Kamers die dit delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms sharing this"
           }
         }
       }
@@ -2951,6 +3321,26 @@
         }
       }
     },
+    "Keuken %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen %@"
+          }
+        }
+      }
+    },
+    "Keuken %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen %lld"
+          }
+        }
+      }
+    },
     "Keuken toevoegen": {
       "localizations": {
         "en": {
@@ -2967,6 +3357,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose"
+          }
+        }
+      }
+    },
+    "Kies een andere stap": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose another step"
           }
         }
       }
@@ -3181,6 +3581,16 @@
         }
       }
     },
+    "Lengte aanrecht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worktop length"
+          }
+        }
+      }
+    },
     "Lengte van het aanrecht": {
       "localizations": {
         "en": {
@@ -3281,6 +3691,16 @@
         }
       }
     },
+    "Meerpersoonswastafels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double washbasins"
+          }
+        }
+      }
+    },
     "Meerpersoonswastafels: %lld": {
       "localizations": {
         "en": {
@@ -3327,6 +3747,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Measure from wall to wall at a height of 1.50 m. With a sloping roof, only the part where the ceiling is at least 1.50 m high counts. Built-in cupboards count."
+          }
+        }
+      }
+    },
+    "Meet van muur tot muur, op 1,5 m hoogte.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure from wall to wall, at a height of 1.5 m."
           }
         }
       }
@@ -3527,6 +3957,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Disagree with the costs?"
+          }
+        }
+      }
+    },
+    "Niet gemeld bij de verhuurder: %@. Meld ze schriftelijk; dan gaan de termijnen lopen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not reported to the landlord: %@. Report them in writing; that starts the deadlines."
+          }
+        }
+      }
+    },
+    "Niet gemeld bij de verhuurder: %lld. Meld ze schriftelijk; dan gaan de termijnen lopen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not reported to the landlord: %lld. Report them in writing; that starts the deadlines."
           }
         }
       }
@@ -3787,6 +4237,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Open"
+          }
+        }
+      }
+    },
+    "Open gebreken: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open defects: %@"
+          }
+        }
+      }
+    },
+    "Open gebreken: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open defects: %lld"
           }
         }
       }
@@ -4421,6 +4891,46 @@
         }
       }
     },
+    "Stap %1$@ van %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "Stap %1$lld van %2$lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Stap %@ van %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %@ of %@"
+          }
+        }
+      }
+    },
+    "Stap %lld van %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %lld of %lld"
+          }
+        }
+      }
+    },
     "Stap %lld: %@. %@": {
       "localizations": {
         "en": {
@@ -4437,6 +4947,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Steps"
+          }
+        }
+      }
+    },
+    "Stappen ingevuld: %1$@ van %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps completed: %1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "Stappen ingevuld: %1$lld van %2$lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps completed: %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Stappen ingevuld: %@ van %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps completed: %@ of %@"
+          }
+        }
+      }
+    },
+    "Stappen ingevuld: %lld van %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps completed: %lld of %lld"
           }
         }
       }
@@ -4511,6 +5061,16 @@
         }
       }
     },
+    "Te veel huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent too high"
+          }
+        }
+      }
+    },
     "Te weinig daglicht in de woonkamer": {
       "localizations": {
         "en": {
@@ -4547,6 +5107,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Counts towards the WOZ points. A parking space is at least 12 m²."
+          }
+        }
+      }
+    },
+    "Terug naar het begin": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the start"
           }
         }
       }
@@ -4861,12 +5431,42 @@
         }
       }
     },
+    "U volgt %@ woningen. Hieronder ziet u wat aandacht nodig heeft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are tracking %@ homes. Below you can see what needs attention."
+          }
+        }
+      }
+    },
+    "U volgt %lld woningen. Hieronder ziet u wat aandacht nodig heeft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are tracking %lld homes. Below you can see what needs attention."
+          }
+        }
+      }
+    },
     "Uitkomst": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Result"
+          }
+        }
+      }
+    },
+    "Uitleg en bronnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Explanation and sources"
           }
         }
       }
@@ -4941,6 +5541,16 @@
         }
       }
     },
+    "Uw kamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your room"
+          }
+        }
+      }
+    },
     "Uw termijnen": {
       "localizations": {
         "en": {
@@ -4951,12 +5561,32 @@
         }
       }
     },
+    "Uw woningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your homes"
+          }
+        }
+      }
+    },
     "Vaatwasser (inbouw)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Dishwasher (built-in)"
+          }
+        }
+      }
+    },
+    "Van het hele adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Of the whole address"
           }
         }
       }
@@ -5061,12 +5691,32 @@
         }
       }
     },
+    "Verwarmde eigen kamers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own rooms"
+          }
+        }
+      }
+    },
     "Verwarmde eigen kamers: %lld": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Heated own rooms: %lld"
+          }
+        }
+      }
+    },
+    "Verwarmde eigen overige ruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own other spaces"
           }
         }
       }
@@ -5091,6 +5741,16 @@
         }
       }
     },
+    "Verwarming en koeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heating and cooling"
+          }
+        }
+      }
+    },
     "Verwarming en verkoeling": {
       "localizations": {
         "en": {
@@ -5101,12 +5761,32 @@
         }
       }
     },
+    "Verwijder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        }
+      }
+    },
     "Verwijder foto": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Delete photo"
+          }
+        }
+      }
+    },
+    "Verwijderen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
           }
         }
       }
@@ -5181,6 +5861,36 @@
         }
       }
     },
+    "Voeg de keuken toe die u gebruikt, ook als u die deelt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the kitchen you use, even if you share it."
+          }
+        }
+      }
+    },
+    "Voeg de ruimten toe die u deelt met andere bewoners, zoals een woonkamer, gang of berging.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the spaces you share with other residents, such as a living room, hallway or storage room."
+          }
+        }
+      }
+    },
+    "Voeg eerst een woning toe": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a home first"
+          }
+        }
+      }
+    },
     "Voeg elke badkamer en elk apart toilet apart toe, ook als u het alleen gebruikt (dan 1 kamer).": {
       "localizations": {
         "en": {
@@ -5207,6 +5917,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Does the kitchen meet the basic level?"
+          }
+        }
+      }
+    },
+    "Volgende": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
           }
         }
       }
@@ -5347,6 +6067,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Facilities"
+          }
+        }
+      }
+    },
+    "Vorige": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous"
           }
         }
       }
@@ -5521,6 +6251,16 @@
         }
       }
     },
+    "Wastafels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasins"
+          }
+        }
+      }
+    },
     "Wastafels: %lld": {
       "localizations": {
         "en": {
@@ -5607,6 +6347,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scan home"
+          }
+        }
+      }
+    },
+    "Woning verwijderen?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete home?"
           }
         }
       }
