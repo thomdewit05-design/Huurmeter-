@@ -105,11 +105,12 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 
 ## G. Fase 5 (afwerking)
 
-1. **Schermafbeeldingen** maakt de CI-job "Schermafbeeldingen en toegankelijkheid" automatisch met de
-   demowoning (iPhone Pro Max, Nederlands, 9:41). Download ze als artifact `schermafbeeldingen` bij de
-   workflowrun. Voor de App Store kan een tekstkader erbij (bijv. in Keynote of Figma) helpen.
-2. **Toegankelijkheid**: Apple's `performAccessibilityAudit()` draait per hoofdscherm. Een echte
-   VoiceOver-ronde door een persoon blijft nodig, net als een test met de grootste tekstgrootte.
+1. **Schermafbeeldingen**: de CI-job is op verzoek van Thom weggehaald (15-11-2026). De UI-tests in
+   `HuurmeterUITests/` blijven bestaan; in Xcode maken ze met de demowoning dezelfde schermafbeeldingen
+   (Product → Test, daarna de bijlagen in het testrapport).
+2. **Toegankelijkheid**: `performAccessibilityAudit()` zit in dezelfde UI-tests en draait dus alleen nog lokaal.
+   Laatst bekende bevinding: "Dynamic Type font sizes are partially unsupported" op het woningscherm
+   (element nog onbekend). Een echte VoiceOver-ronde en een test met de grootste tekstgrootte blijven nodig.
 3. **Demovlaggen** `-demo` en `-demoOntgrendeld` werken alleen in ontwikkelbuilds (DEBUG), zodat de betaalde
    inhoud in de winkelversie niet zonder aankoop te openen is.
 4. **Privacy-manifest** (`PrivacyInfo.xcprivacy`): geen tracking, geen verzamelde gegevens, geen API's met reden.

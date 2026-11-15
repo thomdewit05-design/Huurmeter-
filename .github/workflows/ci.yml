@@ -35,51 +35,6 @@ jobs:
             CODE_SIGNING_ALLOWED=NO | tee build.log | grep -E "error:|warning:|BUILD" || true
           grep -q "BUILD SUCCEEDED" build.log
 
-  schermafbeeldingen:
-    # Fase 5: loopt de app door met de demowoning (UI-tests), maakt de App Store-schermafbeeldingen
-    # (iPhone 6,9", Nederlands) en draait Apple's toegankelijkheidscontrole per scherm.
-    name: Schermafbeeldingen en toegankelijkheid
-    runs-on: macos-15
-    steps:
-      - uses: actions/checkout@v5
-      - name: XcodeGen installeren
-        run: brew install xcodegen
-      - name: Project genereren
-        run: xcodegen generate
-      - name: Simulator klaarzetten (iPhone Pro Max, 9:41)
-        run: |
-          UDID=$(xcrun simctl list devices available -j | python3 -c "
-          import json, sys
-          d = json.load(sys.stdin)['devices']
-          kandidaten = [x for k, v in d.items() if 'iOS' in k for x in v if 'Pro Max' in x['name']]
-          kandidaten.sort(key=lambda x: x['name'], reverse=True)
-          print(kandidaten[0]['udid'])")
-          echo "UDID=$UDID" >> "$GITHUB_ENV"
-          xcrun simctl boot "$UDID"
-          xcrun simctl bootstatus "$UDID"
-          xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged --batteryLevel 100 --cellularBars 4 --wifiBars 3
-      - name: UI-tests
-        run: |
-          set -o pipefail
-          xcodebuild test \
-            -project Huurmeter.xcodeproj \
-            -scheme Huurmeter \
-            -destination "id=$UDID" \
-            -resultBundlePath UITests.xcresult | grep -E "error:|Test Case|failed|passed|TEST" || true
-          xcrun xcresulttool get test-results summary --path UITests.xcresult | tee samenvatting.json
-          python3 -c "import json,sys; s=json.load(open('samenvatting.json')); sys.exit(0 if s.get('result')=='Passed' else 1)"
-      - name: Schermafbeeldingen exporteren
-        if: always()
-        run: |
-          mkdir -p schermafbeeldingen
-          xcrun xcresulttool export attachments --path UITests.xcresult --output-path schermafbeeldingen || true
-          ls -la schermafbeeldingen
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: schermafbeeldingen
-          path: schermafbeeldingen
-
   huurprijscheck:
     # Vergelijkt de voorbeeldwoningen met de officiële Huurprijscheck. Woningen zonder ingevulde uitkomst
     # worden overgeslagen (besluit Thom, afwijking van spec §4); een afwijkende ingevulde uitkomst faalt.
