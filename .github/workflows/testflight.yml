@@ -48,6 +48,14 @@ jobs:
           printf '%s\n' "$ASC_KEY_P8" > "$RUNNER_TEMP/sleutel/AuthKey.p8"
           chmod 600 "$RUNNER_TEMP/sleutel/AuthKey.p8"
 
+      - name: API-sleutel controleren bij App Store Connect
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          python3 -m pip install --quiet --break-system-packages pyjwt cryptography 2>/dev/null || python3 -m pip install --quiet pyjwt cryptography
+          python3 scripts/controleer_asc_sleutel.py "$RUNNER_TEMP/sleutel/AuthKey.p8"
+
       - name: Archiveren (Release)
         run: |
           set -o pipefail
