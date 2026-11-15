@@ -52,6 +52,7 @@ struct HuurView: View {
                 Text("Een eengezinswoning heeft geen andere woningen boven of onder zich, zoals een rijtjeshuis of vrijstaand huis. Al het andere (flat, boven- of benedenwoning) is een appartement.")
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Huur")
         .onChange(of: woning.kaleHuur) { woning.geraakt() }
     }

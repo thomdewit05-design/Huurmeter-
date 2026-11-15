@@ -14,7 +14,10 @@ struct StartView: View {
             Group {
                 if woningen.isEmpty {
                     ContentUnavailableView {
-                        Label("Nog geen woningen", systemImage: "house")
+                        VStack(spacing: 16) {
+                            Logo().frame(width: 96, height: 96)
+                            Text("Klopt uw huur?").font(.title2.weight(.heavy)).foregroundStyle(Huisstijl.bosgroen)
+                        }
                     } description: {
                         Text("Reken in ongeveer tien minuten uit wat de maximale kale huur van uw woning is.")
                     } actions: {
@@ -30,6 +33,7 @@ struct StartView: View {
                     }
                 }
             }
+            .huisstijlAchtergrond()
             .navigationTitle("Huurmeter")
             .navigationDestination(for: Woning.self) { WoningView(woning: $0) }
             .toolbar {

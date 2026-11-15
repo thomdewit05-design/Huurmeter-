@@ -33,6 +33,7 @@ struct WoningView: View {
                 Text(Uitkomst.disclaimer)
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle(woning.titel)
         .navigationBarTitleDisplayMode(.inline)
     }

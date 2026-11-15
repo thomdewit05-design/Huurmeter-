@@ -42,6 +42,7 @@ struct RuimtesView: View {
                                        description: Text("Voeg de kamers, de berging en de tuin of het balkon toe."))
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Ruimtes")
         .sheet(item: $bewerk) { r in
             NavigationStack { RuimteEditView(ruimte: r) }
@@ -168,6 +169,7 @@ struct RuimteEditView: View {
                 }
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle(ruimte.naam.isEmpty ? "Ruimte" : ruimte.naam)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

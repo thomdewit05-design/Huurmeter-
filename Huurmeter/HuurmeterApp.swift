@@ -11,11 +11,20 @@ struct HuurmeterApp: App {
                 StartView()
                     .environment(winkel)
                     .modelContainer(DemoData.container)
+                    .huisstijl()
             } else {
                 StartView()
                     .environment(winkel)
                     .modelContainer(for: [Woning.self, Ruimte.self, Voorziening.self, Berekening.self])
+                    .huisstijl()
             }
         }
+    }
+}
+
+extension View {
+    /// Huisstijl C: afgeronde systeemletter (schaalt mee met de tekstgrootte) en bosgroen als accent.
+    func huisstijl() -> some View {
+        fontDesign(.rounded).tint(Huisstijl.bosgroen)
     }
 }

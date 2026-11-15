@@ -21,6 +21,7 @@ struct UitkomstView: View {
                 inhoud(u)
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Uitkomst")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: bereken)
@@ -39,23 +40,25 @@ struct UitkomstView: View {
         let s = Opmaak.samenvatting(u, kaleHuur: woning.kaleHuur)
         List {
             Section {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(s.kop)
-                        .font(.title2.bold())
-                        .foregroundStyle(s.teVeel ? Color.red : Color.primary)
-                    HStack(alignment: .firstTextBaseline) {
-                        Text("\(u.totaal)").font(.system(.largeTitle, design: .rounded, weight: .bold))
-                        Text("punten").font(.title3)
-                        Spacer()
-                        Text(Opmaak.segment(u.segment))
-                            .font(.subheadline.weight(.semibold))
-                            .padding(.horizontal, 10).padding(.vertical, 4)
-                            .background(.thinMaterial, in: Capsule())
+                VStack(alignment: .leading, spacing: 14) {
+                    if s.teVeel {
+                        Pil(tekst: s.kop, voorgrond: Huisstijl.signaal, achtergrond: Huisstijl.signaalVlak)
+                    } else {
+                        Text(s.kop).font(.headline).foregroundStyle(Huisstijl.gedempt)
+                    }
+                    HStack(alignment: .firstTextBaseline, spacing: 8) {
+                        Text("\(u.totaal)")
+                            .font(.system(.largeTitle, design: .rounded, weight: .heavy))
+                            .foregroundStyle(Huisstijl.bosgroen)
+                        Text("punten").font(.title3).foregroundStyle(Huisstijl.gedempt)
+                        Spacer(minLength: 8)
+                        Pil(tekst: Opmaak.segment(u.segment))
                     }
                     .accessibilityElement(children: .combine)
                     ForEach(s.regels, id: \.self) { Text($0) }
                 }
-                .padding(.vertical, 4)
+                .padding(.vertical, 8)
+                .listRowBackground(Huisstijl.kaart)
             } footer: {
                 Text(Uitkomst.disclaimer).font(.footnote.weight(.semibold))
             }

@@ -17,7 +17,7 @@ enum DossierPDF {
         }())
         return renderer.pdfData { ctx in
             let s = Schrijver(ctx: ctx, pagina: pagina, voet: d.voetnoten.first ?? "")
-            s.tekst(d.titel, .systemFont(ofSize: 22, weight: .bold), na: 2)
+            s.tekst(d.titel, .systemFont(ofSize: 22, weight: .heavy), kleur: Schrijver.bosgroen, na: 2)
             s.tekst(d.adres, .systemFont(ofSize: 14, weight: .semibold), na: 2)
             s.tekst(d.datum, .systemFont(ofSize: 10), kleur: .darkGray, na: 14)
 
@@ -69,6 +69,8 @@ enum DossierPDF {
         let pagina: CGRect
         let voet: String
         let marge: CGFloat = 48
+        /// Huisstijl C: koppen in bosgroen #17402E.
+        static let bosgroen = UIColor(red: 0x17 / 255, green: 0x40 / 255, blue: 0x2E / 255, alpha: 1)
         var y: CGFloat = 0
         var nummer = 0
 
@@ -107,7 +109,7 @@ enum DossierPDF {
         func kop(_ s: String) {
             ruimte(10)
             plek(60)
-            tekst(s, .systemFont(ofSize: 15, weight: .bold), na: 6)
+            tekst(s, .systemFont(ofSize: 15, weight: .heavy), kleur: Self.bosgroen, na: 6)
         }
 
         func regel(_ links: String, _ rechts: String, vet: Bool = false) {

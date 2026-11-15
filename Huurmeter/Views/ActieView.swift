@@ -21,6 +21,7 @@ struct ActieView: View {
                 betaalmuur
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Dossier en brief")
         .navigationBarTitleDisplayMode(.inline)
         .alert("Melding", isPresented: Binding(get: { winkel.melding != nil }, set: { if !$0 { winkel.melding = nil } })) {
@@ -135,6 +136,7 @@ private struct DossierVoorbeeld: View {
         NavigationStack {
             PDFWeergave(url: url)
                 .ignoresSafeArea(edges: .bottom)
+                .huisstijlAchtergrond()
                 .navigationTitle("Dossier")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {

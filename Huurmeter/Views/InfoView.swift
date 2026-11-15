@@ -32,6 +32,7 @@ struct InfoView: View {
                 }
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Info")
         .toolbar {
             ToolbarItem(placement: .confirmationAction) { Button("Sluit") { dismiss() } }

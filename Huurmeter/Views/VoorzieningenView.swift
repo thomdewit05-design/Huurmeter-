@@ -26,6 +26,7 @@ struct VoorzieningenView: View {
                                        description: Text("Voor vandaag zijn geen rekenregels beschikbaar. Werk de app bij."))
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Voorzieningen")
     }
 }

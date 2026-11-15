@@ -50,6 +50,7 @@ struct AdresView: View {
                 Text("Het bouwjaar telt mee als er geen geldig energielabel is. Bij verbouw kan een later jaar gelden.")
             }
         }
+        .huisstijlAchtergrond()
         .navigationTitle("Adres")
         .onChange(of: woning.postcode) { woning.geraakt() }
         .onChange(of: woning.huisnummer) { woning.geraakt() }
