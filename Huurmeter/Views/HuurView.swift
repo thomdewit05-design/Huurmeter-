@@ -22,6 +22,13 @@ struct HuurView: View {
 
     var body: some View {
         Form {
+            if ContractScanner.beschikbaar {
+                Section {
+                    ContractScanKnop(woning: woning)
+                } footer: {
+                    Text("De app leest de kale huur en de ingangsdatum uit uw contract. Dat gebeurt op uw telefoon; de foto's worden niet bewaard.")
+                }
+            }
             Section {
                 TextField("Kale huur per maand", value: $woning.kaleHuur, format: .currency(code: "EUR"))
                     .keyboardType(.decimalPad)
