@@ -5,6 +5,14 @@ import SwiftData
 struct HuurmeterApp: App {
     @State private var winkel = Winkel()
 
+    init() {
+        #if DEBUG
+        if VoorbeeldBestanden.gevraagd {
+            Task { @MainActor in VoorbeeldBestanden.maak() }
+        }
+        #endif
+    }
+
     var body: some Scene {
         WindowGroup {
             if DemoData.actief {

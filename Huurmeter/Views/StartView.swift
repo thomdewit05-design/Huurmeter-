@@ -112,6 +112,7 @@ private struct WelkomKaart: View {
     private var samenvatting: String {
         if woningen.isEmpty { return String(localized: "Reken in ongeveer tien minuten uit wat de maximale kale huur van uw woning is.") }
         if teVeel > 0 { return String(localized: "Bij \(teVeel) van uw woningen betaalt u waarschijnlijk te veel huur.") }
+        if woningen.count == 1 { return String(localized: "U volgt één woning. Hieronder ziet u wat aandacht nodig heeft.") }
         return String(localized: "U volgt \(woningen.count) woningen. Hieronder ziet u wat aandacht nodig heeft.")
     }
 
@@ -281,45 +282,73 @@ private struct AandachtBlok: View {
 private enum WoningStatus: Equatable {
     case nietBerekend, vrijeSector, teVeel, binnenMaximum, geenHuur
 
-    init(woning w: Woning) {
-        guard let b = w.laatsteBerekening else { self = .nietBerekend; return }
+    init(woning w: Woning, cijfers: Woning.Kerncijfers? = nil) {
+        guard let b = cijfers ?? w.kerncijfers else { self = .nietBerekend; return }
         guard let max = b.maxHuur else { self = .vrijeSector; return }
         guard let huur = w.kaleHuur, huur > 0 else { self = .geenHuur; return }
         self = huur > max + 0.005 ? .teVeel : .binnenMaximum
     }
 }
 
+extension Woning {
+    struct Kerncijfers: Equatable {
+        let totaal: Int
+        let maxHuur: Double?
+    }
+
+    /// Punten en maximale huur: actueel berekend zodra de invoer compleet is, anders de laatst bewaarde berekening.
+    var kerncijfers: Kerncijfers? {
+        if case .uitkomst(let u) = Rekenservice().bereken(concept, peildatum: Dag(Date())) {
+            return Kerncijfers(totaal: u.totaal, maxHuur: u.maximaleHuur)
+        }
+        return laatsteBerekening.map { Kerncijfers(totaal: $0.totaal, maxHuur: $0.maxHuur) }
+    }
+
+    /// Straat en huisnummer (kop van de woningkaart).
+    var kaartTitel: String {
+        straat.isEmpty ? titel : "\(straat) \(huisnummer)".trimmingCharacters(in: .whitespaces)
+    }
+
+    /// Postcode en plaats (onder de kop), alleen als de straat bekend is.
+    var kaartOndertitel: String? {
+        guard !straat.isEmpty else { return nil }
+        let pc = Postcode(postcode)?.description ?? postcode
+        let r = "\(pc) \(plaats)".trimmingCharacters(in: .whitespaces)
+        return r.isEmpty ? nil : r
+    }
+}
+
 private struct WoningKaart: View {
     @Environment(Winkel.self) private var winkel
     let woning: Woning
-
-    private var status: WoningStatus { WoningStatus(woning: woning) }
     private var klaar: Int {
         let c = woning.concept
         return Stap.allCases.filter { $0.status(c) == .klaar }.count
     }
 
     var body: some View {
+        let cijfers = woning.kerncijfers
+        let status = WoningStatus(woning: woning, cijfers: cijfers)
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 3) {
-                    Text(woning.titel).font(.headline).foregroundStyle(.primary).lineLimit(2)
-                    if !woning.plaats.isEmpty {
-                        Text(woning.plaats).font(.subheadline).foregroundStyle(Huisstijl.gedempt)
+                    Text(woning.kaartTitel).font(.headline).foregroundStyle(.primary).lineLimit(2)
+                    if let sub = woning.kaartOndertitel {
+                        Text(sub).font(.subheadline).foregroundStyle(Huisstijl.gedempt)
                     }
                 }
                 Spacer(minLength: 8)
                 Image(systemName: "chevron.right").font(.footnote.weight(.semibold)).foregroundStyle(.tertiary)
             }
 
-            if let b = woning.laatsteBerekening {
+            if let b = cijfers {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text(verbatim: "\(b.totaal)")
                         .font(.system(size: 40, weight: .heavy, design: .rounded))
                         .foregroundStyle(Huisstijl.bosgroen)
                     Text("punten").font(.subheadline.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
                     Spacer(minLength: 8)
-                    statusPil(b)
+                    statusPil(status, maxHuur: b.maxHuur)
                 }
             } else {
                 VStack(alignment: .leading, spacing: 8) {
@@ -340,10 +369,10 @@ private struct WoningKaart: View {
     }
 
     @ViewBuilder
-    private func statusPil(_ b: Berekening) -> some View {
+    private func statusPil(_ status: WoningStatus, maxHuur: Double?) -> some View {
         switch status {
         case .teVeel:
-            if winkel.ontgrendeld, let max = b.maxHuur, let huur = woning.kaleHuur {
+            if winkel.ontgrendeld, let max = maxHuur, let huur = woning.kaleHuur {
                 Pil(tekst: String(localized: "\(Opmaak.euro(huur - max)) p/m te veel"), voorgrond: Huisstijl.signaal, achtergrond: Huisstijl.signaalVlak)
             } else {
                 Pil(tekst: String(localized: "Te veel huur"), voorgrond: Huisstijl.signaal, achtergrond: Huisstijl.signaalVlak)

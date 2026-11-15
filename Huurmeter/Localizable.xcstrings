@@ -6031,6 +6031,16 @@
         }
       }
     },
+    "U volgt één woning. Hieronder ziet u wat aandacht nodig heeft.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are tracking one home. Below you can see what needs attention."
+          }
+        }
+      }
+    },
     "Uitkomst": {
       "localizations": {
         "en": {
