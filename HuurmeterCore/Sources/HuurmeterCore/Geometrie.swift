@@ -46,6 +46,17 @@ public enum Geometrie {
         return abs(s) / 2
     }
 
+    /// Afstand tussen twee punten in de ruimte (meters).
+    public static func afstand(_ a: Punt3, _ b: Punt3) -> Double {
+        ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y) + (a.z - b.z) * (a.z - b.z)).squareRoot()
+    }
+
+    /// Totale aanrechtlengte uit gemeten delen (hoekaanrecht: de lange zijden opgeteld, toelichting 5.1),
+    /// afgerond op hele centimeters.
+    public static func aanrechtLengte(_ delen: [Double]) -> Double {
+        (delen.filter { $0 > 0 }.reduce(0, +) * 100).rounded() / 100
+    }
+
     /// Bovenaanzicht: x blijft x, z wordt y (RoomPlan: y is omhoog).
     public static func bovenaanzicht(_ p: Punt3) -> Punt2 { Punt2(p.x, p.z) }
 

@@ -34,6 +34,7 @@ struct VoorzieningenView: View {
 private struct VraagRij: View {
     let woning: Woning
     let vraag: Vraag
+    @State private var toonMeter = false
 
     private var waarde: Binding<Double> {
         Binding(get: { woning.antwoord(vraag.sleutel) },
@@ -51,11 +52,25 @@ private struct VraagRij: View {
             if let uitleg = vraag.uitleg {
                 Text(uitleg).font(.footnote).foregroundStyle(.secondary)
             }
+            if vraag.sleutel == "keuken.aanrecht" && AanrechtMeterView.beschikbaar {
+                Button {
+                    toonMeter = true
+                } label: {
+                    Label("Meet met de camera", systemImage: "ruler")
+                        .font(.footnote)
+                }
+                .buttonStyle(.borderless)
+            }
             if vraag.fotoMogelijk && woning.antwoord(vraag.sleutel) > 0 {
                 FotoKnop(woning: woning, vraag: vraag)
             }
         }
         .padding(.vertical, 2)
+        .fullScreenCover(isPresented: $toonMeter) {
+            AanrechtMeterView { lengte in
+                woning.zetAntwoord(vraag.sleutel, lengte, rubriek: vraag.rubriek)
+            }
+        }
     }
 
     @ViewBuilder

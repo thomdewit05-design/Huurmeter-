@@ -51,4 +51,12 @@ final class GeometrieTests: XCTestCase {
         XCTAssertEqual(Inmeting.voorstel(gescand: 10, aftrek: -3), 10)
         XCTAssertEqual(Inmeting.weergave(12.16), "12,2 m²")
     }
+
+    func testAfstandEnAanrecht() {
+        XCTAssertEqual(Geometrie.afstand(Punt3(0, 0, 0), Punt3(3, 0, 4)), 5, accuracy: 1e-12)
+        XCTAssertEqual(Geometrie.aanrechtLengte([1.234, 0.876]), 2.11)
+        XCTAssertEqual(Geometrie.aanrechtLengte([1.996]), 2.0)
+        XCTAssertEqual(Geometrie.aanrechtLengte([-1, 0.5]), 0.5)
+        XCTAssertEqual(Geometrie.aanrechtLengte([]), 0)
+    }
 }
