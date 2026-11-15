@@ -106,10 +106,13 @@ private struct RuimteRij: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(ruimte.naam.isEmpty ? String(localized: "Naamloos") : ruimte.naam)
                     .font(.body.weight(.medium))
-                Label(ruimte.bron == .scan ? "Gemeten met de camera" : "Zelf ingevuld" as LocalizedStringKey,
-                      systemImage: ruimte.bron == .scan ? "camera.viewfinder" : "pencil")
-                    .font(.caption)
-                    .foregroundStyle(Huisstijl.gedempt)
+                HStack(spacing: 4) {
+                    Image(systemName: ruimte.bron == .scan ? "camera.viewfinder" : "pencil")
+                        .accessibilityHidden(true)
+                    Text(ruimte.bron == .scan ? "Gemeten met de camera" : "Zelf ingevuld" as LocalizedStringKey)
+                }
+                .font(.caption)
+                .foregroundStyle(Huisstijl.gedempt)
             }
             Spacer(minLength: 8)
             Text(verbatim: ruimte.oppervlakte > 0 ? Opmaak.oppervlakte(ruimte.oppervlakte) : "– m²")
