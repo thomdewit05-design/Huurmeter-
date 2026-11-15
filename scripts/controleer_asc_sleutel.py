@@ -34,17 +34,30 @@ except Exception as e:
     print(f"::error title=API-sleutel::Het .p8-bestand is niet te lezen als privésleutel ({type(e).__name__}). Plak de volledige inhoud opnieuw.")
     sys.exit(1)
 
-verzoek = urllib.request.Request("https://api.appstoreconnect.apple.com/v1/apps?limit=1",
-                                 headers={"Authorization": f"Bearer {token}"})
-try:
-    with urllib.request.urlopen(verzoek, timeout=30) as r:
-        print(f"Apple antwoordt {r.status}: de sleutel werkt.")
-except urllib.error.HTTPError as e:
+def vraag(pad):
+    verzoek = urllib.request.Request("https://api.appstoreconnect.apple.com" + pad,
+                                     headers={"Authorization": f"Bearer {token}"})
     try:
-        fouten = json.loads(e.read()).get("errors", [])
-        uitleg = "; ".join(f"{f.get('code')}: {f.get('detail')}" for f in fouten)
-    except Exception:
-        uitleg = ""
-    print(f"::error title=API-sleutel::Apple weigert de sleutel (HTTP {e.code}). {uitleg} "
-          "Controleer of Key ID en Issuer ID bij deze sleutel horen, of de sleutel actief is en de rol Admin heeft.")
+        with urllib.request.urlopen(verzoek, timeout=30) as r:
+            return r.status, ""
+    except urllib.error.HTTPError as e:
+        try:
+            fouten = json.loads(e.read()).get("errors", [])
+            return e.code, "; ".join(f"{f.get('code')}: {f.get('detail')}" for f in fouten)
+        except Exception:
+            return e.code, ""
+
+# /v1/apps werkt met elke rol; certificaten, bundel-ID's en profielen (nodig voor automatisch ondertekenen)
+# alleen met de rol Admin (of App Manager met toegang tot certificaten).
+mislukt = False
+for pad, wat in [("/v1/apps?limit=1", "apps"), ("/v1/bundleIds?limit=1", "bundel-ID's"),
+                 ("/v1/certificates?limit=1", "certificaten"), ("/v1/profiles?limit=1", "profielen")]:
+    status, uitleg = vraag(pad)
+    print(f"{wat}: HTTP {status} {uitleg}")
+    if status != 200:
+        mislukt = True
+        print(f"::error title=API-sleutel::Geen toegang tot {wat} (HTTP {status}). {uitleg} "
+              "Automatisch ondertekenen vraagt een teamsleutel met de rol Admin.")
+if mislukt:
     sys.exit(1)
+print("De sleutel heeft toegang tot alles wat Xcode nodig heeft.")
