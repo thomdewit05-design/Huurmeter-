@@ -157,6 +157,11 @@ private struct VraagRij: View {
                 TextField("0", value: optioneel, format: .number.precision(.fractionLength(0...2)))
                     .keyboardType(.decimalPad)
                 Text(eenheid).foregroundStyle(.secondary)
+                if eenheid == "m²" {
+                    MeetOppervlakteKnop(titel: vraag.tekst.vertaald) { m2 in
+                        woning.zetAntwoord(vraag.sleutel, m2, rubriek: vraag.rubriek)
+                    }
+                }
             }
         }
     }

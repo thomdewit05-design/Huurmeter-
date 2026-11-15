@@ -47,6 +47,14 @@ public enum Geometrie {
         return abs(s) / 2
     }
 
+    /// Oppervlakte van een vlak dat met de camera hoek voor hoek is aangetikt (tuin, balkon, berging),
+    /// gemeten in bovenaanzicht: de hoekpunten worden op het horizontale x-z-vlak geprojecteerd, zodat een
+    /// kleine hoogteverschil tussen de tikken niet meetelt. Afgerond op twee decimalen (toelichting rubriek 1 en 2).
+    public static func grondOppervlakte(_ hoeken: [Punt3]) -> Double {
+        let opp = oppervlakte(hoeken.map { Punt2($0.x, $0.z) })
+        return (opp * 100).rounded() / 100
+    }
+
     /// Afstand tussen twee punten in de ruimte (meters).
     public static func afstand(_ a: Punt3, _ b: Punt3) -> Double {
         ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y) + (a.z - b.z) * (a.z - b.z)).squareRoot()

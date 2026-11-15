@@ -103,6 +103,7 @@ struct RuimteEditView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var ruimte: Ruimte
     @State private var toonScan = false
+    @State private var toonHoeken = false
 
     private var aftrek: Binding<Double?> {
         Binding(get: { ruimte.aftrek > 0 ? ruimte.aftrek : nil },
@@ -157,6 +158,13 @@ struct RuimteEditView: View {
             Section {
                 TextField("Oppervlakte in m²", value: oppervlakte, format: .number.precision(.fractionLength(0...2)))
                     .keyboardType(.decimalPad)
+                if OppervlakteMeterView.beschikbaar {
+                    Button {
+                        toonHoeken = true
+                    } label: {
+                        Label("Meten door de hoeken aan te tikken", systemImage: "camera.metering.spot")
+                    }
+                }
             } header: {
                 Text("Oppervlakte")
             } footer: {
@@ -194,6 +202,13 @@ struct RuimteEditView: View {
         .onChange(of: ruimte.verkoeling) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.zolderZonderVasteTrap) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.naam) { ruimte.woning?.geraakt() }
+        .fullScreenCover(isPresented: $toonHoeken) {
+            OppervlakteMeterView(titel: ruimte.naam.isEmpty ? String(localized: "Ruimte") : ruimte.naam) { m2 in
+                ruimte.oppervlakte = m2
+                ruimte.bron = .scan
+                ruimte.woning?.geraakt()
+            }
+        }
         .fullScreenCover(isPresented: $toonScan) {
             ScanView(naam: ruimte.naam.isEmpty ? "Ruimte" : ruimte.naam) { scan, plattegrond in
                 ruimte.neemScanOver(scan, plattegrond: plattegrond)

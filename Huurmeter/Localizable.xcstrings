@@ -2021,6 +2021,16 @@
         }
       }
     },
+    "Ga in een hoek staan, richt het kruisje op de grond in de hoek en tik.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand in a corner, point the crosshair at the ground in the corner and tap."
+          }
+        }
+      }
+    },
     "Gaat de verhuurder akkoord, dan geldt de lagere huur vanaf de ingangsdatum.": {
       "localizations": {
         "en": {
@@ -3941,6 +3951,16 @@
         }
       }
     },
+    "Laatste hoek weg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove last corner"
+          }
+        }
+      }
+    },
     "Label opzoeken op ep-online.nl": {
       "localizations": {
         "en": {
@@ -4077,6 +4097,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Walk through the home room by room with the camera. Then check the list."
+          }
+        }
+      }
+    },
+    "Loop naar de volgende hoek en tik. Ga zo de hele rand rond.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk to the next corner and tap. Go all the way around the edge."
           }
         }
       }
@@ -4287,6 +4317,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "With how many addresses do you share that space?"
+          }
+        }
+      }
+    },
+    "Meten door de hoeken aan te tikken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure by tapping the corners"
           }
         }
       }
@@ -4786,7 +4826,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Again"
+            "value": "Start over"
           }
         }
       }
@@ -4817,6 +4857,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Floor area in m²"
+          }
+        }
+      }
+    },
+    "Oppervlakte meten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure area"
           }
         }
       }
@@ -5697,6 +5747,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tap what is there. Press and hold to reduce."
+          }
+        }
+      }
+    },
+    "Tik nog meer hoeken aan als de vorm niet rechthoekig is. Klopt het? Tik op Gebruik.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap more corners if the shape is not rectangular. Is it right? Tap Use."
           }
         }
       }
