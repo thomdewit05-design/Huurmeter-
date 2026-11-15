@@ -70,6 +70,21 @@ public struct Dag: Codable, Hashable, Comparable, CustomStringConvertible, Senda
 
     public func plusJaren(_ n: Int) -> Dag { plusMaanden(12 * n) }
 
+    /// Tel dagen op (negatief: terug). Terugrekenen via het Juliaanse dagnummer (Fliegel & Van Flandern).
+    public func plusDagen(_ n: Int) -> Dag {
+        var l = dagnummer + n + 68569
+        let nn = 4 * l / 146097
+        l = l - (146097 * nn + 3) / 4
+        let i = 4000 * (l + 1) / 1461001
+        l = l - 1461 * i / 4 + 31
+        let j = 80 * l / 2447
+        let d = l - 2447 * j / 80
+        l = j / 11
+        let m = j + 2 - 12 * l
+        let y = 100 * (nn - 49) + i + l
+        return Dag(y, m, d)
+    }
+
     /// Aantal dagen van `self` tot `ander` (positief als `ander` later is).
     public func dagen(tot ander: Dag) -> Int { ander.dagnummer - dagnummer }
 }

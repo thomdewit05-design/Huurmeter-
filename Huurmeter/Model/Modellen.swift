@@ -26,6 +26,8 @@ final class Woning {
     var labelDatum: Date?
     var energieprestatievergoeding: Bool = false
     var koelingInLabel: Bool = false
+    /// Lokale herinneringen (termijn aanvangshuur, jaarlijkse huurverhoging).
+    var herinneringenAan: Bool = false
     var aangemaakt: Date = Date()
     var gewijzigd: Date = Date()
 

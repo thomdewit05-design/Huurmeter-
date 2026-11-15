@@ -6,6 +6,22 @@ import WWSKit
 /// Overzicht van één woning: de invoerstappen (scherm 2 t/m 6) en de uitkomst (scherm 7).
 struct WoningView: View {
     @Bindable var woning: Woning
+    @State private var meldingTekst: String?
+
+    private var herinneringen: Binding<Bool> {
+        Binding(get: { woning.herinneringenAan }, set: { aan in
+            Task { @MainActor in
+                if aan && !(await Meldingen.vraagToestemming()) {
+                    meldingTekst = "Meldingen staan uit voor Huurmeter. Zet ze aan in Instellingen › Huurmeter › Meldingen."
+                    woning.herinneringenAan = false
+                    return
+                }
+                meldingTekst = nil
+                woning.herinneringenAan = aan
+                await Meldingen.plan(voor: woning)
+            }
+        })
+    }
 
     var body: some View {
         let concept = woning.concept
@@ -39,6 +55,14 @@ struct WoningView: View {
                 } label: {
                     Label("Huurverhoging", systemImage: "arrow.up.right.circle")
                 }
+            }
+
+            Section {
+                Toggle(isOn: herinneringen) {
+                    Label("Herinneringen", systemImage: "bell")
+                }
+            } footer: {
+                Text(meldingTekst ?? "Een melding twee weken en drie dagen voor het einde van de termijn voor de aanvangshuur, en elk jaar op 1 mei als de huurverhoging eraan komt.")
             }
         }
         .huisstijlAchtergrond()

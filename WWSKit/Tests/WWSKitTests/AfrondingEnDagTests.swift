@@ -55,3 +55,15 @@ final class DagTests: XCTestCase {
         XCTAssertEqual(String(data: data, encoding: .utf8), "[\"2026-07-01\"]")
     }
 }
+
+final class DagOptellenTests: XCTestCase {
+    func testPlusDagen() {
+        XCTAssertEqual(Dag(2026, 12, 31).plusDagen(1), Dag(2027, 1, 1))
+        XCTAssertEqual(Dag(2024, 3, 1).plusDagen(-1), Dag(2024, 2, 29))
+        XCTAssertEqual(Dag(2027, 1, 1).plusDagen(-14), Dag(2026, 12, 18))
+        XCTAssertEqual(Dag(2026, 11, 15).plusDagen(0), Dag(2026, 11, 15))
+        for n in [-400, -31, -1, 1, 59, 365, 1000] {
+            XCTAssertEqual(Dag(2026, 11, 15).dagen(tot: Dag(2026, 11, 15).plusDagen(n)), n)
+        }
+    }
+}

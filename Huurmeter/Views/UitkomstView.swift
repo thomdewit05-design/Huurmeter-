@@ -25,6 +25,7 @@ struct UitkomstView: View {
         .navigationTitle("Uitkomst")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: bereken)
+        .task { if woning.herinneringenAan { await Meldingen.plan(voor: woning) } }
     }
 
     private func bereken() {
