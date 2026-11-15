@@ -116,6 +116,12 @@ final class Ruimte {
     var verwarmd: Bool = true
     var verkoeling: Bool = false
     var zolderZonderVasteTrap: Bool = false
+    /// Vloeroppervlak uit de laatste scan (m²), nil als niet gescand.
+    var gescandeOppervlakte: Double?
+    /// Schuin dak of verlaagd plafond aangegeven door de gebruiker (RoomPlan herkent dit niet betrouwbaar).
+    var schuinDak: Bool = false
+    /// Af te trekken m²: deel met plafond lager dan 1,50 m en schachten/koven.
+    var aftrek: Double = 0
     @Attribute(.externalStorage) var plattegrond: Data?
     var volgorde: Int = 0
     var woning: Woning?
@@ -141,6 +147,21 @@ final class Ruimte {
     var bron: MeetBron {
         get { MeetBron(rawValue: bronRaw) ?? .handmatig }
         set { bronRaw = newValue.rawValue }
+    }
+
+    /// Neemt een scan over: gemeten vloer, plattegrond en de voorgestelde WWS-oppervlakte.
+    func neemScanOver(_ scan: ScanResultaat, plattegrond: Data?) {
+        gescandeOppervlakte = scan.vloeroppervlakte
+        self.plattegrond = plattegrond
+        herberekenUitScan()
+    }
+
+    /// Na een scan: oppervlakte = gescande vloer min de opgegeven aftrek. Markeert de waarde als gescand.
+    func herberekenUitScan() {
+        guard let g = gescandeOppervlakte else { return }
+        oppervlakte = Inmeting.voorstel(gescand: g, aftrek: aftrek)
+        bron = .scan
+        woning?.geraakt()
     }
 
     var concept: RuimteConcept {

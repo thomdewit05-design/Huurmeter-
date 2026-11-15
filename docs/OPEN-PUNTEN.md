@@ -74,3 +74,18 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 6. **Privacy**: "Adres opzoeken" stuurt postcode en huisnummer naar PDOK. Dat staat in Info; voor het
    App Store-privacylabel is dat geen gegevensverzameling door de app zelf, maar laat dit nog checken.
 7. **Bundel-ID en team**: voorlopig `nl.huurmeter.app` (zie open punt in de spec).
+
+## E. Fase 3 (inmeten met RoomPlan)
+
+1. **Niet op een toestel met LiDAR getest.** De scan is gecompileerd (CI), maar RoomPlan werkt alleen op een
+   iPhone Pro met LiDAR. Graag een proefscan van een rechthoekige én een L-vormige kamer, en de uitkomst
+   vergelijken met een rolmaat.
+2. **Meethoogte**: het WWS meet van muur tot muur op 1,50 m hoogte. RoomPlan geeft de vloerpolygoon; bij rechte
+   muren is dat hetzelfde. Plinten, scheve muren of een uitstekende vensterbank kunnen een klein verschil geven.
+3. **Schuin dak en schachten** vult de gebruiker zelf in als af te trekken m² (spec §6). De app rekent die
+   oppervlakte niet zelf uit de scan.
+4. **Meerdere vloervlakken** (bijv. een kamer met een opstap): de app telt alle vloervlakken op en tekent het grootste.
+5. **Plattegrond**: één PNG per ruimte (1200 × 1200), bewaard op het toestel voor het dossier van fase 4.
+   Deuren zijn als onderbreking in de muur getekend, ramen blauw.
+6. **Beleidsboek** (A4) is nog steeds niet geraadpleegd; de meetregels komen uit de toelichting in het Besluit
+   (opgenomen als `meetregels` in het regelbestand).

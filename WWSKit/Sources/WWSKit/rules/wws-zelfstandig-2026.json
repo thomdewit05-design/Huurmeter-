@@ -323,6 +323,12 @@
       "bron": "BHW-I-A, tabel rubriek 12 ('bij: 35% van de ingevolge de onderdelen 1 tot en met 11.1 toegekende punten'; aanbelfunctie met video en audio 0,25 punt; laadpaal 2 punten gedeeld door het aantal adressen)"
     }
   },
+  "meetregels": {
+    "meethoogteM": 1.5,
+    "minimaleVrijeHoogteM": 1.5,
+    "oppervlakteDecimalen": 2,
+    "bron": "BHW-I-A, toelichting rubriek 1 en 2: 'Meting van de oppervlakte van vertrekken vindt plaats van muur tot muur, op een hoogte van 1,50 meter boven de vloer, inclusief de oppervlakte van alle tot de woning behorende losse en vaste kasten. [...] Als oppervlakte van een vertrek met een (ten dele) hellend of verlaagd plafond geldt dat gedeelte waarboven het plafond ten minste 1,50 meter hoog is.' Niet meegeteld: 'verticale koven, schoorsteenkanalen, ventilatie-kanalen of stand- of grondleidingen'; onder een vaste trap alleen het deel waar de ruimte tussen vloer en onderkant trap ten minste 1,50 m is."
+  },
   "prijsopslagen": {
     "rijksmonumentContractNaWbh": 0.35,
     "rijksmonumentContractVoorWbhExtraPunten": 50,

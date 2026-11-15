@@ -87,6 +87,19 @@ private struct RuimteRij: View {
 struct RuimteEditView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var ruimte: Ruimte
+    @State private var toonScan = false
+
+    private var aftrek: Binding<Double?> {
+        Binding(get: { ruimte.aftrek > 0 ? ruimte.aftrek : nil },
+                set: { ruimte.aftrek = max(0, $0 ?? 0); if ruimte.bron == .scan { ruimte.herberekenUitScan() } })
+    }
+
+    private var schuinDak: Binding<Bool> {
+        Binding(get: { ruimte.schuinDak },
+                set: { ruimte.schuinDak = $0
+                       if !$0 { ruimte.aftrek = 0 }
+                       if ruimte.bron == .scan { ruimte.herberekenUitScan() } else { ruimte.woning?.geraakt() } })
+    }
 
     private var functie: Binding<RuimteFunctie> {
         Binding(get: { ruimte.functie ?? .overig },
@@ -120,6 +133,10 @@ struct RuimteEditView: View {
                 }
             } footer: {
                 Text(ruimte.soort.uitleg)
+            }
+
+            if ruimte.soort != .buitenruimte {
+                inmetenSectie
             }
 
             Section {
@@ -160,6 +177,55 @@ struct RuimteEditView: View {
         .onChange(of: ruimte.verkoeling) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.zolderZonderVasteTrap) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.naam) { ruimte.woning?.geraakt() }
+        .fullScreenCover(isPresented: $toonScan) {
+            ScanView(naam: ruimte.naam.isEmpty ? "Ruimte" : ruimte.naam) { scan, plattegrond in
+                ruimte.neemScanOver(scan, plattegrond: plattegrond)
+            }
+        }
+    }
+
+    /// Fase 3: scannen met RoomPlan en de WWS-correcties die RoomPlan niet zelf kan zien.
+    @ViewBuilder
+    private var inmetenSectie: some View {
+        Section {
+            if Scanner.beschikbaar {
+                Button {
+                    toonScan = true
+                } label: {
+                    Label(ruimte.gescandeOppervlakte == nil ? "Scannen met de camera" : "Opnieuw scannen",
+                          systemImage: "camera.viewfinder")
+                }
+            }
+            if let gescand = ruimte.gescandeOppervlakte {
+                LabeledContent("Gemeten vloer", value: Inmeting.weergave(gescand))
+                if let data = ruimte.plattegrond, let beeld = UIImage(data: data) {
+                    Image(uiImage: beeld)
+                        .resizable().scaledToFit()
+                        .frame(maxHeight: 220)
+                        .accessibilityLabel("Plattegrond van \(ruimte.naam)")
+                }
+            }
+            Toggle("Schuin dak of verlaagd plafond", isOn: schuinDak)
+            if ruimte.schuinDak || ruimte.aftrek > 0 {
+                HStack {
+                    Text("Aftrekken")
+                    TextField("0", value: aftrek, format: .number.precision(.fractionLength(0...2)))
+                        .multilineTextAlignment(.trailing)
+                        .keyboardType(.decimalPad)
+                    Text("m²").foregroundStyle(.secondary)
+                }
+            }
+        } header: {
+            Text("Inmeten")
+        } footer: {
+            if ruimte.schuinDak {
+                Text("Trek het deel af waar het plafond lager is dan 1,50 m, plus schachten en leidingkokers. Vaste kasten tellen wél mee. De camera herkent een schuin dak niet goed, dus dit vult u zelf in.")
+            } else if Scanner.beschikbaar {
+                Text("De scan meet de vloer van muur tot muur. Controleer de uitkomst en pas hem zo nodig aan.")
+            } else {
+                Text("Meet de kamer met een rolmaat en vul de oppervlakte hieronder in.")
+            }
+        }
     }
 }
 

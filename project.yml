@@ -31,13 +31,14 @@ targets:
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
+        NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
     settings:
       base:
         # TODO (open punt Thom): definitief bundel-ID en Apple Developer-team.
         PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.2.0"
+        MARKETING_VERSION: "0.3.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         ENABLE_PREVIEWS: YES

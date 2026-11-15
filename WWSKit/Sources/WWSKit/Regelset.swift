@@ -10,6 +10,7 @@ public struct Regelset: Codable, Sendable {
     public let bronnen: [String: Bron]
     public let afronding: AfrondingRegels
     public let rubrieken: Rubrieken
+    public let meetregels: Meetregels
     public let prijsopslagen: Prijsopslagen
     public let segmenten: Segmenten
     public let termijnen: Termijnen
@@ -28,6 +29,22 @@ public struct Regelset: Codable, Sendable {
         public let oppervlaktePerRuimteDecimalen: Int
         public let oppervlakteBron: String
         public let totaalBron: String
+    }
+
+    /// Meetregels voor de oppervlakte (toelichting rubriek 1 en 2). Gebruikt bij inmeten met de camera.
+    public struct Meetregels: Codable, Sendable {
+        /// Hoogte boven de vloer waarop van muur tot muur wordt gemeten.
+        public let meethoogteM: Double
+        /// Alleen het deel waarboven het plafond minstens zo hoog is, telt mee.
+        public let minimaleVrijeHoogteM: Double
+        public let oppervlakteDecimalen: Int
+        public let bron: String
+
+        /// Netto oppervlakte: gemeten vloeroppervlak min het deel met een plafond lager dan de minimale
+        /// vrije hoogte en min schachten/koven (beide door de gebruiker opgegeven). Nooit negatief.
+        public func nettoOppervlakte(vloer: Double, aftrek: Double) -> Double {
+            max(0, vloer - max(0, aftrek))
+        }
     }
 
     public struct Rubrieken: Codable, Sendable {
