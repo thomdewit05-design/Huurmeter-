@@ -22,13 +22,13 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Huurmeter uses the camera to measure your rooms. The images are not stored and do not leave your phone."
+            "value": "Huurmeter uses the camera to measure your rooms, scan documents and take photos as evidence. Everything stays on your phone."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
+            "value": "Huurmeter gebruikt de camera om uw kamers in te meten, documenten te scannen en foto's als bewijs te maken. Alles blijft op uw telefoon."
           }
         }
       }

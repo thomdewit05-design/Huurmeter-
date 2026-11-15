@@ -182,11 +182,11 @@ private struct DatumVraag: View {
     }
 }
 
-/// Optionele foto als bewijs bij een vraag (spec, scherm 5). Wordt alleen op het toestel bewaard.
+/// Optionele foto als bewijs bij een vraag (spec, scherm 5): fotograferen of uit de bibliotheek.
+/// Wordt alleen op het toestel bewaard.
 private struct FotoKnop: View {
     let woning: Woning
     let vraag: Vraag
-    @State private var keuze: PhotosPickerItem?
 
     var body: some View {
         let foto = woning.voorziening(vraag.sleutel)?.foto
@@ -201,26 +201,18 @@ private struct FotoKnop: View {
                 }
                 .font(.footnote)
             }
-            PhotosPicker(selection: $keuze, matching: .images) {
+            FotoToevoegenKnop {
                 Label(foto == nil ? "Foto als bewijs" : "Andere foto" as LocalizedStringKey, systemImage: "camera")
                     .font(.footnote)
+            } gekozen: { fotos in
+                guard let jpeg = fotos.first else { return }
+                if woning.voorziening(vraag.sleutel) == nil {
+                    woning.zetAntwoord(vraag.sleutel, woning.antwoord(vraag.sleutel), rubriek: vraag.rubriek)
+                }
+                woning.voorziening(vraag.sleutel)?.foto = jpeg
             }
         }
         .buttonStyle(.borderless)
-        .onChange(of: keuze) {
-            guard let item = keuze else { return }
-            Task {
-                if let data = try? await item.loadTransferable(type: Data.self),
-                   let beeld = UIImage(data: data),
-                   let jpeg = beeld.verkleind(maximaleZijde: 1600).jpegData(compressionQuality: 0.7) {
-                    if woning.voorziening(vraag.sleutel) == nil {
-                        woning.zetAntwoord(vraag.sleutel, woning.antwoord(vraag.sleutel), rubriek: vraag.rubriek)
-                    }
-                    woning.voorziening(vraag.sleutel)?.foto = jpeg
-                }
-                keuze = nil
-            }
-        }
     }
 }
 

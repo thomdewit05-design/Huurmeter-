@@ -1971,6 +1971,16 @@
         }
       }
     },
+    "Foto maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take photo"
+          }
+        }
+      }
+    },
     "Foto's": {
       "localizations": {
         "en": {
@@ -3777,6 +3787,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose the type of home (Rent screen)."
+          }
+        }
+      }
+    },
+    "Kies uit bibliotheek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose from library"
           }
         }
       }

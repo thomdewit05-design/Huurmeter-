@@ -33,7 +33,7 @@ targets:
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
         EPOnlineAPIKey: "$(EP_ONLINE_API_KEY)"
-        NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
+        NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten, documenten te scannen en foto's als bewijs te maken. Alles blijft op uw telefoon."
     settings:
       base:
         # Bundel-ID: moet gelijk zijn aan het App ID in het Apple Developer-account.
