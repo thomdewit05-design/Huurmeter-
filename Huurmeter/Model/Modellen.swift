@@ -28,6 +28,8 @@ final class Woning {
     var koelingInLabel: Bool = false
     /// Lokale herinneringen (termijn aanvangshuur, jaarlijkse huurverhoging).
     var herinneringenAan: Bool = false
+    /// Laatst geopende stap van het stappenplan (WoningStap.rawValue); nil = begin bij de eerste open stap.
+    var laatsteStap: Int?
     var aangemaakt: Date = Date()
     var gewijzigd: Date = Date()
 
