@@ -1,0 +1,127 @@
+{
+  "naam": "02-rijtjeshuis-1965",
+  "omschrijving": "Tussenwoning 1965, geen label, zolder met vaste trap, achtertuin 42 m².",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1965,
+    "woningtype": "eengezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 28.6,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 8.1,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Slaapkamer 1",
+        "soort": "vertrek",
+        "oppervlakte": 13.4,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 2",
+        "soort": "vertrek",
+        "oppervlakte": 9.2,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 3",
+        "soort": "vertrek",
+        "oppervlakte": 6.3,
+        "verwarmd": false,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 4.1,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Zolder",
+        "soort": "overigeRuimte",
+        "oppervlakte": 14.8,
+        "verwarmd": false,
+        "functie": "zolder"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.05,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 4.2,
+        "verwarmd": true
+      },
+      {
+        "naam": "Overloop",
+        "soort": "verkeersruimte",
+        "oppervlakte": 3.1,
+        "verwarmd": false
+      },
+      {
+        "naam": "Achtertuin",
+        "soort": "buitenruimte",
+        "oppervlakte": 42
+      },
+      {
+        "naam": "Voortuin",
+        "soort": "buitenruimte",
+        "oppervlakte": 9.5
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 2.6,
+        "voorzieningen": {
+          "kookplaatKeramisch": 1,
+          "afzuiginstallatie": 1,
+          "ovenElektrisch": 1,
+          "koelkast": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "staandeToiletten": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "wastafels": 1,
+        "baden": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "handdoekenradiator": 1,
+          "thermostatischeMengkraan": 1
+        }
+      }
+    ],
+    "woz": {
+      "waarde": 312000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2023-03-01",
+    "kaleHuur": 1150.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

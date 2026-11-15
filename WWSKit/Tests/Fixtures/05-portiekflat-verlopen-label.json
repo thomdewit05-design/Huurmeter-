@@ -1,0 +1,92 @@
+{
+  "naam": "05-portiekflat-verlopen-label",
+  "omschrijving": "Portiekflat 1958, label D uit 2015 (verlopen), geen buitenruimte.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1958,
+    "woningtype": "meergezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 19.8,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer",
+        "soort": "vertrek",
+        "oppervlakte": 10.4,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 5.1,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Douche",
+        "soort": "vertrek",
+        "oppervlakte": 2.3,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 0.95,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Zolderberging",
+        "soort": "overigeRuimte",
+        "oppervlakte": 4.5,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 3.0,
+        "verwarmd": false
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 1.2,
+        "voorzieningen": {
+          "kookplaatGas": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "staandeToiletten": 1
+      },
+      {
+        "naam": "Douche",
+        "soort": "badkamer",
+        "wastafels": 1,
+        "douches": 1
+      }
+    ],
+    "energie": {
+      "label": "D",
+      "opnamedatum": "2015-06-10"
+    },
+    "woz": {
+      "waarde": 189000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2026-06-01",
+    "kaleHuur": 850.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

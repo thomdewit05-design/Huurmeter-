@@ -1,0 +1,118 @@
+{
+  "naam": "09-flat-woz-2024",
+  "omschrijving": "Flat 1995, WOZ-beschikking met waardepeildatum 2024, label B (2021), gemeenschappelijke binnentuin.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1995,
+    "woningtype": "meergezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 25.7,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer 1",
+        "soort": "vertrek",
+        "oppervlakte": 11.8,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 2",
+        "soort": "vertrek",
+        "oppervlakte": 7.9,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 6.6,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 4.2,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.15,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Berging",
+        "soort": "overigeRuimte",
+        "oppervlakte": 4.9,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 5.2,
+        "verwarmd": true
+      },
+      {
+        "naam": "Balkon",
+        "soort": "buitenruimte",
+        "oppervlakte": 6.2
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 2.4,
+        "voorzieningen": {
+          "kookplaatKeramisch": 1,
+          "afzuiginstallatie": 1,
+          "koelkast": 1,
+          "ovenElektrisch": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "staandeToiletten": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "wastafels": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "thermostatischeMengkraan": 1
+        }
+      }
+    ],
+    "energie": {
+      "label": "B",
+      "opnamedatum": "2021-03-03"
+    },
+    "gemeenschappelijkeBuitenruimten": [
+      {
+        "naam": "Binnentuin",
+        "oppervlakte": 240,
+        "adressen": 32
+      }
+    ],
+    "woz": {
+      "waarde": 276000,
+      "waardepeildatum": "2024-01-01"
+    },
+    "contractStart": "2022-05-01",
+    "kaleHuur": 1050.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

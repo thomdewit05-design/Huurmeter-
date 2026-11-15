@@ -1,0 +1,147 @@
+{
+  "naam": "07-tussenwoning-label-a-plus",
+  "omschrijving": "Tussenwoning 1985, label A+ (2023) na renovatie, verkoeling via warmtepomp in 2 vertrekken.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1985,
+    "woningtype": "eengezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 31.2,
+        "verwarmd": true,
+        "functie": "woonkamer",
+        "verkoeling": true
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 9.6,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Slaapkamer 1",
+        "soort": "vertrek",
+        "oppervlakte": 14.1,
+        "verwarmd": true,
+        "functie": "slaapkamer",
+        "verkoeling": true
+      },
+      {
+        "naam": "Slaapkamer 2",
+        "soort": "vertrek",
+        "oppervlakte": 10.2,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 3",
+        "soort": "vertrek",
+        "oppervlakte": 7.4,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 5.1,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Zolder",
+        "soort": "overigeRuimte",
+        "oppervlakte": 11.4,
+        "verwarmd": false,
+        "functie": "zolder"
+      },
+      {
+        "naam": "Schuur",
+        "soort": "overigeRuimte",
+        "oppervlakte": 7.8,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.2,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 4.6,
+        "verwarmd": true
+      },
+      {
+        "naam": "Overloop",
+        "soort": "verkeersruimte",
+        "oppervlakte": 3.4,
+        "verwarmd": true
+      },
+      {
+        "naam": "Achtertuin",
+        "soort": "buitenruimte",
+        "oppervlakte": 55
+      },
+      {
+        "naam": "Voortuin",
+        "soort": "buitenruimte",
+        "oppervlakte": 12
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 3.1,
+        "voorzieningen": {
+          "kookplaatInductie": 1,
+          "afzuiginstallatie": 1,
+          "ovenElektrisch": 1,
+          "koelkast": 1,
+          "vrieskast": 1,
+          "vaatwasmachine": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "hangendeToiletten": 1,
+        "wastafels": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "hangendeToiletten": 1,
+        "meerpersoonswastafels": 1,
+        "baden": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "volledigeDoucheafscheiding": 1,
+          "handdoekenradiator": 1,
+          "kastjeMetWastafel": 1,
+          "thermostatischeMengkraan": 2
+        }
+      }
+    ],
+    "energie": {
+      "label": "A+",
+      "opnamedatum": "2023-04-18",
+      "koelingInLabel": true
+    },
+    "woz": {
+      "waarde": 398000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2025-10-01",
+    "kaleHuur": 1495.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

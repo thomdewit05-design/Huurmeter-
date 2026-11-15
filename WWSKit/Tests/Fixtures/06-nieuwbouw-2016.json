@@ -1,0 +1,119 @@
+{
+  "naam": "06-nieuwbouw-2016",
+  "omschrijving": "Appartement 2016, label A (2016, nog geldig), balkon, parkeergarage type I gedeeld.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 2016,
+    "woningtype": "meergezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer met keuken",
+        "soort": "vertrek",
+        "oppervlakte": 34.5,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer 1",
+        "soort": "vertrek",
+        "oppervlakte": 13.2,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 2",
+        "soort": "vertrek",
+        "oppervlakte": 9.1,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 5.4,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.3,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Berging",
+        "soort": "overigeRuimte",
+        "oppervlakte": 6.2,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 7.1,
+        "verwarmd": true
+      },
+      {
+        "naam": "Balkon",
+        "soort": "buitenruimte",
+        "oppervlakte": 8.6
+      }
+    ],
+    "verwarmdeOpenKeukens": 1,
+    "keukens": [
+      {
+        "aanrechtLengte": 2.8,
+        "voorzieningen": {
+          "kookplaatInductie": 1,
+          "afzuiginstallatie": 1,
+          "ovenElektrisch": 1,
+          "koelkast": 1,
+          "vaatwasmachine": 1,
+          "magnetron": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "hangendeToiletten": 1,
+        "wastafels": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "wastafels": 2,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "volledigeDoucheafscheiding": 1,
+          "handdoekenradiator": 1,
+          "thermostatischeMengkraan": 1,
+          "stopcontact": 1
+        }
+      }
+    ],
+    "energie": {
+      "label": "A",
+      "opnamedatum": "2016-12-01"
+    },
+    "parkeerruimten": [
+      {
+        "naam": "Parkeergarage",
+        "plekkenTypeI": 30,
+        "oppervlakteTypeI": 12.5,
+        "adressen": 40
+      }
+    ],
+    "woz": {
+      "waarde": 335000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2024-11-01",
+    "kaleHuur": 1425.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

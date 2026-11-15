@@ -1,0 +1,110 @@
+{
+  "naam": "01-galerijflat-1972",
+  "omschrijving": "Galerijflat 3-kamer, bouwjaar 1972, label C (2019), balkon, aparte wc, badkamer met douche.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1972,
+    "woningtype": "meergezins",
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 24.35,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer 1",
+        "soort": "vertrek",
+        "oppervlakte": 12.1,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Slaapkamer 2",
+        "soort": "vertrek",
+        "oppervlakte": 8.42,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 6.2,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 3.6,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.1,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Berging",
+        "soort": "overigeRuimte",
+        "oppervlakte": 5.8,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Hal",
+        "soort": "verkeersruimte",
+        "oppervlakte": 6.5,
+        "verwarmd": true
+      },
+      {
+        "naam": "Balkon",
+        "soort": "buitenruimte",
+        "oppervlakte": 4.8
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 2.1,
+        "voorzieningen": {
+          "kookplaatGas": 1,
+          "afzuiginstallatie": 1,
+          "eenhandsmengkraan": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "staandeToiletten": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "wastafels": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "thermostatischeMengkraan": 1
+        }
+      }
+    ],
+    "energie": {
+      "label": "C",
+      "opnamedatum": "2019-05-14"
+    },
+    "woz": {
+      "waarde": 238000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2026-07-01",
+    "kaleHuur": 975.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

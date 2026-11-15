@@ -1,0 +1,573 @@
+{
+  "schemaVersie": 1,
+  "regelsetJaar": 2026,
+  "geldigVan": "2026-01-01",
+  "geldigTotEnMet": "2026-12-31",
+  "toelichting": "Woningwaarderingsstelsel zelfstandige woonruimte (WWS) zoals geldend in 2026. Elke waarde verwijst naar een bron in 'bronnen'. Waarden met \"geverifieerd\": false zijn NIET uit een geraadpleegde officiele tekst gehaald en staan in docs/OPEN-PUNTEN.md.",
+  "bronnen": {
+    "BHW-I-A": {
+      "titel": "Besluit huurprijzen woonruimte, Bijlage I onder A (waarderingsstelsel zelfstandige woning) en de bijbehorende toelichting",
+      "url": "https://wetten.overheid.nl/BWBR0003237/2026-01-01",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BHW-8a": {
+      "titel": "Besluit huurprijzen woonruimte, artikel 8a (prijsopslagen)",
+      "url": "https://wetten.overheid.nl/BWBR0003237/2026-01-01",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "UHW-I": {
+      "titel": "Uitvoeringsregeling huurprijzen woonruimte, Bijlage I: Maximale huurprijsgrenzen zelfstandige woningen voor 2026",
+      "url": "https://wetten.overheid.nl/BWBR0015386",
+      "versie": "Geldend van 01-07-2026 t/m heden; bijlage I is gelijk aan de versie geldend van 01-01-2026 t/m 30-06-2026",
+      "geraadpleegd": "2026-11-15"
+    },
+    "HW2014-1": {
+      "titel": "Huisvestingswet 2014, artikel 1 (begrip middeldure huurwoonruimte)",
+      "url": "https://wetten.overheid.nl/BWBR0035303",
+      "versie": "Geldend van 01-11-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BW7-249": {
+      "titel": "Burgerlijk Wetboek Boek 7, artikel 249 (toetsing aanvangshuurprijs binnen zes maanden)",
+      "url": "https://wetten.overheid.nl/BWBR0005290",
+      "versie": "Geldend op 15-11-2026",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BBL-6.29": {
+      "titel": "Besluit bouwwerken leefomgeving, artikel 6.29 lid 4 (geldigheid energielabel)",
+      "url": "https://wetten.overheid.nl/BWBR0041297",
+      "versie": "Geldend van 24-09-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    }
+  },
+  "afronding": {
+    "rubriekStap": 0.25,
+    "rubriekBron": "BHW-I-A, toelichting, Inleiding: 'De waardering in punten per rubriek wordt na saldering afgerond op 0,25 punt waarbij een achtste (1/8) punt naar boven wordt afgerond.'",
+    "oppervlaktePerRuimteDecimalen": 2,
+    "oppervlakteBron": "BHW-I-A, toelichting rubriek 1 en 2: 'De oppervlakte per vertrek wordt afgerond op twee decimalen. De afronding van de oppervlakte van alle vertrekken samen vindt plaats op hele vierkante meters na saldering [...]; bij 0,5 m2 of meer wordt afgerond naar boven, bij minder dan 0,5 m2 naar beneden.'",
+    "totaalBron": "BHW-I-A, toelichting, Slotopmerking: 'Het puntentotaal per woning wordt na eindsaldering (met inbegrip van de bij zorgwoningen geldende toeslag) afgerond op hele punten. Bij 0,5 punten of meer wordt afgerond naar boven [...]'"
+  },
+  "rubrieken": {
+    "1": {
+      "titel": "Oppervlakte van vertrekken",
+      "puntenPerM2": 1,
+      "minimumOppervlakteM2": 4,
+      "bron": "BHW-I-A, tabel rubriek 1 ('1 punt per m2') en toelichting rubriek 1 (eisen vertrek, o.a. 'minimaal 4 m2'; keuken en badkamer/doucheruimte zijn altijd een vertrek; meting op 1,50 m hoogte; deel met plafond lager dan 1,50 m telt niet)"
+    },
+    "2": {
+      "titel": "Oppervlakte van overige ruimten",
+      "puntenPerM2": 0.75,
+      "minimumOppervlakteM2": 2,
+      "zolderZonderVasteTrapAftrek": 5,
+      "bron": "BHW-I-A, tabel rubriek 2 ('0,75 punt per m2') en toelichting rubriek 2 ('minimaal 2 m2'; 'Indien geen vaste trap aanwezig is, wordt het aantal punten van de vloeroppervlakte van de zolderruimte met vijf verminderd, doch niet met meer punten dan voor de oppervlakte van de zolderruimten wordt gegeven.')"
+    },
+    "3": {
+      "titel": "Verkoeling en verwarming",
+      "puntenPerVerwarmdVertrek": 2,
+      "puntenPerVerwarmdeOverigeOfVerkeersruimte": 1,
+      "maximumOverigeEnVerkeersruimten": 4,
+      "puntenPerVertrekMetVerkoeling": 1,
+      "maximumVerkoeling": 2,
+      "bron": "BHW-I-A, tabel rubriek 3 en toelichting rubriek 3 (open keuken telt in deze rubriek als afzonderlijk verwarmd vertrek; vertrek met verkoeling die ook verwarmt geldt als verwarmd vertrek; verkoeling vereist geldig NTA 8800-label waarin de koelfunctie is meegenomen)"
+    },
+    "4": {
+      "titel": "Energieprestatie",
+      "klassen": [
+        {
+          "klasse": "A++++",
+          "eengezins": 62,
+          "meergezins": 58
+        },
+        {
+          "klasse": "A+++",
+          "eengezins": 57,
+          "meergezins": 53
+        },
+        {
+          "klasse": "A++",
+          "eiKleinerDan": 0.6,
+          "eengezins": 52,
+          "meergezins": 48
+        },
+        {
+          "klasse": "A+",
+          "eiGroterDan": 0.6,
+          "eiTotEnMet": 0.8,
+          "eengezins": 47,
+          "meergezins": 43
+        },
+        {
+          "klasse": "A",
+          "eiGroterDan": 0.8,
+          "eiTotEnMet": 1.2,
+          "bouwjaarVanaf": 2002,
+          "eengezins": 41,
+          "meergezins": 37
+        },
+        {
+          "klasse": "B",
+          "eiGroterDan": 1.2,
+          "eiTotEnMet": 1.4,
+          "bouwjaarVanaf": 2000,
+          "bouwjaarTotEnMet": 2001,
+          "eengezins": 34,
+          "meergezins": 30
+        },
+        {
+          "klasse": "C",
+          "eiGroterDan": 1.4,
+          "eiTotEnMet": 1.8,
+          "bouwjaarVanaf": 1992,
+          "bouwjaarTotEnMet": 1999,
+          "eengezins": 22,
+          "meergezins": 15
+        },
+        {
+          "klasse": "D",
+          "eiGroterDan": 1.8,
+          "eiTotEnMet": 2.1,
+          "bouwjaarVanaf": 1984,
+          "bouwjaarTotEnMet": 1991,
+          "eengezins": 14,
+          "meergezins": 11
+        },
+        {
+          "klasse": "E",
+          "eiGroterDan": 2.1,
+          "eiTotEnMet": 2.4,
+          "bouwjaarVanaf": 1979,
+          "bouwjaarTotEnMet": 1983,
+          "eengezins": -5,
+          "meergezins": -5
+        },
+        {
+          "klasse": "F",
+          "eiGroterDan": 2.4,
+          "eiTotEnMet": 2.7,
+          "bouwjaarVanaf": 1977,
+          "bouwjaarTotEnMet": 1978,
+          "eengezins": -9,
+          "meergezins": -9
+        },
+        {
+          "klasse": "G",
+          "eiGroterDan": 2.7,
+          "bouwjaarTotEnMet": 1976,
+          "eengezins": -15,
+          "meergezins": -15
+        }
+      ],
+      "klassenBron": "BHW-I-A, tabel 4.1 'Waardering op basis van energielabel, Energie-index EI of bouwjaar' (kolommen NTA 8800/NEN 7120-label, Energie-index, bouwjaar bij geen of verlopen label, eengezinswoning, meergezinswoning/duplexwoning)",
+      "monumentGeenMinpunten": true,
+      "monumentBron": "BHW-I-A, 4.2: bij rijks-, provinciaal of gemeentelijk monument geen minpunten; label E, F en G (en gelijkgestelde EI/bouwjaren) krijgen dan nul punten",
+      "energieprestatievergoeding": {
+        "eengezins": 32,
+        "meergezins": 28
+      },
+      "energieprestatievergoedingBron": "BHW-I-A, 4.3 Energieprestatievergoeding",
+      "labelGeldigheidJaren": 10,
+      "labelGeldigheidBron": "BBL-6.29: 'Een energielabel is tien jaar geldig gerekend vanaf de datum van opname van de gegevens voor de afgifte ervan.'"
+    },
+    "5": {
+      "titel": "Keuken",
+      "aanrechtLengte": [
+        {
+          "vanafMeter": 0,
+          "punten": 0
+        },
+        {
+          "vanafMeter": 1,
+          "punten": 4
+        },
+        {
+          "vanafMeter": 2,
+          "punten": 7
+        }
+      ],
+      "voorzieningen": {
+        "afzuiginstallatie": 0.75,
+        "kookplaatInductie": 1.75,
+        "kookplaatKeramisch": 1,
+        "kookplaatGas": 0.5,
+        "koelkast": 1,
+        "vrieskast": 0.75,
+        "ovenElektrisch": 1,
+        "ovenGas": 0.5,
+        "magnetron": 1,
+        "vaatwasmachine": 1.5,
+        "extraKastruimtePer60cm": 0.75,
+        "eenhandsmengkraan": 0.25,
+        "thermostatischeMengkraan": 0.5,
+        "kokendwaterfunctie": 0.5
+      },
+      "maximumVoorzieningenIsAanrechtPunten": true,
+      "bron": "BHW-I-A, tabel 5.1 en 5.2 en toelichting rubriek 5 (basisniveau vereist; anders geen punten; voorzieningen tot maximaal de punten voor de aanrechtlengte)"
+    },
+    "6": {
+      "titel": "Sanitair",
+      "toilet": {
+        "aparteToiletruimte": 3,
+        "inBadkamer": 2,
+        "hangendAparteToiletruimte": 3.75,
+        "hangendInBadkamer": 2.75
+      },
+      "wastafel": 1,
+      "wastafelMaximumPerRuimteBuitenBadkamer": 1,
+      "meerpersoonswastafel": 1.5,
+      "meerpersoonswastafelMaximumPerRuimteBuitenBadkamer": 1.5,
+      "douche": 4,
+      "bad": 6,
+      "badEnDouche": 7,
+      "voorzieningenBadruimte": {
+        "bubbelfunctieBad": 1.5,
+        "volledigeDoucheafscheiding": 1.25,
+        "handdoekenradiator": 0.75,
+        "kastjeMetWastafel": 1,
+        "kastruimte": 0.75,
+        "stopcontact": 0.25,
+        "eenhandsmengkraan": 0.25,
+        "thermostatischeMengkraan": 0.5
+      },
+      "kastruimteMaximumPerRuimte": 0.75,
+      "stopcontactMaximumPerWastafel": 0.5,
+      "maximumVoorzieningenIsDoucheBadPunten": true,
+      "bron": "BHW-I-A, tabel 6.1 en 6.2 en toelichting rubriek 6"
+    },
+    "7": {
+      "titel": "Woonvoorzieningen voor gehandicapten",
+      "kostenPerPunt": 332,
+      "bron": "BHW-I-A, tabel rubriek 7 ('Per € 332 van de kosten die de verhuurder aan de voorziening heeft besteed: 1 punt') en toelichting rubriek 7"
+    },
+    "8": {
+      "titel": "Buitenruimten",
+      "priveBasisPunten": 2,
+      "privePuntenPerM2": 0.35,
+      "gemeenschappelijkPuntenPerM2": 0.75,
+      "maximum": 15,
+      "aftrekGeenBuitenruimte": 5,
+      "bron": "BHW-I-A, tabel rubriek 8 en toelichting rubriek 8 (oppervlakten per categorie optellen en afronden als bij rubriek 1 en 2; maximaal 15 punten; geen buitenruimte: af 5 punten)"
+    },
+    "9": {
+      "titel": "Gemeenschappelijke vertrekken, overige ruimten en voorzieningen",
+      "vertrekPuntenPerM2": 1,
+      "overigeRuimtePuntenPerM2": 0.75,
+      "bron": "BHW-I-A, tabel rubriek 9 en toelichting rubriek 9 (stappen 1 t/m 5: oppervlakte, verwarming, keuken/sanitair/gehandicapten, salderen, delen door aantal adressen)"
+    },
+    "10": {
+      "titel": "Gemeenschappelijke parkeerruimten",
+      "typeI": 9,
+      "typeII": 6,
+      "typeIII": 4,
+      "bron": "BHW-I-A, tabel rubriek 10 en toelichting rubriek 10 (type I: afgesloten parkeergarage; type II: buiten met dak; type III: buiten zonder dak; gedeeld door het aantal adressen)"
+    },
+    "11": {
+      "titel": "Punten voor de WOZ-waarde",
+      "minimumwaarde": 85806,
+      "taxatieFactor": 0.85,
+      "cohorten": [
+        {
+          "waardepeildatum": "2025-01-01",
+          "bedragPerPunt": 16954,
+          "delerPerM2": 268,
+          "delerPerM2KleineWoning": 114,
+          "ookVoorTaxatieEnMinimum": true
+        },
+        {
+          "waardepeildatum": "2024-01-01",
+          "bedragPerPunt": 15329,
+          "delerPerM2": 242,
+          "delerPerM2KleineWoning": 103,
+          "ookVoorTaxatieEnMinimum": false
+        }
+      ],
+      "kleineWoning": {
+        "oppervlakteKleinerDanM2": 40,
+        "bouwjaren": [
+          2018,
+          2019,
+          2020,
+          2021,
+          2022
+        ],
+        "coropGebieden": [
+          "Amsterdam",
+          "Utrecht"
+        ]
+      },
+      "uitzondering": {
+        "bouwjaren": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2019
+        ],
+        "drempelTotaal": 110,
+        "minimumWozPunten": 40
+      },
+      "cap": {
+        "maximumAandeel": 0.33,
+        "geldtVanafTotaal": 187,
+        "vangnetTotaal": 186
+      },
+      "waardePerM2AfrondenOpCenten": true,
+      "bron": "BHW-I-A, 11.1 t/m 11.3 en toelichting rubriek 11 (rekenvoorbeelden 1 t/m 5). Afronding van WOZ/m2 op centen volgt uit rekenvoorbeeld 1 (€ 398.000 / 70 m2 -> 23,49466942 punten bij deler 242)."
+    },
+    "12": {
+      "titel": "Bijzondere voorzieningen",
+      "zorgwoningOpslag": 0.35,
+      "videoAanbelfunctie": 0.25,
+      "laadpaalPunten": 2,
+      "bron": "BHW-I-A, tabel rubriek 12 ('bij: 35% van de ingevolge de onderdelen 1 tot en met 11.1 toegekende punten'; aanbelfunctie met video en audio 0,25 punt; laadpaal 2 punten gedeeld door het aantal adressen)"
+    }
+  },
+  "prijsopslagen": {
+    "rijksmonumentContractNaWbh": 0.35,
+    "rijksmonumentContractVoorWbhExtraPunten": 50,
+    "gemeentelijkOfProvinciaalMonument": 0.15,
+    "nieuwbouwMiddenhuur": {
+      "opslag": 0.1,
+      "ingebruiknameNa": "2024-07-01",
+      "bouwGestartVoor": "2028-01-01",
+      "duurJaren": 20
+    },
+    "beschermdStadsOfDorpsgezicht": {
+      "opslag": 0.05,
+      "gebouwdVoor": 1965
+    },
+    "opslagenWordenOpgeteld": true,
+    "bron": "BHW-8a, leden 1 t/m 7; BHW-I-A toelichting, Slotopmerking ('Als meerdere opslagen van toepassing zijn, worden deze percentages bij elkaar opgeteld')",
+    "inwerkingtredingWetBetaalbareHuur": "2024-07-01",
+    "inwerkingtredingWetBetaalbareHuurGeverifieerd": false,
+    "inwerkingtredingWetBetaalbareHuurBron": "TODO: artikel 8a noemt alleen 'het tijdstip van inwerkingtreding van de Wet betaalbare huur'; de datum zelf is niet uit een geraadpleegde bron gehaald (zie OPEN-PUNTEN.md)"
+  },
+  "segmenten": {
+    "sociaalTotEnMetPunten": 143,
+    "middenTotEnMetPunten": 186,
+    "bron": "HW2014-1 (middeldure huurwoonruimte: maximale huurprijsgrens hoger dan het bedrag uit art. 13 lid 1 onder a Wet op de huurtoeslag en niet hoger dan het bedrag uit art. 3 lid 2 Uitvoeringswet huurprijzen woonruimte) in combinatie met UHW-I. De puntengrenzen 143/186 volgen uit de spec en BHW-I-A 11.3 (187/186). De bedragen van die twee grenzen voor 2026 zijn niet rechtstreeks in de bron geverifieerd.",
+    "geverifieerd": false
+  },
+  "termijnen": {
+    "toetsingAanvangshuurMaanden": 6,
+    "bron": "BW7-249: 'De huurder kan tot uiterlijk zes maanden na het tijdstip waarop een door hem met betrekking tot die woonruimte voor de eerste maal aangegane huurovereenkomst is ingegaan, de huurcommissie verzoeken uitspraak te doen over de redelijkheid van de overeengekomen huurprijs.'"
+  },
+  "maximaleHuurprijs": {
+    "minimumPunten": 40,
+    "bron": "UHW-I (tabel 40 t/m 250 punten; 'De maximale huurprijsgrens van zelfstandige woningen met een kwaliteit van minder dan 40 punten is gelijk aan de maximale huurprijsgrens bij 40 punten: € 250,26 per maand.')",
+    "tabel": {
+      "40": 250.26,
+      "41": 256.53,
+      "42": 262.75,
+      "43": 269.02,
+      "44": 275.27,
+      "45": 281.5,
+      "46": 287.78,
+      "47": 294.03,
+      "48": 300.29,
+      "49": 306.54,
+      "50": 312.8,
+      "51": 319.02,
+      "52": 325.3,
+      "53": 331.54,
+      "54": 337.8,
+      "55": 344.05,
+      "56": 350.35,
+      "57": 356.53,
+      "58": 362.79,
+      "59": 369.09,
+      "60": 375.32,
+      "61": 381.55,
+      "62": 387.83,
+      "63": 394.06,
+      "64": 400.32,
+      "65": 406.58,
+      "66": 412.85,
+      "67": 419.1,
+      "68": 425.33,
+      "69": 431.56,
+      "70": 437.81,
+      "71": 444.09,
+      "72": 450.36,
+      "73": 456.57,
+      "74": 462.86,
+      "75": 469.09,
+      "76": 475.36,
+      "77": 481.6,
+      "78": 487.89,
+      "79": 494.1,
+      "80": 500.38,
+      "81": 507.22,
+      "82": 514.08,
+      "83": 520.96,
+      "84": 527.81,
+      "85": 534.7,
+      "86": 541.56,
+      "87": 548.41,
+      "88": 555.29,
+      "89": 562.13,
+      "90": 569.03,
+      "91": 575.87,
+      "92": 582.71,
+      "93": 589.61,
+      "94": 596.45,
+      "95": 603.32,
+      "96": 610.19,
+      "97": 617.08,
+      "98": 623.94,
+      "99": 630.82,
+      "100": 637.67,
+      "101": 644.53,
+      "102": 651.36,
+      "103": 658.24,
+      "104": 665.12,
+      "105": 671.95,
+      "106": 678.85,
+      "107": 685.7,
+      "108": 692.56,
+      "109": 699.44,
+      "110": 706.32,
+      "111": 713.2,
+      "112": 720.05,
+      "113": 726.9,
+      "114": 733.79,
+      "115": 740.66,
+      "116": 747.51,
+      "117": 754.37,
+      "118": 761.21,
+      "119": 768.08,
+      "120": 774.94,
+      "121": 781.85,
+      "122": 788.71,
+      "123": 795.56,
+      "124": 802.44,
+      "125": 809.3,
+      "126": 816.14,
+      "127": 823.02,
+      "128": 829.94,
+      "129": 836.74,
+      "130": 843.62,
+      "131": 850.49,
+      "132": 857.33,
+      "133": 864.24,
+      "134": 871.06,
+      "135": 877.97,
+      "136": 884.79,
+      "137": 891.67,
+      "138": 898.56,
+      "139": 905.39,
+      "140": 912.26,
+      "141": 919.14,
+      "142": 925.98,
+      "143": 932.93,
+      "144": 939.73,
+      "145": 946.61,
+      "146": 953.45,
+      "147": 960.33,
+      "148": 967.18,
+      "149": 974.05,
+      "150": 980.91,
+      "151": 987.78,
+      "152": 994.63,
+      "153": 1001.5,
+      "154": 1008.35,
+      "155": 1015.22,
+      "156": 1022.07,
+      "157": 1029.0,
+      "158": 1035.81,
+      "159": 1042.73,
+      "160": 1049.57,
+      "161": 1056.42,
+      "162": 1063.32,
+      "163": 1070.14,
+      "164": 1077.0,
+      "165": 1083.88,
+      "166": 1090.76,
+      "167": 1097.61,
+      "168": 1104.46,
+      "169": 1111.39,
+      "170": 1118.23,
+      "171": 1125.08,
+      "172": 1131.94,
+      "173": 1138.85,
+      "174": 1145.69,
+      "175": 1152.55,
+      "176": 1159.4,
+      "177": 1166.27,
+      "178": 1173.15,
+      "179": 1180.01,
+      "180": 1186.84,
+      "181": 1193.76,
+      "182": 1200.61,
+      "183": 1207.46,
+      "184": 1214.31,
+      "185": 1221.21,
+      "186": 1228.07,
+      "187": 1234.92,
+      "188": 1241.81,
+      "189": 1248.65,
+      "190": 1255.53,
+      "191": 1262.4,
+      "192": 1269.25,
+      "193": 1276.12,
+      "194": 1283.0,
+      "195": 1289.86,
+      "196": 1296.7,
+      "197": 1303.57,
+      "198": 1310.46,
+      "199": 1317.28,
+      "200": 1324.18,
+      "201": 1331.03,
+      "202": 1337.89,
+      "203": 1344.75,
+      "204": 1351.63,
+      "205": 1358.5,
+      "206": 1365.34,
+      "207": 1372.24,
+      "208": 1379.09,
+      "209": 1385.95,
+      "210": 1392.84,
+      "211": 1399.69,
+      "212": 1406.56,
+      "213": 1413.43,
+      "214": 1420.28,
+      "215": 1427.15,
+      "216": 1433.99,
+      "217": 1440.86,
+      "218": 1447.71,
+      "219": 1454.6,
+      "220": 1461.49,
+      "221": 1468.31,
+      "222": 1475.19,
+      "223": 1482.05,
+      "224": 1488.95,
+      "225": 1495.77,
+      "226": 1502.67,
+      "227": 1509.53,
+      "228": 1516.4,
+      "229": 1523.28,
+      "230": 1530.12,
+      "231": 1536.98,
+      "232": 1543.85,
+      "233": 1550.71,
+      "234": 1557.56,
+      "235": 1564.46,
+      "236": 1571.31,
+      "237": 1578.17,
+      "238": 1585.01,
+      "239": 1591.91,
+      "240": 1598.76,
+      "241": 1605.64,
+      "242": 1612.52,
+      "243": 1619.36,
+      "244": 1626.24,
+      "245": 1633.1,
+      "246": 1639.96,
+      "247": 1646.78,
+      "248": 1653.7,
+      "249": 1660.54,
+      "250": 1667.4
+    }
+  }
+}

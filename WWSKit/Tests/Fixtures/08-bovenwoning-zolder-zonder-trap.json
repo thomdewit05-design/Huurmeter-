@@ -1,0 +1,97 @@
+{
+  "naam": "08-bovenwoning-zolder-zonder-trap",
+  "omschrijving": "Bovenwoning 1910, beschermd stadsgezicht, zolder met vlizotrap, geen label.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1910,
+    "woningtype": "meergezins",
+    "beschermdStadsOfDorpsgezicht": true,
+    "ruimten": [
+      {
+        "naam": "Woonkamer",
+        "soort": "vertrek",
+        "oppervlakte": 22.4,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer",
+        "soort": "vertrek",
+        "oppervlakte": 12.6,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 6.8,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 3.4,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Zolder",
+        "soort": "overigeRuimte",
+        "oppervlakte": 16.2,
+        "verwarmd": false,
+        "functie": "zolder",
+        "zolderZonderVasteTrap": true
+      },
+      {
+        "naam": "Toilet",
+        "soort": "overigeRuimte",
+        "oppervlakte": 1.0,
+        "verwarmd": false,
+        "functie": "toilet"
+      },
+      {
+        "naam": "Trap/overloop",
+        "soort": "verkeersruimte",
+        "oppervlakte": 4.0,
+        "verwarmd": false
+      },
+      {
+        "naam": "Dakterras",
+        "soort": "buitenruimte",
+        "oppervlakte": 9.0
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 2.0,
+        "voorzieningen": {
+          "kookplaatGas": 1,
+          "afzuiginstallatie": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Toilet",
+        "soort": "toiletruimte",
+        "staandeToiletten": 1
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "wastafels": 1,
+        "baden": 1,
+        "voldoetAanEisenBadruimte": true
+      }
+    ],
+    "woz": {
+      "waarde": 365000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2026-10-01",
+    "kaleHuur": 1100.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

@@ -1,0 +1,75 @@
+{
+  "naam": "03-studio-amsterdam-2020",
+  "omschrijving": "Studio 34 m² in Amsterdam, opgeleverd 2020, label A+ (2020), gemeenschappelijke daktuin.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 2020,
+    "woningtype": "meergezins",
+    "coropAmsterdamOfUtrecht": true,
+    "ruimten": [
+      {
+        "naam": "Woon-/slaapkamer",
+        "soort": "vertrek",
+        "oppervlakte": 26.4,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 3.9,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Entree",
+        "soort": "verkeersruimte",
+        "oppervlakte": 3.2,
+        "verwarmd": true
+      }
+    ],
+    "verwarmdeOpenKeukens": 1,
+    "keukens": [
+      {
+        "aanrechtLengte": 1.8,
+        "voorzieningen": {
+          "kookplaatInductie": 1,
+          "koelkast": 1,
+          "afzuiginstallatie": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "hangendeToiletten": 1,
+        "wastafels": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true,
+        "voorzieningen": {
+          "volledigeDoucheafscheiding": 1
+        }
+      }
+    ],
+    "energie": {
+      "label": "A+",
+      "opnamedatum": "2020-09-01"
+    },
+    "gemeenschappelijkeBuitenruimten": [
+      {
+        "naam": "Daktuin",
+        "oppervlakte": 120,
+        "adressen": 48
+      }
+    ],
+    "woz": {
+      "waarde": 295000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2026-09-15",
+    "kaleHuur": 1195.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}

@@ -1,0 +1,96 @@
+{
+  "naam": "04-benedenwoning-1930-monument",
+  "omschrijving": "Benedenwoning 1930, gemeentelijk monument, label E (2018), tuin.",
+  "peildatum": "2026-11-15",
+  "invoer": {
+    "bouwjaar": 1930,
+    "woningtype": "meergezins",
+    "monument": "gemeentelijkOfProvinciaal",
+    "ruimten": [
+      {
+        "naam": "Voorkamer",
+        "soort": "vertrek",
+        "oppervlakte": 18.2,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Achterkamer",
+        "soort": "vertrek",
+        "oppervlakte": 15.9,
+        "verwarmd": true,
+        "functie": "woonkamer"
+      },
+      {
+        "naam": "Slaapkamer",
+        "soort": "vertrek",
+        "oppervlakte": 11.3,
+        "verwarmd": true,
+        "functie": "slaapkamer"
+      },
+      {
+        "naam": "Keuken",
+        "soort": "vertrek",
+        "oppervlakte": 7.4,
+        "verwarmd": true,
+        "functie": "keuken"
+      },
+      {
+        "naam": "Badkamer",
+        "soort": "vertrek",
+        "oppervlakte": 3.2,
+        "verwarmd": true,
+        "functie": "badkamer"
+      },
+      {
+        "naam": "Kelder",
+        "soort": "overigeRuimte",
+        "oppervlakte": 6.1,
+        "verwarmd": false,
+        "functie": "berging"
+      },
+      {
+        "naam": "Gang",
+        "soort": "verkeersruimte",
+        "oppervlakte": 5.4,
+        "verwarmd": true
+      },
+      {
+        "naam": "Tuin",
+        "soort": "buitenruimte",
+        "oppervlakte": 31
+      }
+    ],
+    "keukens": [
+      {
+        "aanrechtLengte": 1.6,
+        "voorzieningen": {
+          "kookplaatGas": 1,
+          "ovenGas": 1
+        }
+      }
+    ],
+    "sanitaireRuimten": [
+      {
+        "naam": "Badkamer",
+        "soort": "badkamer",
+        "staandeToiletten": 1,
+        "wastafels": 1,
+        "douches": 1,
+        "voldoetAanEisenBadruimte": true
+      }
+    ],
+    "energie": {
+      "label": "E",
+      "opnamedatum": "2018-02-20"
+    },
+    "woz": {
+      "waarde": 405000,
+      "waardepeildatum": "2025-01-01"
+    },
+    "contractStart": "2025-01-01",
+    "kaleHuur": 1350.0
+  },
+  "verwacht": null,
+  "verwachtToelichting": "In te vullen door Thom na invoer in de officiële Huurprijscheck: {\"totaal\": <punten>, \"maximaleHuur\": <bedrag of null>, \"rubrieken\": {\"1\": <punten>, ...} (rubrieken optioneel)}"
+}
