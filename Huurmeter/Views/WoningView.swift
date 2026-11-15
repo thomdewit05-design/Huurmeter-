@@ -11,7 +11,8 @@ struct WoningView: View {
     private var herinneringen: Binding<Bool> {
         Binding(get: { woning.herinneringenAan }, set: { aan in
             Task { @MainActor in
-                if aan && !(await Meldingen.vraagToestemming()) {
+                let toegestaan = aan ? await Meldingen.vraagToestemming() : true
+                if !toegestaan {
                     meldingTekst = "Meldingen staan uit voor Huurmeter. Zet ze aan in Instellingen › Huurmeter › Meldingen."
                     woning.herinneringenAan = false
                     return
