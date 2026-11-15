@@ -38,15 +38,34 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.4.0"
+        MARKETING_VERSION: "0.5.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         ENABLE_PREVIEWS: YES
+  HuurmeterUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HuurmeterUITests
+    dependencies:
+      - target: Huurmeter
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app.uitests
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
 schemes:
   Huurmeter:
     build:
       targets:
         Huurmeter: all
+        HuurmeterUITests: [test]
+    test:
+      config: Debug
+      targets:
+        - HuurmeterUITests
     run:
       config: Debug
       # Aankoop testen in de simulator zonder App Store Connect.

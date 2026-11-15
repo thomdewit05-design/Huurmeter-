@@ -18,6 +18,13 @@ final class Winkel {
     @ObservationIgnored private var luisteraar: Task<Void, Never>?
 
     init() {
+        #if DEBUG
+        // Alleen in ontwikkelbuilds, voor schermafbeeldingen en UI-tests: ontgrendeld zonder aankoop.
+        if ProcessInfo.processInfo.arguments.contains("-demoOntgrendeld") {
+            ontgrendeld = true
+            return
+        }
+        #endif
         luisteraar = Task { [weak self] in
             for await resultaat in Transaction.updates {
                 if case .verified(let transactie) = resultaat {

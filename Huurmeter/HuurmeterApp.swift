@@ -7,9 +7,15 @@ struct HuurmeterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            StartView()
-                .environment(winkel)
+            if DemoData.actief {
+                StartView()
+                    .environment(winkel)
+                    .modelContainer(DemoData.container)
+            } else {
+                StartView()
+                    .environment(winkel)
+                    .modelContainer(for: [Woning.self, Ruimte.self, Voorziening.self, Berekening.self])
+            }
         }
-        .modelContainer(for: [Woning.self, Ruimte.self, Voorziening.self, Berekening.self])
     }
 }

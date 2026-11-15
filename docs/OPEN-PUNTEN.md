@@ -102,3 +102,15 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
    bron per rubriek, prijsopslag, plattegronden, bewijsfoto's, bronnen en de disclaimer op elke pagina.
    Persoonsgegevens van de huurder staan er niet in; die vult de huurder zelf in de brief in.
 4. **Brief alleen bij te hoge huur**: in de vrije sector of als de huur niet te hoog is, toont de app uitleg in plaats van een brief.
+
+## G. Fase 5 (afwerking)
+
+1. **Schermafbeeldingen** maakt de CI-job "Schermafbeeldingen en toegankelijkheid" automatisch met de
+   demowoning (iPhone Pro Max, Nederlands, 9:41). Download ze als artifact `schermafbeeldingen` bij de
+   workflowrun. Voor de App Store kan een tekstkader erbij (bijv. in Keynote of Figma) helpen.
+2. **Toegankelijkheid**: Apple's `performAccessibilityAudit()` draait per hoofdscherm. Een echte
+   VoiceOver-ronde door een persoon blijft nodig, net als een test met de grootste tekstgrootte.
+3. **Demovlaggen** `-demo` en `-demoOntgrendeld` werken alleen in ontwikkelbuilds (DEBUG), zodat de betaalde
+   inhoud in de winkelversie niet zonder aankoop te openen is.
+4. **Privacy-manifest** (`PrivacyInfo.xcprivacy`): geen tracking, geen verzamelde gegevens, geen API's met reden.
+5. **Icoon**: eigen ontwerp (huis met meter). Laat het eventueel nog door een ontwerper verfijnen.
