@@ -2,7 +2,6 @@ import SwiftUI
 import SwiftData
 import WWSKit
 import HuurmeterCore
-import WidgetKit
 
 /// Scherm 7: punten, segment, maximale huur, verschil per maand en per jaar, uitklapbaar per rubriek.
 struct UitkomstView: View {
@@ -37,13 +36,6 @@ struct UitkomstView: View {
         if case .uitkomst(let u) = r {
             if !(woning.laatsteBerekening?.zelfdeAls(u) ?? false) {
                 woning.berekeningen.append(Berekening(uitkomst: u))
-            }
-            // Gegevens voor de widget (gedeelde App Group-opslag op het toestel).
-            if let opslag = UserDefaults(suiteName: WidgetGegevens.appGroup) {
-                var g = WidgetGegevens(adres: woning.adres.weergave, uitkomst: u)
-                if !winkel.ontgrendeld { g.maximaleHuur = nil; g.teVeelPerMaand = nil }
-                g.bewaar(in: opslag)
-                WidgetCenter.shared.reloadAllTimelines()
             }
         }
     }
