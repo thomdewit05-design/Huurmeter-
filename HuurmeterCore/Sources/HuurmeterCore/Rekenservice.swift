@@ -76,6 +76,10 @@ public enum Opmaak {
         public let regels: [String]
         /// true = huurder betaalt meer dan het maximum.
         public let teVeel: Bool
+
+        public init(kop: String, regels: [String], teVeel: Bool) {
+            self.kop = kop; self.regels = regels; self.teVeel = teVeel
+        }
     }
 
     public static func samenvatting(_ u: Uitkomst, kaleHuur: Double?) -> Samenvatting {

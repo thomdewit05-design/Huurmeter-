@@ -1,0 +1,62 @@
+{
+  "schemaVersie": 1,
+  "jaar": 2026,
+  "toelichting": "Maximale huurverhoging 2026 per segment. Waarden met \"geverifieerd\": false of null komen niet uit een geraadpleegde bron; de app toont dan dat het maximum niet te bepalen is.",
+  "bronnen": {
+    "UHW-V": {
+      "titel": "Uitvoeringsregeling huurprijzen woonruimte, Bijlage V: Schema van redelijke huuraanpassingen per 1 juli 2026",
+      "url": "https://wetten.overheid.nl/BWBR0015386",
+      "versie": "Geldend van 01-07-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "UW-10": {
+      "titel": "Uitvoeringswet huurprijzen woonruimte, artikel 10 lid 2 tot en met 4 (inkomensgrenzen; formule maximale verhoging vrije sector en middenhuur)",
+      "url": "https://wetten.overheid.nl/BWBR0014315",
+      "versie": "Geldend van 04-06-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "RO-HV": {
+      "titel": "Rijksoverheid, Huurverhoging (maximale huurverhoging vrije sector 2026: 4,4%)",
+      "url": "https://www.rijksoverheid.nl/onderwerpen/huurverhoging",
+      "versie": "Pagina zoals opgehaald op 15-11-2026",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BW7-250-252": {
+      "titel": "Burgerlijk Wetboek Boek 7, artikelen 250 (eenmaal per twaalf maanden) en 252 lid 1 (voorstel ten minste twee maanden vooraf, schriftelijk)",
+      "url": "https://wetten.overheid.nl/BWBR0005290",
+      "versie": "Geldend op 15-11-2026",
+      "geraadpleegd": "2026-11-15"
+    }
+  },
+  "sociaal": {
+    "geldigVan": "2026-07-01",
+    "geldigTotEnMet": "2027-06-30",
+    "inkomensgrenzen": {
+      "eenpersoons": { "laagTotEnMet": 59504, "middenTotEnMet": 70149 },
+      "meerpersoons": { "laagTotEnMet": 68858, "middenTotEnMet": 93531 }
+    },
+    "laagInkomen": { "percentage": 0.041, "huurOnder": 350, "bedragBijLageHuur": 25 },
+    "middenInkomenMaxBedrag": 50,
+    "hoogInkomenMaxBedrag": 100,
+    "onzelfstandigPercentage": 0.041,
+    "nietBovenMaximaleHuur": true,
+    "bron": "UHW-V, IIa onder a t/m c en IIb ('voor zover de maximale huurprijsgrens niet wordt overschreden'); inkomensgrenzen: UW-10 lid 2 onder a, 1° t/m 3°. Bevestigd door RO-HV (tabel per 1 juli 2026)."
+  },
+  "midden": {
+    "percentage": null,
+    "geverifieerd": false,
+    "bron": "UW-10 lid 4: CAO-loonontwikkeling (december t-2 t/m november t-1) plus één procentpunt. TODO: het percentage voor 2026 is niet in een geraadpleegde bron gevonden."
+  },
+  "vrij": {
+    "geldigVan": "2026-01-01",
+    "geldigTotEnMet": "2026-12-31",
+    "percentage": 0.044,
+    "geverifieerd": true,
+    "bron": "UW-10 lid 3 (laagste van inflatie + 1 procentpunt en CAO-loonontwikkeling + 1 procentpunt); percentage 2026 volgens RO-HV: 'In 2026 (1 januari 2026 tot 1 januari 2027) is de maximum huurverhoging voor woningen in de vrije sector 4,4%.'"
+  },
+  "procedure": {
+    "voorstelMinimaalMaandenVooraf": 2,
+    "maximaalEenmaalPerMaanden": 12,
+    "bron": "BW7-250-252: art. 7:252 lid 1 en art. 7:250 lid 1"
+  }
+}

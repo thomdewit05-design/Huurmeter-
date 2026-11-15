@@ -21,7 +21,7 @@ Betaalt u te veel huur? Huurmeter rekent het voor u uit met het woningwaardering
 - Zie direct het aantal punten, of de woning sociale huur, middenhuur of vrije sector is, de maximale kale huur en hoeveel u per maand en per jaar te veel betaalt.
 - Is uw contract jonger dan zes maanden? Dan ziet u hoeveel dagen u nog hebt om de aanvangshuur te laten toetsen.
 
-Met een eenmalige aankoop maakt u een PDF-dossier met de volledige puntentelling, plattegronden en foto's, en een conceptbrief aan uw verhuurder. Voor onbeperkt veel woningen, zonder abonnement en zonder advertenties.
+De puntentelling is gratis. Met een eenmalige aankoop ziet u de maximale kale huur en hoeveel u te veel betaalt, en maakt u een PDF-dossier met plattegronden en foto's en een conceptbrief aan uw verhuurder. Voor onbeperkt veel woningen en kamers, zonder abonnement en zonder advertenties.
 
 Alles blijft op uw telefoon. Er is geen account en de app verzamelt geen gegevens.
 
@@ -57,5 +57,5 @@ Gebruik geen logo of naam van de Huurcommissie of de Rijksoverheid in het icoon 
 ## Toelichting voor de App Review
 
 - De app gebruikt RoomPlan (camera) om kamers in te meten; zonder LiDAR werkt de app met handmatige invoer.
-- De aankoop "Dossier en brief" is een niet-verbruikbaar product.
+- De aankoop "Volledige uitkomst" (ID nl.huurmeter.app.dossier, € 9,99) is een niet-verbruikbaar product: maximale huur, dossier en brief.
 - De app is niet van of namens de overheid; de bronnen staan in het Info-scherm.

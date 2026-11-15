@@ -9,6 +9,7 @@ struct RuimtesView: View {
     @Environment(\.modelContext) private var context
     @Bindable var woning: Woning
     @State private var bewerk: Ruimte?
+    @State private var woningScan = false
 
     var body: some View {
         List {
@@ -24,10 +25,21 @@ struct RuimtesView: View {
                     }
                 }
             }
+            if Scanner.beschikbaar {
+                Section {
+                    Button {
+                        woningScan = true
+                    } label: {
+                        Label("Hele woning scannen", systemImage: "camera.metering.matrix")
+                    }
+                } footer: {
+                    Text("Loop met de camera kamer voor kamer door de woning. Daarna controleert u de lijst.")
+                }
+            }
             Section {
                 Menu {
                     ForEach(RuimteSjabloon.alle) { s in
-                        Button(s.naam) { voegToe(s) }
+                        Button(s.naam.vertaald) { voegToe(s) }
                     }
                 } label: {
                     Label("Ruimte toevoegen", systemImage: "plus.circle.fill")
@@ -44,6 +56,7 @@ struct RuimtesView: View {
         }
         .huisstijlAchtergrond()
         .navigationTitle("Ruimtes")
+        .fullScreenCover(isPresented: $woningScan) { WoningScanView(woning: woning) }
         .sheet(item: $bewerk) { r in
             NavigationStack { RuimteEditView(ruimte: r) }
         }
@@ -72,8 +85,8 @@ private struct RuimteRij: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(ruimte.naam.isEmpty ? "Naamloos" : ruimte.naam)
-                Text(ruimte.bron == .scan ? "Gescand" : "Handmatig").font(.caption).foregroundStyle(.secondary)
+                Text(ruimte.naam.isEmpty ? String(localized: "Naamloos") : ruimte.naam)
+                Text(ruimte.bron == .scan ? "Gescand" : "Handmatig" as LocalizedStringKey).font(.caption).foregroundStyle(.secondary)
             }
             Spacer()
             Text(ruimte.oppervlakte > 0 ? Opmaak.oppervlakte(ruimte.oppervlakte) : "– m²")
@@ -126,14 +139,14 @@ struct RuimteEditView: View {
                 TextField("Naam", text: $ruimte.naam)
                 if ruimte.soort != .buitenruimte {
                     Picker("Functie", selection: functie) {
-                        ForEach(RuimteFunctie.allCases, id: \.self) { Text($0.naam).tag($0) }
+                        ForEach(RuimteFunctie.allCases, id: \.self) { Text($0.naam.vertaald).tag($0) }
                     }
                 }
                 Picker("Soort", selection: soort) {
                     ForEach(RuimteSoort.weergaveVolgorde, id: \.self) { Text($0.enkelvoud).tag($0) }
                 }
             } footer: {
-                Text(ruimte.soort.uitleg)
+                Text(ruimte.soort.uitleg.vertaald)
             }
 
             if ruimte.soort != .buitenruimte {
@@ -194,7 +207,7 @@ struct RuimteEditView: View {
                 Button {
                     toonScan = true
                 } label: {
-                    Label(ruimte.gescandeOppervlakte == nil ? "Scannen met de camera" : "Opnieuw scannen",
+                    Label(ruimte.gescandeOppervlakte == nil ? "Scannen met de camera" : "Opnieuw scannen" as LocalizedStringKey,
                           systemImage: "camera.viewfinder")
                 }
             }

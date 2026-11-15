@@ -21,16 +21,23 @@ targets:
     dependencies:
       - package: WWSKit
       - package: HuurmeterCore
+      - target: HuurmeterWidget
+    entitlements:
+      path: Huurmeter/Huurmeter.entitlements
+      properties:
+        com.apple.security.application-groups: [group.nl.huurmeter.app]
     info:
       path: Huurmeter/Info.plist
       properties:
         CFBundleDisplayName: Huurmeter
         CFBundleDevelopmentRegion: nl
+        CFBundleLocalizations: [nl, en]
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         ITSAppUsesNonExemptEncryption: false
+        EPOnlineAPIKey: "$(EP_ONLINE_API_KEY)"
         NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
     settings:
       base:
@@ -39,11 +46,47 @@ targets:
         DEVELOPMENT_TEAM: 7BDZ6994AD
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.5.0"
+        MARKETING_VERSION: "0.7.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         ENABLE_PREVIEWS: YES
+        # Leeg in ontwikkeling; de TestFlight-workflow vult hem uit het GitHub-geheim EP_ONLINE_API_KEY.
+        EP_ONLINE_API_KEY: ""
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  HuurmeterWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: HuurmeterWidget
+      - path: Huurmeter/Huisstijl/Huisstijl.swift
+      - path: Huurmeter/Localizable.xcstrings
+    dependencies:
+      - package: WWSKit
+      - package: HuurmeterCore
+    entitlements:
+      path: HuurmeterWidget/HuurmeterWidget.entitlements
+      properties:
+        com.apple.security.application-groups: [group.nl.huurmeter.app]
+    info:
+      path: HuurmeterWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Huurmeter
+        CFBundleDevelopmentRegion: nl
+        CFBundleLocalizations: [nl, en]
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app.widget
+        DEVELOPMENT_TEAM: 7BDZ6994AD
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        MARKETING_VERSION: "0.7.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        SKIP_INSTALL: YES
   HuurmeterUITests:
     type: bundle.ui-testing
     platform: iOS

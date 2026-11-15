@@ -5,6 +5,7 @@ name: TestFlight
 #   ASC_KEY_ID      Key ID van de App Store Connect API-sleutel
 #   ASC_ISSUER_ID   Issuer ID (staat boven de lijst met sleutels)
 #   ASC_KEY_P8      Volledige inhoud van het gedownloade AuthKey_XXXX.p8-bestand
+#   EP_ONLINE_API_KEY  (optioneel) API-sleutel van EP-Online (RVO); zonder sleutel verbergt de app de knop
 # De sleutel heeft de rol "Admin" nodig, zodat Xcode zelf het distributiecertificaat en profiel kan maken.
 on:
   workflow_dispatch:
@@ -61,6 +62,7 @@ jobs:
             -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
             -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}" \
             DEVELOPMENT_TEAM="$TEAM_ID" \
+            EP_ONLINE_API_KEY="${{ secrets.EP_ONLINE_API_KEY }}" \
             CURRENT_PROJECT_VERSION="${{ github.run_number }}" | grep -E "error:|warning: |ARCHIVE" || true
           test -d "$RUNNER_TEMP/Huurmeter.xcarchive"
 

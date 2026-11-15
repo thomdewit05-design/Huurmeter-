@@ -19,7 +19,7 @@ enum DemoData {
 
     @MainActor
     private static func maakContainer() -> ModelContainer {
-        let schema = Schema([Woning.self, Ruimte.self, Voorziening.self, Berekening.self])
+        let schema = Schema([Woning.self, Ruimte.self, Voorziening.self, Berekening.self, Gebrek.self])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: schema, configurations: [config])
         vulIn(container.mainContext)

@@ -2,10 +2,12 @@ import SwiftUI
 import SwiftData
 import WWSKit
 import HuurmeterCore
+import WidgetKit
 
 /// Scherm 7: punten, segment, maximale huur, verschil per maand en per jaar, uitklapbaar per rubriek.
 struct UitkomstView: View {
     @Environment(\.modelContext) private var context
+    @Environment(Winkel.self) private var winkel
     @Bindable var woning: Woning
     @State private var resultaat: Rekenservice.Resultaat?
 
@@ -16,7 +18,7 @@ struct UitkomstView: View {
                 ProgressView()
             case .melding(let tekst):
                 ContentUnavailableView("Nog niet te berekenen", systemImage: "list.bullet.clipboard",
-                                       description: Text(tekst))
+                                       description: Text(tekst.vertaald))
             case .uitkomst(let u):
                 inhoud(u)
             }
@@ -25,19 +27,31 @@ struct UitkomstView: View {
         .navigationTitle("Uitkomst")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: bereken)
+        .onChange(of: winkel.ontgrendeld) { bereken() }
+        .task { if woning.herinneringenAan { await Meldingen.plan(voor: woning) } }
     }
 
     private func bereken() {
         let r = Rekenservice().bereken(woning.concept, peildatum: Dag(Date()))
         resultaat = r
-        if case .uitkomst(let u) = r, !(woning.laatsteBerekening?.zelfdeAls(u) ?? false) {
-            woning.berekeningen.append(Berekening(uitkomst: u))
+        if case .uitkomst(let u) = r {
+            if !(woning.laatsteBerekening?.zelfdeAls(u) ?? false) {
+                woning.berekeningen.append(Berekening(uitkomst: u))
+            }
+            // Gegevens voor de widget (gedeelde App Group-opslag op het toestel).
+            if let opslag = UserDefaults(suiteName: WidgetGegevens.appGroup) {
+                var g = WidgetGegevens(adres: woning.adres.weergave, uitkomst: u)
+                if !winkel.ontgrendeld { g.maximaleHuur = nil; g.teVeelPerMaand = nil }
+                g.bewaar(in: opslag)
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
     }
 
     @ViewBuilder
     private func inhoud(_ u: Uitkomst) -> some View {
-        let s = Opmaak.samenvatting(u, kaleHuur: woning.kaleHuur)
+        let s = winkel.ontgrendeld ? Weergave.samenvatting(u, kaleHuur: woning.kaleHuur)
+                                   : Weergave.vergrendeldeSamenvatting(u, kaleHuur: woning.kaleHuur)
         List {
             Section {
                 VStack(alignment: .leading, spacing: 14) {
@@ -52,7 +66,7 @@ struct UitkomstView: View {
                             .foregroundStyle(Huisstijl.bosgroen)
                         Text("punten").font(.title3).foregroundStyle(Huisstijl.gedempt)
                         Spacer(minLength: 8)
-                        Pil(tekst: Opmaak.segment(u.segment))
+                        Pil(tekst: Weergave.segment(u.segment))
                     }
                     .accessibilityElement(children: .combine)
                     ForEach(s.regels, id: \.self) { Text($0) }
@@ -61,6 +75,10 @@ struct UitkomstView: View {
                 .listRowBackground(Huisstijl.kaart)
             } footer: {
                 Text(Uitkomst.disclaimer).font(.footnote.weight(.semibold))
+            }
+
+            if !winkel.ontgrendeld && u.maximaleHuur != nil {
+                Section { OntgrendelKaart() }
             }
 
             Section {
@@ -78,10 +96,10 @@ struct UitkomstView: View {
                     HStack(alignment: .top, spacing: 12) {
                         VStack {
                             Text("\(t.resterendeDagen)").font(.largeTitle.bold()).monospacedDigit()
-                            Text(t.resterendeDagen == 1 ? "dag" : "dagen").font(.caption)
+                            Text(t.resterendeDagen == 1 ? "dag" : "dagen" as LocalizedStringKey).font(.caption)
                         }
                         .frame(minWidth: 64)
-                        Text(Opmaak.termijn(t)).font(.subheadline)
+                        Text(Weergave.termijn(t)).font(.subheadline)
                     }
                     .accessibilityElement(children: .combine)
                 } header: {
@@ -106,7 +124,7 @@ struct UitkomstView: View {
                         Text("Bron: \(r.bron)").font(.caption2).foregroundStyle(.secondary)
                     } label: {
                         HStack {
-                            Text("\(r.nummer). \(r.titel)")
+                            Text(verbatim: "\(r.nummer). \(r.titel.vertaald)")
                             Spacer()
                             Text(Opmaak.punten(r.punten)).monospacedDigit().foregroundStyle(.secondary)
                         }

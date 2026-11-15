@@ -1,0 +1,95 @@
+{
+  "schemaVersie": 1,
+  "toelichting": "Termijnen en stappen voor procedures bij de Huurcommissie. Elke termijn en elk bedrag verwijst naar een wetsartikel in 'bronnen'. Geen eigen schattingen.",
+  "bronnen": {
+    "BW7": {
+      "titel": "Burgerlijk Wetboek Boek 7, titel 4, afdeling 5 (artikelen 249 tot en met 263)",
+      "url": "https://wetten.overheid.nl/BWBR0005290",
+      "versie": "Geldend van 08-10-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "UW": {
+      "titel": "Uitvoeringswet huurprijzen woonruimte, artikelen 7 (vergoeding aan de Staat) en 9 (schriftelijk verzoek; minimumbedragen)",
+      "url": "https://wetten.overheid.nl/BWBR0014315",
+      "versie": "Geldend van 04-06-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BHW": {
+      "titel": "Besluit huurprijzen woonruimte, artikel 4 lid 1 (leges: huurder € 25, verhuurder € 500)",
+      "url": "https://wetten.overheid.nl/BWBR0003237",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    }
+  },
+  "leges": { "huurder": 25, "verhuurder": 500, "bron": "BHW art. 4 lid 1" },
+  "bezwaarRechter": { "weken": 8, "bron": "BW 7:262 lid 1" },
+  "procedures": [
+    {
+      "id": "aanvangshuur",
+      "titel": "Aanvangshuur laten toetsen",
+      "situatie": "U betaalt meer dan de maximale huur en uw contract is minder dan zes maanden geleden ingegaan.",
+      "anker": "Ingangsdatum van uw (eerste) huurcontract",
+      "uiterste": { "maanden": 6, "bron": "BW 7:249" },
+      "stappen": [
+        { "titel": "Puntentelling maken", "tekst": "Tel de punten in Huurmeter en bewaar het PDF-dossier. Dat is uw onderbouwing.", "bron": null },
+        { "titel": "Verzoek indienen bij de Huurcommissie", "tekst": "Dien het verzoek schriftelijk in, uiterlijk op de datum hieronder. Dat kan met het formulier op huurcommissie.nl. Een voorstel aan de verhuurder is hiervoor niet nodig.", "bron": "BW 7:249; UW art. 9 lid 1" },
+        { "titel": "Leges betalen", "tekst": "U betaalt € 25 voorschot. Krijgt u (grotendeels) gelijk, dan krijgt u dit terug en betaalt de verhuurder.", "bron": "BHW art. 4 lid 1; UW art. 7 lid 3" },
+        { "titel": "Uitspraak", "tekst": "Na de uitspraak hebben u en de verhuurder acht weken om naar de rechter te gaan. Doet niemand dat, dan geldt de uitspraak als afspraak. De nieuwe huur geldt vanaf de dag dat u het verzoek indiende.", "bron": "BW 7:262 lid 1; BW 7:263" }
+      ]
+    },
+    {
+      "id": "huurverlaging",
+      "titel": "Huurverlaging vragen (lopend contract)",
+      "situatie": "Uw contract loopt al langer dan zes maanden en de huur is hoger dan de maximale huur bij uw punten.",
+      "anker": "Voorgestelde ingangsdatum van de lagere huur",
+      "vroegste": { "maandenVanafVandaag": 2, "bron": "BW 7:252 lid 1" },
+      "uiterste": { "weken": 6, "bron": "BW 7:254" },
+      "stappen": [
+        { "titel": "Voorstel aan de verhuurder", "tekst": "Stuur de verhuurder schriftelijk een voorstel, ten minste twee maanden voor de ingangsdatum. Noem de huidige huur, de verlaging, de nieuwe huur en de ingangsdatum, en voeg de puntentelling toe. De conceptbrief in Huurmeter doet dit.", "bron": "BW 7:252 lid 1 tot en met 3" },
+        { "titel": "Reactie afwachten", "tekst": "Gaat de verhuurder akkoord, dan geldt de lagere huur vanaf de ingangsdatum.", "bron": null },
+        { "titel": "Geen akkoord: naar de Huurcommissie", "tekst": "Stemt de verhuurder niet in, dan kunt u de Huurcommissie vragen uitspraak te doen, tot uiterlijk zes weken na de voorgestelde ingangsdatum.", "bron": "BW 7:254" },
+        { "titel": "Leges en uitspraak", "tekst": "U betaalt € 25 voorschot. Na de uitspraak is er acht weken om naar de rechter te gaan.", "bron": "BHW art. 4 lid 1; BW 7:262 lid 1" }
+      ]
+    },
+    {
+      "id": "bezwaarHuurverhoging",
+      "titel": "Bezwaar tegen huurverhoging",
+      "situatie": "U hebt een voorstel voor huurverhoging gekregen en bent het er niet mee eens.",
+      "anker": "Ingangsdatum van de voorgestelde verhoging",
+      "uiterste": { "dagen": -1, "bron": "BW 7:253 lid 1" },
+      "stappen": [
+        { "titel": "Voorstel controleren", "tekst": "Controleer in Huurmeter of de verhoging binnen het maximum blijft en of het voorstel ten minste twee maanden vooraf kwam.", "bron": "BW 7:252 lid 1" },
+        { "titel": "Schriftelijk bezwaar maken", "tekst": "Laat de verhuurder vóór de ingangsdatum schriftelijk weten dat u niet instemt. Betaal de verhoging niet: wie de verhoging betaalt, stemt ermee in.", "bron": "BW 7:253 lid 1 en lid 2 onder a" },
+        { "titel": "De verhuurder is aan zet", "tekst": "De verhuurder kan tot zes weken na de ingangsdatum de Huurcommissie vragen uitspraak te doen. Doet hij dat niet, dan gaat de verhoging niet door.", "bron": "BW 7:253 lid 1" }
+      ]
+    },
+    {
+      "id": "gebreken",
+      "titel": "Huurverlaging wegens gebreken",
+      "situatie": "Er is onderhoud nodig (bijvoorbeeld lekkage of schimmel) en de verhuurder lost het niet op.",
+      "anker": "Datum waarop u het gebrek aan de verhuurder meldde",
+      "vroegste": { "weken": 6, "naDagVolgend": true, "bron": "BW 7:257 lid 2" },
+      "uiterste": { "maanden": 6, "naDagVolgend": true, "bron": "BW 7:257 lid 2" },
+      "stappen": [
+        { "titel": "Gebrek schriftelijk melden", "tekst": "Meld het gebrek schriftelijk bij de verhuurder en bewaar een kopie. Leg het vast met foto's in Huurmeter.", "bron": null },
+        { "titel": "Zes weken wachten", "tekst": "Heeft de verhuurder het gebrek zes weken na uw melding nog niet verholpen, dan kunt u naar de Huurcommissie.", "bron": "BW 7:257 lid 2" },
+        { "titel": "Verzoek indienen", "tekst": "Dien het verzoek in binnen zes maanden na uw melding. Daarna kunt u over het verleden niet meer dan zes maanden huurverlaging krijgen.", "bron": "BW 7:257 lid 2 en 3" },
+        { "titel": "Leges en uitspraak", "tekst": "U betaalt € 25 voorschot. Na de uitspraak is er acht weken om naar de rechter te gaan.", "bron": "BHW art. 4 lid 1; BW 7:262 lid 1" }
+      ]
+    },
+    {
+      "id": "servicekosten",
+      "titel": "Servicekosten laten toetsen",
+      "situatie": "U bent het niet eens met de servicekosten of hebt geen jaaroverzicht gekregen.",
+      "anker": "Laatste dag van het kalenderjaar waarover het gaat",
+      "overzichtUiterlijk": { "maanden": 6, "bron": "BW 7:259 lid 2" },
+      "uiterste": { "maanden": 30, "bron": "BW 7:259 lid 2; BW 7:260 lid 2" },
+      "stappen": [
+        { "titel": "Jaaroverzicht vragen", "tekst": "De verhuurder moet u elk jaar, uiterlijk zes maanden na afloop van het kalenderjaar, een overzicht per kostensoort geven. U mag de onderliggende bonnen inzien.", "bron": "BW 7:259 lid 2 en 4" },
+        { "titel": "Overleggen", "tekst": "Bespreek de posten waar u het niet mee eens bent met de verhuurder.", "bron": null },
+        { "titel": "Verzoek indienen", "tekst": "Komt u er niet uit, dan kunt u de Huurcommissie vragen uitspraak te doen, tot 24 maanden na de uiterste datum voor het overzicht. Het verschil moet ten minste € 36 zijn.", "bron": "BW 7:260 lid 1 en 2; UW art. 9 lid 3" },
+        { "titel": "Leges en uitspraak", "tekst": "U betaalt € 25 voorschot. Na de uitspraak is er acht weken om naar de rechter te gaan.", "bron": "BHW art. 4 lid 1; BW 7:262 lid 1" }
+      ]
+    }
+  ]
+}

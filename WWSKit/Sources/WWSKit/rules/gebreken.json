@@ -1,0 +1,70 @@
+{
+  "schemaVersie": 1,
+  "toelichting": "Gebrekencategorieën uit Bijlage II bij het Besluit huurprijzen woonruimte en de laagste huur die de Huurcommissie kan vaststellen (artikel 6 lid 1). De omschrijvingen zijn verkort; de officiële tekst staat in de bron. Hoeveel de huur precies omlaag gaat, staat in het gebrekenboek van de Huurcommissie; dat boek is hier niet opgenomen.",
+  "bronnen": {
+    "BHW": {
+      "titel": "Besluit huurprijzen woonruimte, artikel 6 en Bijlage II (categorieën A, B en C)",
+      "url": "https://wetten.overheid.nl/BWBR0003237",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BW7": {
+      "titel": "Burgerlijk Wetboek Boek 7, artikelen 250 lid 2 (geen huurverhoging zolang vastgestelde gebreken niet zijn opgeheven) en 257 (termijnen)",
+      "url": "https://wetten.overheid.nl/BWBR0005290",
+      "versie": "Geldend van 08-10-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    }
+  },
+  "geenHuurverhoging": { "tekst": "Zolang de Huurcommissie vastgestelde gebreken niet zijn opgeheven, mag de huur niet worden verhoogd.", "bron": "BW 7:250 lid 2" },
+  "categorieen": [
+    {
+      "code": "A",
+      "titel": "Zeer ernstig",
+      "laagsteHuurPercentage": 0.20,
+      "bron": "BHW art. 6 lid 1 onder a; Bijlage II, categorie A",
+      "voorbeelden": [
+        "Geen aansluiting op het riool of een ander afvalwatersysteem",
+        "Geen toevoer van verse lucht of afvoer van binnenlucht in toilet, keuken, woonkamer, slaapkamer of badkamer",
+        "Geen daglicht in de woonkamer of slaapkamer",
+        "Geen werkend toilet met waterspoeling",
+        "Geen aparte badruimte met bad, douche of wastafel met kraan",
+        "Geen aanrecht met spoelbak en kraan, of geen plek voor een kooktoestel",
+        "De voordeur (of de deur van uw kamer) kan niet op slot",
+        "Onbewoonbaar door gevaar: fundering, muren, dak, trappen, vloeren, schoorsteen, balkon of balustrade"
+      ]
+    },
+    {
+      "code": "B",
+      "titel": "Ernstig",
+      "laagsteHuurPercentage": 0.30,
+      "bron": "BHW art. 6 lid 1 onder b; Bijlage II, categorie B",
+      "voorbeelden": [
+        "De gemeente heeft de verhuurder verplicht voorzieningen te treffen en dat is nog niet gebeurd",
+        "Schimmel of houtrot door vocht in keuken, woonkamer of slaapkamer, zodat de ruimte ernstig minder bruikbaar is",
+        "Lekkage van regenwater door dak of gevel",
+        "Slechte afvoer van rook of verbrandingsgassen van de verwarming",
+        "Scheve muren, hellende vloeren of slechte plafonds door verzakking",
+        "Het riool werkt niet goed",
+        "Voortdurende stank omdat de vloer boven de grond niet afsluit",
+        "Veel achterstallig onderhoud tegelijk (schilderwerk, kozijnen, voegwerk, dak, goten)"
+      ]
+    },
+    {
+      "code": "C",
+      "titel": "Overig ernstig",
+      "laagsteHuurPercentage": 0.40,
+      "bron": "BHW art. 6 lid 1 onder c; Bijlage II, categorie C",
+      "voorbeelden": [
+        "Te weinig ventilatie, met ernstige stank of vocht",
+        "De verwarming geeft te weinig warmte",
+        "Voortdurende ernstige geluidsoverlast van installaties in het gebouw",
+        "Ernstige lekkage van water- of afvoerleidingen",
+        "Te weinig daglicht in de woonkamer",
+        "Ernstige scheuren of loslatend pleisterwerk",
+        "Slechte geluidsisolatie tussen woningen",
+        "Schade die is overgebleven na een eerder gebrek",
+        "Ernstige vocht- of schimmelplekken door optrekkend of doorslaand vocht"
+      ]
+    }
+  ]
+}

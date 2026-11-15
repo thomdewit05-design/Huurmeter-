@@ -1,4 +1,5 @@
 import Foundation
+import WWSKit
 
 /// Punt in de ruimte (meters), los van simd zodat de berekening ook buiten iOS te testen is.
 /// RoomPlan gebruikt een rechtshandig assenstelsel met y omhoog; de vloer ligt dus in het x-z-vlak.
@@ -46,6 +47,17 @@ public enum Geometrie {
         return abs(s) / 2
     }
 
+    /// Afstand tussen twee punten in de ruimte (meters).
+    public static func afstand(_ a: Punt3, _ b: Punt3) -> Double {
+        ((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y) + (a.z - b.z) * (a.z - b.z)).squareRoot()
+    }
+
+    /// Totale aanrechtlengte uit gemeten delen (hoekaanrecht: de lange zijden opgeteld, toelichting 5.1),
+    /// afgerond op hele centimeters.
+    public static func aanrechtLengte(_ delen: [Double]) -> Double {
+        (delen.filter { $0 > 0 }.reduce(0, +) * 100).rounded() / 100
+    }
+
     /// Bovenaanzicht: x blijft x, z wordt y (RoomPlan: y is omhoog).
     public static func bovenaanzicht(_ p: Punt3) -> Punt2 { Punt2(p.x, p.z) }
 
@@ -89,4 +101,29 @@ public enum Inmeting {
 
     /// Spec §6: altijd met één decimaal tonen.
     public static func weergave(_ m2: Double) -> String { Opmaak.oppervlakte(m2) }
+}
+
+/// Vertaalt het kamertype dat RoomPlan herkent (CapturedRoom.Section.Label) naar een functie in de app.
+/// Het blijft een voorstel; de gebruiker kan het aanpassen.
+public enum Kamerherkenning {
+    public static func functie(voorLabel label: String) -> RuimteFunctie {
+        switch label.lowercased() {
+        case "bathroom": return .badkamer
+        case "bedroom": return .slaapkamer
+        case "kitchen": return .keuken
+        case "livingroom", "diningroom": return .woonkamer
+        default: return .overig
+        }
+    }
+
+    /// Voorgestelde naam, genummerd als het type vaker voorkomt ("Slaapkamer 2").
+    public static func namen(voor functies: [RuimteFunctie]) -> [String] {
+        var tellers: [RuimteFunctie: Int] = [:]
+        let totaal = Dictionary(grouping: functies, by: { $0 }).mapValues(\.count)
+        return functies.map { f in
+            tellers[f, default: 0] += 1
+            let basis = f == .overig ? "Kamer" : f.rawValue.prefix(1).uppercased() + f.rawValue.dropFirst()
+            return (totaal[f] ?? 0) > 1 ? "\(basis) \(tellers[f]!)" : basis
+        }
+    }
 }

@@ -15,7 +15,7 @@ struct HuurmeterApp: App {
             } else {
                 StartView()
                     .environment(winkel)
-                    .modelContainer(for: [Woning.self, Ruimte.self, Voorziening.self, Berekening.self])
+                    .modelContainer(for: [Woning.self, Ruimte.self, Voorziening.self, Berekening.self, Gebrek.self])
                     .huisstijl()
             }
         }

@@ -6,6 +6,10 @@ import HuurmeterCore
 /// Scherm 6: energielabel en WOZ-waarde, met links om ze op te zoeken.
 struct EnergieWozView: View {
     @Bindable var woning: Woning
+    @State private var bezig = false
+    @State private var epMelding: String?
+
+    private let epOnline = EPOnlineClient(sleutel: Bundle.main.object(forInfoDictionaryKey: "EPOnlineAPIKey") as? String)
 
     private var label: Binding<Energielabel?> {
         Binding(get: { woning.energielabel },
@@ -39,13 +43,24 @@ struct EnergieWozView: View {
                               format: .number.precision(.fractionLength(0...2)))
                         .keyboardType(.decimalPad)
                 }
+                if epOnline.beschikbaar {
+                    Button {
+                        Task { await haalLabel() }
+                    } label: {
+                        HStack {
+                            Label("Ophalen bij EP-Online", systemImage: "arrow.down.circle")
+                            if bezig { Spacer(); ProgressView() }
+                        }
+                    }
+                    .disabled(bezig)
+                }
                 Link(destination: URL(string: "https://www.ep-online.nl")!) {
                     Label("Label opzoeken op ep-online.nl", systemImage: "arrow.up.right.square")
                 }
             } header: {
                 Text("Energielabel")
             } footer: {
-                Text("Een label is tien jaar geldig vanaf de datum van opname. Is het verlopen of is er geen label, dan telt het bouwjaar.")
+                Text(epMelding ?? "Een label is tien jaar geldig vanaf de datum van opname. Is het verlopen of is er geen label, dan telt het bouwjaar.")
             }
 
             Section {
@@ -87,5 +102,28 @@ struct EnergieWozView: View {
         .onChange(of: woning.energieIndex) { woning.geraakt() }
         .onChange(of: woning.energieprestatievergoeding) { woning.geraakt() }
         .onChange(of: woning.koelingInLabel) { woning.geraakt() }
+    }
+
+    private func haalLabel() async {
+        bezig = true
+        defer { bezig = false }
+        do {
+            let l = try await epOnline.haalLabel(postcode: woning.postcode, huisnummer: woning.huisnummer)
+            if let label = l.label {
+                woning.energielabel = label
+                woning.energieIndex = nil
+            } else if let ei = l.energieIndex {
+                woning.energielabel = nil
+                woning.energieIndex = ei
+            }
+            woning.labelDatum = l.opnamedatum?.datum()
+            woning.geraakt()
+            let wat = l.label.map { "Label \($0.rawValue)" } ?? l.energieIndex.map { "Energie-Index \(Opmaak.getal($0, decimalen: 2))" } ?? "Label"
+            epMelding = "\(wat) opgehaald bij EP-Online" + (l.geldigTot.map { ", geldig tot \($0)." } ?? ".")
+        } catch let fout as EPOnlineClient.Fout {
+            epMelding = fout.description
+        } catch {
+            epMelding = EPOnlineClient.Fout.serverfout(0).description
+        }
     }
 }

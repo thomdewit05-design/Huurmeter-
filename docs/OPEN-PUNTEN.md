@@ -115,3 +115,43 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
    inhoud in de winkelversie niet zonder aankoop te openen is.
 4. **Privacy-manifest** (`PrivacyInfo.xcprivacy`): geen tracking, geen verzamelde gegevens, geen API's met reden.
 5. **Icoon**: eigen ontwerp (huis met meter). Laat het eventueel nog door een ontwerper verfijnen.
+
+## H. Extra functies (november 2026)
+
+1. **Huurverhoging middenhuur**: het maximale percentage voor 2026 is niet in een geraadpleegde bron gevonden
+   (formule: Uitvoeringswet art. 10 lid 4). De app zegt dan dat het maximum niet te bepalen is. Graag aanvullen.
+2. **EP-Online**: vraag een gratis API-sleutel aan op apikey.ep-online.nl en zet hem als GitHub-geheim
+   `EP_ONLINE_API_KEY`. Zonder sleutel verbergt de app de knop. Let op: de sleutel zit dan in de app en is
+   daaruit te halen; controleer of de voorwaarden van de RVO dat toestaan, of zet later een eigen tussenserver op.
+3. **Widget** gebruikt de App Group `group.nl.huurmeter.app`; automatische ondertekening maakt die aan. Faalt de
+   TestFlight-build daarop, maak de App Group dan handmatig aan in het developer-account.
+4. **Contract scannen, hele woning scannen, aanrecht meten**: niet op een toestel getest.
+5. **Stappenplan Huurcommissie**: termijnen uit BW 7:249, 7:252-254, 7:257, 7:259-260 en 7:262; leges uit het
+   Besluit huurprijzen woonruimte art. 4. Er is geen juridische toets op de teksten gedaan; laat ze bij twijfel
+   nalezen door bijvoorbeeld een huurteam.
+6. **Gebreken**: de app toont alleen de ondergrens uit art. 6 lid 1 (20/30/40% van de huur). Het gebrekenboek van
+   de Huurcommissie (de werkelijke percentages per gebrek) is niet opgenomen.
+7. **Servicekosten**: de normbedragen voor gas, water en elektriciteit (Bijlage VIII) hangen af van CBS-prijzen per
+   jaar; de app noemt alleen de hoeveelheden. De lijst van wat als servicekosten mag worden gerekend (Besluit
+   servicekosten) is niet opgenomen: die bron was hier niet bereikbaar.
+8. **Kamers (WWS onzelfstandig)** – gekozen interpretaties, graag bevestigen:
+   - De m² van rubriek 1 en 2 (privé plus uw deel van gedeelde ruimten) worden na optellen op hele m² afgerond,
+     zoals bij zelfstandige woningen (de toelichting onder A geldt "van overeenkomstige toepassing").
+   - Verwarming, keuken en sanitair in een binnenruimte die met meerdere adressen wordt gedeeld, tellen in
+     rubriek 9 (volgt het rekenvoorbeeld in de toelichting bij rubriek 9).
+   - Rubriek 7 (gehandicaptenvoorzieningen): kosten / € 332 zonder afronding vooraf, gelijk aan de berekening voor
+     zelfstandige woningen.
+   - Rubriek 13 "minder dan 8 m²" gebruikt de toegerekende m² uit rubriek 1.
+   - Bij 0 punten of minder geeft de huurprijstabel (die begint bij 1 punt) geen bedrag; de app toont dan geen maximum.
+   - Het COROP-gebied kiest de gebruiker zelf; er is geen koppeling van gemeente naar COROP-gebied opgenomen.
+   - Zorgwoning, parkeren en laadpaal zitten in de rekenkern maar nog niet in het kamerscherm.
+   - De kamerinvoer wordt bewaard voor één kamer (op het toestel), niet per woning.
+9. **Engelse versie**: vertaald zijn de schermen, vragen, rubrieknamen, stappenplannen en gebrekencategorieën.
+   Bewust Nederlands gebleven: de conceptbrief en het PDF-dossier (voor verhuurder en Huurcommissie), de
+   bronvermeldingen en de rekenstappen per rubriek. De vertalingen zijn niet door een moedertaalspreker nagelezen.
+   De CI-stap "Engelse vertalingen controleren" meldt teksten die Xcode vindt maar die nog geen vertaling hebben.
+   Ook de App Store-teksten (docs/APP-STORE.md) zijn nog alleen Nederlands.
+10. **Betaalmuur voor de maximale huur**: de maximale huur en het verschil staan nu achter de eenmalige aankoop
+    (advies € 9,99, zie docs/PRIJS.md). Pas in App Store Connect naam en beschrijving van het product
+    `nl.huurmeter.app.dossier` aan naar "Volledige uitkomst" (het ID blijft hetzelfde). Wie de app al kocht voor
+    dossier en brief, krijgt de maximale huur er automatisch bij.
