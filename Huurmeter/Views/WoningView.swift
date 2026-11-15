@@ -105,7 +105,7 @@ private struct StapRij: View {
 
     var body: some View {
         HStack {
-            Label(stap.titel, systemImage: stap.systeemIcoon)
+            Label(stap.titel.vertaald, systemImage: stap.systeemIcoon)
             Spacer()
             switch status {
             case .klaar:
@@ -113,7 +113,7 @@ private struct StapRij: View {
                     .accessibilityLabel("Ingevuld")
             case .deels(let reden):
                 Image(systemName: "exclamationmark.circle").foregroundStyle(.orange)
-                    .accessibilityLabel(reden)
+                    .accessibilityLabel(reden.vertaald)
             case .leeg:
                 Text("Nog invullen").font(.caption).foregroundStyle(.secondary)
             }

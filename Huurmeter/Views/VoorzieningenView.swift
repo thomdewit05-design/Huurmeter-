@@ -14,7 +14,7 @@ struct VoorzieningenView: View {
                 let concept = woning.concept
                 Form {
                     ForEach(Vragenlijst.zichtbareGroepen(regels: regels, concept: concept)) { groep in
-                        Section(groep.titel) {
+                        Section(groep.titel.vertaald) {
                             ForEach(groep.vragen) { vraag in
                                 VraagRij(woning: woning, vraag: vraag)
                             }
@@ -50,7 +50,7 @@ private struct VraagRij: View {
         VStack(alignment: .leading, spacing: 6) {
             invoer
             if let uitleg = vraag.uitleg {
-                Text(uitleg).font(.footnote).foregroundStyle(.secondary)
+                Text(uitleg.vertaald).font(.footnote).foregroundStyle(.secondary)
             }
             if vraag.sleutel == "keuken.aanrecht" && AanrechtMeterView.beschikbaar {
                 Button {
@@ -77,14 +77,14 @@ private struct VraagRij: View {
     private var invoer: some View {
         switch vraag.type {
         case .janee:
-            Toggle(vraag.tekst, isOn: Binding(get: { waarde.wrappedValue >= 0.5 }, set: { waarde.wrappedValue = $0 ? 1 : 0 }))
+            Toggle(vraag.tekst.vertaald, isOn: Binding(get: { waarde.wrappedValue >= 0.5 }, set: { waarde.wrappedValue = $0 ? 1 : 0 }))
         case .aantal(let maximum):
             Stepper(value: Binding(get: { Int(waarde.wrappedValue.rounded()) }, set: { waarde.wrappedValue = Double($0) }),
                     in: 0...maximum) {
                 HStack {
-                    Text(vraag.tekst)
+                    Text(vraag.tekst.vertaald)
                     Spacer()
-                    Text("\(Int(waarde.wrappedValue.rounded()))").monospacedDigit().foregroundStyle(.secondary)
+                    Text(verbatim: "\(Int(waarde.wrappedValue.rounded()))").monospacedDigit().foregroundStyle(.secondary)
                 }
             }
         case .lengte:
@@ -93,22 +93,22 @@ private struct VraagRij: View {
             eenheidVeld(eenheid: "m²")
         case .bedrag:
             VStack(alignment: .leading) {
-                Text(vraag.tekst)
+                Text(vraag.tekst.vertaald)
                 TextField("€ 0", value: optioneel, format: .currency(code: "EUR"))
                     .keyboardType(.decimalPad)
             }
         case .keuze(let opties):
-            Picker(vraag.tekst, selection: waarde) {
-                ForEach(opties, id: \.self) { Text($0.tekst).tag($0.waarde) }
+            Picker(vraag.tekst.vertaald, selection: waarde) {
+                ForEach(opties, id: \.self) { Text($0.tekst.vertaald).tag($0.waarde) }
             }
         case .datum:
-            DatumVraag(tekst: vraag.tekst, waarde: waarde)
+            DatumVraag(tekst: vraag.tekst.vertaald, waarde: waarde)
         }
     }
 
     private func eenheidVeld(eenheid: String) -> some View {
         VStack(alignment: .leading) {
-            Text(vraag.tekst)
+            Text(vraag.tekst.vertaald)
             HStack {
                 TextField("0", value: optioneel, format: .number.precision(.fractionLength(0...2)))
                     .keyboardType(.decimalPad)
@@ -153,7 +153,7 @@ private struct FotoKnop: View {
                 .font(.footnote)
             }
             PhotosPicker(selection: $keuze, matching: .images) {
-                Label(foto == nil ? "Foto als bewijs" : "Andere foto", systemImage: "camera")
+                Label(foto == nil ? "Foto als bewijs" : "Andere foto" as LocalizedStringKey, systemImage: "camera")
                     .font(.footnote)
             }
         }

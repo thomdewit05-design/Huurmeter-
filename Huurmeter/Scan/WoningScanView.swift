@@ -31,7 +31,7 @@ struct WoningScanView: View {
                     scanner
                 }
             }
-            .navigationTitle(controleren ? "Kamers controleren" : "Woning scannen")
+            .navigationTitle(controleren ? "Kamers controleren" : "Woning scannen" as LocalizedStringKey)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Annuleer") { dismiss() } }
@@ -58,8 +58,8 @@ struct WoningScanView: View {
 
             VStack(spacing: 12) {
                 Text(kamers.isEmpty
-                     ? "Begin in de eerste kamer. Richt de camera op de muren en loop langzaam rond."
-                     : "\(kamers.count) \(kamers.count == 1 ? "kamer" : "kamers") gescand. Loop naar de volgende kamer.")
+                     ? String(localized: "Begin in de eerste kamer. Richt de camera op de muren en loop langzaam rond.")
+                     : String(localized: "Kamers gescand: \(kamers.count). Loop naar de volgende kamer."))
                     .font(.subheadline).multilineTextAlignment(.center)
                 HStack {
                     Button("Volgende kamer") { laatsteStopIsKlaar = false; stopTeller += 1 }
@@ -85,7 +85,7 @@ struct WoningScanView: View {
                             Text(Inmeting.weergave(k.scan.vloeroppervlakte)).monospacedDigit().foregroundStyle(Huisstijl.gedempt)
                         }
                         Picker("Functie", selection: $k.functie) {
-                            ForEach(RuimteFunctie.allCases, id: \.self) { Text($0.naam).tag($0) }
+                            ForEach(RuimteFunctie.allCases, id: \.self) { Text($0.naam.vertaald).tag($0) }
                         }
                     }
                 }

@@ -33,7 +33,7 @@ struct ServicekostenView: View {
                 Text("Jaaroverzicht")
             } footer: {
                 if let u = uitkomst {
-                    Text("De verhuurder moet het overzicht per kostensoort uiterlijk \(u.overzichtUiterlijk) geven (BW 7:259 lid 2).")
+                    Text("De verhuurder moet het overzicht per kostensoort uiterlijk \(u.overzichtUiterlijk.description) geven (BW 7:259 lid 2).")
                 }
             }
 
@@ -54,7 +54,7 @@ struct ServicekostenView: View {
                                 .keyboardType(.decimalPad).multilineTextAlignment(.trailing)
                         }
                         if let s = post.saldo, s != 0 {
-                            Text(s > 0 ? "U krijgt \(Opmaak.euro(s)) terug" : "U betaalt \(Opmaak.euro(-s)) bij")
+                            Text(s > 0 ? String(localized: "U krijgt \(Opmaak.euro(s)) terug") : String(localized: "U betaalt \(Opmaak.euro(-s)) bij"))
                                 .font(.footnote.weight(.semibold))
                                 .foregroundStyle(s > 0 ? Huisstijl.bosgroen : Huisstijl.signaal)
                         }
@@ -77,27 +77,27 @@ struct ServicekostenView: View {
                 Section("Uitkomst") {
                     LabeledContent("Totaal voorschot", value: Opmaak.euro(u.totaalVoorschot))
                     LabeledContent("Totaal kosten", value: Opmaak.euro(u.totaalKosten))
-                    LabeledContent(u.saldo >= 0 ? "Terug te krijgen" : "Bij te betalen", value: Opmaak.euro(abs(u.saldo)))
+                    LabeledContent(u.saldo >= 0 ? "Terug te krijgen" : "Bij te betalen" as LocalizedStringKey, value: Opmaak.euro(abs(u.saldo)))
                         .font(.headline)
                     if u.overzichtTeLaat {
-                        Label(ontvangen ? "Het overzicht kwam te laat." : "U had het overzicht al moeten krijgen.",
+                        Label(ontvangen ? "Het overzicht kwam te laat." : "U had het overzicht al moeten krijgen." as LocalizedStringKey,
                               systemImage: "exclamationmark.triangle.fill")
                             .foregroundStyle(Huisstijl.signaal)
                     }
                 }
 
                 Section {
-                    Text(regels.inzage.tekst + " (\(regels.inzage.bron))")
-                    Text(regels.zonderFormulier.tekst + " (\(regels.zonderFormulier.bron))")
+                    Text(verbatim: regels.inzage.tekst.vertaald + " (\(regels.inzage.bron))")
+                    Text(verbatim: regels.zonderFormulier.tekst.vertaald + " (\(regels.zonderFormulier.bron))")
                     Text("Normbedrag overige servicekosten: \(Opmaak.euro(regels.normbedragen.zelfstandig.overigPerJaar)) per jaar. Gas, water en elektriciteit: \(regels.normbedragen.zelfstandig.gas), \(regels.normbedragen.zelfstandig.water) en \(regels.normbedragen.zelfstandig.elektriciteit) (\(regels.normbedragen.bron)).")
-                    Text(regels.voorschotTeHoog.tekst + " (\(regels.voorschotTeHoog.bron))")
+                    Text(verbatim: regels.voorschotTeHoog.tekst.vertaald + " (\(regels.voorschotTeHoog.bron))")
                 } header: {
                     Text("Goed om te weten")
                 }
 
                 Section {
                     if u.verzoekVerlopen {
-                        Label("De termijn voor de Huurcommissie over \(String(jaar)) is verstreken (\(u.verzoekUiterlijk)).",
+                        Label("De termijn voor de Huurcommissie over \(String(jaar)) is verstreken (\(u.verzoekUiterlijk.description)).",
                               systemImage: "clock.badge.exclamationmark")
                     } else {
                         LabeledContent("Huurcommissie uiterlijk", value: u.verzoekUiterlijk.description)

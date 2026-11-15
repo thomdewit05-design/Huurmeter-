@@ -37,7 +37,7 @@ struct GebrekenView: View {
                     } header: {
                         Text("Huurverlaging")
                     } footer: {
-                        Text("Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot \(Int((l.percentage * 100).rounded()))% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. \(regels.geenHuurverhoging.tekst) Bron: \(l.bron); \(regels.geenHuurverhoging.bron).")
+                        Text("Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot \(Int((l.percentage * 100).rounded()))% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. \(regels.geenHuurverhoging.tekst.vertaald) Bron: \(l.bron); \(regels.geenHuurverhoging.bron).")
                     }
                 }
             }
@@ -84,7 +84,7 @@ struct GebrekenView: View {
                         .accessibilityHidden(true)
                 }
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(g.titel.isEmpty ? "Naamloos gebrek" : g.titel).font(.headline)
+                    Text(g.titel.isEmpty ? String(localized: "Naamloos gebrek") : g.titel).font(.headline)
                     Text(status(g)).font(.subheadline).foregroundStyle(.secondary)
                 }
             }
@@ -92,13 +92,14 @@ struct GebrekenView: View {
     }
 
     private func status(_ g: Gebrek) -> String {
-        if let v = g.verholpen { return "Verholpen op \(Dag(v))" }
-        guard let m = g.gemeld else { return "Nog niet gemeld bij de verhuurder" }
-        guard let procedure else { return "Gemeld op \(Dag(m))" }
+        if let v = g.verholpen { return String(localized: "Verholpen op \(Dag(v).description)") }
+        guard let m = g.gemeld else { return String(localized: "Nog niet gemeld bij de verhuurder") }
+        let gemeld = Dag(m).description
+        guard let procedure else { return String(localized: "Gemeld op \(gemeld)") }
         let t = procedure.termijnen(anker: Dag(m), vandaag: Dag(Date()))
-        if t.verlopen { return "Gemeld op \(Dag(m)) · termijn Huurcommissie verstreken" }
-        if let v = t.vroegst, v > Dag(Date()) { return "Gemeld op \(Dag(m)) · Huurcommissie vanaf \(v)" }
-        return "Gemeld op \(Dag(m)) · Huurcommissie tot \(t.uiterlijk)"
+        if t.verlopen { return String(localized: "Gemeld op \(gemeld) · termijn Huurcommissie verstreken") }
+        if let v = t.vroegst, v > Dag(Date()) { return String(localized: "Gemeld op \(gemeld) · Huurcommissie vanaf \(v.description)") }
+        return String(localized: "Gemeld op \(gemeld) · Huurcommissie tot \(t.uiterlijk.description)")
     }
 
     private func verwijder(_ offsets: IndexSet, uit lijst: [Gebrek]) {
@@ -193,11 +194,11 @@ private struct GebrekBewerken: View {
                     Picker("Categorie", selection: $gebrek.categorieRaw) {
                         Text("Weet ik niet").tag(String?.none)
                         ForEach(regels.categorieen) { c in
-                            Text("\(c.code.rawValue): \(c.titel)").tag(String?.some(c.code.rawValue))
+                            Text(verbatim: "\(c.code.rawValue): \(c.titel.vertaald)").tag(String?.some(c.code.rawValue))
                         }
                     }
                     if let c = gebrek.categorie.flatMap({ regels.categorie($0) }) {
-                        ForEach(c.voorbeelden, id: \.self) { Text("• \($0)").font(.footnote) }
+                        ForEach(c.voorbeelden, id: \.self) { Text(verbatim: "• \($0.vertaald)").font(.footnote) }
                     }
                 } header: {
                     Text("Ernst volgens de Huurcommissie")
@@ -207,7 +208,7 @@ private struct GebrekBewerken: View {
             }
         }
         .huisstijlAchtergrond()
-        .navigationTitle(gebrek.titel.isEmpty ? "Nieuw gebrek" : gebrek.titel)
+        .navigationTitle(gebrek.titel.isEmpty ? String(localized: "Nieuw gebrek") : gebrek.titel)
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
             // Leeg achtergelaten: opruimen.

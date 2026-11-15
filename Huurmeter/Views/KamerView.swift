@@ -101,7 +101,7 @@ struct KamerView: View {
                     DisclosureGroup("Inbouwapparatuur en extra's (\(k.voorzieningen.count))") {
                         ForEach(Self.keukenVoorzieningen, id: \.sleutel) { o in
                             let sleutel = o.sleutel, naam = o.naam
-                            Toggle(naam, isOn: Binding(get: { k.voorzieningen.contains(sleutel) },
+                            Toggle(naam.vertaald, isOn: Binding(get: { k.voorzieningen.contains(sleutel) },
                                                        set: { if $0 { k.voorzieningen.insert(sleutel) } else { k.voorzieningen.remove(sleutel) } }))
                         }
                     }
@@ -133,7 +133,7 @@ struct KamerView: View {
                         DisclosureGroup("Extra's in de badkamer (\(s.extra.count))") {
                             ForEach(Self.badkamerExtras, id: \.sleutel) { o in
                                 let sleutel = o.sleutel, naam = o.naam
-                                Toggle(naam, isOn: Binding(get: { s.extra.contains(sleutel) },
+                                Toggle(naam.vertaald, isOn: Binding(get: { s.extra.contains(sleutel) },
                                                            set: { if $0 { s.extra.insert(sleutel) } else { s.extra.remove(sleutel) } }))
                             }
                         }
@@ -230,7 +230,7 @@ struct KamerView: View {
         switch uitkomst {
         case .success(let u):
             Section {
-                LabeledContent("Punten", value: "\(u.totaal)").font(.headline)
+                LabeledContent("Punten", value: String(u.totaal)).font(.headline)
                 if let max = u.maximaleHuur {
                     LabeledContent("Maximale kale huur", value: Opmaak.euro(max)).font(.headline)
                     if let huur = f.kaleHuur, huur > 0 {
@@ -247,7 +247,7 @@ struct KamerView: View {
             } header: {
                 Text("Uitkomst")
             } footer: {
-                Text("Voor kamers geldt altijd huurbescherming, ook bij veel punten (BW 7:247). " + Uitkomst.disclaimer)
+                Text("Voor kamers geldt altijd huurbescherming, ook bij veel punten (BW 7:247). \(Uitkomst.disclaimer.vertaald)")
             }
             Section("Punten per rubriek") {
                 ForEach(u.rubrieken, id: \.nummer) { r in
@@ -255,13 +255,13 @@ struct KamerView: View {
                         ForEach(r.stappen, id: \.self) { Text($0).font(.footnote) }
                         Text(r.bron).font(.caption).foregroundStyle(.secondary)
                     } label: {
-                        LabeledContent("\(r.nummer). \(r.titel)", value: Opmaak.getal(r.punten, decimalen: 2))
+                        LabeledContent(String("\(r.nummer). \(r.titel.vertaald)"), value: Opmaak.getal(r.punten, decimalen: 2))
                     }
                 }
             }
         case .failure(let fout):
             Section("Uitkomst") {
-                Text((fout as? WWSFout)?.description ?? fout.localizedDescription).foregroundStyle(Huisstijl.signaal)
+                Text(verbatim: (fout as? WWSFout)?.description ?? fout.localizedDescription).foregroundStyle(Huisstijl.signaal)
             }
         case nil:
             Section { Text("De regels voor kamers konden niet worden geladen.") }
@@ -270,7 +270,7 @@ struct KamerView: View {
 
     // MARK: Hulp
 
-    private func m2Veld(_ titel: String, _ waarde: Binding<Double>) -> some View {
+    private func m2Veld(_ titel: LocalizedStringKey, _ waarde: Binding<Double>) -> some View {
         HStack {
             Text(titel)
             Spacer()
@@ -282,8 +282,12 @@ struct KamerView: View {
 
     private func deelVelden(kamers: Binding<Int>, adressen: Binding<Int>) -> some View {
         Group {
-            Stepper("Gedeeld door \(kamers.wrappedValue) kamer\(kamers.wrappedValue == 1 ? "" : "s")", value: kamers, in: 1...30)
-            Stepper(adressen.wrappedValue == 1 ? "Alleen dit adres" : "Gedeeld met \(adressen.wrappedValue) adressen", value: adressen, in: 1...50)
+            Stepper(value: kamers, in: 1...30) {
+                Text("Aantal kamers dat dit deelt: \(kamers.wrappedValue)")
+            }
+            Stepper(value: adressen, in: 1...50) {
+                if adressen.wrappedValue == 1 { Text("Alleen dit adres") } else { Text("Aantal adressen dat dit deelt: \(adressen.wrappedValue)") }
+            }
         }
     }
 

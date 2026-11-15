@@ -112,7 +112,7 @@ struct HuurverhogingView: View {
         }
     }
 
-    private func bedragVeld(_ titel: String, waarde: Binding<Double?>) -> some View {
+    private func bedragVeld(_ titel: LocalizedStringKey, waarde: Binding<Double?>) -> some View {
         HStack {
             Text(titel)
             TextField("€ 0", value: waarde, format: .currency(code: "EUR"))

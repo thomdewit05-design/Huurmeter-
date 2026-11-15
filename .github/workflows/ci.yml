@@ -46,6 +46,15 @@ jobs:
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO | tee build.log | grep -E "error:|warning:|BUILD" || true
           grep -q "BUILD SUCCEEDED" build.log
+      - name: Engelse vertalingen controleren
+        run: |
+          xcodebuild -exportLocalizations \
+            -project Huurmeter.xcodeproj \
+            -localizationPath "$RUNNER_TEMP/loc" \
+            -exportLanguage en \
+            CODE_SIGNING_ALLOWED=NO > export.log 2>&1 || { tail -40 export.log; exit 0; }
+          XLIFF=$(find "$RUNNER_TEMP/loc" -name "en.xliff" | head -1)
+          python3 scripts/controleer_vertalingen.py "$XLIFF"
 
   huurprijscheck:
     # Vergelijkt de voorbeeldwoningen met de officiële Huurprijscheck. Woningen zonder ingevulde uitkomst

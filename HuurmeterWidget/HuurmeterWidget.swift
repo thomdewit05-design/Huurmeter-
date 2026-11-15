@@ -100,7 +100,7 @@ struct WidgetWeergave: View {
         VStack(alignment: .leading, spacing: 2) {
             Text("\(g.punten)").font(.system(.largeTitle, design: .rounded, weight: .heavy)).foregroundStyle(Huisstijl.bosgroen)
             Text("punten").font(.caption).foregroundStyle(Huisstijl.gedempt)
-            Text(g.segment).font(.caption2.weight(.bold)).foregroundStyle(Huisstijl.opLimoen)
+            Text(LocalizedStringKey(g.segment)).font(.caption2.weight(.bold)).foregroundStyle(Huisstijl.opLimoen)
                 .padding(.horizontal, 6).padding(.vertical, 2).background(Huisstijl.limoen, in: Capsule())
         }
         .fontDesign(.rounded)

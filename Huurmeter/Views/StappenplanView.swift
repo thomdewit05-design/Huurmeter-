@@ -16,8 +16,8 @@ struct StappenplanView: View {
                             ProcedureView(woning: woning, procedure: p, plannen: plannen)
                         } label: {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text(p.titel).font(.headline)
-                                Text(p.situatie).font(.subheadline).foregroundStyle(.secondary)
+                                Text(p.titel.vertaald).font(.headline)
+                                Text(p.situatie.vertaald).font(.subheadline).foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -44,9 +44,9 @@ private struct ProcedureView: View {
     var body: some View {
         List {
             Section {
-                DatePicker(procedure.anker, selection: $anker, displayedComponents: .date)
+                DatePicker(procedure.anker.vertaald, selection: $anker, displayedComponents: .date)
             } footer: {
-                Text(procedure.situatie)
+                Text(procedure.situatie.vertaald)
             }
 
             Section("Uw termijnen") {
@@ -54,10 +54,10 @@ private struct ProcedureView: View {
                     rij("Overzicht verhuurder uiterlijk", o.description, bron: procedure.overzichtUiterlijk?.bron)
                 }
                 if let v = termijnen.vroegst {
-                    rij(procedure.id == "huurverlaging" ? "Vroegste ingangsdatum voorstel" : "Verzoek mogelijk vanaf",
+                    rij(procedure.id == "huurverlaging" ? "Vroegste ingangsdatum voorstel" : "Verzoek mogelijk vanaf" as LocalizedStringKey,
                         v.description, bron: procedure.vroegste?.bron)
                 }
-                rij(procedure.id == "bezwaarHuurverhoging" ? "Bezwaar uiterlijk" : "Verzoek uiterlijk",
+                rij(procedure.id == "bezwaarHuurverhoging" ? "Bezwaar uiterlijk" : "Verzoek uiterlijk" as LocalizedStringKey,
                     termijnen.uiterlijk.description, bron: procedure.uiterste.bron)
                 Group {
                     if termijnen.verlopen {
@@ -73,22 +73,22 @@ private struct ProcedureView: View {
             Section("Stappen") {
                 ForEach(Array(procedure.stappen.enumerated()), id: \.offset) { i, stap in
                     HStack(alignment: .top, spacing: 12) {
-                        Text("\(i + 1)")
+                        Text(verbatim: "\(i + 1)")
                             .font(.headline)
                             .frame(width: 28, height: 28)
                             .background(Circle().fill(Huisstijl.limoen))
                             .foregroundStyle(Huisstijl.opLimoen)
                             .accessibilityHidden(true)
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(stap.titel).font(.headline)
-                            Text(stap.tekst)
+                            Text(stap.titel.vertaald).font(.headline)
+                            Text(stap.tekst.vertaald)
                             if let b = stap.bron {
                                 Text("Bron: \(b)").font(.caption).foregroundStyle(.secondary)
                             }
                         }
                     }
                     .accessibilityElement(children: .combine)
-                    .accessibilityLabel("Stap \(i + 1): \(stap.titel). \(stap.tekst)")
+                    .accessibilityLabel("Stap \(i + 1): \(stap.titel.vertaald). \(stap.tekst.vertaald)")
                 }
             }
 
@@ -101,12 +101,12 @@ private struct ProcedureView: View {
             }
         }
         .huisstijlAchtergrond()
-        .navigationTitle(procedure.titel)
+        .navigationTitle(procedure.titel.vertaald)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: beginwaarde)
     }
 
-    private func rij(_ titel: String, _ waarde: String, bron: String?) -> some View {
+    private func rij(_ titel: LocalizedStringKey, _ waarde: String, bron: String?) -> some View {
         VStack(alignment: .leading, spacing: 2) {
             LabeledContent(titel, value: waarde)
             if let bron { Text(bron).font(.caption).foregroundStyle(.secondary) }

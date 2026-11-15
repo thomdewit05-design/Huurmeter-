@@ -31,6 +31,7 @@ targets:
       properties:
         CFBundleDisplayName: Huurmeter
         CFBundleDevelopmentRegion: nl
+        CFBundleLocalizations: [nl, en]
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         UILaunchScreen: {}
@@ -45,7 +46,7 @@ targets:
         DEVELOPMENT_TEAM: 7BDZ6994AD
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.6.0"
+        MARKETING_VERSION: "0.7.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         ENABLE_PREVIEWS: YES
@@ -58,6 +59,7 @@ targets:
     sources:
       - path: HuurmeterWidget
       - path: Huurmeter/Huisstijl/Huisstijl.swift
+      - path: Huurmeter/Localizable.xcstrings
     dependencies:
       - package: WWSKit
       - package: HuurmeterCore
@@ -69,6 +71,8 @@ targets:
       path: HuurmeterWidget/Info.plist
       properties:
         CFBundleDisplayName: Huurmeter
+        CFBundleDevelopmentRegion: nl
+        CFBundleLocalizations: [nl, en]
         CFBundleShortVersionString: "$(MARKETING_VERSION)"
         CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
         NSExtension:
@@ -79,38 +83,7 @@ targets:
         DEVELOPMENT_TEAM: 7BDZ6994AD
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.6.0"
-        CURRENT_PROJECT_VERSION: "1"
-        CODE_SIGN_STYLE: Automatic
-        SKIP_INSTALL: YES
-  HuurmeterWidget:
-    type: app-extension
-    platform: iOS
-    sources:
-      - path: HuurmeterWidget
-      - path: Huurmeter/Huisstijl/Huisstijl.swift
-    dependencies:
-      - package: WWSKit
-      - package: HuurmeterCore
-    entitlements:
-      path: HuurmeterWidget/HuurmeterWidget.entitlements
-      properties:
-        com.apple.security.application-groups: [group.nl.huurmeter.app]
-    info:
-      path: HuurmeterWidget/Info.plist
-      properties:
-        CFBundleDisplayName: Huurmeter
-        CFBundleShortVersionString: "$(MARKETING_VERSION)"
-        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
-        NSExtension:
-          NSExtensionPointIdentifier: com.apple.widgetkit-extension
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app.widget
-        DEVELOPMENT_TEAM: 7BDZ6994AD
-        TARGETED_DEVICE_FAMILY: "1"
-        SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.6.0"
+        MARKETING_VERSION: "0.7.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         SKIP_INSTALL: YES

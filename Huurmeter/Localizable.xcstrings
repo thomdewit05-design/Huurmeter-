@@ -1,0 +1,5506 @@
+{
+  "sourceLanguage": "nl",
+  "strings": {
+    "%@ per maand te veel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ per month too much"
+          }
+        }
+      }
+    },
+    "%@ te veel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ too much"
+          }
+        }
+      }
+    },
+    "%@ – %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ – %@"
+          }
+        }
+      }
+    },
+    "%lld punten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld points"
+          }
+        }
+      }
+    },
+    "%lld punten · %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld points · %@"
+          }
+        }
+      }
+    },
+    "0": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "0"
+          }
+        }
+      }
+    },
+    "1 persoon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 person"
+          }
+        }
+      }
+    },
+    "2 of meer personen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 or more people"
+          }
+        }
+      }
+    },
+    "Aanrecht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worktop"
+          }
+        }
+      }
+    },
+    "Aanrecht meten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure worktop"
+          }
+        }
+      }
+    },
+    "Aantal adressen dat dit deelt: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses sharing this: %lld"
+          }
+        }
+      }
+    },
+    "Aantal aparte toiletruimtes met een hangend toilet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of separate toilet rooms with a wall-hung toilet"
+          }
+        }
+      }
+    },
+    "Aantal aparte toiletruimtes met een staand toilet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of separate toilet rooms with a floor-standing toilet"
+          }
+        }
+      }
+    },
+    "Aantal bad- of doucheruimtes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of bathrooms or shower rooms"
+          }
+        }
+      }
+    },
+    "Aantal kamers dat dit deelt: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms sharing this: %lld"
+          }
+        }
+      }
+    },
+    "Aantal van deze plekken met een laadpaal voor bewoners": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number of these spaces with a charging point for residents"
+          }
+        }
+      }
+    },
+    "Aanvangshuur laten toetsen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have the starting rent assessed"
+          }
+        }
+      }
+    },
+    "Adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address"
+          }
+        }
+      }
+    },
+    "Adres opzoeken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up address"
+          }
+        }
+      }
+    },
+    "Aftrekken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract"
+          }
+        }
+      }
+    },
+    "Aftrekpunten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deduction points"
+          }
+        }
+      }
+    },
+    "Afzuigkap (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extractor hood (built-in)"
+          }
+        }
+      }
+    },
+    "Alleen aanpassingen sinds 1 april 1994 die deels gesubsidieerd zijn.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only adaptations since 1 April 1994 that were partly subsidised."
+          }
+        }
+      }
+    },
+    "Alleen bereikbaar via een kamer van de verhuurder, die zelf in de woning woont": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only reachable through a room of the landlord, who lives in the home"
+          }
+        }
+      }
+    },
+    "Alleen dit adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This address only"
+          }
+        }
+      }
+    },
+    "Alleen plekken die bij het complex horen en niet openbaar zijn. Een eigen garage voegt u toe bij Ruimtes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only spaces that belong to the complex and are not public. Add your own garage under Rooms."
+          }
+        }
+      }
+    },
+    "Alleen ruimtes binnen het gebouw die u volgens het huurcontract mag gebruiken.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only spaces inside the building that you may use under your rental contract."
+          }
+        }
+      }
+    },
+    "Alles wat u invult blijft op uw telefoon. Er is geen account en de app verzamelt geen gegevens. Alleen bij 'Adres opzoeken' en 'Ophalen bij EP-Online' worden postcode en huisnummer naar een openbare overheidsdienst gestuurd (PDOK van het Kadaster, EP-Online van de RVO).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Everything you enter stays on your phone. There is no account and the app collects no data. Only for 'Look up address' and 'Fetch from EP-Online' are your postcode and house number sent to a public government service (PDOK of the Land Registry, EP-Online of RVO)."
+          }
+        }
+      }
+    },
+    "Andere foto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other photo"
+          }
+        }
+      }
+    },
+    "Andere ruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other space"
+          }
+        }
+      }
+    },
+    "Anders": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "Annuleer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        }
+      }
+    },
+    "Appartement of andere woning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apartment or other home"
+          }
+        }
+      }
+    },
+    "Bad met douche: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bath with shower: %lld"
+          }
+        }
+      }
+    },
+    "Baden: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baths: %lld"
+          }
+        }
+      }
+    },
+    "Badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom"
+          }
+        }
+      }
+    },
+    "Badkamer of doucheruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom or shower room"
+          }
+        }
+      }
+    },
+    "Badkamer of toilet toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add bathroom or toilet"
+          }
+        }
+      }
+    },
+    "Balkon": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balcony"
+          }
+        }
+      }
+    },
+    "Begin in de eerste kamer. Richt de camera op de muren en loop langzaam rond.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start in the first room. Point the camera at the walls and walk around slowly."
+          }
+        }
+      }
+    },
+    "Belangrijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Important"
+          }
+        }
+      }
+    },
+    "Bereken uw huur in de app": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculate your rent in the app"
+          }
+        }
+      }
+    },
+    "Berekend met de regels van %@, peildatum %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculated with the rules of %@, reference date %@."
+          }
+        }
+      }
+    },
+    "Berging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storage room"
+          }
+        }
+      }
+    },
+    "Berging of bijkeuken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storage room or utility room"
+          }
+        }
+      }
+    },
+    "Berging, zolder, gang": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Storage, attic, hallway"
+          }
+        }
+      }
+    },
+    "Bespreek de posten waar u het niet mee eens bent met de verhuurder.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discuss the items you disagree with with the landlord."
+          }
+        }
+      }
+    },
+    "Bewijsfoto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Evidence photo"
+          }
+        }
+      }
+    },
+    "Bezwaar tegen huurverhoging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Objecting to a rent increase"
+          }
+        }
+      }
+    },
+    "Bezwaar uiterlijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Object by"
+          }
+        }
+      }
+    },
+    "Bij sociale huur mag de verhuurder bij een hoger inkomen meer verhogen. Het gaat om het inkomen van twee jaar geleden; de verhuurder moet dat met een verklaring van de Belastingdienst aantonen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In social housing the landlord may raise the rent more if your income is higher. It concerns your income from two years ago; the landlord must prove it with a statement from the Tax Administration."
+          }
+        }
+      }
+    },
+    "Bij te betalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To pay extra"
+          }
+        }
+      }
+    },
+    "Bijvoorbeeld op een slaapkamer. Per kamer telt één wastafel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For example in a bedroom. One washbasin counts per room."
+          }
+        }
+      }
+    },
+    "Bijzondere voorzieningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Special facilities"
+          }
+        }
+      }
+    },
+    "Binnen zes maanden na de start van uw eerste huurcontract voor deze woning kunt u de Huurcommissie vragen de aanvangshuur te toetsen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Within six months of the start of your first rental contract for this home, you can ask the Rent Tribunal (Huurcommissie) to assess the starting rent."
+          }
+        }
+      }
+    },
+    "Bouwjaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Year built"
+          }
+        }
+      }
+    },
+    "Bouwjaar ontbreekt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Year built missing"
+          }
+        }
+      }
+    },
+    "Boven %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Above %@"
+          }
+        }
+      }
+    },
+    "Brief delen of kopiëren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share or copy letter"
+          }
+        }
+      }
+    },
+    "Bron: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source: %@"
+          }
+        }
+      }
+    },
+    "Bron: BW 7:260 lid 2 (tot 24 maanden na de uiterste datum voor het overzicht).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Source: Dutch Civil Code 7:260(2) (up to 24 months after the deadline for the statement)."
+          }
+        }
+      }
+    },
+    "Bronnen (regels %@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sources (rules %@)"
+          }
+        }
+      }
+    },
+    "Bubbelbad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Whirlpool bath"
+          }
+        }
+      }
+    },
+    "Buitenruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdoor space"
+          }
+        }
+      }
+    },
+    "Buitenruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdoor spaces"
+          }
+        }
+      }
+    },
+    "COROP-gebied": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "COROP region"
+          }
+        }
+      }
+    },
+    "Categorie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Category"
+          }
+        }
+      }
+    },
+    "Categorieën uit Bijlage II bij het Besluit huurprijzen woonruimte. Twijfelt u, kies dan 'Weet ik niet'; de Huurcommissie beoordeelt het zelf.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categories from Annex II of the Residential Rent Decree. If in doubt, choose 'Don't know'; the Rent Tribunal will assess it."
+          }
+        }
+      }
+    },
+    "Conceptbrief aan de verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft letter to the landlord"
+          }
+        }
+      }
+    },
+    "Conceptbrief aan uw verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Draft letter to your landlord"
+          }
+        }
+      }
+    },
+    "Controleer de namen en functies. Een schuin dak of verlaagd plafond geeft u daarna per kamer aan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check the names and functions. You can then mark a sloping roof or lowered ceiling per room."
+          }
+        }
+      }
+    },
+    "Controleer in Huurmeter of de verhoging binnen het maximum blijft en of het voorstel ten minste twee maanden vooraf kwam.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check in Huurmeter whether the increase stays within the maximum and whether the proposal came at least two months in advance."
+          }
+        }
+      }
+    },
+    "Datum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
+          }
+        }
+      }
+    },
+    "Datum waarop u het gebrek aan de verhuurder meldde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date on which you reported the defect to the landlord"
+          }
+        }
+      }
+    },
+    "De app leest de kale huur en de ingangsdatum uit uw contract. Dat gebeurt op uw telefoon; de foto's worden niet bewaard.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The app reads the basic rent and start date from your contract. This happens on your phone; the photos are not stored."
+          }
+        }
+      }
+    },
+    "De gemeente heeft de verhuurder verplicht voorzieningen te treffen en dat is nog niet gebeurd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The municipality has ordered the landlord to make provisions and this has not yet happened"
+          }
+        }
+      }
+    },
+    "De hele onbebouwde oppervlakte. Bij een balkon meet u vanaf de binnenkant van het hek.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The entire unbuilt area. For a balcony, measure from the inside of the railing."
+          }
+        }
+      }
+    },
+    "De huur zonder servicekosten, gas, water en licht. Staat in uw huurcontract of op de jaarlijkse huurverhogingsbrief.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The rent without service charges, gas, water and electricity. It is in your rental contract or in the yearly rent increase letter."
+          }
+        }
+      }
+    },
+    "De kale huur en de ingangsdatum zijn niet gevonden. Scan de pagina met de huurprijs, of vul ze zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The basic rent and start date were not found. Scan the page with the rent, or enter them yourself."
+          }
+        }
+      }
+    },
+    "De regels voor kamers konden niet worden geladen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The rules for rooms could not be loaded."
+          }
+        }
+      }
+    },
+    "De scan meet de vloer van muur tot muur. Controleer de uitkomst en pas hem zo nodig aan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The scan measures the floor from wall to wall. Check the result and adjust it if needed."
+          }
+        }
+      }
+    },
+    "De stappenplannen konden niet worden geladen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The step-by-step plans could not be loaded."
+          }
+        }
+      }
+    },
+    "De termijn voor de Huurcommissie over %@ is verstreken (%@).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The deadline for the Rent Tribunal for %@ has passed (%@)."
+          }
+        }
+      }
+    },
+    "De verhuurder is aan zet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "It is up to the landlord"
+          }
+        }
+      }
+    },
+    "De verhuurder kan tot zes weken na de ingangsdatum de Huurcommissie vragen uitspraak te doen. Doet hij dat niet, dan gaat de verhoging niet door.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The landlord can ask the Rent Tribunal for a ruling up to six weeks after the start date. If they do not, the increase does not go ahead."
+          }
+        }
+      }
+    },
+    "De verhuurder moet het overzicht per kostensoort uiterlijk %@ geven (BW 7:259 lid 2).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The landlord must provide the statement per cost type by %@ (Civil Code 7:259(2))."
+          }
+        }
+      }
+    },
+    "De verhuurder moet u elk jaar, uiterlijk zes maanden na afloop van het kalenderjaar, een overzicht per kostensoort geven. U mag de onderliggende bonnen inzien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every year, no later than six months after the end of the calendar year, the landlord must give you a statement per cost type. You may inspect the underlying receipts."
+          }
+        }
+      }
+    },
+    "De verwarming geeft te weinig warmte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The heating gives too little heat"
+          }
+        }
+      }
+    },
+    "De voordeur (of de deur van uw kamer) kan niet op slot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The front door (or the door of your room) cannot be locked"
+          }
+        }
+      }
+    },
+    "De waardepeildatum staat op de WOZ-beschikking van de gemeente, bijvoorbeeld 01-01-2025.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The valuation reference date is on the municipality's WOZ assessment, for example 01-01-2025."
+          }
+        }
+      }
+    },
+    "Delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share"
+          }
+        }
+      }
+    },
+    "Deze termijn is verstreken.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This deadline has passed."
+          }
+        }
+      }
+    },
+    "Deze verhoging mag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This increase is allowed"
+          }
+        }
+      }
+    },
+    "Dien het verzoek in binnen zes maanden na uw melding. Daarna kunt u over het verleden niet meer dan zes maanden huurverlaging krijgen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit the request within six months of your report. After that you cannot get more than six months of rent reduction for the past."
+          }
+        }
+      }
+    },
+    "Dien het verzoek schriftelijk in, uiterlijk op de datum hieronder. Dat kan met het formulier op huurcommissie.nl. Een voorstel aan de verhuurder is hiervoor niet nodig.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit the request in writing, no later than the date below. You can use the form on huurcommissie.nl. A proposal to the landlord is not needed for this."
+          }
+        }
+      }
+    },
+    "Dit deel: %@ m": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This section: %@ m"
+          }
+        }
+      }
+    },
+    "Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot %lld%% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. %@ Bron: %@; %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is the lower limit: for these defects the Rent Tribunal can reduce the rent to %lld%% of your rent. The exact amount is set using its defects handbook. %@ Source: %@; %@."
+          }
+        }
+      }
+    },
+    "Dit is een concept. Vul de gegevens tussen [haken] in en lees de brief goed na voordat u hem verstuurt. %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is a draft in Dutch. Fill in the details between [brackets] and read the letter carefully before you send it. %@"
+          }
+        }
+      }
+    },
+    "Dossier": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File"
+          }
+        }
+      }
+    },
+    "Dossier en brief": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File and letter"
+          }
+        }
+      }
+    },
+    "Dossier maken (PDF)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create file (PDF)"
+          }
+        }
+      }
+    },
+    "Douches: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Showers: %lld"
+          }
+        }
+      }
+    },
+    "Een PDF-dossier om mee te nemen naar uw verhuurder of de Huurcommissie, en een conceptbrief.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A PDF file to take to your landlord or the Rent Tribunal, and a draft letter."
+          }
+        }
+      }
+    },
+    "Een drempelloze woning in een complex met alarmering naar een meldkamer en gezamenlijke ruimtes voor maaltijden of recreatie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A step-free home in a complex with an alarm connected to a control room and shared spaces for meals or recreation."
+          }
+        }
+      }
+    },
+    "Een eengezinswoning heeft geen andere woningen boven of onder zich, zoals een rijtjeshuis of vrijstaand huis. Al het andere (flat, boven- of benedenwoning) is een appartement.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A single-family home has no other homes above or below it, such as a terraced or detached house. Everything else (flat, upper or lower floor home) is an apartment."
+          }
+        }
+      }
+    },
+    "Een energieprestatievergoeding is een aparte vergoeding voor bijvoorbeeld zonnepanelen bij een zeer zuinige woning. Staat dat niet in uw contract, laat dit dan uit.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An energy performance fee is a separate fee, for example for solar panels in a very energy-efficient home. If it is not in your contract, leave this off."
+          }
+        }
+      }
+    },
+    "Een kamer om in te verblijven, met een raam, minstens 4 m² en grotendeels 2,10 m hoog. Keuken en badkamer tellen altijd als kamer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A room to stay in, with a window, at least 4 m² and mostly 2.10 m high. Kitchen and bathroom always count as a room."
+          }
+        }
+      }
+    },
+    "Een open keuken telt voor verwarming als apart vertrek. Verwarming per kamer vult u in bij Ruimtes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "An open kitchen counts as a separate room for heating. Enter heating per room under Rooms."
+          }
+        }
+      }
+    },
+    "Een ruimte van minstens 2 m² die geen kamer is, zoals een berging, zolder, bijkeuken of eigen garage.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A space of at least 2 m² that is not a room, such as a storage room, attic, utility room or own garage."
+          }
+        }
+      }
+    },
+    "Een verzoek bij de Huurcommissie kost u %@. Krijgt u gelijk, dan krijgt u dit terug.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A request to the Rent Tribunal costs you %@. If you win, you get it back."
+          }
+        }
+      }
+    },
+    "Eengezinswoning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Single-family home"
+          }
+        }
+      }
+    },
+    "Eenhendelmengkraan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Single-lever mixer tap"
+          }
+        }
+      }
+    },
+    "Eenhendelmengkranen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Single-lever mixer taps"
+          }
+        }
+      }
+    },
+    "Eenmalige aankoop. Geen abonnement en geen advertenties. Uw gegevens blijven op uw telefoon.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One-time purchase. No subscription and no ads. Your data stays on your phone."
+          }
+        }
+      }
+    },
+    "Eerdere aankoop herstellen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore previous purchase"
+          }
+        }
+      }
+    },
+    "Eigen balkon of tuin": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own balcony or garden"
+          }
+        }
+      }
+    },
+    "Eigen berging, zolder e.d.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own storage, attic etc."
+          }
+        }
+      }
+    },
+    "Eigen buitenruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private outdoor space"
+          }
+        }
+      }
+    },
+    "Eigen kamers met koeling: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own rooms with cooling: %lld"
+          }
+        }
+      }
+    },
+    "Elektrische oven (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electric oven (built-in)"
+          }
+        }
+      }
+    },
+    "Energie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy"
+          }
+        }
+      }
+    },
+    "Energie en WOZ": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy and WOZ"
+          }
+        }
+      }
+    },
+    "Energie-Index (alleen oud label)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy Index (old label only)"
+          }
+        }
+      }
+    },
+    "Energielabel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy label"
+          }
+        }
+      }
+    },
+    "Energielabel van de woning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy label of the home"
+          }
+        }
+      }
+    },
+    "Energieprestatie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy performance"
+          }
+        }
+      }
+    },
+    "Energieprestatievergoeding afgesproken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy performance fee agreed"
+          }
+        }
+      }
+    },
+    "Er is onderhoud nodig (bijvoorbeeld lekkage of schimmel) en de verhuurder lost het niet op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maintenance is needed (for example a leak or mould) and the landlord does not fix it."
+          }
+        }
+      }
+    },
+    "Ernst volgens de Huurcommissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Severity according to the Rent Tribunal"
+          }
+        }
+      }
+    },
+    "Ernstig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serious"
+          }
+        }
+      }
+    },
+    "Ernstige lekkage van water- of afvoerleidingen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serious leaks from water supply or drain pipes"
+          }
+        }
+      }
+    },
+    "Ernstige scheuren of loslatend pleisterwerk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serious cracks or loose plaster"
+          }
+        }
+      }
+    },
+    "Ernstige vocht- of schimmelplekken door optrekkend of doorslaand vocht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serious damp or mould patches from rising or penetrating damp"
+          }
+        }
+      }
+    },
+    "Extra keukenkasten (aantal stuks van 60 cm breed, minstens 60 cm hoog)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra kitchen cupboards (number of 60 cm wide units, at least 60 cm high)"
+          }
+        }
+      }
+    },
+    "Extra's in de badkamer (%lld)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom extras (%lld)"
+          }
+        }
+      }
+    },
+    "Foto %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo %lld"
+          }
+        }
+      }
+    },
+    "Foto als bewijs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photo as evidence"
+          }
+        }
+      }
+    },
+    "Foto's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos"
+          }
+        }
+      }
+    },
+    "Foto's blijven op uw telefoon. Houd een foto ingedrukt om hem te verwijderen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos stay on your phone. Press and hold a photo to delete it."
+          }
+        }
+      }
+    },
+    "Foto's toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add photos"
+          }
+        }
+      }
+    },
+    "Functie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Function"
+          }
+        }
+      }
+    },
+    "Gaat de verhuurder akkoord, dan geldt de lagere huur vanaf de ingangsdatum.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the landlord agrees, the lower rent applies from the start date."
+          }
+        }
+      }
+    },
+    "Gang of hal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallway"
+          }
+        }
+      }
+    },
+    "Gang, hal of overloop": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallway or landing"
+          }
+        }
+      }
+    },
+    "Gangen en hal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallways"
+          }
+        }
+      }
+    },
+    "Gangen en trappenhuizen tellen alleen mee voor verwarming (1 punt), niet voor de oppervlakte. Vul dan 0 m² in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallways and stairwells only count for heating (1 point), not for floor area. Enter 0 m² for them."
+          }
+        }
+      }
+    },
+    "Gangen, hal en overloop. Deze tellen alleen mee voor verwarming.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallways and landing. These only count for heating."
+          }
+        }
+      }
+    },
+    "Garage": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garage"
+          }
+        }
+      }
+    },
+    "Gaskookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gas hob"
+          }
+        }
+      }
+    },
+    "Gasoven (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gas oven (built-in)"
+          }
+        }
+      }
+    },
+    "Gebrek schriftelijk melden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report the defect in writing"
+          }
+        }
+      }
+    },
+    "Gebrek toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add defect"
+          }
+        }
+      }
+    },
+    "Gebreken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Defects"
+          }
+        }
+      }
+    },
+    "Gebrekenlijst delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Share list of defects"
+          }
+        }
+      }
+    },
+    "Gebruik": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use"
+          }
+        }
+      }
+    },
+    "Gebruik deze meting": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use this measurement"
+          }
+        }
+      }
+    },
+    "Gebruiksoppervlakte van het adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usable floor area of the address"
+          }
+        }
+      }
+    },
+    "Gebruikt de verhuurder bij de Huurcommissie niet het voorgeschreven formulier, of vult hij het onvolledig in, dan stelt de Huurcommissie de servicekosten vast op een normbedrag, of op € 0 als de dienst niet is geleverd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the landlord does not use the prescribed form at the Rent Tribunal, or fills it in incompletely, the Rent Tribunal sets the service charges at a standard amount, or at € 0 if the service was not provided."
+          }
+        }
+      }
+    },
+    "Gedeeld parkeren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared parking"
+          }
+        }
+      }
+    },
+    "Gedeelde berging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared storage"
+          }
+        }
+      }
+    },
+    "Gedeelde binnenruimtes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared indoor spaces"
+          }
+        }
+      }
+    },
+    "Gedeelde buitenruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared outdoor space"
+          }
+        }
+      }
+    },
+    "Gedeelde buitenruimte toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add shared outdoor space"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimte toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add shared space"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared spaces"
+          }
+        }
+      }
+    },
+    "Gedeelde woonruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared living space"
+          }
+        }
+      }
+    },
+    "Geen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None"
+          }
+        }
+      }
+    },
+    "Geen aanrecht met spoelbak en kraan, of geen plek voor een kooktoestel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No worktop with sink and tap, or no place for a cooker"
+          }
+        }
+      }
+    },
+    "Geen aansluiting op het riool of een ander afvalwatersysteem": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No connection to the sewer or another waste water system"
+          }
+        }
+      }
+    },
+    "Geen akkoord: naar de Huurcommissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No agreement: go to the Rent Tribunal"
+          }
+        }
+      }
+    },
+    "Geen aparte badruimte met bad, douche of wastafel met kraan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No separate bathroom with bath, shower or washbasin with tap"
+          }
+        }
+      }
+    },
+    "Geen daglicht in de woonkamer of slaapkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No daylight in the living room or bedroom"
+          }
+        }
+      }
+    },
+    "Geen of onbekend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "None or unknown"
+          }
+        }
+      }
+    },
+    "Geen rekenregels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No calculation rules"
+          }
+        }
+      }
+    },
+    "Geen toevoer van verse lucht of afvoer van binnenlucht in toilet, keuken, woonkamer, slaapkamer of badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No fresh air supply or indoor air extraction in toilet, kitchen, living room, bedroom or bathroom"
+          }
+        }
+      }
+    },
+    "Geen vaste trap (vlizotrap of luik)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No fixed stairs (loft ladder or hatch)"
+          }
+        }
+      }
+    },
+    "Geen werkend toilet met waterspoeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No working flush toilet"
+          }
+        }
+      }
+    },
+    "Gemeenschappelijke binnenruimten (meerdere adressen)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared indoor spaces (multiple addresses)"
+          }
+        }
+      }
+    },
+    "Gemeenschappelijke parkeerruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared parking space"
+          }
+        }
+      }
+    },
+    "Gemeenschappelijke parkeerruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared parking spaces"
+          }
+        }
+      }
+    },
+    "Gemeenschappelijke vertrekken, overige ruimten en voorzieningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared rooms, other spaces and facilities"
+          }
+        }
+      }
+    },
+    "Gemeentelijk of provinciaal monument": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Municipal or provincial monument"
+          }
+        }
+      }
+    },
+    "Gemeld bij de verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported to the landlord"
+          }
+        }
+      }
+    },
+    "Gemeld op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported on"
+          }
+        }
+      }
+    },
+    "Gemeld op %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported on %@"
+          }
+        }
+      }
+    },
+    "Gemeld op %@ · Huurcommissie tot %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported on %@ · Rent Tribunal until %@"
+          }
+        }
+      }
+    },
+    "Gemeld op %@ · Huurcommissie vanaf %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported on %@ · Rent Tribunal from %@"
+          }
+        }
+      }
+    },
+    "Gemeld op %@ · termijn Huurcommissie verstreken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reported on %@ · Rent Tribunal deadline passed"
+          }
+        }
+      }
+    },
+    "Gemeten vloer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured floor"
+          }
+        }
+      }
+    },
+    "Gemeten vloer: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured floor: %@"
+          }
+        }
+      }
+    },
+    "Gescand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scanned"
+          }
+        }
+      }
+    },
+    "Gevonden in uw contract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found in your contract"
+          }
+        }
+      }
+    },
+    "Gezamenlijk inkomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Combined income"
+          }
+        }
+      }
+    },
+    "Goed om te weten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good to know"
+          }
+        }
+      }
+    },
+    "Hal of gang": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hallway"
+          }
+        }
+      }
+    },
+    "Handdoekradiator": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Towel radiator"
+          }
+        }
+      }
+    },
+    "Handmatig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manual"
+          }
+        }
+      }
+    },
+    "Hangend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wall-hung"
+          }
+        }
+      }
+    },
+    "Heeft de verhuurder het gebrek zes weken na uw melding nog niet verholpen, dan kunt u naar de Huurcommissie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the landlord has not fixed the defect six weeks after your report, you can go to the Rent Tribunal."
+          }
+        }
+      }
+    },
+    "Hele woning scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan whole home"
+          }
+        }
+      }
+    },
+    "Herinneringen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reminders"
+          }
+        }
+      }
+    },
+    "Het COROP-gebied is de regio van uw gemeente (bijvoorbeeld Groot-Amsterdam of Utrecht). De WOZ-waarde per m² wordt vergeleken met het gemiddelde van die regio: 10, 12 of 14 punten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The COROP region is the region of your municipality (for example Groot-Amsterdam or Utrecht). The WOZ value per m² is compared with the average of that region: 10, 12 or 14 points."
+          }
+        }
+      }
+    },
+    "Het bouwjaar telt mee als er geen geldig energielabel is. Bij verbouw kan een later jaar gelden.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The year built counts if there is no valid energy label. After a renovation a later year may apply."
+          }
+        }
+      }
+    },
+    "Het gaat om de COROP-gebieden Groot-Amsterdam en Utrecht. Dit telt alleen voor kleine woningen uit 2018 t/m 2022.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This concerns the COROP regions Groot-Amsterdam and Utrecht. It only counts for small homes from 2018 to 2022."
+          }
+        }
+      }
+    },
+    "Het label van de hele woning telt, maal uw deel van de oppervlakte. Zonder geldig label telt het bouwjaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The label of the whole home counts, multiplied by your share of the floor area. Without a valid label, the year built counts."
+          }
+        }
+      }
+    },
+    "Het maximum is hier niet vast te stellen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The maximum cannot be determined here"
+          }
+        }
+      }
+    },
+    "Het overzicht kwam te laat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The statement came too late."
+          }
+        }
+      }
+    },
+    "Het riool werkt niet goed": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The sewer does not work properly"
+          }
+        }
+      }
+    },
+    "Het verschil is kleiner dan %@; dan neemt de Huurcommissie het verzoek niet in behandeling (%@). Gaat het om bepaalde posten waar u het niet mee eens bent, tel dan het betwiste bedrag.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The difference is less than %@; the Rent Tribunal will then not handle the request (%@). If it concerns specific items you disagree with, count the disputed amount."
+          }
+        }
+      }
+    },
+    "Het voorstel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The proposal"
+          }
+        }
+      }
+    },
+    "Hoekdeel toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add corner section"
+          }
+        }
+      }
+    },
+    "Hoeveel adressen kunnen deze plekken gebruiken?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many addresses can use these spaces?"
+          }
+        }
+      }
+    },
+    "Houd hier gebreken bij zoals lekkage, schimmel of een kapotte verwarming. Leg ze vast met foto's en noteer wanneer u ze meldde.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keep track of defects here, such as leaks, mould or broken heating. Record them with photos and note when you reported them."
+          }
+        }
+      }
+    },
+    "Huidige kale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current basic rent"
+          }
+        }
+      }
+    },
+    "Huishouden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Household"
+          }
+        }
+      }
+    },
+    "Huisnummer en toevoeging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "House number and addition"
+          }
+        }
+      }
+    },
+    "Huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent"
+          }
+        }
+      }
+    },
+    "Huur kan omlaag tot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent can go down to"
+          }
+        }
+      }
+    },
+    "Huurcommissie uiterlijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent Tribunal by"
+          }
+        }
+      }
+    },
+    "Huurcommissie vanaf": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent Tribunal from"
+          }
+        }
+      }
+    },
+    "Huurcontract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rental contract"
+          }
+        }
+      }
+    },
+    "Huurcontract scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan rental contract"
+          }
+        }
+      }
+    },
+    "Huurmeter": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huurmeter"
+          }
+        }
+      }
+    },
+    "Huurmeter is niet van de Huurcommissie. Controleer de termijnen in uw eigen situatie; bij twijfel kunt u terecht bij het Juridisch Loket of een huurteam.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huurmeter is not affiliated with the Rent Tribunal. Check the deadlines for your own situation; if in doubt, contact the Juridisch Loket (legal aid desk) or a tenants' support team."
+          }
+        }
+      }
+    },
+    "Huurmeter is niet van of namens de overheid of de Huurcommissie.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huurmeter is not from or on behalf of the government or the Rent Tribunal."
+          }
+        }
+      }
+    },
+    "Huurmeter rekent uit hoeveel punten uw huurwoning heeft volgens het woningwaarderingsstelsel (WWS), wat de maximale kale huur is en of u mogelijk te veel betaalt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huurmeter calculates how many points your rental home has under the Dutch housing valuation system (WWS), what the maximum basic rent is and whether you may be paying too much."
+          }
+        }
+      }
+    },
+    "Huurt u een kamer?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Renting a room?"
+          }
+        }
+      }
+    },
+    "Huurverhoging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent increase"
+          }
+        }
+      }
+    },
+    "Huurverlaging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent reduction"
+          }
+        }
+      }
+    },
+    "Huurverlaging vragen (lopend contract)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requesting a rent reduction (existing contract)"
+          }
+        }
+      }
+    },
+    "Huurverlaging wegens gebreken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent reduction because of defects"
+          }
+        }
+      }
+    },
+    "Ik huur een kamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I rent a room"
+          }
+        }
+      }
+    },
+    "Ik weet de ingangsdatum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I know the start date"
+          }
+        }
+      }
+    },
+    "Ik weet wanneer de vorige verhoging inging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I know when the previous increase started"
+          }
+        }
+      }
+    },
+    "Ik weet wanneer ik het voorstel kreeg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I know when I received the proposal"
+          }
+        }
+      }
+    },
+    "In hoeveel andere kamers zit een wastafel?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many other rooms have a washbasin?"
+          }
+        }
+      }
+    },
+    "Inbouwapparatuur en extra's (%lld)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in appliances and extras (%lld)"
+          }
+        }
+      }
+    },
+    "Inclusief %@%% opslag (%@ zonder opslag).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Including %@%% premium (%@ without premium)."
+          }
+        }
+      }
+    },
+    "Indicatie op basis van uw invoer. Alleen de Huurcommissie of de rechter stelt de huurprijs bindend vast.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimate based on your input. Only the Rent Tribunal or a court sets the rent in a binding way."
+          }
+        }
+      }
+    },
+    "Inductiekookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Induction hob"
+          }
+        }
+      }
+    },
+    "Info": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Info"
+          }
+        }
+      }
+    },
+    "Ingangsdatum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date"
+          }
+        }
+      }
+    },
+    "Ingangsdatum contract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contract start date"
+          }
+        }
+      }
+    },
+    "Ingangsdatum van de voorgestelde verhoging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date of the proposed increase"
+          }
+        }
+      }
+    },
+    "Ingangsdatum van uw (eerste) huurcontract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date of your (first) rental contract"
+          }
+        }
+      }
+    },
+    "Ingebouwde afzuigkap": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in extractor hood"
+          }
+        }
+      }
+    },
+    "Ingebouwde elektrische oven": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in electric oven"
+          }
+        }
+      }
+    },
+    "Ingebouwde gaskookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in gas hob"
+          }
+        }
+      }
+    },
+    "Ingebouwde gasoven": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in gas oven"
+          }
+        }
+      }
+    },
+    "Ingebouwde inductiekookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in induction hob"
+          }
+        }
+      }
+    },
+    "Ingebouwde keramische kookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in ceramic hob"
+          }
+        }
+      }
+    },
+    "Ingebouwde koelkast": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in fridge"
+          }
+        }
+      }
+    },
+    "Ingebouwde magnetron": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in microwave"
+          }
+        }
+      }
+    },
+    "Ingebouwde vaatwasser": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in dishwasher"
+          }
+        }
+      }
+    },
+    "Ingebouwde vriezer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in freezer"
+          }
+        }
+      }
+    },
+    "Ingevuld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filled in"
+          }
+        }
+      }
+    },
+    "Inkomen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Income"
+          }
+        }
+      }
+    },
+    "Inmeten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure"
+          }
+        }
+      }
+    },
+    "Is de bouw vóór 1 januari 2028 gestart?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Did construction start before 1 January 2028?"
+          }
+        }
+      }
+    },
+    "Is de woning een monument?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is the home a monument?"
+          }
+        }
+      }
+    },
+    "Is die ruimte verwarmd?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is that space heated?"
+          }
+        }
+      }
+    },
+    "Is er een open keuken met verwarming?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there an open kitchen with heating?"
+          }
+        }
+      }
+    },
+    "Is het een zorgwoning?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is it a care home?"
+          }
+        }
+      }
+    },
+    "Is het voorschot voor gas, water of elektriciteit met een eigen meter veel hoger dan de te verwachten kosten, dan kan de Huurcommissie het voorschot verlagen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the advance for gas, water or electricity with your own meter is much higher than the expected costs, the Rent Tribunal can lower the advance."
+          }
+        }
+      }
+    },
+    "Jaaroverzicht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annual statement"
+          }
+        }
+      }
+    },
+    "Jaaroverzicht ontvangen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annual statement received"
+          }
+        }
+      }
+    },
+    "Jaaroverzicht vragen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ask for the annual statement"
+          }
+        }
+      }
+    },
+    "Kale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic rent"
+          }
+        }
+      }
+    },
+    "Kale huur ontbreekt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic rent missing"
+          }
+        }
+      }
+    },
+    "Kale huur per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic rent per month"
+          }
+        }
+      }
+    },
+    "Kalenderjaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar year"
+          }
+        }
+      }
+    },
+    "Kamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room"
+          }
+        }
+      }
+    },
+    "Kamer (vertrek)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room (habitable)"
+          }
+        }
+      }
+    },
+    "Kamer(s) die alleen u gebruikt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room(s) only you use"
+          }
+        }
+      }
+    },
+    "Kamers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms"
+          }
+        }
+      }
+    },
+    "Kamers controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check rooms"
+          }
+        }
+      }
+    },
+    "Kamers gescand: %lld. Loop naar de volgende kamer.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms scanned: %lld. Walk to the next room."
+          }
+        }
+      }
+    },
+    "Kamers toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add rooms"
+          }
+        }
+      }
+    },
+    "Kast in de badkamer (minstens 40 × 40 cm)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cupboard in the bathroom (at least 40 × 40 cm)"
+          }
+        }
+      }
+    },
+    "Kastruimte (min. 40 × 40 cm)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cupboard space (min. 40 × 40 cm)"
+          }
+        }
+      }
+    },
+    "Keramische kookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ceramic hob"
+          }
+        }
+      }
+    },
+    "Keuken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen"
+          }
+        }
+      }
+    },
+    "Keuken toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add kitchen"
+          }
+        }
+      }
+    },
+    "Kies": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose"
+          }
+        }
+      }
+    },
+    "Kies het type woning (scherm Huur).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose the type of home (Rent screen)."
+          }
+        }
+      }
+    },
+    "Kies…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose…"
+          }
+        }
+      }
+    },
+    "Klaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "Klopt uw huur?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is your rent right?"
+          }
+        }
+      }
+    },
+    "Koeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cooling"
+          }
+        }
+      }
+    },
+    "Koeling staat in het energielabel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cooling is included in the energy label"
+          }
+        }
+      }
+    },
+    "Koeling telt alleen bij een vaste installatie, zoals een warmtepomp of vaste airco. Een mobiele airco telt niet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cooling only counts for a fixed installation, such as a heat pump or fixed air conditioning. A mobile air conditioner does not count."
+          }
+        }
+      }
+    },
+    "Koelkast (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fridge (built-in)"
+          }
+        }
+      }
+    },
+    "Kokendwaterkraan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boiling water tap"
+          }
+        }
+      }
+    },
+    "Komt u er niet uit, dan kunt u de Huurcommissie vragen uitspraak te doen, tot 24 maanden na de uiterste datum voor het overzicht. Het verschil moet ten minste € 36 zijn.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If you cannot agree, you can ask the Rent Tribunal for a ruling, up to 24 months after the deadline for the statement. The difference must be at least € 36."
+          }
+        }
+      }
+    },
+    "Kosten die de verhuurder maakte voor aanpassingen voor een bewoner met een beperking": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Costs the landlord incurred for adaptations for a resident with a disability"
+          }
+        }
+      }
+    },
+    "Kosten volgens overzicht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Costs per statement"
+          }
+        }
+      }
+    },
+    "Kostensoort toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add cost type"
+          }
+        }
+      }
+    },
+    "Kostensoort, bijv. schoonmaak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cost type, e.g. cleaning"
+          }
+        }
+      }
+    },
+    "Laat de verhuurder vóór de ingangsdatum schriftelijk weten dat u niet instemt. Betaal de verhoging niet: wie de verhoging betaalt, stemt ermee in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let the landlord know in writing before the start date that you do not agree. Do not pay the increase: paying it means agreeing to it."
+          }
+        }
+      }
+    },
+    "Laatste dag van het kalenderjaar waarover het gaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Last day of the calendar year concerned"
+          }
+        }
+      }
+    },
+    "Label opzoeken op ep-online.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up label on ep-online.nl"
+          }
+        }
+      }
+    },
+    "Leges betalen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pay the fee"
+          }
+        }
+      }
+    },
+    "Leges en uitspraak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fee and ruling"
+          }
+        }
+      }
+    },
+    "Lekkage van regenwater door dak of gevel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rainwater leaking through the roof or facade"
+          }
+        }
+      }
+    },
+    "Lengte van het aanrecht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Length of the worktop"
+          }
+        }
+      }
+    },
+    "Let op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note"
+          }
+        }
+      }
+    },
+    "Ligt de woning in de regio Amsterdam of Utrecht?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is the home in the Amsterdam or Utrecht region?"
+          }
+        }
+      }
+    },
+    "Ligt de woning in een rijksbeschermd stads- of dorpsgezicht?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is the home in a nationally protected townscape or village view?"
+          }
+        }
+      }
+    },
+    "Loop met de camera kamer voor kamer door de woning. Daarna controleert u de lijst.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk through the home room by room with the camera. Then check the list."
+          }
+        }
+      }
+    },
+    "Magnetron (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Microwave (built-in)"
+          }
+        }
+      }
+    },
+    "Maximaal %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum %@"
+          }
+        }
+      }
+    },
+    "Maximale kale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum basic rent"
+          }
+        }
+      }
+    },
+    "Maximale kale huur: %@ per maand.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximum basic rent: %@ per month."
+          }
+        }
+      }
+    },
+    "Meer controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More checks"
+          }
+        }
+      }
+    },
+    "Meerpersoonswastafels: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double washbasins: %lld"
+          }
+        }
+      }
+    },
+    "Meet de kamer met een rolmaat en vul de oppervlakte hieronder in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure the room with a tape measure and enter the floor area below."
+          }
+        }
+      }
+    },
+    "Meet met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure with the camera"
+          }
+        }
+      }
+    },
+    "Meet over het midden van het blad, inclusief spoelbak en kookplaat. Bij een hoekaanrecht telt u de lange zijden van beide delen op.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure along the middle of the top, including sink and hob. For a corner worktop, add up the long sides of both parts."
+          }
+        }
+      }
+    },
+    "Meet van muur tot muur op 1,50 m hoogte. Bij een schuin dak telt alleen het deel waar het plafond minstens 1,50 m hoog is. Vaste kasten tellen mee.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure from wall to wall at a height of 1.50 m. With a sloping roof, only the part where the ceiling is at least 1.50 m high counts. Built-in cupboards count."
+          }
+        }
+      }
+    },
+    "Meet van muur tot muur, op 1,5 m hoogte. U kunt de oppervlakte ook met de LiDAR-scan van een woning meten en hier overnemen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure from wall to wall, at a height of 1.5 m. You can also measure the area with the LiDAR scan of a home and copy it here."
+          }
+        }
+      }
+    },
+    "Meld het gebrek schriftelijk bij de verhuurder en bewaar een kopie. Leg het vast met foto's in Huurmeter.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report the defect to the landlord in writing and keep a copy. Record it with photos in Huurmeter."
+          }
+        }
+      }
+    },
+    "Melding": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Report"
+          }
+        }
+      }
+    },
+    "Met %lld punten valt de woning in de vrije sector. Daar geldt geen wettelijke maximale huurprijs.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With %lld points the home is in the private sector. There is no legal maximum rent there."
+          }
+        }
+      }
+    },
+    "Met de puntentelling per rubriek, de ruimtes (gescand of handmatig), plattegronden, bewijsfoto's en bronnen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With the points per category, the rooms (scanned or manual), floor plans, evidence photos and sources."
+          }
+        }
+      }
+    },
+    "Met hoeveel adressen (inclusief uzelf) deelt u deze buitenruimte?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With how many addresses (including yourself) do you share this outdoor space?"
+          }
+        }
+      }
+    },
+    "Met hoeveel adressen deelt u die ruimte?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "With how many addresses do you share that space?"
+          }
+        }
+      }
+    },
+    "Middenhuur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mid-rent"
+          }
+        }
+      }
+    },
+    "Minstens 70 cm breed en met twee kranen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "At least 70 cm wide and with two taps."
+          }
+        }
+      }
+    },
+    "Mogelijk %@ per maand te veel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Possibly %@ per month too much"
+          }
+        }
+      }
+    },
+    "Monument": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monument"
+          }
+        }
+      }
+    },
+    "Monument en nieuwbouw": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Monument and new build"
+          }
+        }
+      }
+    },
+    "Na de uitspraak hebben u en de verhuurder acht weken om naar de rechter te gaan. Doet niemand dat, dan geldt de uitspraak als afspraak. De nieuwe huur geldt vanaf de dag dat u het verzoek indiende.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the ruling, you and the landlord have eight weeks to go to court. If nobody does, the ruling counts as an agreement. The new rent applies from the day you submitted the request."
+          }
+        }
+      }
+    },
+    "Naam": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "Naamloos": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untitled"
+          }
+        }
+      }
+    },
+    "Naamloos gebrek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Untitled defect"
+          }
+        }
+      }
+    },
+    "Naar de Huurcommissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To the Rent Tribunal"
+          }
+        }
+      }
+    },
+    "Naar huurcommissie.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Go to huurcommissie.nl"
+          }
+        }
+      }
+    },
+    "Nee": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No"
+          }
+        }
+      }
+    },
+    "Niet eens met de kosten?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disagree with the costs?"
+          }
+        }
+      }
+    },
+    "Niets herkend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing recognised"
+          }
+        }
+      }
+    },
+    "Nieuw gebrek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New defect"
+          }
+        }
+      }
+    },
+    "Nieuwe woning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New home"
+          }
+        }
+      }
+    },
+    "Nog %lld dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld days left"
+          }
+        }
+      }
+    },
+    "Nog %lld dagen om de Huurcommissie te vragen uw aanvangshuur te toetsen (tot en met %@). Dit geldt alleen als dit uw eerste huurcontract voor deze woning is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld days left to ask the Rent Tribunal to assess your starting rent (up to and including %@). This only applies if this is your first rental contract for this home."
+          }
+        }
+      }
+    },
+    "Nog %lld dagen om de aanvangshuur te laten toetsen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld days left to have the starting rent assessed"
+          }
+        }
+      }
+    },
+    "Nog geen kamer toegevoegd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No room added yet"
+          }
+        }
+      }
+    },
+    "Nog geen ruimtes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No rooms yet"
+          }
+        }
+      }
+    },
+    "Nog invullen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To fill in"
+          }
+        }
+      }
+    },
+    "Nog niet berekend": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not calculated yet"
+          }
+        }
+      }
+    },
+    "Nog niet gemeld bij de verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not yet reported to the landlord"
+          }
+        }
+      }
+    },
+    "Nog niet te berekenen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot be calculated yet"
+          }
+        }
+      }
+    },
+    "Normbedrag overige servicekosten: %@ per jaar. Gas, water en elektriciteit: %@, %@ en %@ (%@).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard amount for other service charges: %@ per year. Gas, water and electricity: %@, %@ and %@ (%@)."
+          }
+        }
+      }
+    },
+    "OK": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
+          }
+        }
+      }
+    },
+    "Omschrijving": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Description"
+          }
+        }
+      }
+    },
+    "Onbewoonbaar door gevaar: fundering, muren, dak, trappen, vloeren, schoorsteen, balkon of balustrade": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uninhabitable due to danger: foundations, walls, roof, stairs, floors, chimney, balcony or balustrade"
+          }
+        }
+      }
+    },
+    "Onderkant raam woonkamer hoger dan 1,60 m": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bottom of living room window higher than 1.60 m"
+          }
+        }
+      }
+    },
+    "Ontdekt op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discovered on"
+          }
+        }
+      }
+    },
+    "Ontvangen op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Received on"
+          }
+        }
+      }
+    },
+    "Open": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open"
+          }
+        }
+      }
+    },
+    "Ophalen bij EP-Online": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetch from EP-Online"
+          }
+        }
+      }
+    },
+    "Opnamedatum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assessment date"
+          }
+        }
+      }
+    },
+    "Opnamedatum van het label ontbreekt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assessment date of the label missing"
+          }
+        }
+      }
+    },
+    "Opnieuw": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Again"
+          }
+        }
+      }
+    },
+    "Opnieuw scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan again"
+          }
+        }
+      }
+    },
+    "Oppervlakte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor area"
+          }
+        }
+      }
+    },
+    "Oppervlakte in m²": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor area in m²"
+          }
+        }
+      }
+    },
+    "Oppervlakte van een gedeelde berging, wasruimte of fietsenstalling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Area of a shared storage room, laundry room or bicycle storage"
+          }
+        }
+      }
+    },
+    "Oppervlakte van een gedeelde woon- of recreatieruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Area of a shared living or recreation room"
+          }
+        }
+      }
+    },
+    "Oppervlakte van een tuin of dakterras dat u deelt met andere adressen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Area of a garden or roof terrace you share with other addresses"
+          }
+        }
+      }
+    },
+    "Oppervlakte van overige ruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor area of other spaces"
+          }
+        }
+      }
+    },
+    "Oppervlakte van uw plek in de parkeergarage": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Area of your space in the parking garage"
+          }
+        }
+      }
+    },
+    "Oppervlakte van vertrekken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor area of habitable rooms"
+          }
+        }
+      }
+    },
+    "Overig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other"
+          }
+        }
+      }
+    },
+    "Overig ernstig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other serious"
+          }
+        }
+      }
+    },
+    "Overige ruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other space"
+          }
+        }
+      }
+    },
+    "Overige ruimtes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other spaces"
+          }
+        }
+      }
+    },
+    "Overige voorzieningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Other facilities"
+          }
+        }
+      }
+    },
+    "Overleggen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Discuss"
+          }
+        }
+      }
+    },
+    "Overnemen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use"
+          }
+        }
+      }
+    },
+    "Overzicht verhuurder uiterlijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Landlord's statement by"
+          }
+        }
+      }
+    },
+    "PDF-dossier met puntentelling, plattegronden en foto's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF file with points, floor plans and photos"
+          }
+        }
+      }
+    },
+    "Parkeerplekken buiten met een dak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdoor parking spaces with a roof"
+          }
+        }
+      }
+    },
+    "Parkeerplekken buiten zonder dak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Outdoor parking spaces without a roof"
+          }
+        }
+      }
+    },
+    "Parkeerplekken in een afgesloten parkeergarage bij het complex": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parking spaces in a closed parking garage at the complex"
+          }
+        }
+      }
+    },
+    "Plaats": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Town"
+          }
+        }
+      }
+    },
+    "Plattegrond van %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor plan of %@"
+          }
+        }
+      }
+    },
+    "Postcode": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Postcode"
+          }
+        }
+      }
+    },
+    "Posten (per jaar)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Items (per year)"
+          }
+        }
+      }
+    },
+    "Prijsopslag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Price premium"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy"
+          }
+        }
+      }
+    },
+    "Punten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Points"
+          }
+        }
+      }
+    },
+    "Punten per rubriek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Points per category"
+          }
+        }
+      }
+    },
+    "Punten voor de WOZ-waarde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Points for the WOZ value"
+          }
+        }
+      }
+    },
+    "Puntentelling maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculate the points"
+          }
+        }
+      }
+    },
+    "Raam in de woonkamer kleiner dan 0,75 m²": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living room window smaller than 0.75 m²"
+          }
+        }
+      }
+    },
+    "Reactie afwachten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wait for a response"
+          }
+        }
+      }
+    },
+    "Reken in ongeveer tien minuten uit wat de maximale kale huur van uw woning is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find out in about ten minutes what the maximum basic rent of your home is."
+          }
+        }
+      }
+    },
+    "Rijksmonument": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "National monument"
+          }
+        }
+      }
+    },
+    "Rijksmonument, contract vanaf 1-7-2024": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "National monument, contract from 1-7-2024"
+          }
+        }
+      }
+    },
+    "Rijksmonument, contract vóór 1-7-2024": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "National monument, contract before 1-7-2024"
+          }
+        }
+      }
+    },
+    "Ruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Room"
+          }
+        }
+      }
+    },
+    "Ruimte toevoegen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add room"
+          }
+        }
+      }
+    },
+    "Ruimtes": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms"
+          }
+        }
+      }
+    },
+    "Sanitair": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sanitary facilities"
+          }
+        }
+      }
+    },
+    "Scannen met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan with the camera"
+          }
+        }
+      }
+    },
+    "Schade die is overgebleven na een eerder gebrek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Damage left over from an earlier defect"
+          }
+        }
+      }
+    },
+    "Scheve muren, hellende vloeren of slechte plafonds door verzakking": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leaning walls, sloping floors or bad ceilings due to subsidence"
+          }
+        }
+      }
+    },
+    "Schimmel of houtrot door vocht in keuken, woonkamer of slaapkamer, zodat de ruimte ernstig minder bruikbaar is": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mould or wood rot from damp in kitchen, living room or bedroom, making the room seriously less usable"
+          }
+        }
+      }
+    },
+    "Schriftelijk bezwaar maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Object in writing"
+          }
+        }
+      }
+    },
+    "Schuin dak of verlaagd plafond": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sloping roof or lowered ceiling"
+          }
+        }
+      }
+    },
+    "Servicekosten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service charges"
+          }
+        }
+      }
+    },
+    "Servicekosten laten toetsen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Have service charges assessed"
+          }
+        }
+      }
+    },
+    "Slaapkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedroom"
+          }
+        }
+      }
+    },
+    "Slechte afvoer van rook of verbrandingsgassen van de verwarming": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poor extraction of smoke or combustion gases from the heating"
+          }
+        }
+      }
+    },
+    "Slechte geluidsisolatie tussen woningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Poor sound insulation between homes"
+          }
+        }
+      }
+    },
+    "Sluit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "Sociale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Social housing"
+          }
+        }
+      }
+    },
+    "Soort": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type"
+          }
+        }
+      }
+    },
+    "Soort huurwoning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type of rental"
+          }
+        }
+      }
+    },
+    "Staand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Floor-standing"
+          }
+        }
+      }
+    },
+    "Staat meestal in uw huurcontract of in de brief van de verhuurder. De app stelt het segment voor op basis van uw puntentelling.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usually stated in your rental contract or in the landlord's letter. The app suggests the segment based on your points."
+          }
+        }
+      }
+    },
+    "Stap %lld: %@. %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %lld: %@. %@"
+          }
+        }
+      }
+    },
+    "Stappen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steps"
+          }
+        }
+      }
+    },
+    "Stappenplan Huurcommissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rent Tribunal step-by-step plan"
+          }
+        }
+      }
+    },
+    "Stemt de verhuurder niet in, dan kunt u de Huurcommissie vragen uitspraak te doen, tot uiterlijk zes weken na de voorgestelde ingangsdatum.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "If the landlord does not agree, you can ask the Rent Tribunal for a ruling, up to six weeks after the proposed start date."
+          }
+        }
+      }
+    },
+    "Stopcontact bij wastafel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Socket at washbasin"
+          }
+        }
+      }
+    },
+    "Stopcontacten bij de wastafel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sockets at the washbasin"
+          }
+        }
+      }
+    },
+    "Straat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Street"
+          }
+        }
+      }
+    },
+    "Straat, plaats en bouwjaar worden opgehaald uit de openbare registers van het Kadaster (PDOK).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Street, town and year built are fetched from the public registers of the Land Registry (PDOK)."
+          }
+        }
+      }
+    },
+    "Stuur de verhuurder schriftelijk een voorstel, ten minste twee maanden voor de ingangsdatum. Noem de huidige huur, de verlaging, de nieuwe huur en de ingangsdatum, en voeg de puntentelling toe. De conceptbrief in Huurmeter doet dit.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send the landlord a written proposal at least two months before the start date. State the current rent, the reduction, the new rent and the start date, and attach the points calculation. The draft letter in Huurmeter does this."
+          }
+        }
+      }
+    },
+    "Te weinig daglicht in de woonkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too little daylight in the living room"
+          }
+        }
+      }
+    },
+    "Te weinig ventilatie, met ernstige stank of vocht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Too little ventilation, with serious odour or damp"
+          }
+        }
+      }
+    },
+    "Tel de punten in Huurmeter en bewaar het PDF-dossier. Dat is uw onderbouwing.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count the points in Huurmeter and keep the PDF file. That is your evidence."
+          }
+        }
+      }
+    },
+    "Telt mee bij de WOZ-punten. Een parkeerplek is minstens 12 m².": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Counts towards the WOZ points. A parking space is at least 12 m²."
+          }
+        }
+      }
+    },
+    "Terug te krijgen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To get back"
+          }
+        }
+      }
+    },
+    "Thermostaatkraan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thermostatic tap"
+          }
+        }
+      }
+    },
+    "Thermostaatkranen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thermostatic taps"
+          }
+        }
+      }
+    },
+    "Toilet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toilet"
+          }
+        }
+      }
+    },
+    "Tot %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Up to %@"
+          }
+        }
+      }
+    },
+    "Totaal kosten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total costs"
+          }
+        }
+      }
+    },
+    "Totaal voorschot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total advance"
+          }
+        }
+      }
+    },
+    "Totaal: %@ m": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Total: %@ m"
+          }
+        }
+      }
+    },
+    "Trek het deel af waar het plafond lager is dan 1,50 m, plus schachten en leidingkokers. Vaste kasten tellen wél mee. De camera herkent een schuin dak niet goed, dus dit vult u zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract the part where the ceiling is lower than 1.50 m, plus shafts and pipe ducts. Built-in cupboards do count. The camera does not recognise a sloping roof well, so enter this yourself."
+          }
+        }
+      }
+    },
+    "Tuin": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garden"
+          }
+        }
+      }
+    },
+    "Tuin, balkon, dakterras of loggia die alleen bij uw woning hoort. Een Frans balkon telt niet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Garden, balcony, roof terrace or loggia that belongs only to your home. A Juliet balcony does not count."
+          }
+        }
+      }
+    },
+    "Type woning": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type of home"
+          }
+        }
+      }
+    },
+    "Type woning ontbreekt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Type of home missing"
+          }
+        }
+      }
+    },
+    "U bent het niet eens met de servicekosten of hebt geen jaaroverzicht gekregen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You disagree with the service charges or did not receive an annual statement."
+          }
+        }
+      }
+    },
+    "U betaalt %@ bij": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay %@ extra"
+          }
+        }
+      }
+    },
+    "U betaalt %@, dat is niet meer dan het maximum.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay %@, which is not more than the maximum."
+          }
+        }
+      }
+    },
+    "U betaalt %@: %@ per maand te veel, %@ per jaar.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay %@: %@ per month too much, %@ per year."
+          }
+        }
+      }
+    },
+    "U betaalt meer dan de maximale huur en uw contract is minder dan zes maanden geleden ingegaan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay more than the maximum rent and your contract started less than six months ago."
+          }
+        }
+      }
+    },
+    "U betaalt mogelijk %@ per maand te veel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You may be paying %@ per month too much."
+          }
+        }
+      }
+    },
+    "U betaalt € 25 voorschot. Krijgt u (grotendeels) gelijk, dan krijgt u dit terug en betaalt de verhuurder.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay a € 25 advance. If you (largely) win, you get it back and the landlord pays."
+          }
+        }
+      }
+    },
+    "U betaalt € 25 voorschot. Na de uitspraak is er acht weken om naar de rechter te gaan.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You pay a € 25 advance. After the ruling there are eight weeks to go to court."
+          }
+        }
+      }
+    },
+    "U had het overzicht al moeten krijgen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You should already have received the statement."
+          }
+        }
+      }
+    },
+    "U hebt een voorstel voor huurverhoging gekregen en bent het er niet mee eens.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You received a rent increase proposal and disagree with it."
+          }
+        }
+      }
+    },
+    "U hoeft niet akkoord te gaan. Laat de verhuurder vóór de ingangsdatum schriftelijk weten dat u bezwaar maakt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You do not have to agree. Let the landlord know in writing before the start date that you object."
+          }
+        }
+      }
+    },
+    "U krijgt %@ terug": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You get %@ back"
+          }
+        }
+      }
+    },
+    "U kunt de waarde hierna nog aanpassen, bijvoorbeeld voor een schuin dak.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You can still adjust the value afterwards, for example for a sloping roof."
+          }
+        }
+      }
+    },
+    "U mag de bonnen en facturen achter het overzicht inzien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You may inspect the receipts and invoices behind the statement."
+          }
+        }
+      }
+    },
+    "Uitkomst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Result"
+          }
+        }
+      }
+    },
+    "Uitspraak": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ruling"
+          }
+        }
+      }
+    },
+    "Uw contract loopt al langer dan zes maanden en de huur is hoger dan de maximale huur bij uw punten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your contract has been running for more than six months and the rent is higher than the maximum rent for your points."
+          }
+        }
+      }
+    },
+    "Uw eigen ruimte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your own space"
+          }
+        }
+      }
+    },
+    "Uw eigen tuin of balkon voegt u toe bij Ruimtes.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add your own garden or balcony under Rooms."
+          }
+        }
+      }
+    },
+    "Uw huur is niet hoger dan het maximum.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your rent is not higher than the maximum."
+          }
+        }
+      }
+    },
+    "Uw kale huur per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your basic rent per month"
+          }
+        }
+      }
+    },
+    "Uw termijnen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your deadlines"
+          }
+        }
+      }
+    },
+    "Vaatwasser (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dishwasher (built-in)"
+          }
+        }
+      }
+    },
+    "Van muur tot muur op 1,50 m hoogte, alleen het deel waar het plafond minstens 1,50 m hoog is.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wall to wall at a height of 1.50 m, only the part where the ceiling is at least 1.50 m high."
+          }
+        }
+      }
+    },
+    "Vaste douchewand of -cabine": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed shower screen or cabin"
+          }
+        }
+      }
+    },
+    "Vaste douchewand of -cabine (geen gordijn)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed shower screen or cabin (no curtain)"
+          }
+        }
+      }
+    },
+    "Vaste koeling die ook verwarmt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed cooling that also heats"
+          }
+        }
+      }
+    },
+    "Veel achterstallig onderhoud tegelijk (schilderwerk, kozijnen, voegwerk, dak, goten)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lot of overdue maintenance at once (paintwork, window frames, pointing, roof, gutters)"
+          }
+        }
+      }
+    },
+    "Verholpen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed"
+          }
+        }
+      }
+    },
+    "Verholpen op": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed on"
+          }
+        }
+      }
+    },
+    "Verholpen op %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fixed on %@"
+          }
+        }
+      }
+    },
+    "Verkoeling en verwarming": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cooling and heating"
+          }
+        }
+      }
+    },
+    "Verwarmd": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated"
+          }
+        }
+      }
+    },
+    "Verwarmde eigen kamers: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own rooms: %lld"
+          }
+        }
+      }
+    },
+    "Verwarmde eigen overige ruimten: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own other spaces: %lld"
+          }
+        }
+      }
+    },
+    "Verwarming": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heating"
+          }
+        }
+      }
+    },
+    "Verwarming en verkoeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heating and cooling"
+          }
+        }
+      }
+    },
+    "Verwijder foto": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete photo"
+          }
+        }
+      }
+    },
+    "Verzoek indienen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit the request"
+          }
+        }
+      }
+    },
+    "Verzoek indienen bij de Huurcommissie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Submit a request to the Rent Tribunal"
+          }
+        }
+      }
+    },
+    "Verzoek mogelijk vanaf": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request possible from"
+          }
+        }
+      }
+    },
+    "Verzoek uiterlijk": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Request by"
+          }
+        }
+      }
+    },
+    "Video-intercom met deuropener": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video intercom with door opener"
+          }
+        }
+      }
+    },
+    "Videodeurbel waarmee u de voordeur van het gebouw opent?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video doorbell with which you open the building's front door?"
+          }
+        }
+      }
+    },
+    "Voeg de kamers, de berging en de tuin of het balkon toe.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the rooms, the storage room and the garden or balcony."
+          }
+        }
+      }
+    },
+    "Voeg elke badkamer en elk apart toilet apart toe, ook als u het alleen gebruikt (dan 1 kamer).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add each bathroom and each separate toilet separately, even if only you use it (then 1 room)."
+          }
+        }
+      }
+    },
+    "Voeg minstens één kamer toe (scherm Ruimtes).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add at least one room (Rooms screen)."
+          }
+        }
+      }
+    },
+    "Voldoet de keuken aan het basisniveau?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Does the kitchen meet the basic level?"
+          }
+        }
+      }
+    },
+    "Volgende kamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next room"
+          }
+        }
+      }
+    },
+    "Voor een kamer zonder eigen voordeur, keuken of toilet geldt een eigen puntentelling. Gedeelde ruimten tellen naar rato: hun punten worden gedeeld door het aantal kamers dat ze mag gebruiken.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A room without its own front door, kitchen or toilet has its own points system. Shared spaces count pro rata: their points are divided by the number of rooms allowed to use them."
+          }
+        }
+      }
+    },
+    "Voor kamers geldt altijd huurbescherming, ook bij veel punten (BW 7:247). %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms always have rent protection, even with many points (Civil Code 7:247). %@"
+          }
+        }
+      }
+    },
+    "Voor onbeperkt veel woningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For unlimited homes"
+          }
+        }
+      }
+    },
+    "Voor vandaag zijn geen rekenregels beschikbaar. Werk de app bij.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No calculation rules are available for today. Update the app."
+          }
+        }
+      }
+    },
+    "Voorgestelde ingangsdatum van de lagere huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proposed start date of the lower rent"
+          }
+        }
+      }
+    },
+    "Voorgestelde nieuwe huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proposed new rent"
+          }
+        }
+      }
+    },
+    "Voorschot": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advance"
+          }
+        }
+      }
+    },
+    "Voorstel aan de verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proposal to the landlord"
+          }
+        }
+      }
+    },
+    "Voorstel controleren": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check the proposal"
+          }
+        }
+      }
+    },
+    "Voortdurende ernstige geluidsoverlast van installaties in het gebouw": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Constant serious noise nuisance from installations in the building"
+          }
+        }
+      }
+    },
+    "Voortdurende stank omdat de vloer boven de grond niet afsluit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Constant odour because the ground floor does not seal"
+          }
+        }
+      }
+    },
+    "Voorzieningen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facilities"
+          }
+        }
+      }
+    },
+    "Vorige verhoging": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous increase"
+          }
+        }
+      }
+    },
+    "Vriezer (inbouw)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freezer (built-in)"
+          }
+        }
+      }
+    },
+    "Vrije sector": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private sector"
+          }
+        }
+      }
+    },
+    "Vrije sector: geen maximale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Private sector: no maximum rent"
+          }
+        }
+      }
+    },
+    "Vroegste ingangsdatum voorstel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Earliest start date of proposal"
+          }
+        }
+      }
+    },
+    "Vul de stappen in willekeurige volgorde in. U kunt alles later aanpassen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fill in the steps in any order. You can change everything later."
+          }
+        }
+      }
+    },
+    "Vul het bouwjaar in (scherm Adres).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the year built (Address screen)."
+          }
+        }
+      }
+    },
+    "Vul per post het voorschot over het hele jaar in en de kosten uit het overzicht.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For each item, enter the advance for the whole year and the costs from the statement."
+          }
+        }
+      }
+    },
+    "Vul uw kale huur in om het verschil te zien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter your basic rent to see the difference."
+          }
+        }
+      }
+    },
+    "WOZ en oppervlakte opzoeken op wozwaardeloket.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up WOZ and floor area on wozwaardeloket.nl"
+          }
+        }
+      }
+    },
+    "WOZ-waarde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WOZ value"
+          }
+        }
+      }
+    },
+    "WOZ-waarde opzoeken op wozwaardeloket.nl": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Look up WOZ value on wozwaardeloket.nl"
+          }
+        }
+      }
+    },
+    "WOZ-waarde van het hele adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WOZ value of the whole address"
+          }
+        }
+      }
+    },
+    "Waardepeildatum": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuation reference date"
+          }
+        }
+      }
+    },
+    "Wanneer is de woning voor het eerst bewoond?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "When was the home first occupied?"
+          }
+        }
+      }
+    },
+    "Wastafel in een ingebouwd kastje": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasin in a built-in cabinet"
+          }
+        }
+      }
+    },
+    "Wastafelmeubel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vanity unit"
+          }
+        }
+      }
+    },
+    "Wastafels: %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasins: %lld"
+          }
+        }
+      }
+    },
+    "Wat doet Huurmeter?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What does Huurmeter do?"
+          }
+        }
+      }
+    },
+    "Wat is er mis? Bijv. lekkage badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What is wrong? E.g. bathroom leak"
+          }
+        }
+      }
+    },
+    "Wat u krijgt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What you get"
+          }
+        }
+      }
+    },
+    "Water aan- en afvoer, een aansluiting voor koken, een aanrecht van minstens 1 meter, twee kastjes van minstens 50 cm breed en tegels of ander waterdicht materiaal tot 1,50 m hoog.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Water supply and drain, a connection for cooking, a worktop of at least 1 metre, two cupboards at least 50 cm wide and tiles or other waterproof material up to 1.50 m high."
+          }
+        }
+      }
+    },
+    "Waterdichte vloer, over minstens de helft van de vloer 2 m vrije hoogte, tegels tot 1,50 m (bad) of 1,80 m (douche), wastafel met mengkraan en spiegel, warm en koud water bij douche of bad.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waterproof floor, at least 2 m clear height over at least half of the floor, tiles up to 1.50 m (bath) or 1.80 m (shower), washbasin with mixer tap and mirror, hot and cold water at shower or bath."
+          }
+        }
+      }
+    },
+    "Weet ik niet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't know"
+          }
+        }
+      }
+    },
+    "Weet ik niet / zeg ik liever niet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Don't know / prefer not to say"
+          }
+        }
+      }
+    },
+    "Woning scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan home"
+          }
+        }
+      }
+    },
+    "Woonkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living room"
+          }
+        }
+      }
+    },
+    "Woonkamer of ander vertrek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Living room or other habitable room"
+          }
+        }
+      }
+    },
+    "Woonvoorzieningen voor gehandicapten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facilities for people with disabilities"
+          }
+        }
+      }
+    },
+    "Zeer ernstig": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Very serious"
+          }
+        }
+      }
+    },
+    "Zes weken wachten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wait six weeks"
+          }
+        }
+      }
+    },
+    "Zit er een wastafel in een aparte toiletruimte?": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is there a washbasin in a separate toilet room?"
+          }
+        }
+      }
+    },
+    "Zolang de Huurcommissie vastgestelde gebreken niet zijn opgeheven, mag de huur niet worden verhoogd.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As long as defects established by the Rent Tribunal have not been fixed, the rent may not be increased."
+          }
+        }
+      }
+    },
+    "Zolder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attic"
+          }
+        }
+      }
+    },
+    "Zonder WOZ-waarde rekent de app met de minimumwaarde": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Without a WOZ value the app uses the minimum value"
+          }
+        }
+      }
+    },
+    "Zonder WOZ-waarde rekent de app met de wettelijke minimumwaarde. Dat geeft meestal te weinig punten.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Without a WOZ value the app uses the legal minimum value. That usually gives too few points."
+          }
+        }
+      }
+    },
+    "dag": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "day"
+          }
+        }
+      }
+    },
+    "dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "days"
+          }
+        }
+      }
+    },
+    "m": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "m"
+          }
+        }
+      }
+    },
+    "m²": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "m²"
+          }
+        }
+      }
+    },
+    "punten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "points"
+          }
+        }
+      }
+    },
+    "€ 0": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "€ 0"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
