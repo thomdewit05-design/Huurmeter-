@@ -44,7 +44,7 @@ struct UitkomstView: View {
                         .font(.title2.bold())
                         .foregroundStyle(s.teVeel ? Color.red : Color.primary)
                     HStack(alignment: .firstTextBaseline) {
-                        Text("\(u.totaal)").font(.system(size: 44, weight: .bold, design: .rounded))
+                        Text("\(u.totaal)").font(.system(.largeTitle, design: .rounded, weight: .bold))
                         Text("punten").font(.title3)
                         Spacer()
                         Text(Opmaak.segment(u.segment))
