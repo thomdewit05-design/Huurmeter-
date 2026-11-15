@@ -2,14 +2,52 @@ import SwiftUI
 import WWSKit
 import HuurmeterCore
 
-/// Functie 11: puntentelling voor een kamer (onzelfstandige woonruimte).
+/// De stappen van de kamerberekening.
+enum KamerStap: Int, CaseIterable, Identifiable {
+    case kamer, gedeeld, keuken, sanitair, energie, buiten, woz, overig, uitkomst
+
+    var id: Int { rawValue }
+
+    var titel: LocalizedStringKey {
+        switch self {
+        case .kamer: return "Uw kamer"
+        case .gedeeld: return "Gedeelde ruimten"
+        case .keuken: return "Keuken"
+        case .sanitair: return "Sanitair"
+        case .energie: return "Energie"
+        case .buiten: return "Buitenruimte"
+        case .woz: return "WOZ-waarde"
+        case .overig: return "Overig"
+        case .uitkomst: return "Uitkomst"
+        }
+    }
+
+    var icoon: String {
+        switch self {
+        case .kamer: return "bed.double"
+        case .gedeeld: return "sofa"
+        case .keuken: return "fork.knife"
+        case .sanitair: return "shower"
+        case .energie: return "bolt"
+        case .buiten: return "sun.max"
+        case .woz: return "building.columns"
+        case .overig: return "ellipsis.circle"
+        case .uitkomst: return "checkmark.seal"
+        }
+    }
+}
+
+/// Functie 11: puntentelling voor een kamer (onzelfstandige woonruimte), als stappenplan.
 /// De invoer blijft op het toestel bewaard (één kamer).
 struct KamerView: View {
     @Environment(Winkel.self) private var winkel
     @AppStorage("kamerFormulier") private var opgeslagen: Data = Data()
+    @AppStorage("kamerStap") private var stapNummer = 0
     @State private var f = KamerFormulier()
     @State private var geladen = false
     private let regels = try? KamerRegels.laad()
+
+    private var stap: KamerStap { KamerStap(rawValue: stapNummer) ?? .kamer }
 
     private var uitkomst: Result<KamerUitkomst, Error>? {
         guard let regels else { return nil }
@@ -18,19 +56,24 @@ struct KamerView: View {
 
     var body: some View {
         Form {
-            uitlegSectie
-            kamerSectie
-            gedeeldSectie
-            keukenSectie
-            sanitairSectie
-            energieSectie
-            buitenSectie
-            wozSectie
-            overigSectie
-            uitkomstSectie
+            inhoud(stap)
         }
+        .id(stap)
+        .transition(.opacity)
+        .scrollDismissesKeyboard(.interactively)
         .huisstijlAchtergrond()
+        .safeAreaInset(edge: .top, spacing: 0) { kop }
+        .safeAreaInset(edge: .bottom, spacing: 0) { navigatie }
         .navigationTitle("Kamer")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Klaar") {
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+                }
+            }
+        }
         .onAppear {
             guard !geladen else { return }
             geladen = true
@@ -39,181 +82,321 @@ struct KamerView: View {
         .onChange(of: f) { opgeslagen = (try? JSONEncoder().encode(f)) ?? Data() }
     }
 
-    // MARK: Secties
+    private func ga(naar nieuw: KamerStap) {
+        withAnimation(.easeInOut(duration: 0.2)) { stapNummer = nieuw.rawValue }
+    }
 
-    private var uitlegSectie: some View {
+    // MARK: Kop en navigatie
+
+    private var kop: some View {
+        let totaal = KamerStap.allCases.count
+        return VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 12) {
+                Image(systemName: stap.icoon)
+                    .font(.headline)
+                    .foregroundStyle(Huisstijl.opLimoen)
+                    .frame(width: 38, height: 38)
+                    .background(Huisstijl.limoen, in: RoundedRectangle(cornerRadius: 11, style: .continuous))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("Stap \(stap.rawValue + 1) van \(totaal)")
+                        .font(.caption.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
+                    Menu {
+                        ForEach(KamerStap.allCases) { s in
+                            Button { ga(naar: s) } label: { Label(s.titel, systemImage: s.icoon) }
+                        }
+                    } label: {
+                        HStack(spacing: 4) {
+                            Text(stap.titel).font(.title3.weight(.bold)).foregroundStyle(Huisstijl.bosgroen)
+                            Image(systemName: "chevron.down").font(.caption.weight(.bold)).foregroundStyle(Huisstijl.gedempt)
+                        }
+                    }
+                    .accessibilityHint(Text("Kies een andere stap"))
+                }
+                Spacer(minLength: 8)
+                if case .success(let u) = uitkomst {
+                    VStack(alignment: .trailing, spacing: 0) {
+                        Text(verbatim: "\(u.totaal)").font(.title2.weight(.heavy)).monospacedDigit().foregroundStyle(Huisstijl.bosgroen)
+                        Text("punten").font(.caption2.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
+                    }
+                    .accessibilityElement(children: .combine)
+                }
+            }
+            ProgressView(value: Double(stap.rawValue + 1), total: Double(totaal))
+                .tint(Huisstijl.bosgroen)
+                .accessibilityHidden(true)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(Huisstijl.kaart)
+        .overlay(alignment: .bottom) { Divider() }
+    }
+
+    private var navigatie: some View {
+        HStack(spacing: 12) {
+            if let vorige = KamerStap(rawValue: stap.rawValue - 1) {
+                Button { ga(naar: vorige) } label: {
+                    Label("Vorige", systemImage: "chevron.left").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+            }
+            if let volgende = KamerStap(rawValue: stap.rawValue + 1) {
+                Button { ga(naar: volgende) } label: {
+                    HStack(spacing: 6) {
+                        Text(volgende == .uitkomst ? "Bekijk uitkomst" : "Volgende")
+                        Image(systemName: "chevron.right")
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+            } else {
+                Button { ga(naar: .kamer) } label: {
+                    Label("Terug naar het begin", systemImage: "arrow.counterclockwise").frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
+        .padding(.bottom, 8)
+        .background(Huisstijl.kaart)
+        .overlay(alignment: .top) { Divider() }
+    }
+
+    // MARK: Inhoud per stap
+
+    @ViewBuilder
+    private func inhoud(_ s: KamerStap) -> some View {
+        switch s {
+        case .kamer: kamerStap
+        case .gedeeld: gedeeldStap
+        case .keuken: keukenStap
+        case .sanitair: sanitairStap
+        case .energie: energieStap
+        case .buiten: buitenStap
+        case .woz: wozStap
+        case .overig: overigStap
+        case .uitkomst: uitkomstStap
+        }
+    }
+
+    @ViewBuilder
+    private var kamerStap: some View {
         Section {
             Text("Voor een kamer zonder eigen voordeur, keuken of toilet geldt een eigen puntentelling. Gedeelde ruimten tellen naar rato: hun punten worden gedeeld door het aantal kamers dat ze mag gebruiken.")
                 .font(.subheadline)
-            TextField("Uw kale huur per maand", value: $f.kaleHuur, format: .currency(code: "EUR"))
-                .keyboardType(.decimalPad)
         }
-    }
-
-    private var kamerSectie: some View {
+        Section("Huur") {
+            bedragRij("Kale huur per maand", $f.kaleHuur)
+        }
         Section {
-            m2Veld("Kamer(s) die alleen u gebruikt", $f.priveVertrekken)
-            m2Veld("Eigen berging, zolder e.d.", $f.priveOverigeRuimten)
-            Stepper("Verwarmde eigen kamers: \(f.verwarmdePriveVertrekken)", value: $f.verwarmdePriveVertrekken, in: 0...6)
-            Stepper("Verwarmde eigen overige ruimten: \(f.verwarmdePriveOverigeRuimten)", value: $f.verwarmdePriveOverigeRuimten, in: 0...6)
-            Stepper("Eigen kamers met koeling: \(f.gekoeldePriveVertrekken)", value: $f.gekoeldePriveVertrekken, in: 0...6)
+            getalRij("Kamer(s) die alleen u gebruikt", $f.priveVertrekken, eenheid: "m²")
+            getalRij("Eigen berging, zolder e.d.", $f.priveOverigeRuimten, eenheid: "m²")
         } header: {
-            Text("Uw eigen ruimte")
+            Text("Oppervlakte")
         } footer: {
-            Text("Meet van muur tot muur, op 1,5 m hoogte. U kunt de oppervlakte ook met de LiDAR-scan van een woning meten en hier overnemen.")
+            Text("Meet van muur tot muur, op 1,5 m hoogte.")
+        }
+        Section("Verwarming en koeling") {
+            aantalRij("Verwarmde eigen kamers", $f.verwarmdePriveVertrekken, 0...6)
+            aantalRij("Verwarmde eigen overige ruimten", $f.verwarmdePriveOverigeRuimten, 0...6)
+            aantalRij("Eigen kamers met koeling", $f.gekoeldePriveVertrekken, 0...6)
         }
     }
 
-    private var gedeeldSectie: some View {
+    @ViewBuilder
+    private var gedeeldStap: some View {
         Section {
-            ForEach($f.gedeeldeRuimten) { $r in
-                VStack(alignment: .leading, spacing: 6) {
-                    Picker("Soort", selection: $r.soort) {
-                        Text("Woonkamer of ander vertrek").tag(GedeeldeRuimte.Soort.vertrek)
-                        Text("Berging, zolder, gang").tag(GedeeldeRuimte.Soort.overig)
-                    }
-                    m2Veld("Oppervlakte", $r.m2)
-                    deelVelden(kamers: $r.kamers, adressen: $r.adressen)
-                    Toggle("Verwarmd", isOn: $r.verwarmd)
-                    if r.soort == .vertrek { Toggle("Koeling", isOn: $r.gekoeld) }
-                }
-            }
-            .onDelete { f.gedeeldeRuimten.remove(atOffsets: $0) }
-            Button { f.gedeeldeRuimten.append(GedeeldeRuimte()) } label: { Label("Gedeelde ruimte toevoegen", systemImage: "plus") }
-        } header: {
-            Text("Gedeelde ruimten")
+            Text("Voeg de ruimten toe die u deelt met andere bewoners, zoals een woonkamer, gang of berging.")
+                .font(.subheadline)
         } footer: {
             Text("Gangen en trappenhuizen tellen alleen mee voor verwarming (1 punt), niet voor de oppervlakte. Vul dan 0 m² in.")
         }
-    }
-
-    private var keukenSectie: some View {
-        Section {
-            ForEach($f.keukens) { $k in
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack {
-                        Text("Aanrecht")
-                        Spacer()
-                        TextField("m", value: $k.aanrechtLengte, format: .number.precision(.fractionLength(0...2)))
-                            .keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 90)
-                        Text("m").foregroundStyle(.secondary)
-                    }
-                    deelVelden(kamers: $k.kamers, adressen: $k.adressen)
-                    DisclosureGroup("Inbouwapparatuur en extra's (\(k.voorzieningen.count))") {
-                        ForEach(Self.keukenVoorzieningen, id: \.sleutel) { o in
-                            let sleutel = o.sleutel, naam = o.naam
-                            Toggle(naam.vertaald, isOn: Binding(get: { k.voorzieningen.contains(sleutel) },
-                                                       set: { if $0 { k.voorzieningen.insert(sleutel) } else { k.voorzieningen.remove(sleutel) } }))
-                        }
-                    }
+        ForEach($f.gedeeldeRuimten) { $item in
+            Section {
+                Picker("Soort", selection: $item.soort) {
+                    Text("Woonkamer of ander vertrek").tag(GedeeldeRuimte.Soort.vertrek)
+                    Text("Berging, zolder, gang").tag(GedeeldeRuimte.Soort.overig)
                 }
+                .pickerStyle(.menu)
+                getalRij("Oppervlakte", $item.m2, eenheid: "m²")
+                deelRijen(kamers: $item.kamers, adressen: $item.adressen)
+                Toggle("Verwarmd", isOn: $item.verwarmd)
+                if item.soort == .vertrek {
+                    Toggle("Koeling", isOn: $item.gekoeld)
+                }
+            } header: {
+                blokKop("Gedeelde ruimte \(nummer(item.id, in: f.gedeeldeRuimten))") { f.gedeeldeRuimten.removeAll { $0.id == item.id } }
             }
-            .onDelete { f.keukens.remove(atOffsets: $0) }
-            Button { f.keukens.append(KeukenRij()) } label: { Label("Keuken toevoegen", systemImage: "plus") }
-        } header: {
-            Text("Keuken")
+        }
+        Section {
+            toevoegKnop("Gedeelde ruimte toevoegen") { f.gedeeldeRuimten.append(GedeeldeRuimte()) }
         }
     }
 
-    private var sanitairSectie: some View {
+    @ViewBuilder
+    private var keukenStap: some View {
+        if f.keukens.isEmpty {
+            Section {
+                Text("Voeg de keuken toe die u gebruikt, ook als u die deelt.").font(.subheadline)
+            }
+        }
+        ForEach($f.keukens) { $item in
+            Section {
+                getalRij("Lengte aanrecht", $item.aanrechtLengte, eenheid: "m")
+                deelRijen(kamers: $item.kamers, adressen: $item.adressen)
+                DisclosureGroup {
+                    ForEach(Self.keukenVoorzieningen, id: \.sleutel) { o in
+                        Toggle(o.naam.vertaald, isOn: keuze(o.sleutel, in: $item.voorzieningen))
+                    }
+                } label: {
+                    LabeledContent("Inbouwapparatuur en extra's") {
+                        Text(verbatim: "\(item.voorzieningen.count)").monospacedDigit()
+                    }
+                }
+            } header: {
+                blokKop("Keuken \(nummer(item.id, in: f.keukens))") { f.keukens.removeAll { $0.id == item.id } }
+            }
+        }
         Section {
-            ForEach($f.sanitair) { $s in
-                VStack(alignment: .leading, spacing: 6) {
-                    Picker("Toilet", selection: $s.toilet) {
+            toevoegKnop("Keuken toevoegen") { f.keukens.append(KeukenRij()) }
+        }
+    }
+
+    @ViewBuilder
+    private var sanitairStap: some View {
+        Section {
+            Text("Voeg elke badkamer en elk apart toilet apart toe, ook als u het alleen gebruikt (dan 1 kamer).")
+                .font(.subheadline)
+        }
+        ForEach($f.sanitair) { $item in
+            Section {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Toilet")
+                    Picker("Toilet", selection: $item.toilet) {
                         Text("Geen").tag(KamerSanitair.Toilet.geen)
                         Text("Staand").tag(KamerSanitair.Toilet.staand)
                         Text("Hangend").tag(KamerSanitair.Toilet.zwevend)
                     }
-                    Stepper("Wastafels: \(s.wastafels)", value: $s.wastafels, in: 0...6)
-                    Stepper("Meerpersoonswastafels: \(s.meerpersoonswastafels)", value: $s.meerpersoonswastafels, in: 0...3)
-                    Stepper("Douches: \(s.douches)", value: $s.douches, in: 0...3)
-                    Stepper("Baden: \(s.baden)", value: $s.baden, in: 0...2)
-                    Stepper("Bad met douche: \(s.badDouches)", value: $s.badDouches, in: 0...2)
-                    deelVelden(kamers: $s.kamers, adressen: $s.adressen)
-                    if s.douches + s.baden + s.badDouches > 0 {
-                        DisclosureGroup("Extra's in de badkamer (\(s.extra.count))") {
-                            ForEach(Self.badkamerExtras, id: \.sleutel) { o in
-                                let sleutel = o.sleutel, naam = o.naam
-                                Toggle(naam.vertaald, isOn: Binding(get: { s.extra.contains(sleutel) },
-                                                           set: { if $0 { s.extra.insert(sleutel) } else { s.extra.remove(sleutel) } }))
-                            }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                }
+                aantalRij("Wastafels", $item.wastafels, 0...6)
+                aantalRij("Meerpersoonswastafels", $item.meerpersoonswastafels, 0...3)
+                aantalRij("Douches", $item.douches, 0...3)
+                aantalRij("Baden", $item.baden, 0...2)
+                aantalRij("Bad met douche", $item.badDouches, 0...2)
+                deelRijen(kamers: $item.kamers, adressen: $item.adressen)
+                if item.douches + item.baden + item.badDouches > 0 {
+                    DisclosureGroup {
+                        ForEach(Self.badkamerExtras, id: \.sleutel) { o in
+                            Toggle(o.naam.vertaald, isOn: keuze(o.sleutel, in: $item.extra))
+                        }
+                    } label: {
+                        LabeledContent("Extra's in de badkamer") {
+                            Text(verbatim: "\(item.extra.count)").monospacedDigit()
                         }
                     }
                 }
+            } header: {
+                blokKop("Badkamer of toilet \(nummer(item.id, in: f.sanitair))") { f.sanitair.removeAll { $0.id == item.id } }
             }
-            .onDelete { f.sanitair.remove(atOffsets: $0) }
-            Button { f.sanitair.append(SanitairRij()) } label: { Label("Badkamer of toilet toevoegen", systemImage: "plus") }
-        } header: {
-            Text("Sanitair")
-        } footer: {
-            Text("Voeg elke badkamer en elk apart toilet apart toe, ook als u het alleen gebruikt (dan 1 kamer).")
+        }
+        Section {
+            toevoegKnop("Badkamer of toilet toevoegen") { f.sanitair.append(SanitairRij()) }
         }
     }
 
-    private var energieSectie: some View {
+    @ViewBuilder
+    private var energieStap: some View {
         Section {
-            Picker("Energielabel van de woning", selection: $f.label) {
+            Picker("Energielabel", selection: $f.label) {
                 Text("Geen of onbekend").tag(Energielabel?.none)
                 ForEach(Energielabel.allCases, id: \.self) { Text($0.rawValue).tag(Energielabel?.some($0)) }
             }
+            .pickerStyle(.menu)
             if f.label != nil {
                 DatePicker("Opnamedatum", selection: $f.labelOpnamedatum, in: ...Date(), displayedComponents: .date)
             }
-            TextField("Bouwjaar", value: $f.bouwjaar, format: .number.grouping(.never)).keyboardType(.numberPad)
+            LabeledContent("Bouwjaar") {
+                TextField("Bouwjaar", value: $f.bouwjaar, format: .number.grouping(.never))
+                    .keyboardType(.numberPad).multilineTextAlignment(.trailing).frame(width: 90)
+            }
         } header: {
-            Text("Energie")
+            Text("Energielabel van de woning")
         } footer: {
             Text("Het label van de hele woning telt, maal uw deel van de oppervlakte. Zonder geldig label telt het bouwjaar.")
         }
-    }
-
-    private var buitenSectie: some View {
         Section {
-            m2Veld("Eigen balkon of tuin", $f.priveBuitenruimte)
-            ForEach($f.gedeeldeBuitenruimten) { $b in
-                VStack(alignment: .leading, spacing: 6) {
-                    m2Veld("Gedeelde buitenruimte", $b.m2)
-                    deelVelden(kamers: $b.kamers, adressen: $b.adressen)
-                }
+            Link(destination: URL(string: "https://www.ep-online.nl")!) {
+                Label("Label opzoeken op ep-online.nl", systemImage: "arrow.up.right.square")
             }
-            .onDelete { f.gedeeldeBuitenruimten.remove(atOffsets: $0) }
-            Button { f.gedeeldeBuitenruimten.append(GedeeldeBuitenruimte()) } label: { Label("Gedeelde buitenruimte toevoegen", systemImage: "plus") }
-        } header: {
-            Text("Buitenruimte")
         }
     }
 
-    private var wozSectie: some View {
+    @ViewBuilder
+    private var buitenStap: some View {
         Section {
-            TextField("WOZ-waarde van het hele adres", value: $f.wozWaarde, format: .currency(code: "EUR").precision(.fractionLength(0)))
-                .keyboardType(.numberPad)
-            m2Veld("Gebruiksoppervlakte van het adres", $f.gebruiksoppervlakteAdres)
+            getalRij("Eigen balkon of tuin", $f.priveBuitenruimte, eenheid: "m²")
+        } header: {
+            Text("Alleen voor u")
+        } footer: {
+            Text("De hele onbebouwde oppervlakte. Bij een balkon meet u vanaf de binnenkant van het hek.")
+        }
+        ForEach($f.gedeeldeBuitenruimten) { $item in
+            Section {
+                getalRij("Oppervlakte", $item.m2, eenheid: "m²")
+                deelRijen(kamers: $item.kamers, adressen: $item.adressen)
+            } header: {
+                blokKop("Gedeelde buitenruimte \(nummer(item.id, in: f.gedeeldeBuitenruimten))") { f.gedeeldeBuitenruimten.removeAll { $0.id == item.id } }
+            }
+        }
+        Section {
+            toevoegKnop("Gedeelde buitenruimte toevoegen") { f.gedeeldeBuitenruimten.append(GedeeldeBuitenruimte()) }
+        }
+    }
+
+    @ViewBuilder
+    private var wozStap: some View {
+        Section {
+            bedragRij("WOZ-waarde", $f.wozWaarde, decimalen: 0)
+            getalRij("Gebruiksoppervlakte", $f.gebruiksoppervlakteAdres, eenheid: "m²")
             if let regels {
                 Picker("Waardepeildatum", selection: $f.wozPeildatum) {
                     ForEach(regels.corop.perPeildatum.keys.sorted().reversed(), id: \.self) { iso in
                         Text(Dag(iso: iso)?.description ?? iso).tag(iso)
                     }
                 }
+                .pickerStyle(.menu)
                 Picker("COROP-gebied", selection: $f.coropGebied) {
                     Text("Kies").tag(String?.none)
                     ForEach(regels.corop.gebieden, id: \.self) { Text($0).tag(String?.some($0)) }
                 }
-            }
-            Link(destination: URL(string: "https://www.wozwaardeloket.nl")!) {
-                Label("WOZ en oppervlakte opzoeken op wozwaardeloket.nl", systemImage: "arrow.up.right.square")
+                .pickerStyle(.navigationLink)
             }
         } header: {
-            Text("WOZ-waarde")
+            Text("Van het hele adres")
         } footer: {
             Text("Het COROP-gebied is de regio van uw gemeente (bijvoorbeeld Groot-Amsterdam of Utrecht). De WOZ-waarde per m² wordt vergeleken met het gemiddelde van die regio: 10, 12 of 14 punten.")
         }
+        Section {
+            Link(destination: URL(string: "https://www.wozwaardeloket.nl")!) {
+                Label("WOZ en oppervlakte opzoeken op wozwaardeloket.nl", systemImage: "arrow.up.right.square")
+            }
+        }
     }
 
-    private var overigSectie: some View {
-        Section {
+    @ViewBuilder
+    private var overigStap: some View {
+        Section("Aftrekpunten") {
             Toggle("Alleen bereikbaar via een kamer van de verhuurder, die zelf in de woning woont", isOn: $f.alleenViaVertrekVerhuurder)
             Toggle("Raam in de woonkamer kleiner dan 0,75 m²", isOn: $f.ruitKleinerDan075)
             Toggle("Onderkant raam woonkamer hoger dan 1,60 m", isOn: $f.kozijnHogerDan160)
+        }
+        Section("Extra") {
             Toggle("Video-intercom met deuropener", isOn: $f.videoIntercom)
             Picker("Monument", selection: $f.monument) {
                 Text("Geen").tag(KamerMonument.geen)
@@ -221,22 +404,26 @@ struct KamerView: View {
                 Text("Rijksmonument, contract vanaf 1-7-2024").tag(KamerMonument.rijksmonumentContractNaWbh)
                 Text("Gemeentelijk of provinciaal monument").tag(KamerMonument.gemeentelijkOfProvinciaal)
             }
-        } header: {
-            Text("Overig")
+            .pickerStyle(.navigationLink)
         }
     }
 
     @ViewBuilder
-    private var uitkomstSectie: some View {
+    private var uitkomstStap: some View {
         switch uitkomst {
         case .success(let u):
             Section {
-                LabeledContent("Punten", value: String(u.totaal)).font(.headline)
-                if let max = u.maximaleHuur {
-                    if winkel.ontgrendeld {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack(alignment: .firstTextBaseline, spacing: 6) {
+                        Text(verbatim: "\(u.totaal)")
+                            .font(.system(size: 44, weight: .heavy, design: .rounded))
+                            .foregroundStyle(Huisstijl.bosgroen)
+                        Text("punten").font(.title3).foregroundStyle(Huisstijl.gedempt)
+                    }
+                    if let max = u.maximaleHuur, winkel.ontgrendeld {
                         LabeledContent("Maximale kale huur", value: Opmaak.euro(max)).font(.headline)
                     }
-                    if let huur = f.kaleHuur, huur > 0 {
+                    if let max = u.maximaleHuur, let huur = f.kaleHuur, huur > 0 {
                         if huur > max + 0.005 {
                             Label(winkel.ontgrendeld ? String(localized: "U betaalt mogelijk \(Opmaak.euro(huur - max)) per maand te veel.")
                                                      : Bandbreedte.voor(teVeelPerMaand: huur - max).map(Weergave.bandTekst)
@@ -249,14 +436,13 @@ struct KamerView: View {
                         }
                     }
                 }
+                .padding(.vertical, 6)
                 ForEach(u.waarschuwingen, id: \.self) { Text($0).font(.footnote).foregroundStyle(.secondary) }
-            } header: {
-                Text("Uitkomst")
+                if !winkel.ontgrendeld && u.maximaleHuur != nil {
+                    OntgrendelKaart()
+                }
             } footer: {
                 Text("Voor kamers geldt altijd huurbescherming, ook bij veel punten (BW 7:247). \(Uitkomst.disclaimer.vertaald)")
-            }
-            if !winkel.ontgrendeld && u.maximaleHuur != nil {
-                Section { OntgrendelKaart() }
             }
             Section("Punten per rubriek") {
                 ForEach(u.rubrieken, id: \.nummer) { r in
@@ -264,12 +450,16 @@ struct KamerView: View {
                         ForEach(r.stappen, id: \.self) { Text($0).font(.footnote) }
                         Text(r.bron).font(.caption).foregroundStyle(.secondary)
                     } label: {
-                        LabeledContent(String("\(r.nummer). \(r.titel.vertaald)"), value: Opmaak.getal(r.punten, decimalen: 2))
+                        LabeledContent {
+                            Text(Opmaak.getal(r.punten, decimalen: 2)).monospacedDigit()
+                        } label: {
+                            Text(verbatim: "\(r.nummer). \(r.titel.vertaald)")
+                        }
                     }
                 }
             }
         case .failure(let fout):
-            Section("Uitkomst") {
+            Section {
                 Text(verbatim: (fout as? WWSFout)?.description ?? fout.localizedDescription).foregroundStyle(Huisstijl.signaal)
             }
         case nil:
@@ -277,27 +467,76 @@ struct KamerView: View {
         }
     }
 
-    // MARK: Hulp
+    // MARK: Rijen (alle getallen rechts uitgelijnd, eenheid in een vaste kolom)
 
-    private func m2Veld(_ titel: LocalizedStringKey, _ waarde: Binding<Double>) -> some View {
-        HStack {
+    private func getalRij(_ titel: LocalizedStringKey, _ waarde: Binding<Double>, eenheid: String) -> some View {
+        LabeledContent {
+            HStack(spacing: 6) {
+                TextField("0", value: waarde, format: .number.precision(.fractionLength(0...2)))
+                    .keyboardType(.decimalPad)
+                    .multilineTextAlignment(.trailing)
+                    .monospacedDigit()
+                    .frame(width: 80)
+                Text(eenheid).foregroundStyle(.secondary).frame(width: 26, alignment: .leading)
+            }
+        } label: {
             Text(titel)
-            Spacer()
-            TextField("0", value: waarde, format: .number.precision(.fractionLength(0...2)))
-                .keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(maxWidth: 90)
-            Text("m²").foregroundStyle(.secondary)
         }
     }
 
-    private func deelVelden(kamers: Binding<Int>, adressen: Binding<Int>) -> some View {
-        Group {
-            Stepper(value: kamers, in: 1...30) {
-                Text("Aantal kamers dat dit deelt: \(kamers.wrappedValue)")
-            }
-            Stepper(value: adressen, in: 1...50) {
-                if adressen.wrappedValue == 1 { Text("Alleen dit adres") } else { Text("Aantal adressen dat dit deelt: \(adressen.wrappedValue)") }
+    private func bedragRij(_ titel: LocalizedStringKey, _ waarde: Binding<Double?>, decimalen: Int = 2) -> some View {
+        LabeledContent {
+            TextField("€ 0", value: waarde, format: .currency(code: "EUR").precision(.fractionLength(decimalen)))
+                .keyboardType(decimalen == 0 ? .numberPad : .decimalPad)
+                .multilineTextAlignment(.trailing)
+                .monospacedDigit()
+                .frame(width: 140)
+        } label: {
+            Text(titel)
+        }
+    }
+
+    private func aantalRij(_ titel: LocalizedStringKey, _ waarde: Binding<Int>, _ bereik: ClosedRange<Int>) -> some View {
+        Stepper(value: waarde, in: bereik) {
+            LabeledContent {
+                Text(verbatim: "\(waarde.wrappedValue)").monospacedDigit().foregroundStyle(.primary)
+            } label: {
+                Text(titel)
             }
         }
+    }
+
+    @ViewBuilder
+    private func deelRijen(kamers: Binding<Int>, adressen: Binding<Int>) -> some View {
+        aantalRij("Kamers die dit delen", kamers, 1...30)
+        aantalRij("Adressen die dit delen", adressen, 1...50)
+    }
+
+    private func blokKop(_ titel: LocalizedStringKey, verwijder: @escaping () -> Void) -> some View {
+        HStack {
+            Text(titel)
+            Spacer()
+            Button(role: .destructive, action: verwijder) {
+                Label("Verwijder", systemImage: "trash").labelStyle(.iconOnly)
+            }
+            .buttonStyle(.borderless)
+            .accessibilityLabel(Text("Verwijder"))
+        }
+    }
+
+    private func toevoegKnop(_ titel: LocalizedStringKey, actie: @escaping () -> Void) -> some View {
+        Button(action: actie) {
+            Label(titel, systemImage: "plus.circle.fill").font(.headline)
+        }
+    }
+
+    private func nummer<T: Identifiable>(_ id: T.ID, in lijst: [T]) -> Int {
+        (lijst.firstIndex { $0.id == id } ?? 0) + 1
+    }
+
+    private func keuze(_ sleutel: String, in set: Binding<Set<String>>) -> Binding<Bool> {
+        Binding(get: { set.wrappedValue.contains(sleutel) },
+                set: { if $0 { set.wrappedValue.insert(sleutel) } else { set.wrappedValue.remove(sleutel) } })
     }
 
     struct Optie { let sleutel: String; let naam: String }

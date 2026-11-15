@@ -311,6 +311,16 @@
         }
       }
     },
+    "Adressen die dit delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses sharing this"
+          }
+        }
+      }
+    },
     "Aftrekken": {
       "localizations": {
         "en": {
@@ -411,6 +421,16 @@
         }
       }
     },
+    "Alleen voor u": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Just for you"
+          }
+        }
+      }
+    },
     "Alles wat u invult blijft op uw telefoon.": {
       "localizations": {
         "en": {
@@ -481,12 +501,32 @@
         }
       }
     },
+    "Bad met douche": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bath with shower"
+          }
+        }
+      }
+    },
     "Bad met douche: %lld": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Bath with shower: %lld"
+          }
+        }
+      }
+    },
+    "Baden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baths"
           }
         }
       }
@@ -521,6 +561,26 @@
         }
       }
     },
+    "Badkamer of toilet %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom or toilet %@"
+          }
+        }
+      }
+    },
+    "Badkamer of toilet %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom or toilet %lld"
+          }
+        }
+      }
+    },
     "Badkamer of toilet toevoegen": {
       "localizations": {
         "en": {
@@ -547,6 +607,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Start in the first room. Point the camera at the walls and walk around slowly."
+          }
+        }
+      }
+    },
+    "Bekijk uitkomst": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See result"
           }
         }
       }
@@ -1231,6 +1301,16 @@
         }
       }
     },
+    "Douches": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Showers"
+          }
+        }
+      }
+    },
     "Douches: %lld": {
       "localizations": {
         "en": {
@@ -1401,6 +1481,16 @@
         }
       }
     },
+    "Eigen kamers met koeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Own rooms with cooling"
+          }
+        }
+      }
+    },
     "Eigen kamers met koeling: %lld": {
       "localizations": {
         "en": {
@@ -1551,12 +1641,32 @@
         }
       }
     },
+    "Extra": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extra"
+          }
+        }
+      }
+    },
     "Extra keukenkasten (aantal stuks van 60 cm breed, minstens 60 cm hoog)": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Extra kitchen cupboards (number of 60 cm wide units, at least 60 cm high)"
+          }
+        }
+      }
+    },
+    "Extra's in de badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bathroom extras"
           }
         }
       }
@@ -1781,6 +1891,16 @@
         }
       }
     },
+    "Gebruiksoppervlakte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usable floor area"
+          }
+        }
+      }
+    },
     "Gebruiksoppervlakte van het adres": {
       "localizations": {
         "en": {
@@ -1841,12 +1961,52 @@
         }
       }
     },
+    "Gedeelde buitenruimte %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared outdoor space %@"
+          }
+        }
+      }
+    },
+    "Gedeelde buitenruimte %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared outdoor space %lld"
+          }
+        }
+      }
+    },
     "Gedeelde buitenruimte toevoegen": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Add shared outdoor space"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimte %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared space %@"
+          }
+        }
+      }
+    },
+    "Gedeelde ruimte %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shared space %lld"
           }
         }
       }
@@ -2671,6 +2831,16 @@
         }
       }
     },
+    "Inbouwapparatuur en extra's": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Built-in appliances and extras"
+          }
+        }
+      }
+    },
     "Inbouwapparatuur en extra's (%lld)": {
       "localizations": {
         "en": {
@@ -3081,6 +3251,16 @@
         }
       }
     },
+    "Kamers die dit delen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms sharing this"
+          }
+        }
+      }
+    },
     "Kamers gescand: %lld. Loop naar de volgende kamer.": {
       "localizations": {
         "en": {
@@ -3141,6 +3321,26 @@
         }
       }
     },
+    "Keuken %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen %@"
+          }
+        }
+      }
+    },
+    "Keuken %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kitchen %lld"
+          }
+        }
+      }
+    },
     "Keuken toevoegen": {
       "localizations": {
         "en": {
@@ -3157,6 +3357,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose"
+          }
+        }
+      }
+    },
+    "Kies een andere stap": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose another step"
           }
         }
       }
@@ -3371,6 +3581,16 @@
         }
       }
     },
+    "Lengte aanrecht": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worktop length"
+          }
+        }
+      }
+    },
     "Lengte van het aanrecht": {
       "localizations": {
         "en": {
@@ -3471,6 +3691,16 @@
         }
       }
     },
+    "Meerpersoonswastafels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double washbasins"
+          }
+        }
+      }
+    },
     "Meerpersoonswastafels: %lld": {
       "localizations": {
         "en": {
@@ -3517,6 +3747,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Measure from wall to wall at a height of 1.50 m. With a sloping roof, only the part where the ceiling is at least 1.50 m high counts. Built-in cupboards count."
+          }
+        }
+      }
+    },
+    "Meet van muur tot muur, op 1,5 m hoogte.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure from wall to wall, at a height of 1.5 m."
           }
         }
       }
@@ -4651,6 +4891,46 @@
         }
       }
     },
+    "Stap %1$@ van %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %1$@ of %2$@"
+          }
+        }
+      }
+    },
+    "Stap %1$lld van %2$lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "Stap %@ van %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %@ of %@"
+          }
+        }
+      }
+    },
+    "Stap %lld van %lld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Step %lld of %lld"
+          }
+        }
+      }
+    },
     "Stap %lld: %@. %@": {
       "localizations": {
         "en": {
@@ -4827,6 +5107,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Counts towards the WOZ points. A parking space is at least 12 m²."
+          }
+        }
+      }
+    },
+    "Terug naar het begin": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Back to the start"
           }
         }
       }
@@ -5251,6 +5541,16 @@
         }
       }
     },
+    "Uw kamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your room"
+          }
+        }
+      }
+    },
     "Uw termijnen": {
       "localizations": {
         "en": {
@@ -5277,6 +5577,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dishwasher (built-in)"
+          }
+        }
+      }
+    },
+    "Van het hele adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Of the whole address"
           }
         }
       }
@@ -5381,12 +5691,32 @@
         }
       }
     },
+    "Verwarmde eigen kamers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own rooms"
+          }
+        }
+      }
+    },
     "Verwarmde eigen kamers: %lld": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Heated own rooms: %lld"
+          }
+        }
+      }
+    },
+    "Verwarmde eigen overige ruimten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heated own other spaces"
           }
         }
       }
@@ -5411,12 +5741,32 @@
         }
       }
     },
+    "Verwarming en koeling": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heating and cooling"
+          }
+        }
+      }
+    },
     "Verwarming en verkoeling": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Heating and cooling"
+          }
+        }
+      }
+    },
+    "Verwijder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
           }
         }
       }
@@ -5511,6 +5861,26 @@
         }
       }
     },
+    "Voeg de keuken toe die u gebruikt, ook als u die deelt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the kitchen you use, even if you share it."
+          }
+        }
+      }
+    },
+    "Voeg de ruimten toe die u deelt met andere bewoners, zoals een woonkamer, gang of berging.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add the spaces you share with other residents, such as a living room, hallway or storage room."
+          }
+        }
+      }
+    },
     "Voeg eerst een woning toe": {
       "localizations": {
         "en": {
@@ -5547,6 +5917,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Does the kitchen meet the basic level?"
+          }
+        }
+      }
+    },
+    "Volgende": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
           }
         }
       }
@@ -5687,6 +6067,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Facilities"
+          }
+        }
+      }
+    },
+    "Vorige": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous"
           }
         }
       }
@@ -5857,6 +6247,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vanity unit"
+          }
+        }
+      }
+    },
+    "Wastafels": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasins"
           }
         }
       }
