@@ -201,6 +201,16 @@
         }
       }
     },
+    "Aantal": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number"
+          }
+        }
+      }
+    },
     "Aantal adressen dat dit deelt: %@": {
       "localizations": {
         "en": {
@@ -301,12 +311,42 @@
         }
       }
     },
+    "Adres gevonden, maar het bouwjaar niet. Vul het zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address found, but not the year built. Please enter it yourself."
+          }
+        }
+      }
+    },
     "Adres opzoeken": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Look up address"
+          }
+        }
+      }
+    },
+    "Adres: %1$@ %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address: %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Adres: %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address: %@ %@"
           }
         }
       }
@@ -381,6 +421,16 @@
         }
       }
     },
+    "Alleen als hij is ingebouwd (achter een keukendeur).": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only if it is built in (behind a kitchen door)."
+          }
+        }
+      }
+    },
     "Alleen bereikbaar via een kamer van de verhuurder, die zelf in de woning woont": {
       "localizations": {
         "en": {
@@ -397,6 +447,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "This address only"
+          }
+        }
+      }
+    },
+    "Alleen een ingebouwde oven telt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only a built-in oven counts."
+          }
+        }
+      }
+    },
+    "Alleen een ingebouwde vaatwasser telt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Only a built-in dishwasher counts."
           }
         }
       }
@@ -491,12 +561,32 @@
         }
       }
     },
+    "Apart toilet scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan separate toilet"
+          }
+        }
+      }
+    },
     "Appartement of andere woning": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Apartment or other home"
+          }
+        }
+      }
+    },
+    "Bad": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bath"
           }
         }
       }
@@ -587,6 +677,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Add bathroom or toilet"
+          }
+        }
+      }
+    },
+    "Badkamer scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan bathroom"
+          }
+        }
+      }
+    },
+    "Badkamer scannen met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan bathroom with the camera"
           }
         }
       }
@@ -971,6 +1081,16 @@
         }
       }
     },
+    "Controleer of dit klopt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check that this is correct."
+          }
+        }
+      }
+    },
     "Controleer of het voorstel binnen het maximum blijft. Bezwaar maakt u vóór de ingangsdatum.": {
       "localizations": {
         "en": {
@@ -1007,6 +1127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "The app reads the basic rent and start date from your contract. This happens on your phone; the photos are not stored."
+          }
+        }
+      }
+    },
+    "De camera heeft ook voorzieningen herkend. Controleer ze; ze worden ingevuld bij Voorzieningen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera also recognised facilities. Check them; they will be filled in under Facilities."
           }
         }
       }
@@ -1061,12 +1191,32 @@
         }
       }
     },
+    "De opnamedatum is niet gevonden; vul die zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The assessment date was not found; please enter it yourself."
+          }
+        }
+      }
+    },
     "De regels voor kamers konden niet worden geladen.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "The rules for rooms could not be loaded."
+          }
+        }
+      }
+    },
+    "De scan is niet gelukt. Probeer het opnieuw of vul de vragen zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The scan did not work. Try again or answer the questions yourself."
           }
         }
       }
@@ -1231,6 +1381,16 @@
         }
       }
     },
+    "Dit heeft de camera gezien. Controleer elk punt en zet uit wat niet klopt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is what the camera saw. Check each item and turn off what is not right."
+          }
+        }
+      }
+    },
     "Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot %1$@%% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. %2$@ Bron: %3$@; %4$@.": {
       "localizations": {
         "en": {
@@ -1321,6 +1481,16 @@
         }
       }
     },
+    "Dubbele wastafel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Double washbasin"
+          }
+        }
+      }
+    },
     "Een PDF-dossier om mee te nemen naar uw verhuurder of de Huurcommissie, en een conceptbrief.": {
       "localizations": {
         "en": {
@@ -1331,12 +1501,32 @@
         }
       }
     },
+    "Een douche herkent de camera niet. Vul die zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera does not recognise a shower. Enter it yourself."
+          }
+        }
+      }
+    },
     "Een drempelloze woning in een complex met alarmering naar een meldkamer en gezamenlijke ruimtes voor maaltijden of recreatie.": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "A step-free home in a complex with an alarm connected to a control room and shared spaces for meals or recreation."
+          }
+        }
+      }
+    },
+    "Een dubbele wastafel is minstens 70 cm breed en heeft twee kranen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A double washbasin is at least 70 cm wide and has two taps."
           }
         }
       }
@@ -1357,6 +1547,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "An energy performance fee is a separate fee, for example for solar panels in a very energy-efficient home. If it is not in your contract, leave this off."
+          }
+        }
+      }
+    },
+    "Een hangend toilet hangt aan de muur, zonder voet.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A wall-hung toilet hangs on the wall, without a base."
           }
         }
       }
@@ -1511,6 +1711,16 @@
         }
       }
     },
+    "Elektrisch": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Electric"
+          }
+        }
+      }
+    },
     "Elektrische oven (inbouw)": {
       "localizations": {
         "en": {
@@ -1561,12 +1771,32 @@
         }
       }
     },
+    "Energielabel scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan energy label"
+          }
+        }
+      }
+    },
     "Energielabel van de woning": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Energy label of the home"
+          }
+        }
+      }
+    },
+    "Energielabel: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy label: %@"
           }
         }
       }
@@ -1587,6 +1817,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Energy performance fee agreed"
+          }
+        }
+      }
+    },
+    "Er is niets gevonden om over te nemen. Scan de pagina waar het op staat, of vul het zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing was found to take over. Scan the page it is on, or enter it yourself."
+          }
+        }
+      }
+    },
+    "Er is niets herkend dat punten oplevert. Vul de vragen zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing was recognised that earns points. Answer the questions yourself."
           }
         }
       }
@@ -1691,6 +1941,16 @@
         }
       }
     },
+    "Eén minder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One less"
+          }
+        }
+      }
+    },
     "Foto %lld": {
       "localizations": {
         "en": {
@@ -1717,6 +1977,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Photos"
+          }
+        }
+      }
+    },
+    "Foto's als bewijs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos as evidence"
           }
         }
       }
@@ -1817,6 +2087,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Garage"
+          }
+        }
+      }
+    },
+    "Gas": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gas"
           }
         }
       }
@@ -2301,12 +2581,32 @@
         }
       }
     },
+    "Gevonden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found"
+          }
+        }
+      }
+    },
     "Gevonden in uw contract": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Found in your contract"
+          }
+        }
+      }
+    },
+    "Gewone wastafel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regular washbasin"
           }
         }
       }
@@ -2881,6 +3181,16 @@
         }
       }
     },
+    "Inductie": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Induction"
+          }
+        }
+      }
+    },
     "Inductiekookplaat": {
       "localizations": {
         "en": {
@@ -2937,6 +3247,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Start date of your (first) rental contract"
+          }
+        }
+      }
+    },
+    "Ingangsdatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date: %@"
           }
         }
       }
@@ -3191,6 +3511,16 @@
         }
       }
     },
+    "Kale huur: %@ per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic rent: %@ per month"
+          }
+        }
+      }
+    },
     "Kalenderjaar": {
       "localizations": {
         "en": {
@@ -3311,6 +3641,16 @@
         }
       }
     },
+    "Keramisch": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ceramic"
+          }
+        }
+      }
+    },
     "Keramische kookplaat": {
       "localizations": {
         "en": {
@@ -3351,6 +3691,26 @@
         }
       }
     },
+    "Keuken scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan kitchen"
+          }
+        }
+      }
+    },
+    "Keuken scannen met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan kitchen with the camera"
+          }
+        }
+      }
+    },
     "Keuken toevoegen": {
       "localizations": {
         "en": {
@@ -3377,6 +3737,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Choose another step"
+          }
+        }
+      }
+    },
+    "Kies het soort. Alleen een ingebouwde kookplaat telt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose the type. Only a built-in hob counts."
           }
         }
       }
@@ -3451,6 +3821,16 @@
         }
       }
     },
+    "Koelkast": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fridge"
+          }
+        }
+      }
+    },
     "Koelkast (inbouw)": {
       "localizations": {
         "en": {
@@ -3477,6 +3857,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "If you cannot agree, you can ask the Rent Tribunal for a ruling, up to 24 months after the deadline for the statement. The difference must be at least € 36."
+          }
+        }
+      }
+    },
+    "Kookplaat": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hob"
+          }
+        }
+      }
+    },
+    "Kopiëren (zelfde complex)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy (same complex)"
           }
         }
       }
@@ -3591,6 +3991,16 @@
         }
       }
     },
+    "Lengte": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Length"
+          }
+        }
+      }
+    },
     "Lengte aanrecht": {
       "localizations": {
         "en": {
@@ -3607,6 +4017,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Length of the worktop"
+          }
+        }
+      }
+    },
+    "Lengte van het aanrecht (schatting)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Worktop length (estimate)"
           }
         }
       }
@@ -3637,6 +4057,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Is the home in a nationally protected townscape or village view?"
+          }
+        }
+      }
+    },
+    "Loop langzaam door de ruimte en richt de camera op de apparaten en het sanitair. Tik op Klaar als alles is gezien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk slowly through the room and point the camera at the appliances and sanitary fittings. Tap Done when everything has been seen."
           }
         }
       }
@@ -4291,6 +4721,26 @@
         }
       }
     },
+    "Opgehaald: %@. Tik op Volgende.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetched: %@. Tap Next."
+          }
+        }
+      }
+    },
+    "Opgeteld uit de onderkasten, spoelbak en apparaten onder het blad. Controleer het met de AR-meter of een rolmaat.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Added up from the base cabinets, sink and appliances under the worktop. Check it with the AR meter or a tape measure."
+          }
+        }
+      }
+    },
     "Ophalen bij EP-Online": {
       "localizations": {
         "en": {
@@ -4317,6 +4767,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Assessment date of the label missing"
+          }
+        }
+      }
+    },
+    "Opnamedatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assessment date: %@"
           }
         }
       }
@@ -4417,6 +4877,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Floor area of habitable rooms"
+          }
+        }
+      }
+    },
+    "Oven": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oven"
           }
         }
       }
@@ -4831,6 +5301,26 @@
         }
       }
     },
+    "Servicekosten volgens contract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service charges per contract"
+          }
+        }
+      }
+    },
+    "Servicekosten: %@ per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service charges: %@ per month"
+          }
+        }
+      }
+    },
     "Slaapkamer": {
       "localizations": {
         "en": {
@@ -4867,6 +5357,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Close"
+          }
+        }
+      }
+    },
+    "Sluiten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "Sneller: scan uw huurcontract. De app neemt het adres, de huur, de ingangsdatum en de servicekosten over.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faster: scan your rental contract. The app takes over the address, rent, start date and service charges."
           }
         }
       }
@@ -5181,12 +5691,42 @@
         }
       }
     },
+    "Tik aan wat er is. Lang indrukken om te verminderen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap what is there. Press and hold to reduce."
+          }
+        }
+      }
+    },
     "Toilet": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Toilet"
+          }
+        }
+      }
+    },
+    "Toilet in de badkamer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toilet in the bathroom"
+          }
+        }
+      }
+    },
+    "Toilet scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan toilet"
           }
         }
       }
@@ -5257,6 +5797,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Garden, balcony, roof terrace or loggia that belongs only to your home. A Juliet balcony does not count."
+          }
+        }
+      }
+    },
+    "Tweede badkamer scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan second bathroom"
           }
         }
       }
@@ -5597,6 +6147,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Your homes"
+          }
+        }
+      }
+    },
+    "Vaatwasser": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dishwasher"
           }
         }
       }
@@ -6211,6 +6771,16 @@
         }
       }
     },
+    "WOZ-beschikking scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan WOZ assessment"
+          }
+        }
+      }
+    },
     "WOZ-waarde": {
       "localizations": {
         "en": {
@@ -6241,12 +6811,32 @@
         }
       }
     },
+    "WOZ-waarde: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WOZ value: %@"
+          }
+        }
+      }
+    },
     "Waardepeildatum": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Valuation reference date"
+          }
+        }
+      }
+    },
+    "Waardepeildatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuation reference date: %@"
           }
         }
       }
@@ -6261,12 +6851,32 @@
         }
       }
     },
+    "Wastafel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasin"
+          }
+        }
+      }
+    },
     "Wastafel in een ingebouwd kastje": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Washbasin in a built-in cabinet"
+          }
+        }
+      }
+    },
+    "Wastafel in het toilet": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Washbasin in the toilet"
           }
         }
       }
@@ -6367,6 +6977,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Don't know / prefer not to say"
+          }
+        }
+      }
+    },
+    "Wissen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
           }
         }
       }
@@ -6501,6 +7121,36 @@
         }
       }
     },
+    "aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on"
+          }
+        }
+      }
+    },
+    "adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "address"
+          }
+        }
+      }
+    },
+    "bouwjaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "year built"
+          }
+        }
+      }
+    },
     "dag": {
       "localizations": {
         "en": {
@@ -6517,6 +7167,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "days"
+          }
+        }
+      }
+    },
+    "energielabel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "energy label"
           }
         }
       }
@@ -6547,6 +7207,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "points"
+          }
+        }
+      }
+    },
+    "uit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "off"
           }
         }
       }

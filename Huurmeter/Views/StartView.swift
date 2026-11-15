@@ -61,6 +61,11 @@ struct StartView: View {
                     NavigationLink(value: woning) { WoningKaart(woning: woning) }
                         .buttonStyle(.plain)
                         .contextMenu {
+                            Button {
+                                pad.append(woning.kopie(in: context))
+                            } label: {
+                                Label("Kopiëren (zelfde complex)", systemImage: "plus.square.on.square")
+                            }
                             Button(role: .destructive) { teVerwijderen = woning } label: {
                                 Label("Verwijderen", systemImage: "trash")
                             }

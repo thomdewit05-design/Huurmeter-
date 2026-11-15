@@ -55,6 +55,7 @@ struct RuimtesView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Ruimtes")
         .fullScreenCover(isPresented: $woningScan) { WoningScanView(woning: woning) }
         .sheet(item: $bewerk) { r in
@@ -183,6 +184,7 @@ struct RuimteEditView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle(ruimte.naam.isEmpty ? "Ruimte" : ruimte.naam)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {

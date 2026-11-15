@@ -60,6 +60,7 @@ struct HuurView: View {
             }
         }
         .huisstijlAchtergrond()
+        .toetsenbordKlaar()
         .navigationTitle("Huur")
         .onChange(of: woning.kaleHuur) { woning.geraakt() }
     }
