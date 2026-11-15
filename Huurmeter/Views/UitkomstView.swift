@@ -7,6 +7,7 @@ import WidgetKit
 /// Scherm 7: punten, segment, maximale huur, verschil per maand en per jaar, uitklapbaar per rubriek.
 struct UitkomstView: View {
     @Environment(\.modelContext) private var context
+    @Environment(Winkel.self) private var winkel
     @Bindable var woning: Woning
     @State private var resultaat: Rekenservice.Resultaat?
 
@@ -26,6 +27,7 @@ struct UitkomstView: View {
         .navigationTitle("Uitkomst")
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: bereken)
+        .onChange(of: winkel.ontgrendeld) { bereken() }
         .task { if woning.herinneringenAan { await Meldingen.plan(voor: woning) } }
     }
 
@@ -38,7 +40,9 @@ struct UitkomstView: View {
             }
             // Gegevens voor de widget (gedeelde App Group-opslag op het toestel).
             if let opslag = UserDefaults(suiteName: WidgetGegevens.appGroup) {
-                WidgetGegevens(adres: woning.adres.weergave, uitkomst: u).bewaar(in: opslag)
+                var g = WidgetGegevens(adres: woning.adres.weergave, uitkomst: u)
+                if !winkel.ontgrendeld { g.maximaleHuur = nil; g.teVeelPerMaand = nil }
+                g.bewaar(in: opslag)
                 WidgetCenter.shared.reloadAllTimelines()
             }
         }
@@ -46,7 +50,8 @@ struct UitkomstView: View {
 
     @ViewBuilder
     private func inhoud(_ u: Uitkomst) -> some View {
-        let s = Weergave.samenvatting(u, kaleHuur: woning.kaleHuur)
+        let s = winkel.ontgrendeld ? Weergave.samenvatting(u, kaleHuur: woning.kaleHuur)
+                                   : Weergave.vergrendeldeSamenvatting(u, kaleHuur: woning.kaleHuur)
         List {
             Section {
                 VStack(alignment: .leading, spacing: 14) {
@@ -70,6 +75,10 @@ struct UitkomstView: View {
                 .listRowBackground(Huisstijl.kaart)
             } footer: {
                 Text(Uitkomst.disclaimer).font(.footnote.weight(.semibold))
+            }
+
+            if !winkel.ontgrendeld && u.maximaleHuur != nil {
+                Section { OntgrendelKaart() }
             }
 
             Section {

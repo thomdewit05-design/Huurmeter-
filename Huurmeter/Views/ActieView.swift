@@ -24,11 +24,6 @@ struct ActieView: View {
         .huisstijlAchtergrond()
         .navigationTitle("Dossier en brief")
         .navigationBarTitleDisplayMode(.inline)
-        .alert("Melding", isPresented: Binding(get: { winkel.melding != nil }, set: { if !$0 { winkel.melding = nil } })) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(winkel.melding ?? "")
-        }
         .sheet(isPresented: $toonDossier) {
             if let dossier { DossierVoorbeeld(url: dossier) }
         }
@@ -36,30 +31,8 @@ struct ActieView: View {
 
     // MARK: Betaalmuur (spec §8: eenmalig, geen abonnement)
 
-    @ViewBuilder
     private var betaalmuur: some View {
-        Section {
-            Label("PDF-dossier met puntentelling, plattegronden en foto's", systemImage: "doc.richtext")
-            Label("Conceptbrief aan uw verhuurder", systemImage: "envelope")
-            Label("Voor onbeperkt veel woningen", systemImage: "house.and.flag")
-        } header: {
-            Text("Wat u krijgt")
-        } footer: {
-            Text("Eenmalige aankoop. Geen abonnement en geen advertenties. Uw gegevens blijven op uw telefoon.")
-        }
-        Section {
-            Button {
-                Task { await winkel.koop() }
-            } label: {
-                HStack {
-                    Text(winkel.product.map { "Koop voor \($0.displayPrice)" } ?? "Laden…")
-                    if winkel.bezig { Spacer(); ProgressView() }
-                }
-            }
-            .disabled(winkel.product == nil || winkel.bezig)
-            Button("Eerdere aankoop herstellen") { Task { await winkel.herstel() } }
-                .disabled(winkel.bezig)
-        }
+        Section { OntgrendelKaart() }
     }
 
     // MARK: Na aankoop

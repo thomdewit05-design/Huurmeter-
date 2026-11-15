@@ -151,3 +151,7 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
    bronvermeldingen en de rekenstappen per rubriek. De vertalingen zijn niet door een moedertaalspreker nagelezen.
    De CI-stap "Engelse vertalingen controleren" meldt teksten die Xcode vindt maar die nog geen vertaling hebben.
    Ook de App Store-teksten (docs/APP-STORE.md) zijn nog alleen Nederlands.
+10. **Betaalmuur voor de maximale huur**: de maximale huur en het verschil staan nu achter de eenmalige aankoop
+    (advies € 9,99, zie docs/PRIJS.md). Pas in App Store Connect naam en beschrijving van het product
+    `nl.huurmeter.app.dossier` aan naar "Volledige uitkomst" (het ID blijft hetzelfde). Wie de app al kocht voor
+    dossier en brief, krijgt de maximale huur er automatisch bij.

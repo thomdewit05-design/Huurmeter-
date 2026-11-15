@@ -1,6 +1,16 @@
 {
   "sourceLanguage": "nl",
   "strings": {
+    "%1$@ punten · max. %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ points · max. %2$@"
+          }
+        }
+      }
+    },
     "%@": {
       "localizations": {
         "en": {
@@ -17,6 +27,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ per month too much"
+          }
+        }
+      }
+    },
+    "%@ punten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ points"
+          }
+        }
+      }
+    },
+    "%@ punten · vrije sector": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ points · private sector"
           }
         }
       }
@@ -57,6 +87,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld points · %@"
+          }
+        }
+      }
+    },
+    "%lld punten · max. %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld points · max. %@"
+          }
+        }
+      }
+    },
+    "%lld punten · vrije sector": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld points · private sector"
           }
         }
       }
@@ -427,6 +477,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Start in the first room. Point the camera at the walls and walk around slowly."
+          }
+        }
+      }
+    },
+    "Bekijk uw maximale huur": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See your maximum rent"
           }
         }
       }
@@ -817,6 +877,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "The basic rent and start date were not found. Scan the page with the rent, or enter them yourself."
+          }
+        }
+      }
+    },
+    "De maximale kale huur en hoeveel u per maand en per jaar te veel betaalt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The maximum basic rent and how much you overpay per month and per year"
           }
         }
       }
@@ -3071,6 +3141,16 @@
         }
       }
     },
+    "Laden…": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
+          }
+        }
+      }
+    },
     "Leges betalen": {
       "localizations": {
         "en": {
@@ -3276,7 +3356,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Report"
+            "value": "Message"
           }
         }
       }
@@ -3651,6 +3731,36 @@
         }
       }
     },
+    "Ontgrendel de uitkomst om de maximale kale huur te zien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock the result to see the maximum basic rent."
+          }
+        }
+      }
+    },
+    "Ontgrendel de uitkomst om te zien wat de maximale huur is en hoeveel u per maand te veel betaalt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock the result to see the maximum rent and how much you overpay per month."
+          }
+        }
+      }
+    },
+    "Ontgrendel voor %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock for %@"
+          }
+        }
+      }
+    },
     "Ontvangen op": {
       "localizations": {
         "en": {
@@ -3877,6 +3987,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Landlord's statement by"
+          }
+        }
+      }
+    },
+    "PDF-dossier en conceptbrief aan uw verhuurder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PDF file and draft letter to your landlord"
           }
         }
       }
@@ -4751,6 +4871,16 @@
         }
       }
     },
+    "Uw huur is waarschijnlijk te hoog": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your rent is probably too high"
+          }
+        }
+      }
+    },
     "Uw kale huur per maand": {
       "localizations": {
         "en": {
@@ -5067,6 +5197,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "For unlimited homes"
+          }
+        }
+      }
+    },
+    "Voor onbeperkt veel woningen en kamers": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "For unlimited homes and rooms"
           }
         }
       }

@@ -5,6 +5,7 @@ import HuurmeterCore
 /// Functie 11: puntentelling voor een kamer (onzelfstandige woonruimte).
 /// De invoer blijft op het toestel bewaard (één kamer).
 struct KamerView: View {
+    @Environment(Winkel.self) private var winkel
     @AppStorage("kamerFormulier") private var opgeslagen: Data = Data()
     @State private var f = KamerFormulier()
     @State private var geladen = false
@@ -232,10 +233,14 @@ struct KamerView: View {
             Section {
                 LabeledContent("Punten", value: String(u.totaal)).font(.headline)
                 if let max = u.maximaleHuur {
-                    LabeledContent("Maximale kale huur", value: Opmaak.euro(max)).font(.headline)
+                    if winkel.ontgrendeld {
+                        LabeledContent("Maximale kale huur", value: Opmaak.euro(max)).font(.headline)
+                    }
                     if let huur = f.kaleHuur, huur > 0 {
                         if huur > max + 0.005 {
-                            Label("U betaalt mogelijk \(Opmaak.euro(huur - max)) per maand te veel.", systemImage: "exclamationmark.triangle.fill")
+                            Label(winkel.ontgrendeld ? String(localized: "U betaalt mogelijk \(Opmaak.euro(huur - max)) per maand te veel.")
+                                                     : String(localized: "Uw huur is waarschijnlijk te hoog"),
+                                  systemImage: "exclamationmark.triangle.fill")
                                 .foregroundStyle(Huisstijl.signaal)
                         } else {
                             Label("Uw huur is niet hoger dan het maximum.", systemImage: "checkmark.seal.fill")
@@ -248,6 +253,9 @@ struct KamerView: View {
                 Text("Uitkomst")
             } footer: {
                 Text("Voor kamers geldt altijd huurbescherming, ook bij veel punten (BW 7:247). \(Uitkomst.disclaimer.vertaald)")
+            }
+            if !winkel.ontgrendeld && u.maximaleHuur != nil {
+                Section { OntgrendelKaart() }
             }
             Section("Punten per rubriek") {
                 ForEach(u.rubrieken, id: \.nummer) { r in

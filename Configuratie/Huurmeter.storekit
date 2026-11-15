@@ -1,33 +1,32 @@
 {
-  "identifier" : "6F3A1C2B",
-  "nonRenewingSubscriptions" : [
-
-  ],
-  "products" : [
+  "identifier": "6F3A1C2B",
+  "nonRenewingSubscriptions": [],
+  "products": [
     {
-      "displayPrice" : "9.99",
-      "familyShareable" : false,
-      "internalID" : "6740000001",
-      "localizations" : [
+      "displayPrice": "9.99",
+      "familyShareable": false,
+      "internalID": "6740000001",
+      "localizations": [
         {
-          "description" : "PDF-dossier en conceptbrief voor onbeperkt veel woningen.",
-          "displayName" : "Dossier en brief",
-          "locale" : "nl"
+          "description": "Maximale huur, PDF-dossier en conceptbrief voor onbeperkt veel woningen.",
+          "displayName": "Volledige uitkomst",
+          "locale": "nl"
+        },
+        {
+          "description": "Maximum rent, PDF file and draft letter for unlimited homes.",
+          "displayName": "Full result",
+          "locale": "en_US"
         }
       ],
-      "productID" : "nl.huurmeter.app.dossier",
-      "referenceName" : "Dossier en brief",
-      "type" : "NonConsumable"
+      "productID": "nl.huurmeter.app.dossier",
+      "referenceName": "Volledige uitkomst",
+      "type": "NonConsumable"
     }
   ],
-  "settings" : {
-
-  },
-  "subscriptionGroups" : [
-
-  ],
-  "version" : {
-    "major" : 3,
-    "minor" : 0
+  "settings": {},
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
   }
 }

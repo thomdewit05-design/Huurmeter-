@@ -44,6 +44,23 @@ enum Weergave {
         return Opmaak.Samenvatting(kop: String(localized: "\(u.totaal) punten · \(seg)"), regels: regels, teVeel: false)
     }
 
+    /// Samenvatting zonder bedragen, zolang de uitkomst niet is ontgrendeld. Het oordeel (te veel of niet)
+    /// blijft zichtbaar; de maximale huur en het verschil staan achter de betaalmuur.
+    static func vergrendeldeSamenvatting(_ u: Uitkomst, kaleHuur: Double?) -> Opmaak.Samenvatting {
+        let open = samenvatting(u, kaleHuur: kaleHuur)
+        guard u.maximaleHuur != nil else { return open } // vrije sector: er is geen maximum om te verbergen
+        let kop = String(localized: "\(u.totaal) punten · \(segment(u.segment))")
+        guard kaleHuur != nil, let verschil = u.verschilPerMaand else {
+            return Opmaak.Samenvatting(kop: kop, regels: [String(localized: "Ontgrendel de uitkomst om de maximale kale huur te zien.")], teVeel: false)
+        }
+        if verschil > 0 {
+            return Opmaak.Samenvatting(kop: String(localized: "Uw huur is waarschijnlijk te hoog"),
+                                       regels: [String(localized: "Ontgrendel de uitkomst om te zien wat de maximale huur is en hoeveel u per maand te veel betaalt.")],
+                                       teVeel: true)
+        }
+        return Opmaak.Samenvatting(kop: kop, regels: [String(localized: "Uw huur is niet hoger dan het maximum.")], teVeel: false)
+    }
+
     static func termijn(_ t: Termijn) -> String {
         String(localized: "Nog \(t.resterendeDagen) dagen om de Huurcommissie te vragen uw aanvangshuur te toetsen (tot en met \(t.einddatum.description)). Dit geldt alleen als dit uw eerste huurcontract voor deze woning is.")
     }

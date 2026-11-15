@@ -66,18 +66,25 @@ struct StartView: View {
 }
 
 private struct WoningRij: View {
+    @Environment(Winkel.self) private var winkel
     let woning: Woning
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(woning.titel).font(.headline)
             if let b = woning.laatsteBerekening {
-                Text("\(b.totaal) punten" + (b.maxHuur.map { " · max. \(Opmaak.euro($0))" } ?? " · vrije sector"))
+                Text(rijTekst(b))
                     .font(.subheadline).foregroundStyle(.secondary)
             } else {
                 Text("Nog niet berekend").font(.subheadline).foregroundStyle(.secondary)
             }
         }
         .accessibilityElement(children: .combine)
+    }
+
+    private func rijTekst(_ b: Berekening) -> String {
+        guard let max = b.maxHuur else { return String(localized: "\(b.totaal) punten · vrije sector") }
+        return winkel.ontgrendeld ? String(localized: "\(b.totaal) punten · max. \(Opmaak.euro(max))")
+                                  : String(localized: "\(b.totaal) punten")
     }
 }

@@ -2,12 +2,14 @@ import Foundation
 import StoreKit
 import Observation
 
-/// Eenmalige aankoop (StoreKit 2, niet-verbruikbaar) die het PDF-dossier en de brief ontgrendelt
-/// voor onbeperkt veel woningen (spec §8). Geen abonnement, geen eigen server: StoreKit controleert zelf.
+/// Eenmalige aankoop (StoreKit 2, niet-verbruikbaar) die de berekende maximale huur, het PDF-dossier en de
+/// brief ontgrendelt voor onbeperkt veel woningen en kamers (spec §8). Geen abonnement, geen eigen server:
+/// StoreKit controleert zelf. Gratis blijven: de puntentelling per rubriek en het oordeel (te veel of niet).
 @MainActor
 @Observable
 final class Winkel {
-    /// TODO (open punt Thom): product aanmaken in App Store Connect met dit ID, richtprijs € 9,99.
+    /// TODO (open punt Thom): product aanmaken in App Store Connect met dit ID, prijs € 9,99 (zie docs/PRIJS.md).
+    /// Het ID blijft "dossier" zodat een al aangemaakt product blijft werken; de naam in de App Store is "Volledige uitkomst".
     static let productID = "nl.huurmeter.app.dossier"
 
     private(set) var product: Product?
