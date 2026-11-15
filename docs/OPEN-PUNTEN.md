@@ -123,8 +123,10 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 2. **EP-Online**: vraag een gratis API-sleutel aan op apikey.ep-online.nl en zet hem als GitHub-geheim
    `EP_ONLINE_API_KEY`. Zonder sleutel verbergt de app de knop. Let op: de sleutel zit dan in de app en is
    daaruit te halen; controleer of de voorwaarden van de RVO dat toestaan, of zet later een eigen tussenserver op.
-3. **Widget** gebruikt de App Group `group.nl.huurmeter.app`; automatische ondertekening maakt die aan. Faalt de
-   TestFlight-build daarop, maak de App Group dan handmatig aan in het developer-account.
+3. **Widget**: op verzoek uit de app gehaald (november 2026), omdat ondertekenen met de API-sleutel de App Group
+   niet kon aanmaken. De code staat nog in de git-geschiedenis en `WidgetGegevens` in HuurmeterCore. Terugzetten
+   kan nadat de App Group `group.nl.huurmeter.app` en het App ID `nl.huurmeter.app.widget` handmatig in het
+   developer-account zijn aangemaakt.
 4. **Contract scannen, hele woning scannen, aanrecht meten**: niet op een toestel getest.
 5. **Stappenplan Huurcommissie**: termijnen uit BW 7:249, 7:252-254, 7:257, 7:259-260 en 7:262; leges uit het
    Besluit huurprijzen woonruimte art. 4. Er is geen juridische toets op de teksten gedaan; laat ze bij twijfel
