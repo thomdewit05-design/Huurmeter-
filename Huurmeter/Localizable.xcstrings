@@ -1,6 +1,16 @@
 {
   "sourceLanguage": "nl",
   "strings": {
+    "%@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@"
+          }
+        }
+      }
+    },
     "%@ per maand te veel": {
       "localizations": {
         "en": {
@@ -101,6 +111,16 @@
         }
       }
     },
+    "Aantal adressen dat dit deelt: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addresses sharing this: %@"
+          }
+        }
+      }
+    },
     "Aantal adressen dat dit deelt: %lld": {
       "localizations": {
         "en": {
@@ -137,6 +157,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Number of bathrooms or shower rooms"
+          }
+        }
+      }
+    },
+    "Aantal kamers dat dit deelt: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rooms sharing this: %@"
           }
         }
       }
@@ -957,6 +987,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "This section: %@ m"
+          }
+        }
+      }
+    },
+    "Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot %1$@%% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. %2$@ Bron: %3$@; %4$@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is the lower limit: for these defects the Rent Tribunal can reduce the rent to %1$@%% of your rent. The exact amount is set using its defects handbook. %2$@ Source: %3$@; %4$@."
+          }
+        }
+      }
+    },
+    "Dit is de ondergrens: de Huurcommissie kan de huur bij deze gebreken verlagen tot %@%% van uw huur. Hoeveel het precies wordt, bepaalt zij met haar gebrekenboek. %@ Bron: %@; %@.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This is the lower limit: for these defects the Rent Tribunal can reduce the rent to %1$@%% of your rent. The exact amount is set using its defects handbook. %2$@ Source: %3$@; %4$@."
           }
         }
       }
@@ -2261,6 +2311,16 @@
         }
       }
     },
+    "HuurmeterWidget": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Huurmeter"
+          }
+        }
+      }
+    },
     "Huurt u een kamer?": {
       "localizations": {
         "en": {
@@ -3417,6 +3477,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "New home"
+          }
+        }
+      }
+    },
+    "Nog %@ dagen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ days left"
+          }
+        }
+      }
+    },
+    "Nog %@ dagen om de aanvangshuur te laten toetsen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ days left to have the starting rent assessed"
           }
         }
       }
