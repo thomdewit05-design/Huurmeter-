@@ -32,6 +32,14 @@ struct WoningView: View {
             } footer: {
                 Text(Uitkomst.disclaimer)
             }
+
+            Section("Meer controleren") {
+                NavigationLink {
+                    HuurverhogingView(woning: woning)
+                } label: {
+                    Label("Huurverhoging", systemImage: "arrow.up.right.circle")
+                }
+            }
         }
         .huisstijlAchtergrond()
         .navigationTitle(woning.titel)
