@@ -60,6 +60,16 @@ struct UitkomstView: View {
                 Text(Uitkomst.disclaimer).font(.footnote.weight(.semibold))
             }
 
+            Section {
+                NavigationLink {
+                    ActieView(woning: woning, uitkomst: u)
+                } label: {
+                    Label("Dossier en brief", systemImage: "doc.richtext")
+                }
+            } footer: {
+                Text("Een PDF-dossier om mee te nemen naar uw verhuurder of de Huurcommissie, en een conceptbrief.")
+            }
+
             if let t = u.termijnAanvangshuur {
                 Section {
                     HStack(alignment: .top, spacing: 12) {

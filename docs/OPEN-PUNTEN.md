@@ -89,3 +89,16 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
    Deuren zijn als onderbreking in de muur getekend, ramen blauw.
 6. **Beleidsboek** (A4) is nog steeds niet geraadpleegd; de meetregels komen uit de toelichting in het Besluit
    (opgenomen als `meetregels` in het regelbestand).
+
+## F. Fase 4 (PDF-dossier, brief, StoreKit)
+
+1. **Brieftekst laten nalezen** door iemand met huurrechtkennis (stond al in de spec). De brief vraagt om
+   verlaging naar de maximale huur, noemt bij een contract jonger dan zes maanden de toetsing van de
+   aanvangshuur (art. 7:249 BW) en anders in algemene termen de Huurcommissie. Geen wetsartikelen voor de
+   procedure na zes maanden: dat graag laten aanvullen.
+2. **App Store Connect**: product `nl.huurmeter.app.dossier` (niet-verbruikbaar, richtprijs € 9,99) moet nog
+   worden aangemaakt. Tot dan werkt de aankoop alleen in de simulator via `Configuratie/Huurmeter.storekit`.
+3. **Dossier**: A4-PDF met kerncijfers, ruimtes (gescand of handmatig), puntentelling met tussenstappen en
+   bron per rubriek, prijsopslag, plattegronden, bewijsfoto's, bronnen en de disclaimer op elke pagina.
+   Persoonsgegevens van de huurder staan er niet in; die vult de huurder zelf in de brief in.
+4. **Brief alleen bij te hoge huur**: in de vrije sector of als de huur niet te hoog is, toont de app uitleg in plaats van een brief.

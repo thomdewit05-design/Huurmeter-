@@ -8,6 +8,7 @@ is en hoeveel de huurder te veel betaalt. Zie [HUURMETER_SPEC.md](HUURMETER_SPEC
 - **Fase 1 (rekenregels)**: klaar, wacht op de verwachte uitkomsten van de tien voorbeeldwoningen.
 - **Fase 2 (schermen 1 t/m 7, handmatige invoer)**: gebouwd.
 - **Fase 3 (inmeten met RoomPlan, plattegrond per ruimte)**: gebouwd, nog niet op een toestel met LiDAR getest.
+- **Fase 4 (PDF-dossier, conceptbrief, eenmalige aankoop via StoreKit 2)**: gebouwd. Aankoop testen kan in de simulator met `Configuratie/Huurmeter.storekit`.
 
 | Map | Inhoud |
 |-----|--------|

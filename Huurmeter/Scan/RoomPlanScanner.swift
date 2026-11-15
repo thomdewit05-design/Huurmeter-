@@ -36,6 +36,7 @@ struct RoomPlanScanner: UIViewRepresentable {
         if !coordinator.gestopt { view.captureSession.stop() }
     }
 
+    @objc(HuurmeterRoomPlanCoordinator)
     final class Coordinator: NSObject, RoomCaptureViewDelegate {
         let klaar: (CapturedRoom?) -> Void
         var gestopt = false

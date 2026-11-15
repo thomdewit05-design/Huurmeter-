@@ -38,7 +38,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
-        MARKETING_VERSION: "0.3.0"
+        MARKETING_VERSION: "0.4.0"
         CURRENT_PROJECT_VERSION: "1"
         CODE_SIGN_STYLE: Automatic
         ENABLE_PREVIEWS: YES
@@ -49,3 +49,5 @@ schemes:
         Huurmeter: all
     run:
       config: Debug
+      # Aankoop testen in de simulator zonder App Store Connect.
+      storeKitConfiguration: Configuratie/Huurmeter.storekit
