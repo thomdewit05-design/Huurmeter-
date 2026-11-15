@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-tests:
+    name: Unit-tests (WWSKit, HuurmeterCore)
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: WWSKit (zonder vergelijking met de Huurprijscheck)
+        working-directory: WWSKit
+        run: swift test --skip FixtureTests.testFixturesKomenOvereenMetHuurprijscheck
+      - name: HuurmeterCore
+        working-directory: HuurmeterCore
+        run: swift test
+
+  app:
+    name: iOS-app bouwen
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: XcodeGen installeren
+        run: brew install xcodegen
+      - name: Project genereren
+        run: xcodegen generate
+      - name: Bouwen voor de simulator
+        run: |
+          xcodebuild build \
+            -project Huurmeter.xcodeproj \
+            -scheme Huurmeter \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO | tee build.log | grep -E "error:|warning:|BUILD" || true
+          grep -q "BUILD SUCCEEDED" build.log
+
+  huurprijscheck:
+    # Spec §4: de build is pas groen als alle voorbeeldwoningen exact overeenkomen met de officiële
+    # Huurprijscheck. Deze job faalt tot de verwachte uitkomsten in WWSKit/Tests/Fixtures zijn ingevuld.
+    name: Voorbeeldwoningen = Huurprijscheck
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - working-directory: WWSKit
+        run: swift test --filter FixtureTests

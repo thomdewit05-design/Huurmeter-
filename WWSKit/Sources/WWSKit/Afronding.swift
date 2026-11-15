@@ -34,20 +34,8 @@ public enum Afronding {
 /// Getallen in Nederlandse notatie voor de tussenstappen.
 enum NL {
     static func getal(_ x: Double, decimalen: Int? = nil) -> String {
-        let f = NumberFormatter()
-        f.locale = Locale(identifier: "nl_NL")
-        f.numberStyle = .decimal
-        f.usesGroupingSeparator = true
-        f.groupingSeparator = "."
-        f.decimalSeparator = ","
-        if let d = decimalen {
-            f.minimumFractionDigits = d
-            f.maximumFractionDigits = d
-        } else {
-            f.minimumFractionDigits = 0
-            f.maximumFractionDigits = 4
-        }
-        return f.string(from: NSNumber(value: x)) ?? String(x)
+        if let d = decimalen { return Getalnotatie.nl(x, decimalen: d) }
+        return Getalnotatie.nl(x, maxDecimalen: 4)
     }
 
     static func punten(_ x: Double) -> String {

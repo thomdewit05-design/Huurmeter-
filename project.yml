@@ -1,0 +1,50 @@
+# Xcode-project voor Huurmeter. Genereer het project met:  xcodegen generate
+# (installeren: brew install xcodegen). Het .xcodeproj wordt niet in git bewaard.
+name: Huurmeter
+options:
+  bundleIdPrefix: nl.huurmeter
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: nl
+  createIntermediateGroups: true
+packages:
+  WWSKit:
+    path: WWSKit
+  HuurmeterCore:
+    path: HuurmeterCore
+targets:
+  Huurmeter:
+    type: application
+    platform: iOS
+    sources:
+      - path: Huurmeter
+    dependencies:
+      - package: WWSKit
+      - package: HuurmeterCore
+    info:
+      path: Huurmeter/Info.plist
+      properties:
+        CFBundleDisplayName: Huurmeter
+        CFBundleDevelopmentRegion: nl
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        # TODO (open punt Thom): definitief bundel-ID en Apple Developer-team.
+        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        MARKETING_VERSION: "0.2.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: YES
+schemes:
+  Huurmeter:
+    build:
+      targets:
+        Huurmeter: all
+    run:
+      config: Debug

@@ -1,0 +1,42 @@
+{
+  "response":{
+    "numFound":4,
+    "start":0,
+    "maxScore":7.012953,
+    "numFoundExact":true,
+    "docs":[{
+      "bron":"BAG",
+      "woonplaatscode":"1245",
+      "type":"adres",
+      "woonplaatsnaam":"'s-Gravenhage",
+      "wijkcode":"WK051828",
+      "huis_nlt":"1",
+      "openbareruimtetype":"Weg",
+      "buurtnaam":"Voorhout",
+      "gemeentecode":"0518",
+      "rdf_seealso":"http://bag.basisregistraties.overheid.nl/bag/id/nummeraanduiding/0518200000625535",
+      "weergavenaam":"Binnenhof 1, 2513AA 's-Gravenhage",
+      "straatnaam_verkort":"Binnenhof",
+      "id":"adr-53cdac1a2441292cedc1087f620fda13",
+      "gekoppeld_perceel":["GVH03-F-2381"],
+      "gemeentenaam":"'s-Gravenhage",
+      "buurtcode":"BU05182812",
+      "wijknaam":"Wijk 28 Centrum",
+      "identificatie":"0518010000625536-0518200000625535",
+      "openbareruimte_id":"0518300000201432",
+      "waterschapsnaam":"Hoogheemraadschap van Delfland",
+      "provinciecode":"PV28",
+      "postcode":"2513AA",
+      "provincienaam":"Zuid-Holland",
+      "centroide_ll":"POINT(4.31215331 52.07913814)",
+      "nummeraanduiding_id":"0518200000625535",
+      "waterschapscode":"15",
+      "adresseerbaarobject_id":"0518010000625536",
+      "huisnummer":1,
+      "provincieafkorting":"ZH",
+      "centroide_rd":"POINT(81306.399 455085.991)",
+      "straatnaam":"Binnenhof",
+      "score":7.012953
+    }]
+  }
+}

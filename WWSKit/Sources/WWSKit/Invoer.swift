@@ -15,7 +15,7 @@ public enum RuimteSoort: String, Codable, Sendable {
     case buitenruimte
 }
 
-public enum RuimteFunctie: String, Codable, Sendable {
+public enum RuimteFunctie: String, Codable, CaseIterable, Sendable {
     case woonkamer, slaapkamer, keuken, badkamer, toilet, berging, zolder, garage, gang, overig
 }
 

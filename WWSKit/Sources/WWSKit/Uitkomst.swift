@@ -33,6 +33,11 @@ public struct Termijn: Codable, Sendable {
     public let einddatum: Dag
     /// Resterende dagen vanaf de peildatum (0 of meer).
     public let resterendeDagen: Int
+
+    public init(einddatum: Dag, resterendeDagen: Int) {
+        self.einddatum = einddatum
+        self.resterendeDagen = resterendeDagen
+    }
 }
 
 public struct Uitkomst: Codable, Sendable {
