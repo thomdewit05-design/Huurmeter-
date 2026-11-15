@@ -34,6 +34,7 @@ final class Woning {
     @Relationship(deleteRule: .cascade, inverse: \Ruimte.woning) var ruimten: [Ruimte] = []
     @Relationship(deleteRule: .cascade, inverse: \Voorziening.woning) var voorzieningen: [Voorziening] = []
     @Relationship(deleteRule: .cascade, inverse: \Berekening.woning) var berekeningen: [Berekening] = []
+    @Relationship(deleteRule: .cascade, inverse: \Gebrek.woning) var gebreken: [Gebrek] = []
 
     init() {}
 
@@ -216,4 +217,27 @@ final class Berekening {
 /// De regelset die vandaag geldt (nil als de app geen regelbestand voor vandaag heeft).
 enum HuidigeRegels {
     static var regels: Regelset? { try? RegelsetBibliotheek.regelset(op: Dag(Date())) }
+}
+
+/// Functie 9: een gebrek dat de huurder bijhoudt, met meld- en hersteldatum en foto's.
+@Model
+final class Gebrek {
+    var titel: String = ""
+    var omschrijving: String = ""
+    var ruimte: String = ""
+    var categorieRaw: String?
+    var ontdekt: Date = Date()
+    var gemeld: Date?
+    var verholpen: Date?
+    @Attribute(.externalStorage) var fotos: [Data] = []
+    var woning: Woning?
+
+    init(titel: String = "") { self.titel = titel }
+
+    var categorie: Gebrekcategorie? {
+        get { categorieRaw.flatMap(Gebrekcategorie.init(rawValue:)) }
+        set { categorieRaw = newValue?.rawValue }
+    }
+
+    var open: Bool { verholpen == nil }
 }

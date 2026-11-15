@@ -61,6 +61,12 @@ struct WoningView: View {
                 } label: {
                     Label("Naar de Huurcommissie", systemImage: "list.number")
                 }
+                NavigationLink {
+                    GebrekenView(woning: woning)
+                } label: {
+                    Label("Gebreken", systemImage: "wrench.and.screwdriver")
+                }
+                .badge(woning.gebreken.filter(\.open).count)
             }
 
             Section {
