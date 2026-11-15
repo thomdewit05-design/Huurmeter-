@@ -67,6 +67,11 @@ struct WoningView: View {
                     Label("Gebreken", systemImage: "wrench.and.screwdriver")
                 }
                 .badge(woning.gebreken.filter(\.open).count)
+                NavigationLink {
+                    ServicekostenView(woning: woning)
+                } label: {
+                    Label("Servicekosten", systemImage: "eurosign.circle")
+                }
             }
 
             Section {

@@ -1,0 +1,39 @@
+{
+  "schemaVersie": 1,
+  "toelichting": "Regels voor de servicekosten-check. Termijnen staan in huurcommissie-procedures.json (procedure 'servicekosten'). Normbedragen voor gas, water en elektriciteit hangen af van CBS-prijzen per jaar en zijn daarom niet als bedrag opgenomen.",
+  "bronnen": {
+    "BW7": {
+      "titel": "Burgerlijk Wetboek Boek 7, artikelen 259 (jaaroverzicht, inzage), 260 (verzoek Huurcommissie) en 261 lid 3 (te hoog voorschot nutsvoorzieningen)",
+      "url": "https://wetten.overheid.nl/BWBR0005290",
+      "versie": "Geldend van 08-10-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "UW": {
+      "titel": "Uitvoeringswet huurprijzen woonruimte, artikelen 9 lid 3 (minimaal € 36 verschil) en 18 lid 4 (geen of onvolledig formulier: normbedrag of € 0)",
+      "url": "https://wetten.overheid.nl/BWBR0014315",
+      "versie": "Geldend van 04-06-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "UR-VIII": {
+      "titel": "Uitvoeringsregeling huurprijzen woonruimte, artikel 14a en Bijlage VIII (normbedragen servicekosten)",
+      "url": "https://wetten.overheid.nl/BWBR0015386",
+      "versie": "Geldend van 01-07-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    }
+  },
+  "minimumGeschil": { "bedrag": 36, "bron": "UW art. 9 lid 3" },
+  "zonderFormulier": {
+    "tekst": "Gebruikt de verhuurder bij de Huurcommissie niet het voorgeschreven formulier, of vult hij het onvolledig in, dan stelt de Huurcommissie de servicekosten vast op een normbedrag, of op € 0 als de dienst niet is geleverd.",
+    "bron": "UW art. 18 lid 4"
+  },
+  "normbedragen": {
+    "zelfstandig": { "gas": "prijs van 400 m³ gas", "water": "prijs van 25 m³ water", "elektriciteit": "prijs van 800 kWh", "overigPerJaar": 12 },
+    "onzelfstandig": { "gas": "prijs van 250 m³ gas", "water": "prijs van 25 m³ water", "elektriciteit": "prijs van 500 kWh", "overigPerJaar": 12 },
+    "bron": "Uitvoeringsregeling huurprijzen woonruimte, Bijlage VIII (gemiddelde CBS-prijzen van het jaar)"
+  },
+  "voorschotTeHoog": {
+    "tekst": "Is het voorschot voor gas, water of elektriciteit met een eigen meter veel hoger dan de te verwachten kosten, dan kan de Huurcommissie het voorschot verlagen.",
+    "bron": "BW 7:261 lid 3"
+  },
+  "inzage": { "tekst": "U mag de bonnen en facturen achter het overzicht inzien.", "bron": "BW 7:259 lid 4" }
+}
