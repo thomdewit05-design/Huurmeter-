@@ -44,6 +44,13 @@ GitHub Actions (`.github/workflows/ci.yml`) bouwt bij elke push de app en draait
 "Voorbeeldwoningen = Huurprijscheck" vergelijkt de voorbeeldwoningen in `WWSKit/Tests/Fixtures/` met de officiële
 Huurprijscheck. Woningen zonder ingevulde uitkomst worden overgeslagen; een ingevulde uitkomst die afwijkt, faalt.
 
+## TestFlight
+
+De workflow `.github/workflows/testflight.yml` bouwt een Release-versie, ondertekent hem automatisch en zet hem
+in TestFlight. Start hem handmatig via **Actions → TestFlight → Run workflow**. Nodig: de app in App Store
+Connect met bundel-ID `nl.huurmeter.app` en drie GitHub-secrets (`ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8`) van
+een App Store Connect API-sleutel met de rol Admin. Het buildnummer is het runnummer van de workflow.
+
 ## Gebruik
 
 ```swift

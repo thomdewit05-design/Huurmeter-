@@ -87,30 +87,45 @@ final class HuurmeterUITests: XCTestCase {
 
     // MARK: Toegankelijkheid (fase 5)
 
-    /// Voert Apple's toegankelijkheidscontrole uit. "Contrast nearly passed" wordt genegeerd: dat geeft Apple
-    /// voor zijn eigen secundaire tekstkleur (bijschriften). Echte contrastfouten en alle andere soorten falen wel.
-    func controleer() throws {
+    /// Voert Apple's toegankelijkheidscontrole uit en verzamelt alle bevindingen (met het element erbij),
+    /// zodat één run laat zien wat er per scherm moet gebeuren. "Contrast nearly passed" wordt genegeerd:
+    /// dat geeft Apple voor zijn eigen secundaire tekstkleur (bijschriften). Al het andere laat de test falen.
+    func controleer(_ scherm: String) throws {
+        var bevindingen: [String] = []
         try app.performAccessibilityAudit { issue in
-            issue.auditType == .contrast && issue.compactDescription.localizedCaseInsensitiveContains("nearly")
+            let bijnaContrast = issue.auditType == .contrast
+                && issue.compactDescription.localizedCaseInsensitiveContains("nearly")
+            if !bijnaContrast {
+                let element = issue.element.map { "\($0.elementType.rawValue) '\($0.label)'" } ?? "onbekend element"
+                bevindingen.append("\(issue.compactDescription) — \(element)")
+            }
+            return true
+        }
+        if !bevindingen.isEmpty {
+            XCTFail("Toegankelijkheid \(scherm): " + bevindingen.joined(separator: " | "))
         }
     }
 
     func testToegankelijkheid() throws {
-        try controleer()
+        continueAfterFailure = true
+        try controleer("start")
 
         openWoning()
-        try controleer()
+        XCTAssertTrue(knop("Adres").waitForExistence(timeout: 10))
+        try controleer("woning")
 
         tik("Uitkomst")
         XCTAssertTrue(knop("Dossier en brief").waitForExistence(timeout: 10))
-        try controleer()
+        try controleer("uitkomst")
         terug()
 
         tik("Ruimtes")
-        try controleer()
+        wachtOpTekst("Ruimte toevoegen")
+        try controleer("ruimtes")
         terug()
 
         tik("Voorzieningen")
-        try controleer()
+        wachtOpTekst("basisniveau")
+        try controleer("voorzieningen")
     }
 }

@@ -34,8 +34,9 @@ targets:
         NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
     settings:
       base:
-        # TODO (open punt Thom): definitief bundel-ID en Apple Developer-team.
+        # Bundel-ID: moet gelijk zijn aan het App ID in het Apple Developer-account.
         PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
+        DEVELOPMENT_TEAM: 7BDZ6994AD
         TARGETED_DEVICE_FAMILY: "1"
         SWIFT_VERSION: "5.9"
         MARKETING_VERSION: "0.5.0"
