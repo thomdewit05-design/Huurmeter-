@@ -73,11 +73,15 @@ struct UitkomstView: View {
                 }
                 .padding(.vertical, 8)
                 .listRowBackground(Huisstijl.kaart)
+                // Verbetering 1: bij een te hoge huur staat de betaalkaart direct onder de samenvatting.
+                if !winkel.ontgrendeld && s.teVeel {
+                    OntgrendelKaart(kop: "Zie hoeveel u te veel betaalt")
+                }
             } footer: {
                 Text(Uitkomst.disclaimer).font(.footnote.weight(.semibold))
             }
 
-            if !winkel.ontgrendeld && u.maximaleHuur != nil {
+            if !winkel.ontgrendeld && u.maximaleHuur != nil && !s.teVeel {
                 Section { OntgrendelKaart() }
             }
 

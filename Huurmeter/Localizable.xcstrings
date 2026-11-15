@@ -3741,6 +3741,16 @@
         }
       }
     },
+    "Ontgrendel de uitkomst om het exacte bedrag en de maximale huur te zien.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock the result to see the exact amount and the maximum rent."
+          }
+        }
+      }
+    },
     "Ontgrendel de uitkomst om te zien wat de maximale huur is en hoeveel u per maand te veel betaalt.": {
       "localizations": {
         "en": {
@@ -4731,6 +4741,46 @@
         }
       }
     },
+    "U betaalt waarschijnlijk meer dan %@ per maand te veel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are probably overpaying more than %@ per month."
+          }
+        }
+      }
+    },
+    "U betaalt waarschijnlijk tot %@ per maand te veel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are probably overpaying up to %@ per month."
+          }
+        }
+      }
+    },
+    "U betaalt waarschijnlijk tussen %1$@ en %2$@ per maand te veel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are probably overpaying between %1$@ and %2$@ per month."
+          }
+        }
+      }
+    },
+    "U betaalt waarschijnlijk tussen %@ en %@ per maand te veel.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "You are probably overpaying between %@ and %@ per month."
+          }
+        }
+      }
+    },
     "U betaalt € 25 voorschot. Krijgt u (grotendeels) gelijk, dan krijgt u dit terug en betaalt de verhuurder.": {
       "localizations": {
         "en": {
@@ -5607,6 +5657,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Wait six weeks"
+          }
+        }
+      }
+    },
+    "Zie hoeveel u te veel betaalt": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See how much you overpay"
           }
         }
       }

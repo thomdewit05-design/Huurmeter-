@@ -239,7 +239,8 @@ struct KamerView: View {
                     if let huur = f.kaleHuur, huur > 0 {
                         if huur > max + 0.005 {
                             Label(winkel.ontgrendeld ? String(localized: "U betaalt mogelijk \(Opmaak.euro(huur - max)) per maand te veel.")
-                                                     : String(localized: "Uw huur is waarschijnlijk te hoog"),
+                                                     : Bandbreedte.voor(teVeelPerMaand: huur - max).map(Weergave.bandTekst)
+                                                       ?? String(localized: "Uw huur is waarschijnlijk te hoog"),
                                   systemImage: "exclamationmark.triangle.fill")
                                 .foregroundStyle(Huisstijl.signaal)
                         } else {
