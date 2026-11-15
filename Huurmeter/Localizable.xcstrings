@@ -2561,6 +2561,16 @@
         }
       }
     },
+    "Gemeten met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured with the camera"
+          }
+        }
+      }
+    },
     "Gemeten vloer": {
       "localizations": {
         "en": {
@@ -5271,6 +5281,16 @@
         }
       }
     },
+    "Scan kamer voor kamer met de camera, of voeg een ruimte toe en meet die apart. Meet van muur tot muur op 1,50 m hoogte; vaste kasten tellen mee.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan room by room with the camera, or add a room and measure it separately. Measure from wall to wall at a height of 1.50 m; built-in cupboards count."
+          }
+        }
+      }
+    },
     "Scannen met de camera": {
       "localizations": {
         "en": {
@@ -7117,6 +7137,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Very serious"
+          }
+        }
+      }
+    },
+    "Zelf ingevuld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entered manually"
           }
         }
       }
