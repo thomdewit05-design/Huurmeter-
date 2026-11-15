@@ -1,12 +1,14 @@
 # Voorbeeldwoningen voor de Huurprijscheck
 
-Voer elke woning in de officiële [Huurprijscheck van de Huurcommissie](https://www.huurcommissie.nl) in, met peildatum **15-11-2026** en precies de gegevens hieronder. Noteer het **puntentotaal** en de **maximale kale huur** (en als het kan de punten per rubriek). Stuur die naar Claude, of vul ze zelf in bij `verwacht` in het bijbehorende bestand in `WWSKit/Tests/Fixtures/`:
+Voer elke woning in de officiële [Huurprijscheck van de Huurcommissie](https://huurprijscheck.huurcommissie.nl) (de huidige check, tijdvak 1 januari t/m 31 december 2026; niet de oude check voor huur van vóór 1 juli 2024) in, met peildatum **15-11-2026** en precies de gegevens hieronder. Noteer het **puntentotaal** en de **maximale kale huur** (en als het kan de punten per rubriek). Stuur die naar Claude, of vul ze zelf in bij `verwacht` in het bijbehorende bestand in `WWSKit/Tests/Fixtures/`:
 
 ```json
 "verwacht": { "totaal": 135, "maximaleHuur": 877.97, "rubrieken": { "1": 55, "2": 4.5 } }
 ```
 
 `maximaleHuur` is `null` in de vrije sector. `rubrieken` mag je weglaten.
+
+**Energielabel:** alle labels in deze testset zijn een letter, ook die uit 2015–2021; er hoort geen Energie-Index bij. Kies in de check de optie voor een label met een letter. Woning 05 heeft een verlopen label (2015): daar telt het bouwjaar.
 
 Ter vergelijking staat bij elke woning wat Huurmeter nu berekent. **Neem dat niet over:** de waarden moeten uit de Huurprijscheck komen.
 
