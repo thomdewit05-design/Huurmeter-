@@ -10,6 +10,12 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v5
+      - name: Xcode 26 kiezen (App Store eist de iOS 26 SDK)
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$XCODE" ]; then echo "::error::Geen Xcode 26 gevonden op de runner"; ls /Applications | grep Xcode; exit 1; fi
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
       - name: WWSKit (zonder vergelijking met de Huurprijscheck)
         working-directory: WWSKit
         run: swift test --skip FixtureTests.testFixturesKomenOvereenMetHuurprijscheck
@@ -22,6 +28,12 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v5
+      - name: Xcode 26 kiezen (App Store eist de iOS 26 SDK)
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$XCODE" ]; then echo "::error::Geen Xcode 26 gevonden op de runner"; ls /Applications | grep Xcode; exit 1; fi
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
       - name: XcodeGen installeren
         run: brew install xcodegen
       - name: Project genereren
@@ -42,5 +54,11 @@ jobs:
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v5
+      - name: Xcode 26 kiezen (App Store eist de iOS 26 SDK)
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$XCODE" ]; then echo "::error::Geen Xcode 26 gevonden op de runner"; ls /Applications | grep Xcode; exit 1; fi
+          sudo xcode-select -s "$XCODE/Contents/Developer"
+          xcodebuild -version
       - working-directory: WWSKit
         run: swift test --filter FixtureTests
