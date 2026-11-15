@@ -41,12 +41,15 @@ final class FixtureTests: XCTestCase {
         }
     }
 
+    /// Besluit Thom (15-11-2026, afwijking van spec §4): woningen zonder ingevulde uitkomst worden
+    /// overgeslagen in plaats van de build rood te maken. Een ingevulde uitkomst die afwijkt, faalt wel.
     func testFixturesKomenOvereenMetHuurprijscheck() throws {
+        var nietIngevuld: [String] = []
         for f in try laadFixtures() {
             let u = try Rekenmachine(peildatum: f.peildatum).bereken(f.invoer, peildatum: f.peildatum)
             let berekend = u.rubrieken.map { "r\($0.nummer)=\(NL.getal($0.punten))" }.joined(separator: " ")
             guard let v = f.verwacht else {
-                XCTFail("\(f.naam): verwachte uitkomst uit de Huurprijscheck nog niet ingevuld. Berekend: totaal \(u.totaal), max. huur \(u.maximaleHuur.map { NL.euro($0) } ?? "geen") [\(berekend)]")
+                nietIngevuld.append("\(f.naam) (berekend: \(u.totaal) punten, max. huur \(u.maximaleHuur.map { NL.euro($0) } ?? "geen"))")
                 continue
             }
             XCTAssertEqual(u.totaal, v.totaal, "\(f.naam): totaal [\(berekend)]")
@@ -54,6 +57,10 @@ final class FixtureTests: XCTestCase {
             for (nr, p) in v.rubrieken ?? [:] {
                 XCTAssertEqual(u.rubriek(nr)?.punten, p, "\(f.naam): rubriek \(nr)")
             }
+        }
+        if !nietIngevuld.isEmpty {
+            throw XCTSkip("\(nietIngevuld.count) voorbeeldwoning(en) zonder uitkomst uit de Huurprijscheck, niet vergeleken: "
+                          + nietIngevuld.joined(separator: "; "))
         }
     }
 }

@@ -1,0 +1,74 @@
+# Xcode-project voor Huurmeter. Genereer het project met:  xcodegen generate
+# (installeren: brew install xcodegen). Het .xcodeproj wordt niet in git bewaard.
+name: Huurmeter
+options:
+  bundleIdPrefix: nl.huurmeter
+  deploymentTarget:
+    iOS: "17.0"
+  developmentLanguage: nl
+  createIntermediateGroups: true
+packages:
+  WWSKit:
+    path: WWSKit
+  HuurmeterCore:
+    path: HuurmeterCore
+targets:
+  Huurmeter:
+    type: application
+    platform: iOS
+    sources:
+      - path: Huurmeter
+    dependencies:
+      - package: WWSKit
+      - package: HuurmeterCore
+    info:
+      path: Huurmeter/Info.plist
+      properties:
+        CFBundleDisplayName: Huurmeter
+        CFBundleDevelopmentRegion: nl
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        ITSAppUsesNonExemptEncryption: false
+        NSCameraUsageDescription: "Huurmeter gebruikt de camera om uw kamers in te meten. De beelden worden niet bewaard en verlaten uw telefoon niet."
+    settings:
+      base:
+        # Bundel-ID: moet gelijk zijn aan het App ID in het Apple Developer-account.
+        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app
+        DEVELOPMENT_TEAM: 7BDZ6994AD
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        MARKETING_VERSION: "0.5.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_PREVIEWS: YES
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+  HuurmeterUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HuurmeterUITests
+    dependencies:
+      - target: Huurmeter
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: nl.huurmeter.app.uitests
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_STYLE: Automatic
+schemes:
+  Huurmeter:
+    build:
+      targets:
+        Huurmeter: all
+        HuurmeterUITests: [test]
+    test:
+      config: Debug
+      targets:
+        - HuurmeterUITests
+    run:
+      config: Debug
+      # Aankoop testen in de simulator zonder App Store Connect.
+      storeKitConfiguration: Configuratie/Huurmeter.storekit

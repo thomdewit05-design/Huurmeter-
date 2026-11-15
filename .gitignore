@@ -1,5 +1,7 @@
 .build/
 .swiftpm/
-*.xcodeproj/xcuserdata/
-.DS_Store
+*.xcodeproj/
+Huurmeter/Info.plist
 DerivedData/
+.DS_Store
+build.log

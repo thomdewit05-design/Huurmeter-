@@ -5,12 +5,30 @@ is en hoeveel de huurder te veel betaalt. Zie [HUURMETER_SPEC.md](HUURMETER_SPEC
 
 ## Stand
 
-**Fase 1 (rekenregels) is gebouwd en wacht op overleg.** Er is nog geen UI.
+- **Fase 1 (rekenregels)**: klaar, wacht op de verwachte uitkomsten van de tien voorbeeldwoningen.
+- **Fase 2 (schermen 1 t/m 7, handmatige invoer)**: gebouwd.
+- **Fase 3 (inmeten met RoomPlan, plattegrond per ruimte)**: gebouwd, nog niet op een toestel met LiDAR getest.
+- **Fase 4 (PDF-dossier, conceptbrief, eenmalige aankoop via StoreKit 2)**: gebouwd. Aankoop testen kan in de simulator met `Configuratie/Huurmeter.storekit`.
 
-- `WWSKit/`: Swift-package zonder UI-afhankelijkheden (iOS 17+, ook te bouwen op macOS en Linux).
-- `WWSKit/Sources/WWSKit/rules/wws-zelfstandig-2026.json`: alle puntenwaarden en de huurtabel 2026, elk met bron.
-- `docs/BRONNEN.md`: geraadpleegde officiële bronnen.
-- `docs/OPEN-PUNTEN.md`: wat niet geverifieerd is en welke interpretaties bevestigd moeten worden.
+| Map | Inhoud |
+|-----|--------|
+| `WWSKit/` | Rekenregels (Swift-package zonder UI). Regelbestand: `Sources/WWSKit/rules/wws-zelfstandig-2026.json`. |
+| `HuurmeterCore/` | Logica achter de schermen zonder UI: PDOK-adres en bouwjaar, vragenlijst, omzetting naar WWSKit, teksten. |
+| `Huurmeter/` | De iOS-app (SwiftUI, SwiftData, iOS 17+, alleen iPhone). |
+| `project.yml` | XcodeGen-beschrijving van het Xcode-project. |
+| `docs/` | Bronnen en open punten. |
+
+## App openen in Xcode
+
+```bash
+brew install xcodegen
+```
+
+```bash
+xcodegen generate && open Huurmeter.xcodeproj
+```
+
+Kies in Xcode bij *Signing & Capabilities* je eigen team; het bundel-ID `nl.huurmeter.app` is voorlopig.
 
 ## Testen
 
@@ -18,10 +36,20 @@ is en hoeveel de huurder te veel betaalt. Zie [HUURMETER_SPEC.md](HUURMETER_SPEC
 cd WWSKit && swift test
 ```
 
-De unit-tests (per rubriek, met grensgevallen en de rekenvoorbeelden uit de officiële toelichting) slagen.
-`FixtureTests.testFixturesKomenOvereenMetHuurprijscheck` faalt bewust zolang de verwachte uitkomsten van de tien
-voorbeeldwoningen in `WWSKit/Tests/Fixtures/` niet zijn ingevuld vanuit de officiële Huurprijscheck. De foutmelding
-toont per woning wat WWSKit berekent.
+```bash
+cd HuurmeterCore && swift test
+```
+
+GitHub Actions (`.github/workflows/ci.yml`) bouwt bij elke push de app en draait alle tests. De job
+"Voorbeeldwoningen = Huurprijscheck" vergelijkt de voorbeeldwoningen in `WWSKit/Tests/Fixtures/` met de officiële
+Huurprijscheck. Woningen zonder ingevulde uitkomst worden overgeslagen; een ingevulde uitkomst die afwijkt, faalt.
+
+## TestFlight
+
+De workflow `.github/workflows/testflight.yml` bouwt een Release-versie, ondertekent hem automatisch en zet hem
+in TestFlight. Start hem handmatig via **Actions → TestFlight → Run workflow**. Nodig: de app in App Store
+Connect met bundel-ID `nl.huurmeter.app` en drie GitHub-secrets (`ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8`) van
+een App Store Connect API-sleutel met de rol Admin. Het buildnummer is het runnummer van de workflow.
 
 ## Gebruik
 

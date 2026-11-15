@@ -1,4 +1,4 @@
-# Open punten na fase 1 (WWSKit + regelbestand 2026)
+# Open punten
 
 Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 
@@ -7,8 +7,8 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 | # | Wat | Waar | Status |
 |---|-----|------|--------|
 | A1 | Datum inwerkingtreding Wet betaalbare huur = **2024-07-01** | `prijsopslagen.inwerkingtredingWetBetaalbareHuur` | Art. 8a noemt alleen "het tijdstip van inwerkingtreding". Gemarkeerd `geverifieerd: false`; de app toont een waarschuwing als de datum gebruikt wordt. Graag bevestigen (Staatsblad / inwerkingtredingsbesluit). |
-| A2 | Segmentgrenzen **143 / 186 punten** | `segmenten` | Huisvestingswet 2014 art. 1 definieert middenhuur via twee bedragen (art. 13 lid 1 onder a Wet op de huurtoeslag; art. 3 lid 2 Uitvoeringswet huurprijzen woonruimte). Die bedragen voor 2026 heb ik niet opgezocht. De puntgrenzen komen uit de spec en kloppen met de huurtabel (143 → € 932,93; 186 → € 1.228,07) en met 11.3 (187/186). |
-| A3 | Verwachte uitkomsten van de tien voorbeeldwoningen | `WWSKit/Tests/Fixtures/*.json`, veld `verwacht` | **Thom**: invoeren in de officiële Huurprijscheck en het totaal, de maximale huur en (liefst) de punten per rubriek invullen. Tot dan faalt `FixtureTests` (zo bedoeld). |
+| A2 | Segmentgrenzen **143 / 186 punten** | `segmenten` | **Opgelost (15-11-2026).** Art. 13 lid 1 onder a Wet op de huurtoeslag: € 932,93 (= 143 punten in de huurtabel); art. 2 lid 1 Besluit huurprijzen woonruimte: de grens is de huurprijsgrens bij 186 punten. Let op art. 2 lid 2: een woning die bij aanvang boven 186 punten zat, zakt tijdens het contract niet onder die grens door minder WOZ-punten (nog niet in WWSKit verwerkt). |
+| A3 | Verwachte uitkomsten van de tien voorbeeldwoningen | `WWSKit/Tests/Fixtures/*.json`, veld `verwacht` | **Besluit Thom (15-11-2026), afwijking van spec §4:** de build hoeft niet te wachten op deze waarden. Woningen zonder uitkomst worden overgeslagen; een ingevulde uitkomst die afwijkt, laat de build falen. Zolang niets is ingevuld, is niet getoetst of Huurmeter gelijk rekent met de officiële Huurprijscheck. Invulblad: `docs/VOORBEELDWONINGEN.md`. |
 | A4 | Beleidsboek waarderingsstelsel zelfstandige woonruimte (Huurcommissie) | – | **Niet geraadpleegd.** Alles is gebaseerd op de wettekst en de toelichting. Het Beleidsboek kan veel van de punten in B oplossen; het is ook de bron voor de meetregels in fase 3. |
 
 ## B. De bron is hier niet eenduidig; gekozen interpretatie graag bevestigen
@@ -59,3 +59,58 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
 - Op wetten.overheid.nl staan al wijzigingen aangekondigd per **01-01-2027** voor Bijlage I en de
   Uitvoeringsregeling. Daarvoor komt `wws-zelfstandig-2027.json` erbij; de app kiest het bestand op peildatum.
 - Fase 2 kan pas als A3 is ingevuld en de groene build er is, of als je besluit fase 2 alvast te starten.
+
+## D. Fase 2 (schermen 1 t/m 7)
+
+1. **Niet op een echt toestel getest.** De app-code is gecompileerd via GitHub Actions (macOS, Xcode), maar
+   niemand heeft hem nog in de simulator of op een iPhone doorgelopen. Graag een eerste rondje in Xcode.
+2. **Bouwjaar uit de BAG**: bij meerdere panden neemt de app het oudste bouwjaar. Bij verbouw tot woning kan
+   een ander jaar gelden; de gebruiker kan het aanpassen.
+3. **COROP-gebied Amsterdam/Utrecht** wordt aan de gebruiker gevraagd (alleen bij kleine woningen uit 2018 t/m
+   2022). Automatisch afleiden uit de gemeente kan later met een gemeente-COROP-tabel.
+4. **Sanitair**: de vragenlijst ondersteunt maximaal twee badkamers en telt wastafels in andere kamers als één per kamer.
+5. **Gedeelde ruimtes en parkeren**: één gedeelde woonruimte, één gedeelde berging en één groep parkeerplekken.
+   Complexere situaties (verschillende aantallen adressen per plek) vragen later een uitgebreider scherm.
+6. **Privacy**: "Adres opzoeken" stuurt postcode en huisnummer naar PDOK. Dat staat in Info; voor het
+   App Store-privacylabel is dat geen gegevensverzameling door de app zelf, maar laat dit nog checken.
+7. **Bundel-ID en team**: voorlopig `nl.huurmeter.app` (zie open punt in de spec).
+
+## E. Fase 3 (inmeten met RoomPlan)
+
+1. **Niet op een toestel met LiDAR getest.** De scan is gecompileerd (CI), maar RoomPlan werkt alleen op een
+   iPhone Pro met LiDAR. Graag een proefscan van een rechthoekige én een L-vormige kamer, en de uitkomst
+   vergelijken met een rolmaat.
+2. **Meethoogte**: het WWS meet van muur tot muur op 1,50 m hoogte. RoomPlan geeft de vloerpolygoon; bij rechte
+   muren is dat hetzelfde. Plinten, scheve muren of een uitstekende vensterbank kunnen een klein verschil geven.
+3. **Schuin dak en schachten** vult de gebruiker zelf in als af te trekken m² (spec §6). De app rekent die
+   oppervlakte niet zelf uit de scan.
+4. **Meerdere vloervlakken** (bijv. een kamer met een opstap): de app telt alle vloervlakken op en tekent het grootste.
+5. **Plattegrond**: één PNG per ruimte (1200 × 1200), bewaard op het toestel voor het dossier van fase 4.
+   Deuren zijn als onderbreking in de muur getekend, ramen blauw.
+6. **Beleidsboek** (A4) is nog steeds niet geraadpleegd; de meetregels komen uit de toelichting in het Besluit
+   (opgenomen als `meetregels` in het regelbestand).
+
+## F. Fase 4 (PDF-dossier, brief, StoreKit)
+
+1. **Brieftekst laten nalezen** door iemand met huurrechtkennis (stond al in de spec). De brief vraagt om
+   verlaging naar de maximale huur, noemt bij een contract jonger dan zes maanden de toetsing van de
+   aanvangshuur (art. 7:249 BW) en anders in algemene termen de Huurcommissie. Geen wetsartikelen voor de
+   procedure na zes maanden: dat graag laten aanvullen.
+2. **App Store Connect**: product `nl.huurmeter.app.dossier` (niet-verbruikbaar, richtprijs € 9,99) moet nog
+   worden aangemaakt. Tot dan werkt de aankoop alleen in de simulator via `Configuratie/Huurmeter.storekit`.
+3. **Dossier**: A4-PDF met kerncijfers, ruimtes (gescand of handmatig), puntentelling met tussenstappen en
+   bron per rubriek, prijsopslag, plattegronden, bewijsfoto's, bronnen en de disclaimer op elke pagina.
+   Persoonsgegevens van de huurder staan er niet in; die vult de huurder zelf in de brief in.
+4. **Brief alleen bij te hoge huur**: in de vrije sector of als de huur niet te hoog is, toont de app uitleg in plaats van een brief.
+
+## G. Fase 5 (afwerking)
+
+1. **Schermafbeeldingen** maakt de CI-job "Schermafbeeldingen en toegankelijkheid" automatisch met de
+   demowoning (iPhone Pro Max, Nederlands, 9:41). Download ze als artifact `schermafbeeldingen` bij de
+   workflowrun. Voor de App Store kan een tekstkader erbij (bijv. in Keynote of Figma) helpen.
+2. **Toegankelijkheid**: Apple's `performAccessibilityAudit()` draait per hoofdscherm. Een echte
+   VoiceOver-ronde door een persoon blijft nodig, net als een test met de grootste tekstgrootte.
+3. **Demovlaggen** `-demo` en `-demoOntgrendeld` werken alleen in ontwikkelbuilds (DEBUG), zodat de betaalde
+   inhoud in de winkelversie niet zonder aankoop te openen is.
+4. **Privacy-manifest** (`PrivacyInfo.xcprivacy`): geen tracking, geen verzamelde gegevens, geen API's met reden.
+5. **Icoon**: eigen ontwerp (huis met meter). Laat het eventueel nog door een ontwerper verfijnen.

@@ -40,6 +40,18 @@
       "url": "https://wetten.overheid.nl/BWBR0041297",
       "versie": "Geldend van 24-09-2026 t/m heden",
       "geraadpleegd": "2026-11-15"
+    },
+    "WHT-13": {
+      "titel": "Wet op de huurtoeslag, artikel 13 lid 1 (maximale huurgrens)",
+      "url": "https://wetten.overheid.nl/BWBR0008659",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
+    },
+    "BHW-2": {
+      "titel": "Besluit huurprijzen woonruimte, artikel 2 (grens van artikel 7:247 BW / artikel 3 lid 2 Uitvoeringswet)",
+      "url": "https://wetten.overheid.nl/BWBR0003237/2026-01-01",
+      "versie": "Geldend van 01-01-2026 t/m heden",
+      "geraadpleegd": "2026-11-15"
     }
   },
   "afronding": {
@@ -323,6 +335,12 @@
       "bron": "BHW-I-A, tabel rubriek 12 ('bij: 35% van de ingevolge de onderdelen 1 tot en met 11.1 toegekende punten'; aanbelfunctie met video en audio 0,25 punt; laadpaal 2 punten gedeeld door het aantal adressen)"
     }
   },
+  "meetregels": {
+    "meethoogteM": 1.5,
+    "minimaleVrijeHoogteM": 1.5,
+    "oppervlakteDecimalen": 2,
+    "bron": "BHW-I-A, toelichting rubriek 1 en 2: 'Meting van de oppervlakte van vertrekken vindt plaats van muur tot muur, op een hoogte van 1,50 meter boven de vloer, inclusief de oppervlakte van alle tot de woning behorende losse en vaste kasten. [...] Als oppervlakte van een vertrek met een (ten dele) hellend of verlaagd plafond geldt dat gedeelte waarboven het plafond ten minste 1,50 meter hoog is.' Niet meegeteld: 'verticale koven, schoorsteenkanalen, ventilatie-kanalen of stand- of grondleidingen'; onder een vaste trap alleen het deel waar de ruimte tussen vloer en onderkant trap ten minste 1,50 m is."
+  },
   "prijsopslagen": {
     "rijksmonumentContractNaWbh": 0.35,
     "rijksmonumentContractVoorWbhExtraPunten": 50,
@@ -346,8 +364,8 @@
   "segmenten": {
     "sociaalTotEnMetPunten": 143,
     "middenTotEnMetPunten": 186,
-    "bron": "HW2014-1 (middeldure huurwoonruimte: maximale huurprijsgrens hoger dan het bedrag uit art. 13 lid 1 onder a Wet op de huurtoeslag en niet hoger dan het bedrag uit art. 3 lid 2 Uitvoeringswet huurprijzen woonruimte) in combinatie met UHW-I. De puntengrenzen 143/186 volgen uit de spec en BHW-I-A 11.3 (187/186). De bedragen van die twee grenzen voor 2026 zijn niet rechtstreeks in de bron geverifieerd.",
-    "geverifieerd": false
+    "bron": "HW2014-1 (middeldure huurwoonruimte: maximale huurprijsgrens hoger dan het bedrag uit art. 13 lid 1 onder a Wet op de huurtoeslag en niet hoger dan het bedrag uit art. 3 lid 2 Uitvoeringswet huurprijzen woonruimte). WHT-13: 'De maximale huurgrens is: a. € 932,93 per maand' = UHW-I bij 143 punten. BHW-2: 'Het bedrag, bedoeld in artikel 3, tweede lid, van de Uitvoeringswet huurprijzen woonruimte, is de [...] huurprijsgrens, behorende bij de kwaliteit voor een woonruimte met 186 punten.'",
+    "geverifieerd": true
   },
   "termijnen": {
     "toetsingAanvangshuurMaanden": 6,

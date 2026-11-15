@@ -1,0 +1,33 @@
+{
+  "identifier" : "6F3A1C2B",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6740000001",
+      "localizations" : [
+        {
+          "description" : "PDF-dossier en conceptbrief voor onbeperkt veel woningen.",
+          "displayName" : "Dossier en brief",
+          "locale" : "nl"
+        }
+      ],
+      "productID" : "nl.huurmeter.app.dossier",
+      "referenceName" : "Dossier en brief",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
