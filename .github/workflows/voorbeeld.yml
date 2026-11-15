@@ -43,6 +43,16 @@ jobs:
           mkdir -p docs/voorbeeld
           cp "$DATA/Documents/voorbeeld-dossier.pdf" "$DATA/Documents/voorbeeld-brief.txt" docs/voorbeeld/
           xcrun simctl io "$UDID" screenshot docs/voorbeeld/scherm.png || true
+          # Extra schermen: ruimtes met de demowoning en met een lege woning.
+          schermafbeelding() {
+            xcrun simctl terminate "$UDID" nl.huurmeter.app || true
+            xcrun simctl launch "$UDID" nl.huurmeter.app -demo -AppleLanguages "(nl)" -AppleLocale nl_NL "${@:2}"
+            sleep 8
+            xcrun simctl io "$UDID" screenshot "docs/voorbeeld/$1.png" || true
+          }
+          schermafbeelding ruimtes -openStap 2
+          schermafbeelding ruimtes-leeg -legeWoning -openStap 2
+          schermafbeelding voorzieningen -openStap 3
           ls -la docs/voorbeeld
       - name: Op de branch zetten
         run: |
