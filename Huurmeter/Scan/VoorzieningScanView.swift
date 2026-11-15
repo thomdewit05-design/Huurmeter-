@@ -74,7 +74,7 @@ struct VoorzieningScanView: View {
                         .font(.subheadline)
                 }
                 ForEach(Array(lijst.indices), id: \.self) { i in
-                    voorstelRij(i)
+                    voorstelRij(i, standaard: lijst[i])
                 }
             }
             if case .badkamer = ruimte {
@@ -98,8 +98,8 @@ struct VoorzieningScanView: View {
     }
 
     @ViewBuilder
-    private func voorstelRij(_ i: Int) -> some View {
-        let binding = Binding(get: { voorstellen?[i] ?? lijstFallback }, set: { voorstellen?[i] = $0 })
+    private func voorstelRij(_ i: Int, standaard: Voorstel) -> some View {
+        let binding = Binding(get: { voorstellen?[i] ?? standaard }, set: { voorstellen?[i] = $0 })
         let v = binding.wrappedValue
         Section {
             Toggle(isOn: binding.overnemen) {
@@ -132,11 +132,6 @@ struct VoorzieningScanView: View {
         } footer: {
             if let u = v.uitleg { Text(u.vertaald) }
         }
-    }
-
-    private var lijstFallback: Voorstel {
-        Voorstel(id: "", titel: "", uitleg: nil, opties: [.init(sleutel: "", tekst: "")], gekozen: 0, waarde: 0,
-                 isLengte: false, rubriek: "", overnemen: false)
     }
 
     private func neemOver() {
