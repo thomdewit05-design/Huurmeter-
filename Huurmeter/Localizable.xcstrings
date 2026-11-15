@@ -1371,6 +1371,16 @@
         }
       }
     },
+    "Een melding twee weken en drie dagen voor het einde van de termijn voor de aanvangshuur, en elk jaar op 1 mei als de huurverhoging eraan komt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A notification two weeks and three days before the deadline for the starting rent ends, and every year on 1 May when the rent increase is coming."
+          }
+        }
+      }
+    },
     "Een open keuken telt voor verwarming als apart vertrek. Verwarming per kamer vult u in bij Ruimtes.": {
       "localizations": {
         "en": {
@@ -3681,6 +3691,16 @@
         }
       }
     },
+    "Meer": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More"
+          }
+        }
+      }
+    },
     "Meer controleren": {
       "localizations": {
         "en": {
@@ -3787,6 +3807,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Message"
+          }
+        }
+      }
+    },
+    "Meldingen staan uit voor Huurmeter. Zet ze aan in Instellingen › Huurmeter › Meldingen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications are off for Huurmeter. Turn them on in Settings › Huurmeter › Notifications."
           }
         }
       }
