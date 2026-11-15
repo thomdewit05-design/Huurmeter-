@@ -6,14 +6,25 @@ import FoundationNetworking
 /// Haalt data op via HTTP. Eigen protocol zodat tests vaste antwoorden kunnen gebruiken.
 public protocol HTTPHaler: Sendable {
     func haal(_ url: URL) async throws -> (Data, Int)
+    /// Met extra kopteksten (bijv. een API-sleutel). Standaard: zonder kopteksten.
+    func haal(_ url: URL, kopteksten: [String: String]) async throws -> (Data, Int)
+}
+
+public extension HTTPHaler {
+    func haal(_ url: URL, kopteksten: [String: String]) async throws -> (Data, Int) { try await haal(url) }
 }
 
 public struct URLSessionHaler: HTTPHaler {
     public init() {}
 
     public func haal(_ url: URL) async throws -> (Data, Int) {
+        try await haal(url, kopteksten: [:])
+    }
+
+    public func haal(_ url: URL, kopteksten: [String: String]) async throws -> (Data, Int) {
         var verzoek = URLRequest(url: url, timeoutInterval: 15)
         verzoek.setValue("application/json", forHTTPHeaderField: "Accept")
+        for (k, v) in kopteksten { verzoek.setValue(v, forHTTPHeaderField: k) }
         return try await withCheckedThrowingContinuation { cont in
             URLSession.shared.dataTask(with: verzoek) { data, response, error in
                 if let error { cont.resume(throwing: error); return }

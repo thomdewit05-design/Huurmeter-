@@ -115,3 +115,14 @@ Stand: 15-11-2026. Geraadpleegde bronnen: zie [BRONNEN.md](BRONNEN.md).
    inhoud in de winkelversie niet zonder aankoop te openen is.
 4. **Privacy-manifest** (`PrivacyInfo.xcprivacy`): geen tracking, geen verzamelde gegevens, geen API's met reden.
 5. **Icoon**: eigen ontwerp (huis met meter). Laat het eventueel nog door een ontwerper verfijnen.
+
+## H. Extra functies (november 2026)
+
+1. **Huurverhoging middenhuur**: het maximale percentage voor 2026 is niet in een geraadpleegde bron gevonden
+   (formule: Uitvoeringswet art. 10 lid 4). De app zegt dan dat het maximum niet te bepalen is. Graag aanvullen.
+2. **EP-Online**: vraag een gratis API-sleutel aan op apikey.ep-online.nl en zet hem als GitHub-geheim
+   `EP_ONLINE_API_KEY`. Zonder sleutel verbergt de app de knop. Let op: de sleutel zit dan in de app en is
+   daaruit te halen; controleer of de voorwaarden van de RVO dat toestaan, of zet later een eigen tussenserver op.
+3. **Widget** gebruikt de App Group `group.nl.huurmeter.app`; automatische ondertekening maakt die aan. Faalt de
+   TestFlight-build daarop, maak de App Group dan handmatig aan in het developer-account.
+4. **Contract scannen, hele woning scannen, aanrecht meten**: niet op een toestel getest.

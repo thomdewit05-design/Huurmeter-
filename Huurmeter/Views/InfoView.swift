@@ -15,7 +15,7 @@ struct InfoView: View {
                 Text("Huurmeter is niet van of namens de overheid of de Huurcommissie.")
             }
             Section("Privacy") {
-                Text("Alles wat u invult blijft op uw telefoon. Er is geen account en de app verzamelt geen gegevens. Alleen bij 'Adres opzoeken' worden postcode en huisnummer naar de openbare dienst PDOK van het Kadaster gestuurd.")
+                Text("Alles wat u invult blijft op uw telefoon. Er is geen account en de app verzamelt geen gegevens. Alleen bij 'Adres opzoeken' en 'Ophalen bij EP-Online' worden postcode en huisnummer naar een openbare overheidsdienst gestuurd (PDOK van het Kadaster, EP-Online van de RVO).")
             }
             if let regels = HuidigeRegels.regels {
                 Section("Bronnen (regels \(String(regels.regelsetJaar)))") {

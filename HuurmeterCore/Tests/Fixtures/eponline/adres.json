@@ -1,0 +1,4 @@
+[
+  {"Registratiedatum":"2019-05-20T10:12:00","Opnamedatum":"2019-05-14T00:00:00","Geldig_tot":"2029-05-14T00:00:00","Energieklasse":"C","EnergieIndex":null,"IsVereenvoudigdLabel":false,"Postcode":"1234AB","Huisnummer":10,"Bouwjaar":1972},
+  {"Registratiedatum":"2009-03-01T09:00:00","Opnamedatum":"2009-02-20T00:00:00","Geldig_tot":"2019-02-20T00:00:00","Energieklasse":"E","EnergieIndex":2.25,"IsVereenvoudigdLabel":false,"Postcode":"1234AB","Huisnummer":10,"Bouwjaar":1972}
+]
