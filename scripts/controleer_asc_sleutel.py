@@ -61,3 +61,26 @@ for pad, wat in [("/v1/apps?limit=1", "apps"), ("/v1/bundleIds?limit=1", "bundel
 if mislukt:
     sys.exit(1)
 print("De sleutel heeft toegang tot alles wat Xcode nodig heeft.")
+
+def haal_json(pad):
+    verzoek = urllib.request.Request("https://api.appstoreconnect.apple.com" + pad,
+                                     headers={"Authorization": f"Bearer {token}"})
+    with urllib.request.urlopen(verzoek, timeout=30) as r:
+        return json.loads(r.read())
+
+# Informatief: bestaan de App ID's en staat App Groups aan? (Een App Group zelf kan niet via de API worden
+# aangemaakt; dat moet in het developer-account.)
+for ident in ["nl.huurmeter.app", "nl.huurmeter.app.widget"]:
+    try:
+        d = haal_json(f"/v1/bundleIds?filter[identifier]={ident}&include=bundleIdCapabilities&limit=5")
+        treffers = [b for b in d.get("data", []) if b["attributes"]["identifier"] == ident]
+        if not treffers:
+            print(f"::warning title=App ID::{ident} bestaat nog niet in het developer-account.")
+            continue
+        caps = sorted({i["attributes"].get("capabilityType") for i in d.get("included", [])
+                       if i.get("type") == "bundleIdCapabilities"})
+        print(f"{ident}: bestaat; capabilities: {', '.join(c for c in caps if c) or 'geen'}")
+        if "APP_GROUPS" not in caps:
+            print(f"::warning title=App Groups::App Groups staat uit voor {ident}.")
+    except Exception as e:
+        print(f"{ident}: niet op te vragen ({type(e).__name__})")
