@@ -30,6 +30,8 @@ final class Woning {
     var herinneringenAan: Bool = false
     /// Laatst geopende stap van het stappenplan (WoningStap.rawValue); nil = begin bij de eerste open stap.
     var laatsteStap: Int?
+    /// Voorschot servicekosten per maand volgens het contract (voor de servicekosten-check).
+    var servicekostenPerMaand: Double?
     var aangemaakt: Date = Date()
     var gewijzigd: Date = Date()
 
@@ -96,6 +98,19 @@ final class Woning {
             labelOpnamedatum: labelDatum.map { Dag($0) },
             energieprestatievergoeding: energieprestatievergoeding, koelingInLabel: koelingInLabel,
             wozWaarde: wozWaarde, wozPeildatum: wozPeildatum.map { Dag($0) })
+    }
+
+    /// Neemt een energielabel van EP-Online over (label of oude Energie-Index, met opnamedatum).
+    func neemLabelOver(_ l: EPOnlineClient.Label) {
+        if let label = l.label {
+            energielabel = label
+            energieIndex = nil
+        } else if let ei = l.energieIndex {
+            energielabel = nil
+            energieIndex = ei
+        }
+        labelDatum = l.opnamedatum?.datum()
+        geraakt()
     }
 
     func neemAdresOver(_ a: AdresGegevens) {
@@ -242,4 +257,41 @@ final class Gebrek {
     }
 
     var open: Bool { verholpen == nil }
+}
+
+extension Woning {
+    /// Kopie voor een woning in hetzelfde complex: adres zonder huisnummer, bouwjaar, type, alle ruimtes en
+    /// voorzieningen. Niet gekopieerd: huisnummer, huur, contractdatum, WOZ, energielabel, foto's, berekeningen
+    /// en gebreken (die verschillen per woning).
+    func kopie(in context: ModelContext) -> Woning {
+        let w = Woning()
+        context.insert(w)
+        w.postcode = postcode
+        w.straat = straat
+        w.plaats = plaats
+        w.gemeente = gemeente
+        w.bouwjaar = bouwjaar
+        w.typeRaw = typeRaw
+        w.koelingInLabel = koelingInLabel
+        for r in gesorteerdeRuimten {
+            let n = Ruimte(naam: r.naam, functie: r.functie ?? .overig, volgorde: r.volgorde)
+            n.soortRaw = r.soortRaw
+            n.functieRaw = r.functieRaw
+            n.oppervlakte = r.oppervlakte
+            n.bronRaw = r.bronRaw
+            n.verwarmd = r.verwarmd
+            n.verkoeling = r.verkoeling
+            n.zolderZonderVasteTrap = r.zolderZonderVasteTrap
+            n.gescandeOppervlakte = r.gescandeOppervlakte
+            n.schuinDak = r.schuinDak
+            n.aftrek = r.aftrek
+            n.plattegrond = r.plattegrond
+            w.ruimten.append(n)
+        }
+        for v in voorzieningen {
+            w.voorzieningen.append(Voorziening(rubriek: v.rubriek, sleutel: v.sleutel, waarde: v.waarde))
+        }
+        w.geraakt()
+        return w
+    }
 }

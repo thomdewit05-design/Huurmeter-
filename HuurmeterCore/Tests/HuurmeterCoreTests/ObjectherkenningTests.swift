@@ -43,4 +43,20 @@ final class ObjectherkenningTests: XCTestCase {
         XCTAssertTrue(Objectherkenning.voorstellen([GevondenObject(.overig)], ruimte: .keuken).isEmpty)
         XCTAssertNil(Objectherkenning.aanrechtSchatting([GevondenObject(.kast, breedte: 0.2, hoogte: 0.9)]))
     }
+
+    func testHeleWoning() {
+        let r = Objectherkenning.voorstellenVoorWoning([
+            (.woonkamer, [GevondenObject(.kookplaat), GevondenObject(.vaatwasser)]),   // open keuken
+            (.badkamer, [GevondenObject(.bad), GevondenObject(.wastafelOfSpoelbak, breedte: 0.6)]),
+            (.badkamer, [GevondenObject(.wastafelOfSpoelbak, breedte: 0.6)]),
+            (.toilet, [GevondenObject(.toilet)]),
+        ])
+        XCTAssertEqual(r.badkamers, 2)
+        XCTAssertEqual(r.voorstellen.map(\.id), ["keuken.kookplaat", "keuken.vaatwasser", "badkamer1.bad", "badkamer1.wastafel",
+                                                 "badkamer2.wastafel", "toilet.toilet"])
+        XCTAssertEqual(r.voorstellen.map(\.sleutel), ["keuken.kookplaatInductie", "keuken.vaatwasmachine", "badkamer1.baden",
+                                                      "badkamer1.wastafels", "badkamer2.wastafels", "toilet.staand"])
+        XCTAssertEqual(Set(r.voorstellen.map(\.id)).count, r.voorstellen.count, "id's zijn uniek")
+        XCTAssertTrue(r.voorstellen[2].isAantal)
+    }
 }

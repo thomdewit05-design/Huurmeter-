@@ -74,7 +74,7 @@ struct VoorzieningScanView: View {
                         .font(.subheadline)
                 }
                 ForEach(Array(lijst.indices), id: \.self) { i in
-                    voorstelRij(i, standaard: lijst[i])
+                    VoorstelSectie(voorstel: Binding(get: { voorstellen?[i] ?? lijst[i] }, set: { voorstellen?[i] = $0 }))
                 }
             }
             if case .badkamer = ruimte {
@@ -95,43 +95,6 @@ struct VoorzieningScanView: View {
         }
         .huisstijlAchtergrond()
         .toetsenbordKlaar()
-    }
-
-    @ViewBuilder
-    private func voorstelRij(_ i: Int, standaard: Voorstel) -> some View {
-        let binding = Binding(get: { voorstellen?[i] ?? standaard }, set: { voorstellen?[i] = $0 })
-        let v = binding.wrappedValue
-        Section {
-            Toggle(isOn: binding.overnemen) {
-                Text(v.titel.vertaald).font(.headline)
-            }
-            if v.overnemen {
-                if v.opties.count > 1 {
-                    Picker(v.titel.vertaald, selection: binding.gekozen) {
-                        ForEach(Array(v.opties.enumerated()), id: \.offset) { n, o in
-                            Text(o.tekst.vertaald).tag(n)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                }
-                if v.isLengte {
-                    LabeledContent("Lengte") {
-                        HStack(spacing: 6) {
-                            TextField("0", value: binding.waarde, format: .number.precision(.fractionLength(0...2)))
-                                .keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(width: 80)
-                            Text("m").foregroundStyle(.secondary)
-                        }
-                    }
-                } else if v.isAantal {
-                    Stepper(value: Binding(get: { Int(binding.wrappedValue.waarde) }, set: { binding.wrappedValue.waarde = Double($0) }), in: 1...6) {
-                        LabeledContent("Aantal") { Text(verbatim: "\(Int(v.waarde))").monospacedDigit() }
-                    }
-                }
-            }
-        } footer: {
-            if let u = v.uitleg { Text(u.vertaald) }
-        }
     }
 
     private func neemOver() {
@@ -162,5 +125,44 @@ struct VoorzieningScanView: View {
         default: soort = .overig
         }
         return GevondenObject(soort, breedte: Double(o.dimensions.x), hoogte: Double(o.dimensions.y), diepte: Double(o.dimensions.z))
+    }
+}
+
+/// Eén voorgesteld antwoord ter controle: aan/uit, soort kiezen, aantal of lengte aanpassen.
+struct VoorstelSectie: View {
+    @Binding var voorstel: Voorstel
+
+    var body: some View {
+        Section {
+            Toggle(isOn: $voorstel.overnemen) {
+                Text(voorstel.titel.vertaald).font(.headline)
+            }
+            if voorstel.overnemen {
+                if voorstel.opties.count > 1 {
+                    Picker(voorstel.titel.vertaald, selection: $voorstel.gekozen) {
+                        ForEach(Array(voorstel.opties.enumerated()), id: \.offset) { n, o in
+                            Text(o.tekst.vertaald).tag(n)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .labelsHidden()
+                }
+                if voorstel.isLengte {
+                    LabeledContent("Lengte") {
+                        HStack(spacing: 6) {
+                            TextField("0", value: $voorstel.waarde, format: .number.precision(.fractionLength(0...2)))
+                                .keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(width: 80)
+                            Text("m").foregroundStyle(.secondary)
+                        }
+                    }
+                } else if voorstel.isAantal {
+                    Stepper(value: Binding(get: { Int(voorstel.waarde) }, set: { voorstel.waarde = Double($0) }), in: 1...6) {
+                        LabeledContent("Aantal") { Text(verbatim: "\(Int(voorstel.waarde))").monospacedDigit() }
+                    }
+                }
+            }
+        } footer: {
+            if let u = voorstel.uitleg { Text(u.vertaald) }
+        }
     }
 }

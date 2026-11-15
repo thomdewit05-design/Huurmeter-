@@ -17,8 +17,12 @@ struct VoorzieningenView: View {
                     ForEach(Vragenlijst.zichtbareGroepen(regels: regels, concept: concept)) { groep in
                         Section(groep.titel.vertaald) {
                             if Scanner.beschikbaar { scanKnoppen(groep.id) }
-                            ForEach(groep.vragen) { vraag in
+                            let tegels = groep.vragen.filter(Tegels.isTegel)
+                            ForEach(groep.vragen.filter { !Tegels.isTegel($0) }) { vraag in
                                 VraagRij(woning: woning, vraag: vraag)
+                            }
+                            if !tegels.isEmpty {
+                                TegelRaster(woning: woning, vragen: tegels)
                             }
                         }
                     }
@@ -221,5 +225,137 @@ extension UIImage {
         guard schaal < 1 else { return self }
         let nieuw = CGSize(width: size.width * schaal, height: size.height * schaal)
         return UIGraphicsImageRenderer(size: nieuw).image { _ in draw(in: CGRect(origin: .zero, size: nieuw)) }
+    }
+}
+
+// MARK: - Tegels voor apparatuur en extra's (sneller dan een lijst schakelaars)
+
+enum Tegels {
+    /// Vragen die als tegel worden getoond: keukenapparatuur en extra's in de badkamer.
+    static func isTegel(_ v: Vraag) -> Bool {
+        let delen = v.sleutel.split(separator: ".")
+        guard delen.count == 2 else { return false }
+        let soort = String(delen[0]), naam = String(delen[1])
+        switch v.type {
+        case .janee, .aantal: break
+        default: return false
+        }
+        if soort == "keuken" { return !["basisniveau", "aanrecht"].contains(naam) }
+        if soort.hasPrefix("badkamer") {
+            return !["douches", "baden", "wastafels", "meerpersoonswastafels", "toiletStaand", "toiletHangend", "voldoetEisen"].contains(naam)
+        }
+        return false
+    }
+
+    static func icoon(_ sleutel: String) -> String {
+        let naam = sleutel.split(separator: ".").last.map(String.init) ?? sleutel
+        switch naam {
+        case "afzuiginstallatie": return "wind"
+        case "kookplaatInductie", "kookplaatKeramisch": return "cooktop"
+        case "kookplaatGas": return "flame"
+        case "koelkast": return "refrigerator"
+        case "vrieskast": return "snowflake"
+        case "ovenElektrisch", "ovenGas": return "oven"
+        case "magnetron": return "microwave"
+        case "vaatwasmachine": return "dishwasher"
+        case "extraKastruimtePer60cm", "kastruimte": return "cabinet"
+        case "eenhandsmengkraan": return "drop"
+        case "thermostatischeMengkraan": return "thermometer.medium"
+        case "kokendwaterfunctie": return "drop.fill"
+        case "bubbelfunctieBad": return "bathtub"
+        case "volledigeDoucheafscheiding": return "shower"
+        case "handdoekenradiator": return "heater.vertical"
+        case "kastjeMetWastafel": return "sink"
+        case "stopcontact": return "powerplug"
+        default: return "square.grid.2x2"
+        }
+    }
+}
+
+/// Raster van tegels: tik = aan/uit (of één erbij bij een aantal), lang indrukken = minder of wissen.
+private struct TegelRaster: View {
+    let woning: Woning
+    let vragen: [Vraag]
+    private let kolommen = [GridItem(.adaptive(minimum: 104), spacing: 10)]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Tik aan wat er is. Lang indrukken om te verminderen.")
+                .font(.footnote).foregroundStyle(.secondary)
+            LazyVGrid(columns: kolommen, spacing: 10) {
+                ForEach(vragen) { vraag in tegel(vraag) }
+            }
+            let gekozen = vragen.filter { $0.fotoMogelijk && woning.antwoord($0.sleutel) > 0 }
+            if !gekozen.isEmpty {
+                DisclosureGroup("Foto's als bewijs") {
+                    ForEach(gekozen) { vraag in
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(vraag.tekst.vertaald).font(.footnote.weight(.semibold))
+                            FotoKnop(woning: woning, vraag: vraag)
+                        }
+                    }
+                }
+                .font(.subheadline)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+
+    private func maximum(_ v: Vraag) -> Int {
+        if case .aantal(let m) = v.type { return m }
+        return 1
+    }
+
+    private func tegel(_ vraag: Vraag) -> some View {
+        let waarde = Int(woning.antwoord(vraag.sleutel).rounded())
+        let aan = waarde > 0
+        let isAantal = maximum(vraag) > 1
+        return Button {
+            let nieuw = isAantal ? min(waarde + 1, maximum(vraag)) : (aan ? 0 : 1)
+            woning.zetAntwoord(vraag.sleutel, Double(nieuw), rubriek: vraag.rubriek)
+        } label: {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Image(systemName: Tegels.icoon(vraag.sleutel))
+                        .font(.title3)
+                        .foregroundStyle(aan ? Huisstijl.opLimoen : Huisstijl.gedempt)
+                    Spacer()
+                    if aan {
+                        Text(verbatim: isAantal ? "\(waarde)" : "✓")
+                            .font(.caption.weight(.heavy))
+                            .foregroundStyle(Huisstijl.opLimoen)
+                            .padding(.horizontal, 7).padding(.vertical, 3)
+                            .background(Huisstijl.kaart.opacity(0.6), in: Capsule())
+                    }
+                }
+                Text(vraag.tekst.vertaald)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(aan ? Huisstijl.opLimoen : .primary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(3)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 0)
+            }
+            .padding(10)
+            .frame(maxWidth: .infinity, minHeight: 92, alignment: .topLeading)
+            .background(aan ? Huisstijl.limoen : Huisstijl.salie, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(aan ? Huisstijl.bosgroen.opacity(0.3) : .clear))
+        }
+        .buttonStyle(.plain)
+        .contextMenu {
+            if isAantal && waarde > 0 {
+                Button { woning.zetAntwoord(vraag.sleutel, Double(waarde - 1), rubriek: vraag.rubriek) } label: {
+                    Label("Eén minder", systemImage: "minus.circle")
+                }
+            }
+            if waarde > 0 {
+                Button(role: .destructive) { woning.zetAntwoord(vraag.sleutel, 0, rubriek: vraag.rubriek) } label: {
+                    Label("Wissen", systemImage: "xmark.circle")
+                }
+            }
+        }
+        .accessibilityLabel(Text(vraag.tekst.vertaald))
+        .accessibilityValue(Text(isAantal ? "\(waarde)" : (aan ? String(localized: "aan") : String(localized: "uit"))))
+        .accessibilityAddTraits(aan ? .isSelected : [])
     }
 }

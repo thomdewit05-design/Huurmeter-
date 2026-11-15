@@ -54,6 +54,9 @@ struct EnergieWozView: View {
                     }
                     .disabled(bezig)
                 }
+                if ContractScanner.beschikbaar {
+                    DocumentScanKnop(titel: "Energielabel scannen", icoon: "doc.viewfinder", verwerk: verwerkLabel)
+                }
                 Link(destination: URL(string: "https://www.ep-online.nl")!) {
                     Label("Label opzoeken op ep-online.nl", systemImage: "arrow.up.right.square")
                 }
@@ -80,6 +83,9 @@ struct EnergieWozView: View {
                         ForEach(peildata, id: \.self) { Text($0.description).tag(Dag?.some($0)) }
                     }
                 }
+                if ContractScanner.beschikbaar {
+                    DocumentScanKnop(titel: "WOZ-beschikking scannen", icoon: "doc.viewfinder", verwerk: verwerkWOZ)
+                }
                 Link(destination: URL(string: "https://www.wozwaardeloket.nl")!) {
                     Label("WOZ-waarde opzoeken op wozwaardeloket.nl", systemImage: "arrow.up.right.square")
                 }
@@ -105,20 +111,40 @@ struct EnergieWozView: View {
         .onChange(of: woning.koelingInLabel) { woning.geraakt() }
     }
 
+    private func verwerkLabel(_ tekst: String) -> (samenvatting: String, overnemen: () -> Void)? {
+        let r = DocumentHerkenner.energielabel(tekst)
+        guard let label = r.label else { return nil }
+        var regels = [String(localized: "Energielabel: \(label.rawValue)")]
+        if let d = r.opnamedatum { regels.append(String(localized: "Opnamedatum: \(d.description)")) }
+        else { regels.append(String(localized: "De opnamedatum is niet gevonden; vul die zelf in.")) }
+        regels.append(String(localized: "Controleer of dit klopt."))
+        return (regels.joined(separator: "\n"), {
+            woning.energielabel = label
+            woning.energieIndex = nil
+            if let d = r.opnamedatum { woning.labelDatum = d.datum() }
+            woning.geraakt()
+        })
+    }
+
+    private func verwerkWOZ(_ tekst: String) -> (samenvatting: String, overnemen: () -> Void)? {
+        let r = DocumentHerkenner.woz(tekst)
+        guard let waarde = r.waarde else { return nil }
+        var regels = [String(localized: "WOZ-waarde: \(Opmaak.euro(waarde))")]
+        if let d = r.peildatum { regels.append(String(localized: "Waardepeildatum: \(d.description)")) }
+        regels.append(String(localized: "Controleer of dit klopt."))
+        return (regels.joined(separator: "\n"), {
+            woning.wozWaarde = waarde
+            if let d = r.peildatum { woning.wozPeildatum = d.datum() }
+            woning.geraakt()
+        })
+    }
+
     private func haalLabel() async {
         bezig = true
         defer { bezig = false }
         do {
             let l = try await epOnline.haalLabel(postcode: woning.postcode, huisnummer: woning.huisnummer)
-            if let label = l.label {
-                woning.energielabel = label
-                woning.energieIndex = nil
-            } else if let ei = l.energieIndex {
-                woning.energielabel = nil
-                woning.energieIndex = ei
-            }
-            woning.labelDatum = l.opnamedatum?.datum()
-            woning.geraakt()
+            woning.neemLabelOver(l)
             let wat = l.label.map { "Label \($0.rawValue)" } ?? l.energieIndex.map { "Energie-Index \(Opmaak.getal($0, decimalen: 2))" } ?? "Label"
             epMelding = "\(wat) opgehaald bij EP-Online" + (l.geldigTot.map { ", geldig tot \($0)." } ?? ".")
         } catch let fout as EPOnlineClient.Fout {

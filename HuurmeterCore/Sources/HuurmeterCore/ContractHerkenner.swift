@@ -9,6 +9,12 @@ public enum ContractHerkenner {
         public var kaleHuurRegel: String?
         public var ingangsdatum: Dag?
         public var ingangsdatumRegel: String?
+        public var postcode: String?
+        public var huisnummer: String?
+        public var servicekostenPerMaand: Double?
+
+        /// true als er niets is herkend.
+        public var isLeeg: Bool { kaleHuur == nil && ingangsdatum == nil && postcode == nil && servicekostenPerMaand == nil }
     }
 
     /// Woorden die direct op de kale huur wijzen (zonder servicekosten).
@@ -49,6 +55,8 @@ public enum ContractHerkenner {
                 break
             }
         }
+        if let a = adres(in: regels) { v.postcode = a.postcode; v.huisnummer = a.huisnummer }
+        v.servicekostenPerMaand = servicekosten(in: regels)
         return v
     }
 

@@ -14,6 +14,8 @@ struct WoningScanView: View {
         let scan: ScanResultaat
         var naam: String
         var functie: RuimteFunctie
+        /// Wat de camera in deze kamer herkende (apparaten, sanitair).
+        var objecten: [GevondenObject] = []
     }
 
     @State private var kamers: [GescandeKamer] = []
@@ -21,6 +23,7 @@ struct WoningScanView: View {
     @State private var startTeller = 0
     @State private var laatsteStopIsKlaar = false
     @State private var controleren = false
+    @State private var voorstellen: [Voorstel] = []
 
     var body: some View {
         NavigationStack {
@@ -44,11 +47,13 @@ struct WoningScanView: View {
             MeerKamerScanner(stopTeller: stopTeller, startTeller: startTeller, pauzeerBijStop: laatsteStopIsKlaar) { kamer in
                 if let kamer, let s = ScanResultaat(kamer) {
                     let label = kamer.sections.first.map { "\($0.label)" } ?? "unidentified"
-                    kamers.append(GescandeKamer(scan: s, naam: "", functie: Kamerherkenning.functie(voorLabel: label)))
+                    kamers.append(GescandeKamer(scan: s, naam: "", functie: Kamerherkenning.functie(voorLabel: label),
+                                                objecten: kamer.objects.map(VoorzieningScanView.object)))
                 }
                 if laatsteStopIsKlaar {
                     let namen = Kamerherkenning.namen(voor: kamers.map(\.functie))
                     for i in kamers.indices { kamers[i].naam = namen[i] }
+                    werkVoorstellenBij()
                     controleren = true
                 } else {
                     startTeller += 1
@@ -87,11 +92,21 @@ struct WoningScanView: View {
                         Picker("Functie", selection: $k.functie) {
                             ForEach(RuimteFunctie.allCases, id: \.self) { Text($0.naam.vertaald).tag($0) }
                         }
+                        .onChange(of: k.functie) { werkVoorstellenBij() }
                     }
                 }
-                .onDelete { kamers.remove(atOffsets: $0) }
+                .onDelete { kamers.remove(atOffsets: $0); werkVoorstellenBij() }
             } footer: {
                 Text("Controleer de namen en functies. Een schuin dak of verlaagd plafond geeft u daarna per kamer aan.")
+            }
+            if !voorstellen.isEmpty {
+                Section {
+                    Text("De camera heeft ook voorzieningen herkend. Controleer ze; ze worden ingevuld bij Voorzieningen.")
+                        .font(.subheadline)
+                } header: {
+                    Text("Voorzieningen")
+                }
+                ForEach($voorstellen) { $v in VoorstelSectie(voorstel: $v) }
             }
             Section {
                 Button("Kamers toevoegen") { voegToe() }
@@ -101,6 +116,17 @@ struct WoningScanView: View {
         .huisstijlAchtergrond()
     }
 
+    /// Voorstellen opnieuw bepalen uit de kamers en hun functies (de keuze aan/uit blijft waar mogelijk staan).
+    private func werkVoorstellenBij() {
+        let oud = Dictionary(uniqueKeysWithValues: voorstellen.map { ($0.id, $0) })
+        voorstellen = Objectherkenning.voorstellenVoorWoning(kamers.map { ($0.functie, $0.objecten) }).voorstellen.map { v in
+            guard let o = oud[v.id] else { return v }
+            var n = v
+            n.overnemen = o.overnemen; n.gekozen = o.gekozen; n.waarde = o.waarde
+            return n
+        }
+    }
+
     private func voegToe() {
         var volgorde = (woning.ruimten.map(\.volgorde).max() ?? 0) + 1
         for k in kamers {
@@ -108,6 +134,13 @@ struct WoningScanView: View {
             volgorde += 1
             woning.ruimten.append(r)
             r.neemScanOver(k.scan, plattegrond: Plattegrond.png(k.scan, naam: k.naam))
+        }
+        for v in voorstellen where v.overnemen {
+            woning.zetAntwoord(v.sleutel, v.waarde, rubriek: v.rubriek)
+        }
+        let badkamers = Objectherkenning.voorstellenVoorWoning(kamers.map { ($0.functie, $0.objecten) }).badkamers
+        if badkamers > 0 && woning.antwoord("badkamers") < Double(badkamers) {
+            woning.zetAntwoord("badkamers", Double(badkamers), rubriek: "6")
         }
         woning.geraakt()
         dismiss()

@@ -52,6 +52,8 @@ struct ContractScanner: UIViewControllerRepresentable {
 /// Knop + bevestiging voor het huurscherm.
 struct ContractScanKnop: View {
     let woning: Woning
+    /// Wordt aangeroepen na overnemen (bijv. om het adres op te zoeken).
+    var naOvernemen: (() -> Void)? = nil
     @State private var toonScanner = false
     @State private var voorstel: ContractHerkenner.Voorstel?
     @State private var nietsGevonden = false
@@ -67,7 +69,7 @@ struct ContractScanKnop: View {
                 toonScanner = false
                 guard let tekst else { return }
                 let v = ContractHerkenner.herken(tekst)
-                if v.kaleHuur == nil && v.ingangsdatum == nil { nietsGevonden = true } else { voorstel = v }
+                if v.isLeeg { nietsGevonden = true } else { voorstel = v }
             }
             .ignoresSafeArea()
         }
@@ -87,9 +89,11 @@ struct ContractScanKnop: View {
     private var samenvatting: String {
         guard let v = voorstel else { return "" }
         var r: [String] = []
-        if let h = v.kaleHuur { r.append("Kale huur: \(Opmaak.euro(h)) per maand") }
-        if let d = v.ingangsdatum { r.append("Ingangsdatum: \(d)") }
-        r.append("Controleer of dit klopt.")
+        if let h = v.kaleHuur { r.append(String(localized: "Kale huur: \(Opmaak.euro(h)) per maand")) }
+        if let d = v.ingangsdatum { r.append(String(localized: "Ingangsdatum: \(d.description)")) }
+        if let pc = v.postcode { r.append(String(localized: "Adres: \(pc) \(v.huisnummer ?? "")")) }
+        if let s = v.servicekostenPerMaand { r.append(String(localized: "Servicekosten: \(Opmaak.euro(s)) per maand")) }
+        r.append(String(localized: "Controleer of dit klopt."))
         return r.joined(separator: "\n")
     }
 
@@ -97,7 +101,52 @@ struct ContractScanKnop: View {
         guard let v = voorstel else { return }
         if let h = v.kaleHuur { woning.kaleHuur = h }
         if let d = v.ingangsdatum { woning.contractStart = d.datum() }
+        if let pc = v.postcode, woning.postcode.isEmpty || Postcode(woning.postcode)?.waarde == pc {
+            woning.postcode = pc
+            if let hn = v.huisnummer { woning.huisnummer = hn }
+        }
+        if let s = v.servicekostenPerMaand { woning.servicekostenPerMaand = s }
         woning.geraakt()
         voorstel = nil
+        naOvernemen?()
+    }
+}
+
+/// Een brief scannen (WOZ-beschikking, energielabel) en het gevonden voorstel laten bevestigen.
+struct DocumentScanKnop: View {
+    let titel: LocalizedStringKey
+    let icoon: String
+    /// Herkent de tekst; geeft een samenvatting en de actie om over te nemen, of nil als er niets is gevonden.
+    let verwerk: (String) -> (samenvatting: String, overnemen: () -> Void)?
+
+    @State private var toonScanner = false
+    @State private var gevonden: (samenvatting: String, overnemen: () -> Void)?
+    @State private var nietsGevonden = false
+
+    var body: some View {
+        Button {
+            toonScanner = true
+        } label: {
+            Label(titel, systemImage: icoon)
+        }
+        .fullScreenCover(isPresented: $toonScanner) {
+            ContractScanner { tekst in
+                toonScanner = false
+                guard let tekst else { return }
+                if let g = verwerk(tekst) { gevonden = g } else { nietsGevonden = true }
+            }
+            .ignoresSafeArea()
+        }
+        .alert("Niets herkend", isPresented: $nietsGevonden) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("Er is niets gevonden om over te nemen. Scan de pagina waar het op staat, of vul het zelf in.")
+        }
+        .alert("Gevonden", isPresented: Binding(get: { gevonden != nil }, set: { if !$0 { gevonden = nil } })) {
+            Button("Overnemen") { gevonden?.overnemen(); gevonden = nil }
+            Button("Annuleer", role: .cancel) {}
+        } message: {
+            Text(gevonden?.samenvatting ?? "")
+        }
     }
 }

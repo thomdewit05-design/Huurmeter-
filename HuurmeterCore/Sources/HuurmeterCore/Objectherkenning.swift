@@ -1,4 +1,5 @@
 import Foundation
+import WWSKit
 
 /// Een object dat de camera (RoomPlan) in een ruimte heeft herkend, met afmetingen in meters.
 public struct GevondenObject: Sendable, Equatable {
@@ -48,7 +49,8 @@ public struct Voorstel: Sendable, Equatable, Identifiable {
     /// anders is het een ja/nee-vraag en wordt 1 ingevuld.
     public var isAantal: Bool {
         guard !isLengte else { return false }
-        return id == "bad" || id == "wastafel" || (id == "toilet" && sleutel.hasPrefix("toilet."))
+        let kern = id.split(separator: ".").last.map(String.init) ?? id
+        return kern == "bad" || kern == "wastafel" || (kern == "toilet" && sleutel.hasPrefix("toilet."))
     }
 }
 
@@ -129,6 +131,29 @@ public enum Objectherkenning {
             }
         }
         return lijst
+    }
+
+    /// Voorstellen voor een hele woning (één scan, kamer na kamer). Keuken: objecten in kamers met de functie
+    /// keuken, of anders keukenapparatuur waar ook gezien (open keuken). Badkamers in volgorde (maximaal
+    /// `maxBadkamers`), aparte toiletten samen.
+    public static func voorstellenVoorWoning(_ kamers: [(functie: RuimteFunctie, objecten: [GevondenObject])],
+                                             maxBadkamers: Int = 2) -> (voorstellen: [Voorstel], badkamers: Int) {
+        let keukenSoorten: Set<GevondenObject.Soort> = [.kookplaat, .oven, .vaatwasser, .koelkast]
+        var keuken = kamers.filter { $0.functie == .keuken }.flatMap(\.objecten)
+        if keuken.isEmpty { keuken = kamers.flatMap(\.objecten).filter { keukenSoorten.contains($0.soort) } }
+        var lijst = metVoorvoegsel("keuken", voorstellen(keuken, ruimte: .keuken))
+        let badkamers = kamers.filter { $0.functie == .badkamer }.prefix(maxBadkamers)
+        for (n, b) in badkamers.enumerated() {
+            lijst += metVoorvoegsel("badkamer\(n + 1)", voorstellen(b.objecten, ruimte: .badkamer(n + 1)))
+        }
+        let toiletten = kamers.filter { $0.functie == .toilet }.flatMap(\.objecten)
+        lijst += metVoorvoegsel("toilet", voorstellen(toiletten, ruimte: .toilet))
+        return (lijst, badkamers.count)
+    }
+
+    static func metVoorvoegsel(_ v: String, _ lijst: [Voorstel]) -> [Voorstel] {
+        lijst.map { Voorstel(id: "\(v).\($0.id)", titel: $0.titel, uitleg: $0.uitleg, opties: $0.opties, gekozen: $0.gekozen,
+                             waarde: $0.waarde, isLengte: $0.isLengte, rubriek: $0.rubriek, overnemen: $0.overnemen) }
     }
 
     /// Schatting van de aanrechtlengte: de breedte van alles wat onder het blad staat (onderkasten van 60 tot

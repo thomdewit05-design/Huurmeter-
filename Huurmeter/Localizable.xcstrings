@@ -311,12 +311,42 @@
         }
       }
     },
+    "Adres gevonden, maar het bouwjaar niet. Vul het zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address found, but not the year built. Please enter it yourself."
+          }
+        }
+      }
+    },
     "Adres opzoeken": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Look up address"
+          }
+        }
+      }
+    },
+    "Adres: %1$@ %2$@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address: %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Adres: %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Address: %@ %@"
           }
         }
       }
@@ -1051,6 +1081,16 @@
         }
       }
     },
+    "Controleer of dit klopt.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check that this is correct."
+          }
+        }
+      }
+    },
     "Controleer of het voorstel binnen het maximum blijft. Bezwaar maakt u vóór de ingangsdatum.": {
       "localizations": {
         "en": {
@@ -1087,6 +1127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "The app reads the basic rent and start date from your contract. This happens on your phone; the photos are not stored."
+          }
+        }
+      }
+    },
+    "De camera heeft ook voorzieningen herkend. Controleer ze; ze worden ingevuld bij Voorzieningen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The camera also recognised facilities. Check them; they will be filled in under Facilities."
           }
         }
       }
@@ -1137,6 +1187,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "The maximum basic rent and how much you overpay per month and per year"
+          }
+        }
+      }
+    },
+    "De opnamedatum is niet gevonden; vul die zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The assessment date was not found; please enter it yourself."
           }
         }
       }
@@ -1711,12 +1771,32 @@
         }
       }
     },
+    "Energielabel scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan energy label"
+          }
+        }
+      }
+    },
     "Energielabel van de woning": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Energy label of the home"
+          }
+        }
+      }
+    },
+    "Energielabel: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Energy label: %@"
           }
         }
       }
@@ -1737,6 +1817,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Energy performance fee agreed"
+          }
+        }
+      }
+    },
+    "Er is niets gevonden om over te nemen. Scan de pagina waar het op staat, of vul het zelf in.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing was found to take over. Scan the page it is on, or enter it yourself."
           }
         }
       }
@@ -1851,6 +1941,16 @@
         }
       }
     },
+    "Eén minder": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "One less"
+          }
+        }
+      }
+    },
     "Foto %lld": {
       "localizations": {
         "en": {
@@ -1877,6 +1977,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Photos"
+          }
+        }
+      }
+    },
+    "Foto's als bewijs": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Photos as evidence"
           }
         }
       }
@@ -2467,6 +2577,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scanned"
+          }
+        }
+      }
+    },
+    "Gevonden": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Found"
           }
         }
       }
@@ -3131,6 +3251,16 @@
         }
       }
     },
+    "Ingangsdatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start date: %@"
+          }
+        }
+      }
+    },
     "Ingebouwde afzuigkap": {
       "localizations": {
         "en": {
@@ -3377,6 +3507,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Basic rent per month"
+          }
+        }
+      }
+    },
+    "Kale huur: %@ per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basic rent: %@ per month"
           }
         }
       }
@@ -3727,6 +3867,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Hob"
+          }
+        }
+      }
+    },
+    "Kopiëren (zelfde complex)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy (same complex)"
           }
         }
       }
@@ -4571,6 +4721,16 @@
         }
       }
     },
+    "Opgehaald: %@. Tik op Volgende.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fetched: %@. Tap Next."
+          }
+        }
+      }
+    },
     "Opgeteld uit de onderkasten, spoelbak en apparaten onder het blad. Controleer het met de AR-meter of een rolmaat.": {
       "localizations": {
         "en": {
@@ -4607,6 +4767,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Assessment date of the label missing"
+          }
+        }
+      }
+    },
+    "Opnamedatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assessment date: %@"
           }
         }
       }
@@ -5131,6 +5301,26 @@
         }
       }
     },
+    "Servicekosten volgens contract": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service charges per contract"
+          }
+        }
+      }
+    },
+    "Servicekosten: %@ per maand": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Service charges: %@ per month"
+          }
+        }
+      }
+    },
     "Slaapkamer": {
       "localizations": {
         "en": {
@@ -5177,6 +5367,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Close"
+          }
+        }
+      }
+    },
+    "Sneller: scan uw huurcontract. De app neemt het adres, de huur, de ingangsdatum en de servicekosten over.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faster: scan your rental contract. The app takes over the address, rent, start date and service charges."
           }
         }
       }
@@ -5487,6 +5687,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Thermostatic taps"
+          }
+        }
+      }
+    },
+    "Tik aan wat er is. Lang indrukken om te verminderen.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap what is there. Press and hold to reduce."
           }
         }
       }
@@ -6561,6 +6771,16 @@
         }
       }
     },
+    "WOZ-beschikking scannen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan WOZ assessment"
+          }
+        }
+      }
+    },
     "WOZ-waarde": {
       "localizations": {
         "en": {
@@ -6591,12 +6811,32 @@
         }
       }
     },
+    "WOZ-waarde: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WOZ value: %@"
+          }
+        }
+      }
+    },
     "Waardepeildatum": {
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
             "value": "Valuation reference date"
+          }
+        }
+      }
+    },
+    "Waardepeildatum: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Valuation reference date: %@"
           }
         }
       }
@@ -6741,6 +6981,16 @@
         }
       }
     },
+    "Wissen": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clear"
+          }
+        }
+      }
+    },
     "Woning scannen": {
       "localizations": {
         "en": {
@@ -6871,6 +7121,36 @@
         }
       }
     },
+    "aan": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on"
+          }
+        }
+      }
+    },
+    "adres": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "address"
+          }
+        }
+      }
+    },
+    "bouwjaar": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "year built"
+          }
+        }
+      }
+    },
     "dag": {
       "localizations": {
         "en": {
@@ -6887,6 +7167,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "days"
+          }
+        }
+      }
+    },
+    "energielabel": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "energy label"
           }
         }
       }
@@ -6917,6 +7207,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "points"
+          }
+        }
+      }
+    },
+    "uit": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "off"
           }
         }
       }

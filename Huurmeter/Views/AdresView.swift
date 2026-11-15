@@ -7,11 +7,20 @@ struct AdresView: View {
     @Bindable var woning: Woning
     @State private var bezig = false
     @State private var melding: String?
+    @State private var gevonden: String?
 
     private let pdok = PDOKClient()
+    private let epOnline = EPOnlineClient(sleutel: Bundle.main.object(forInfoDictionaryKey: "EPOnlineAPIKey") as? String)
 
     var body: some View {
         Form {
+            if ContractScanner.beschikbaar && woning.straat.isEmpty {
+                Section {
+                    ContractScanKnop(woning: woning) { Task { await zoek() } }
+                } footer: {
+                    Text("Sneller: scan uw huurcontract. De app neemt het adres, de huur, de ingangsdatum en de servicekosten over.")
+                }
+            }
             Section {
                 TextField("Postcode", text: $woning.postcode)
                     .textContentType(.postalCode)
@@ -19,6 +28,8 @@ struct AdresView: View {
                     .autocorrectionDisabled()
                 TextField("Huisnummer en toevoeging", text: $woning.huisnummer)
                     .autocorrectionDisabled()
+                    .submitLabel(.search)
+                    .onSubmit { Task { await zoek() } }
                 Button {
                     Task { await zoek() }
                 } label: {
@@ -31,6 +42,8 @@ struct AdresView: View {
             } footer: {
                 if let melding {
                     Text(melding).foregroundStyle(.orange)
+                } else if let gevonden {
+                    Label(gevonden, systemImage: "checkmark.circle.fill").foregroundStyle(Huisstijl.bosgroen)
                 } else {
                     Text("Straat, plaats en bouwjaar worden opgehaald uit de openbare registers van het Kadaster (PDOK).")
                 }
@@ -59,13 +72,24 @@ struct AdresView: View {
     }
 
     private func zoek() async {
+        guard !bezig, Postcode(woning.postcode) != nil, Huisnummer(woning.huisnummer) != nil else { return }
         bezig = true
         melding = nil
+        gevonden = nil
         defer { bezig = false }
         do {
             let a = try await pdok.vulAan(postcode: woning.postcode, huisnummer: woning.huisnummer)
             woning.neemAdresOver(a)
-            if a.bouwjaar == nil { melding = "Adres gevonden, maar het bouwjaar niet. Vul het zelf in." }
+            var opgehaald = [String(localized: "adres")]
+            if a.bouwjaar != nil { opgehaald.append(String(localized: "bouwjaar")) }
+            // Snelstart: meteen ook het energielabel, als dat er nog niet is en EP-Online beschikbaar is.
+            if epOnline.beschikbaar && woning.energielabel == nil && woning.energieIndex == nil,
+               let l = try? await epOnline.haalLabel(postcode: woning.postcode, huisnummer: woning.huisnummer) {
+                woning.neemLabelOver(l)
+                opgehaald.append(String(localized: "energielabel"))
+            }
+            gevonden = String(localized: "Opgehaald: \(opgehaald.joined(separator: ", ")). Tik op Volgende.")
+            if a.bouwjaar == nil { melding = String(localized: "Adres gevonden, maar het bouwjaar niet. Vul het zelf in.") }
         } catch let fout as PDOKFout {
             melding = fout.description
         } catch {

@@ -121,5 +121,11 @@ struct ServicekostenView: View {
         .huisstijlAchtergrond()
         .toetsenbordKlaar()
         .navigationTitle("Servicekosten")
+        .onAppear {
+            // Voorschot uit het gescande contract als eerste post (per jaar).
+            if let s = woning.servicekostenPerMaand, posten.count == 1, posten[0].naam.isEmpty, posten[0].voorschot == 0 {
+                posten = [ServicekostenPost(naam: String(localized: "Servicekosten volgens contract"), voorschot: Afronding.centen(s * 12), kosten: nil)]
+            }
+        }
     }
 }
