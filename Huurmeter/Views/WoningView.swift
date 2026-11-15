@@ -56,6 +56,11 @@ struct WoningView: View {
                 } label: {
                     Label("Huurverhoging", systemImage: "arrow.up.right.circle")
                 }
+                NavigationLink {
+                    StappenplanView(woning: woning)
+                } label: {
+                    Label("Naar de Huurcommissie", systemImage: "list.number")
+                }
             }
 
             Section {
