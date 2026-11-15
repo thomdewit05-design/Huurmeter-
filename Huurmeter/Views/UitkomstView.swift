@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 import WWSKit
 import HuurmeterCore
+import WidgetKit
 
 /// Scherm 7: punten, segment, maximale huur, verschil per maand en per jaar, uitklapbaar per rubriek.
 struct UitkomstView: View {
@@ -31,8 +32,15 @@ struct UitkomstView: View {
     private func bereken() {
         let r = Rekenservice().bereken(woning.concept, peildatum: Dag(Date()))
         resultaat = r
-        if case .uitkomst(let u) = r, !(woning.laatsteBerekening?.zelfdeAls(u) ?? false) {
-            woning.berekeningen.append(Berekening(uitkomst: u))
+        if case .uitkomst(let u) = r {
+            if !(woning.laatsteBerekening?.zelfdeAls(u) ?? false) {
+                woning.berekeningen.append(Berekening(uitkomst: u))
+            }
+            // Gegevens voor de widget (gedeelde App Group-opslag op het toestel).
+            if let opslag = UserDefaults(suiteName: WidgetGegevens.appGroup) {
+                WidgetGegevens(adres: woning.adres.weergave, uitkomst: u).bewaar(in: opslag)
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
     }
 

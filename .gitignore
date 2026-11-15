@@ -5,3 +5,6 @@ Huurmeter/Info.plist
 DerivedData/
 .DS_Store
 build.log
+Huurmeter/Huurmeter.entitlements
+HuurmeterWidget/Info.plist
+HuurmeterWidget/HuurmeterWidget.entitlements
