@@ -309,12 +309,13 @@ private struct TegelRaster: View {
         let isAantal = maximum(vraag) > 1
         return Button {
             let nieuw = isAantal ? min(waarde + 1, maximum(vraag)) : (aan ? 0 : 1)
-            woning.zetAntwoord(vraag.sleutel, Double(nieuw), rubriek: vraag.rubriek)
+            withAnimation(.huurmeterKort) { woning.zetAntwoord(vraag.sleutel, Double(nieuw), rubriek: vraag.rubriek) }
         } label: {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Image(systemName: Tegels.icoon(vraag.sleutel))
                         .font(.title3)
+                        .symbolEffect(.bounce, value: waarde)
                         .foregroundStyle(aan ? Huisstijl.opLimoen : Huisstijl.gedempt)
                     Spacer()
                     if aan {
@@ -338,7 +339,8 @@ private struct TegelRaster: View {
             .background(aan ? Huisstijl.limoen : Huisstijl.salie, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(aan ? Huisstijl.bosgroen.opacity(0.3) : .clear))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(IndrukStijl())
+        .sensoryFeedback(.impact(weight: .light), trigger: waarde)
         .contextMenu {
             if isAantal && waarde > 0 {
                 Button { woning.zetAntwoord(vraag.sleutel, Double(waarde - 1), rubriek: vraag.rubriek) } label: {

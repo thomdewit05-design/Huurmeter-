@@ -33,13 +33,15 @@ struct WoningView: View {
     @State private var begonnen = false
     @State private var punten: Int?
     @State private var toonMeer = false
+    @State private var vooruit = true
 
     var body: some View {
         Group { inhoud(stap) }
             .id(stap)
-            .transition(.opacity)
+            .transition(.stap(vooruit: vooruit))
             .safeAreaInset(edge: .top, spacing: 0) { kop }
-            .safeAreaInset(edge: .bottom, spacing: 0) { navigatie }
+            .onderbalk { navigatie }
+            .sensoryFeedback(.selection, trigger: stap)
             .navigationTitle(woning.titel)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -67,7 +69,8 @@ struct WoningView: View {
     }
 
     private func ga(naar nieuw: WoningStap) {
-        withAnimation(.easeInOut(duration: 0.2)) { stap = nieuw }
+        vooruit = nieuw.rawValue >= stap.rawValue
+        withAnimation(.huurmeter) { stap = nieuw }
         woning.laatsteStap = nieuw.rawValue
     }
 
@@ -125,6 +128,8 @@ struct WoningView: View {
                 if let punten {
                     VStack(alignment: .trailing, spacing: 0) {
                         Text(verbatim: "\(punten)").font(.title2.weight(.heavy)).monospacedDigit().foregroundStyle(Huisstijl.bosgroen)
+                            .contentTransition(.numericText(value: Double(punten)))
+                            .animation(.huurmeter, value: punten)
                         Text("punten").font(.caption2.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
                     }
                     .accessibilityElement(children: .combine)
@@ -140,6 +145,7 @@ struct WoningView: View {
                         .frame(height: 6)
                 }
             }
+            .animation(.huurmeter, value: stap)
             .accessibilityHidden(true)
         }
         .padding(.horizontal, 16)
@@ -156,6 +162,7 @@ struct WoningView: View {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.large)
+                .transition(.move(edge: .leading).combined(with: .opacity))
             }
             if let volgende = WoningStap(rawValue: stap.rawValue + 1) {
                 Button { ga(naar: volgende) } label: {

@@ -9,6 +9,7 @@ struct UitkomstView: View {
     @Environment(Winkel.self) private var winkel
     @Bindable var woning: Woning
     @State private var resultaat: Rekenservice.Resultaat?
+    @State private var getoondePunten = 0
 
     var body: some View {
         Group {
@@ -53,9 +54,15 @@ struct UitkomstView: View {
                         Text(s.kop).font(.headline).foregroundStyle(Huisstijl.gedempt)
                     }
                     HStack(alignment: .firstTextBaseline, spacing: 8) {
-                        Text("\(u.totaal)")
+                        Text(verbatim: "\(getoondePunten)")
                             .font(.system(.largeTitle, design: .rounded, weight: .heavy))
                             .foregroundStyle(Huisstijl.bosgroen)
+                            .contentTransition(.numericText(value: Double(getoondePunten)))
+                            .onAppear {
+                                withAnimation(.huurmeter.delay(0.15)) { getoondePunten = u.totaal }
+                            }
+                            .onChange(of: u.totaal) { withAnimation(.huurmeter) { getoondePunten = u.totaal } }
+                            .accessibilityLabel(Text(verbatim: "\(u.totaal)"))
                         Text("punten").font(.title3).foregroundStyle(Huisstijl.gedempt)
                         Spacer(minLength: 8)
                         Pil(tekst: Weergave.segment(u.segment))
