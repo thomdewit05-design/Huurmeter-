@@ -45,6 +45,7 @@ struct KamerView: View {
     @AppStorage("kamerStap") private var stapNummer = 0
     @State private var f = KamerFormulier()
     @State private var geladen = false
+    @State private var vooruit = true
     private let regels = try? KamerRegels.laad()
 
     private var stap: KamerStap { KamerStap(rawValue: stapNummer) ?? .kamer }
@@ -59,10 +60,11 @@ struct KamerView: View {
             inhoud(stap)
         }
         .id(stap)
-        .transition(.opacity)
+        .transition(.stap(vooruit: vooruit))
         .huisstijlAchtergrond()
         .safeAreaInset(edge: .top, spacing: 0) { kop }
-        .safeAreaInset(edge: .bottom, spacing: 0) { navigatie }
+        .onderbalk { navigatie }
+        .sensoryFeedback(.selection, trigger: stapNummer)
         .navigationTitle("Kamer")
         .navigationBarTitleDisplayMode(.inline)
         .toetsenbordKlaar()
@@ -75,7 +77,8 @@ struct KamerView: View {
     }
 
     private func ga(naar nieuw: KamerStap) {
-        withAnimation(.easeInOut(duration: 0.2)) { stapNummer = nieuw.rawValue }
+        vooruit = nieuw.rawValue >= stapNummer
+        withAnimation(.huurmeter) { stapNummer = nieuw.rawValue }
     }
 
     // MARK: Kop en navigatie
@@ -109,12 +112,15 @@ struct KamerView: View {
                 if case .success(let u) = uitkomst {
                     VStack(alignment: .trailing, spacing: 0) {
                         Text(verbatim: "\(u.totaal)").font(.title2.weight(.heavy)).monospacedDigit().foregroundStyle(Huisstijl.bosgroen)
+                            .contentTransition(.numericText(value: Double(u.totaal)))
+                            .animation(.huurmeter, value: u.totaal)
                         Text("punten").font(.caption2.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
                     }
                     .accessibilityElement(children: .combine)
                 }
             }
             ProgressView(value: Double(stap.rawValue + 1), total: Double(totaal))
+                .animation(.huurmeter, value: stap)
                 .tint(Huisstijl.bosgroen)
                 .accessibilityHidden(true)
         }

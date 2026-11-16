@@ -185,14 +185,19 @@ struct MeetOppervlakteKnop: View {
             Button {
                 toon = true
             } label: {
-                Image(systemName: "camera.metering.spot")
+                Image(systemName: LidarOppervlakteView.beschikbaar ? "camera.metering.matrix" : "camera.metering.spot")
                     .font(.body.weight(.semibold))
                     .foregroundStyle(Huisstijl.bosgroen)
             }
             .buttonStyle(.borderless)
-            .accessibilityLabel(Text("Meet met de camera"))
+            .accessibilityLabel(Text(LidarOppervlakteView.beschikbaar ? "Scannen met LiDAR" : "Meet met de camera"))
             .fullScreenCover(isPresented: $toon) {
-                OppervlakteMeterView(titel: titel, gebruik: gebruik)
+                // Met LiDAR: vloer scannen. Zonder LiDAR (oudere iPhones): hoeken aantikken.
+                if LidarOppervlakteView.beschikbaar {
+                    LidarOppervlakteView(titel: titel, gebruik: gebruik)
+                } else {
+                    OppervlakteMeterView(titel: titel, gebruik: gebruik)
+                }
             }
         }
     }

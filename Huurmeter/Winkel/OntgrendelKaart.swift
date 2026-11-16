@@ -36,6 +36,7 @@ struct OntgrendelKaart: View {
                 .font(.caption).foregroundStyle(.secondary)
         }
         .padding(.vertical, 6)
+        .sensoryFeedback(.success, trigger: winkel.ontgrendeld)
         .alert("Melding", isPresented: Binding(get: { winkel.melding != nil }, set: { if !$0 { winkel.melding = nil } })) {
             Button("OK", role: .cancel) {}
         } message: {

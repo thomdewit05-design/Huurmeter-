@@ -18,11 +18,11 @@ struct StartView: View {
         NavigationStack(path: $pad) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 28) {
-                    WelkomKaart(woningen: woningen, nieuweWoning: nieuweWoning)
-                    AandachtBlok(woningen: woningen, vandaag: vandaag)
-                    woningenBlok
-                    HulpmiddelenBlok(woning: recentste, nieuweWoning: nieuweWoning)
-                    voetnoot
+                    WelkomKaart(woningen: woningen, nieuweWoning: nieuweWoning).verschijn(0)
+                    AandachtBlok(woningen: woningen, vandaag: vandaag).verschijn(1)
+                    woningenBlok.verschijn(2)
+                    HulpmiddelenBlok(woning: recentste, nieuweWoning: nieuweWoning).verschijn(3)
+                    voetnoot.verschijn(4)
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 32)
@@ -69,7 +69,7 @@ struct StartView: View {
                 BlokKop(titel: "Uw woningen", icoon: "house")
                 ForEach(woningen) { woning in
                     NavigationLink(value: woning) { WoningKaart(woning: woning) }
-                        .buttonStyle(.plain)
+                        .buttonStyle(IndrukStijl())
                         .contextMenu {
                             Button {
                                 pad.append(woning.kopie(in: context))
@@ -242,7 +242,7 @@ private struct AandachtBlok: View {
                             rij(p)
                         }
                     }
-                    .buttonStyle(.plain)
+                    .buttonStyle(IndrukStijl())
                 }
             }
         }
@@ -356,6 +356,8 @@ private struct WoningKaart: View {
                     Text(verbatim: "\(b.totaal)")
                         .font(.system(size: 40, weight: .heavy, design: .rounded))
                         .foregroundStyle(Huisstijl.bosgroen)
+                        .contentTransition(.numericText(value: Double(b.totaal)))
+                        .animation(.huurmeter, value: b.totaal)
                     Text("punten").font(.subheadline.weight(.semibold)).foregroundStyle(Huisstijl.gedempt)
                     Spacer(minLength: 8)
                     statusPil(status, maxHuur: b.maxHuur)
@@ -418,11 +420,11 @@ private struct HulpmiddelenBlok: View {
                 NavigationLink { KamerView() } label: {
                     TegelInhoud(titel: "Kamer berekenen", icoon: "door.left.hand.open", ondertitel: nil)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(IndrukStijl())
                 NavigationLink { InfoView() } label: {
                     TegelInhoud(titel: "Uitleg en bronnen", icoon: "book", ondertitel: nil)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(IndrukStijl())
             }
         }
     }
@@ -434,12 +436,12 @@ private struct HulpmiddelenBlok: View {
             NavigationLink { bestemming(woning) } label: {
                 TegelInhoud(titel: titel, icoon: icoon, ondertitel: woning.titel)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(IndrukStijl())
         } else {
             Button(action: nieuweWoning) {
                 TegelInhoud(titel: titel, icoon: icoon, ondertitel: String(localized: "Voeg eerst een woning toe"))
             }
-            .buttonStyle(.plain)
+            .buttonStyle(IndrukStijl())
         }
     }
 }
