@@ -201,7 +201,8 @@ struct RuimteEditView: View {
                     Button {
                         toonHoeken = true
                     } label: {
-                        Label("Meten door de hoeken aan te tikken", systemImage: "camera.metering.spot")
+                        Label(LidarOppervlakteView.beschikbaar ? "Vloer scannen met LiDAR" : "Meten door de hoeken aan te tikken" as LocalizedStringKey,
+                              systemImage: LidarOppervlakteView.beschikbaar ? "camera.metering.matrix" : "camera.metering.spot")
                     }
                 }
             } header: {
@@ -242,10 +243,16 @@ struct RuimteEditView: View {
         .onChange(of: ruimte.zolderZonderVasteTrap) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.naam) { ruimte.woning?.geraakt() }
         .fullScreenCover(isPresented: $toonHoeken) {
-            OppervlakteMeterView(titel: ruimte.naam.isEmpty ? String(localized: "Ruimte") : ruimte.naam) { m2 in
+            let titel = ruimte.naam.isEmpty ? String(localized: "Ruimte") : ruimte.naam
+            let neemOver: (Double) -> Void = { m2 in
                 ruimte.oppervlakte = m2
                 ruimte.bron = .scan
                 ruimte.woning?.geraakt()
+            }
+            if LidarOppervlakteView.beschikbaar {
+                LidarOppervlakteView(titel: titel, gebruik: neemOver)
+            } else {
+                OppervlakteMeterView(titel: titel, gebruik: neemOver)
             }
         }
         .fullScreenCover(isPresented: $toonScan) {

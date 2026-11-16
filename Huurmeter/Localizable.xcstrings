@@ -2791,6 +2791,16 @@
         }
       }
     },
+    "Het groene deel is gemeten. Ga door tot alles groen is en tik dan op Gebruik.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The green part has been measured. Keep going until everything is green, then tap Use."
+          }
+        }
+      }
+    },
     "Het label van de hele woning telt, maal uw deel van de oppervlakte. Zonder geldig label telt het bouwjaar.": {
       "localizations": {
         "en": {
@@ -5231,6 +5241,16 @@
         }
       }
     },
+    "Richt de camera schuin naar beneden en beweeg langzaam over de hele vloer of grond.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Point the camera down at an angle and move slowly over the whole floor or ground."
+          }
+        }
+      }
+    },
     "Rijksmonument": {
       "localizations": {
         "en": {
@@ -5307,6 +5327,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scan room by room with the camera, or add a room and measure it separately. Measure from wall to wall at a height of 1.50 m; built-in cupboards count."
+          }
+        }
+      }
+    },
+    "Scannen met LiDAR": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan with LiDAR"
           }
         }
       }
@@ -6551,6 +6581,16 @@
         }
       }
     },
+    "Vloer scannen met LiDAR": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan floor with LiDAR"
+          }
+        }
+      }
+    },
     "Voeg de kamers, de berging en de tuin of het balkon toe.": {
       "localizations": {
         "en": {
@@ -7037,6 +7077,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "What is wrong? E.g. bathroom leak"
+          }
+        }
+      }
+    },
+    "Wat op de vloer staat (meubels, planten) wordt niet gezien. Meet die plekken zo nodig na of tel ze erbij.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Things standing on the floor (furniture, plants) are not seen. Measure those spots again or add them if needed."
           }
         }
       }
