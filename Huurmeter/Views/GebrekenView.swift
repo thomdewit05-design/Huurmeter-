@@ -125,7 +125,6 @@ private struct GebrekBewerken: View {
     @Bindable var gebrek: Gebrek
     let regels: GebrekenRegels?
     let procedure: Stappenplannen.Procedure?
-    @State private var keuze: [PhotosPickerItem] = []
 
     private func datum(_ pad: ReferenceWritableKeyPath<Gebrek, Date?>) -> Binding<Bool> {
         Binding(get: { gebrek[keyPath: pad] != nil }, set: { gebrek[keyPath: pad] = $0 ? Date() : nil })
@@ -161,8 +160,10 @@ private struct GebrekBewerken: View {
                         }
                     }
                 }
-                PhotosPicker(selection: $keuze, maxSelectionCount: 6, matching: .images) {
+                FotoToevoegenKnop(maxAantal: 6) {
                     Label("Foto's toevoegen", systemImage: "camera")
+                } gekozen: { fotos in
+                    gebrek.fotos.append(contentsOf: fotos)
                 }
             } header: {
                 Text("Foto's")
@@ -213,24 +214,12 @@ private struct GebrekBewerken: View {
         .navigationTitle(gebrek.titel.isEmpty ? String(localized: "Nieuw gebrek") : gebrek.titel)
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
+            // Niet opruimen terwijl de camera over dit scherm ligt.
+            guard !CameraStatus.open else { return }
             // Leeg achtergelaten: opruimen.
             if gebrek.titel.isEmpty && gebrek.omschrijving.isEmpty && gebrek.fotos.isEmpty
                 && gebrek.gemeld == nil && gebrek.categorie == nil { context.delete(gebrek) }
             else { gebrek.woning?.geraakt() }
-        }
-        .onChange(of: keuze) {
-            let items = keuze
-            guard !items.isEmpty else { return }
-            Task {
-                for item in items {
-                    if let data = try? await item.loadTransferable(type: Data.self),
-                       let beeld = UIImage(data: data),
-                       let jpeg = beeld.verkleind(maximaleZijde: 1600).jpegData(compressionQuality: 0.7) {
-                        gebrek.fotos.append(jpeg)
-                    }
-                }
-                keuze = []
-            }
         }
     }
 }

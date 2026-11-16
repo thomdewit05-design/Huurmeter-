@@ -470,6 +470,9 @@ struct KamerView: View {
                     .monospacedDigit()
                     .frame(width: 80)
                 Text(eenheid).foregroundStyle(.secondary).frame(width: 26, alignment: .leading)
+                if eenheid == "m²" {
+                    MeetOppervlakteKnop(titel: String(localized: "Oppervlakte meten")) { waarde.wrappedValue = $0 }
+                }
             }
         } label: {
             Text(titel)

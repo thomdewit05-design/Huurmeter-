@@ -1971,6 +1971,16 @@
         }
       }
     },
+    "Foto maken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Take photo"
+          }
+        }
+      }
+    },
     "Foto's": {
       "localizations": {
         "en": {
@@ -2017,6 +2027,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Function"
+          }
+        }
+      }
+    },
+    "Ga in een hoek staan, richt het kruisje op de grond in de hoek en tik.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stand in a corner, point the crosshair at the ground in the corner and tap."
           }
         }
       }
@@ -2547,6 +2567,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reported on %@ · Rent Tribunal deadline passed"
+          }
+        }
+      }
+    },
+    "Gemeten met de camera": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measured with the camera"
           }
         }
       }
@@ -3761,6 +3791,16 @@
         }
       }
     },
+    "Kies uit bibliotheek": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose from library"
+          }
+        }
+      }
+    },
     "Kies…": {
       "localizations": {
         "en": {
@@ -3941,6 +3981,16 @@
         }
       }
     },
+    "Laatste hoek weg": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove last corner"
+          }
+        }
+      }
+    },
     "Label opzoeken op ep-online.nl": {
       "localizations": {
         "en": {
@@ -4077,6 +4127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Walk through the home room by room with the camera. Then check the list."
+          }
+        }
+      }
+    },
+    "Loop naar de volgende hoek en tik. Ga zo de hele rand rond.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Walk to the next corner and tap. Go all the way around the edge."
           }
         }
       }
@@ -4287,6 +4347,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "With how many addresses do you share that space?"
+          }
+        }
+      }
+    },
+    "Meten door de hoeken aan te tikken": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure by tapping the corners"
           }
         }
       }
@@ -4786,7 +4856,7 @@
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Again"
+            "value": "Start over"
           }
         }
       }
@@ -4817,6 +4887,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Floor area in m²"
+          }
+        }
+      }
+    },
+    "Oppervlakte meten": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Measure area"
           }
         }
       }
@@ -5217,6 +5297,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sanitary facilities"
+          }
+        }
+      }
+    },
+    "Scan kamer voor kamer met de camera, of voeg een ruimte toe en meet die apart. Meet van muur tot muur op 1,50 m hoogte; vaste kasten tellen mee.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scan room by room with the camera, or add a room and measure it separately. Measure from wall to wall at a height of 1.50 m; built-in cupboards count."
           }
         }
       }
@@ -5697,6 +5787,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tap what is there. Press and hold to reduce."
+          }
+        }
+      }
+    },
+    "Tik nog meer hoeken aan als de vorm niet rechthoekig is. Klopt het? Tik op Gebruik.": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap more corners if the shape is not rectangular. Is it right? Tap Use."
           }
         }
       }
@@ -7057,6 +7157,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Very serious"
+          }
+        }
+      }
+    },
+    "Zelf ingevuld": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entered manually"
           }
         }
       }

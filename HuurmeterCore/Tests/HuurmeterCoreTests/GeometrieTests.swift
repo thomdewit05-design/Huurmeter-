@@ -72,4 +72,16 @@ final class KamerherkenningTests: XCTestCase {
         XCTAssertEqual(Kamerherkenning.namen(voor: [.woonkamer, .slaapkamer, .slaapkamer, .overig]),
                        ["Woonkamer", "Slaapkamer 1", "Slaapkamer 2", "Kamer"])
     }
+
+    func testGrondOppervlakteUitAangetikteHoeken() {
+        // Tuin van 5 × 4 m, met kleine hoogteverschillen tussen de tikken.
+        let tuin = [Punt3(0, 0, 0), Punt3(5, 0.03, 0), Punt3(5, -0.02, 4), Punt3(0, 0.01, 4)]
+        XCTAssertEqual(Geometrie.grondOppervlakte(tuin), 20)
+        // L-vormig balkon: 3 × 1,5 plus 1 × 1 = 5,5 m².
+        let l = [Punt3(0, 0, 0), Punt3(3, 0, 0), Punt3(3, 0, 1.5), Punt3(1, 0, 1.5), Punt3(1, 0, 2.5), Punt3(0, 0, 2.5)]
+        XCTAssertEqual(Geometrie.grondOppervlakte(l), 5.5)
+        XCTAssertEqual(Geometrie.grondOppervlakte([Punt3(0, 0, 0), Punt3(1, 0, 0)]), 0)
+        // Tegen de klok in of met de klok mee: zelfde uitkomst.
+        XCTAssertEqual(Geometrie.grondOppervlakte(tuin.reversed()), 20)
+    }
 }

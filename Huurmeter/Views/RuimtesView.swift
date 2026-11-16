@@ -13,30 +13,52 @@ struct RuimtesView: View {
 
     var body: some View {
         List {
+            if woning.ruimten.isEmpty {
+                Section {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Image(systemName: "square.split.2x2")
+                            .font(.title2.weight(.semibold))
+                            .foregroundStyle(Huisstijl.opLimoen)
+                            .frame(width: 48, height: 48)
+                            .background(Huisstijl.limoen, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .accessibilityHidden(true)
+                        Text("Nog geen ruimtes").font(.title3.weight(.bold)).foregroundStyle(Huisstijl.bosgroen)
+                        Text("Voeg de kamers, de berging en de tuin of het balkon toe.")
+                            .font(.subheadline).foregroundStyle(Huisstijl.gedempt)
+                    }
+                    .padding(.vertical, 6)
+                }
+            }
             ForEach(RuimteSoort.weergaveVolgorde, id: \.self) { soort in
                 let lijst = woning.gesorteerdeRuimten.filter { $0.soort == soort }
                 if !lijst.isEmpty {
-                    Section(soort.meervoud) {
+                    Section {
                         ForEach(lijst) { r in
                             Button { bewerk = r } label: { RuimteRij(ruimte: r) }
                                 .foregroundStyle(.primary)
                         }
                         .onDelete { idx in verwijder(idx.map { lijst[$0] }) }
+                    } header: {
+                        HStack(alignment: .firstTextBaseline) {
+                            Text(soort.meervoud)
+                            Spacer()
+                            Text(verbatim: Opmaak.oppervlakte(lijst.reduce(0) { $0 + $1.oppervlakte }))
+                                .monospacedDigit()
+                        }
+                        .font(.subheadline.weight(.bold))
+                        .foregroundStyle(Huisstijl.bosgroen)
+                        .textCase(nil)
                     }
                 }
             }
-            if Scanner.beschikbaar {
-                Section {
+            Section {
+                if Scanner.beschikbaar {
                     Button {
                         woningScan = true
                     } label: {
                         Label("Hele woning scannen", systemImage: "camera.metering.matrix")
                     }
-                } footer: {
-                    Text("Loop met de camera kamer voor kamer door de woning. Daarna controleert u de lijst.")
                 }
-            }
-            Section {
                 Menu {
                     ForEach(RuimteSjabloon.alle) { s in
                         Button(s.naam.vertaald) { voegToe(s) }
@@ -45,13 +67,9 @@ struct RuimtesView: View {
                     Label("Ruimte toevoegen", systemImage: "plus.circle.fill")
                 }
             } footer: {
-                Text("Meet van muur tot muur op 1,50 m hoogte. Bij een schuin dak telt alleen het deel waar het plafond minstens 1,50 m hoog is. Vaste kasten tellen mee.")
-            }
-        }
-        .overlay {
-            if woning.ruimten.isEmpty {
-                ContentUnavailableView("Nog geen ruimtes", systemImage: "square.split.2x2",
-                                       description: Text("Voeg de kamers, de berging en de tuin of het balkon toe."))
+                Text(Scanner.beschikbaar
+                     ? "Scan kamer voor kamer met de camera, of voeg een ruimte toe en meet die apart. Meet van muur tot muur op 1,50 m hoogte; vaste kasten tellen mee."
+                     : "Meet van muur tot muur op 1,50 m hoogte. Bij een schuin dak telt alleen het deel waar het plafond minstens 1,50 m hoog is. Vaste kasten tellen mee." as LocalizedStringKey)
             }
         }
         .huisstijlAchtergrond()
@@ -84,16 +102,29 @@ private struct RuimteRij: View {
     let ruimte: Ruimte
 
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 2) {
                 Text(ruimte.naam.isEmpty ? String(localized: "Naamloos") : ruimte.naam)
-                Text(ruimte.bron == .scan ? "Gescand" : "Handmatig" as LocalizedStringKey).font(.caption).foregroundStyle(.secondary)
+                    .font(.body.weight(.medium))
+                HStack(spacing: 4) {
+                    Image(systemName: ruimte.bron == .scan ? "camera.viewfinder" : "pencil")
+                        .accessibilityHidden(true)
+                    Text(ruimte.bron == .scan ? "Gemeten met de camera" : "Zelf ingevuld" as LocalizedStringKey)
+                }
+                .font(.caption)
+                .foregroundStyle(Huisstijl.gedempt)
             }
-            Spacer()
-            Text(ruimte.oppervlakte > 0 ? Opmaak.oppervlakte(ruimte.oppervlakte) : "– m²")
+            Spacer(minLength: 8)
+            Text(verbatim: ruimte.oppervlakte > 0 ? Opmaak.oppervlakte(ruimte.oppervlakte) : "– m²")
                 .monospacedDigit()
+                .fontWeight(.semibold)
                 .foregroundStyle(ruimte.oppervlakte > 0 ? .primary : .secondary)
+            Image(systemName: "chevron.right")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(.tertiary)
+                .accessibilityHidden(true)
         }
+        .padding(.vertical, 2)
         .accessibilityElement(children: .combine)
     }
 }
@@ -103,6 +134,7 @@ struct RuimteEditView: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var ruimte: Ruimte
     @State private var toonScan = false
+    @State private var toonHoeken = false
 
     private var aftrek: Binding<Double?> {
         Binding(get: { ruimte.aftrek > 0 ? ruimte.aftrek : nil },
@@ -155,8 +187,23 @@ struct RuimteEditView: View {
             }
 
             Section {
-                TextField("Oppervlakte in m²", value: oppervlakte, format: .number.precision(.fractionLength(0...2)))
-                    .keyboardType(.decimalPad)
+                LabeledContent("Oppervlakte") {
+                    HStack(spacing: 6) {
+                        TextField("0", value: oppervlakte, format: .number.precision(.fractionLength(0...2)))
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .monospacedDigit()
+                            .frame(width: 90)
+                        Text("m²").foregroundStyle(.secondary)
+                    }
+                }
+                if OppervlakteMeterView.beschikbaar {
+                    Button {
+                        toonHoeken = true
+                    } label: {
+                        Label("Meten door de hoeken aan te tikken", systemImage: "camera.metering.spot")
+                    }
+                }
             } header: {
                 Text("Oppervlakte")
             } footer: {
@@ -194,6 +241,13 @@ struct RuimteEditView: View {
         .onChange(of: ruimte.verkoeling) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.zolderZonderVasteTrap) { ruimte.woning?.geraakt() }
         .onChange(of: ruimte.naam) { ruimte.woning?.geraakt() }
+        .fullScreenCover(isPresented: $toonHoeken) {
+            OppervlakteMeterView(titel: ruimte.naam.isEmpty ? String(localized: "Ruimte") : ruimte.naam) { m2 in
+                ruimte.oppervlakte = m2
+                ruimte.bron = .scan
+                ruimte.woning?.geraakt()
+            }
+        }
         .fullScreenCover(isPresented: $toonScan) {
             ScanView(naam: ruimte.naam.isEmpty ? "Ruimte" : ruimte.naam) { scan, plattegrond in
                 ruimte.neemScanOver(scan, plattegrond: plattegrond)
@@ -224,12 +278,15 @@ struct RuimteEditView: View {
             }
             Toggle("Schuin dak of verlaagd plafond", isOn: schuinDak)
             if ruimte.schuinDak || ruimte.aftrek > 0 {
-                HStack {
-                    Text("Aftrekken")
-                    TextField("0", value: aftrek, format: .number.precision(.fractionLength(0...2)))
-                        .multilineTextAlignment(.trailing)
-                        .keyboardType(.decimalPad)
-                    Text("m²").foregroundStyle(.secondary)
+                LabeledContent("Aftrekken") {
+                    HStack(spacing: 6) {
+                        TextField("0", value: aftrek, format: .number.precision(.fractionLength(0...2)))
+                            .keyboardType(.decimalPad)
+                            .multilineTextAlignment(.trailing)
+                            .monospacedDigit()
+                            .frame(width: 90)
+                        Text("m²").foregroundStyle(.secondary)
+                    }
                 }
             }
         } header: {

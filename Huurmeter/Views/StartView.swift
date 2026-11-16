@@ -31,6 +31,16 @@ struct StartView: View {
             .navigationTitle("Huurmeter")
             .navigationBarTitleDisplayMode(.inline)
             .navigationDestination(for: Woning.self) { WoningView(woning: $0) }
+            #if DEBUG
+            .onAppear {
+                let args = ProcessInfo.processInfo.arguments
+                if let i = args.firstIndex(of: "-openStap"), i + 1 < args.count, let n = Int(args[i + 1]),
+                   let w = woningen.first, pad.isEmpty {
+                    w.laatsteStap = n
+                    pad.append(w)
+                }
+            }
+            #endif
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button { toonInfo = true } label: { Label("Info", systemImage: "info.circle") }

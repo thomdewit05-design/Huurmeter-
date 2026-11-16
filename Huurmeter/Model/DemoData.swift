@@ -28,6 +28,14 @@ enum DemoData {
 
     @MainActor
     static func vulIn(_ context: ModelContext) {
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-legeWoning") {
+            let leeg = Woning()
+            leeg.postcode = "1234AB"; leeg.huisnummer = "12"; leeg.straat = "Galerijstraat"; leeg.plaats = "Voorbeeldstad"
+            leeg.gewijzigd = Date().addingTimeInterval(60)
+            context.insert(leeg)
+        }
+        #endif
         let w = Woning()
         context.insert(w)
         w.postcode = "1234AB"
